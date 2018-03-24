@@ -35,7 +35,7 @@ saveRDS(jtdwehi, "data/jtdwehi.Rds")
 
 ## Search all the hashtags!
 
-![](/post/2017-08-18-joining-the-dots-twitter-analysis_files/hashtags-1.png
+![](/post/2017-08-18-joining-the-dots-twitter-analysis_files/hashtags-1.png)
 
 # Timeline
 ## Tweets by day

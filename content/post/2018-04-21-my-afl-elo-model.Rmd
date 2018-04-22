@@ -1,0 +1,183 @@
+---
+title: My AFL-Elo model
+author: Luke Zappia
+date: '2018-04-21'
+slug: my-afl-elo-model
+categories:
+  - afl
+tags:
+  - afl2018
+  - elo
+  - sport
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(autodep        = TRUE,
+                      cache          = FALSE,
+                      cache.comments = TRUE,
+                      echo           = FALSE,
+                      error          = FALSE,
+                      fig.align      = "center",
+                      fig.width      = 10,
+                      fig.height     = 8,
+                      message        = FALSE,
+                      warning        = FALSE)
+```
+
+```{r libraries}
+library("knitr")
+library("formattable")
+library("here")
+library("tidyverse")
+```
+
+Over the last few years I have followed a lot of the work done by
+[FiveThiryEight][FiveThirtyEight], particularly their attempts to model and
+predict sport. More recently I have discovered there is a community of people
+trying to do similar things for the AFL, including [The Arc][TheArc],
+[Squiggle][Squiggle], [Matter of Stats][Mos] and [Hurling People Now][HPN].
+
+Many of these modelling projects are based around the [Elo system][Elo]. If you
+haven't heard of it before this model is a ranking system originally designed
+for chess by a Hungarian physicist. In the simplest form each player (or team)
+is assigned a ranking. When a match is played you can estimate a win probability
+based on the differences between the rankings. The rankings are then adjusted
+based on the result in such a way that unexpected results cause bigger changes
+than those that are closer to what was predicted. This model is relatively naive
+and simple to implement, no knowledge of the players or teams themselves is
+required, just the results of matches, but can still produce good predictions.
+
+Given this I thought it would be a good place to start. My version of the model
+is closely based on the one described by The Arc [here][TheArcModel]. There were
+a few different things I wanted to try but (as always) everything took longer
+than I planned, so what I have done in the end is very similar. The one area
+where I have done things differently is the process used to select the
+parameters of the model. This part wasn't really described in the post on The
+Arc so I was left to my own devices. Here are brief descriptions of the
+parameters, but if you are interested I suggest you check out the outline of
+the model on The Arc which has a lot more detail:
+
+* **New team rating** - The starting rating for new teams that enter the
+  competition (Gold Coast and GWS). Original teams start with a rating of 1500.
+* **New season adjustment** - Amount to regress to the mean at the beginning of
+  a new season
+* **HGA alpha** - Weighting given to travel distance when calculating home
+  ground advantage (HGA)
+* **HGA beta** - Weighting given to ground experience when calculating HGA
+* **p** - Controls how win probabilities are converted to margins
+* **k** - Controls how differences between predicted and actual results affect
+  ratings. Greater values cause greater changes, meaning the the model reacts
+  quicker to what has happened but also that it is more unstable. In many ways
+  this is the critical parameter for the Elo model. For this version of the
+  model we use three different values:
+    * **Early** - Used for the first five rounds of the regular season
+    * **Normal** - Used for the remainder of the regular season
+    * **Finals** - Used for finals matches
+
+To select these parameters I chose to use a [genetic optimisation algorithm][GA].
+Partly because it is potentially able to explore a wider parameter space, but
+also because I think they are cool. To do this we need a measure of fitness that
+we are aiming for. For sport predictions there are generally two things we want
+to know, who is going to win and by how much. Estimating these can often be best
+done using different sets of parameters. For this reason I ran the optimisation
+procedure three times, once optimising for win prediction accuracy, once
+optimising for the mean absolute error in predicting the margin and once for a
+50/50 balance between the two. Each optimisation procedure was run for 100
+generations with 100 individuals in each generation, training the model on all
+AFL games from 1997 to 2016 and assessing performance on the games from 2000
+to 2016. This leaves the 2017 season as a validation set to check the selected
+parameters. Here the best performing parameter sets from each of the
+optimisations compared to the default parameters based on The Arc:
+
+```{r opt-summary}
+opt_summ <- read_tsv(here("data/afl2018/optimisation_summary.tsv"),
+                     col_types = cols(
+                         .default = col_double(),
+                         Version = col_character()
+                     ))
+
+opt_summ %>%
+    mutate(new_team_rating = round(new_team_rating),
+           new_season_adjustment = round(new_season_adjustment, 2),
+           hga_alpha = round(hga_alpha, 2),
+           hga_beta = round(hga_beta, 2),
+           pred_p = round(pred_p, 4),
+           adjust_k_early = round(adjust_k_early),
+           adjust_k_normal = round(adjust_k_normal),
+           adjust_k_finals = round(adjust_k_finals),
+           Margin2016 = round(Margin2016, 2),
+           Predict2016 = round(Predict2016, 2),
+           Margin2017 = round(Margin2017, 2),
+           Predict2017 = round(Predict2017, 2)) %>%
+    mutate_all(as.character) %>%
+    select(-Version) %>%
+    rename(NewTeamRating = new_team_rating,
+           NewSeasonAdjustment = new_season_adjustment,
+           HGA_Alpha = hga_alpha,
+           HGA_Beta = hga_beta,
+           p = pred_p,
+           k_Early = adjust_k_early,
+           k_Normal = adjust_k_normal,
+           k_Finals = adjust_k_finals) %>%
+    t() %>%
+    data.frame() %>%
+    rename(Default = X1, Margin = X2, Balanced = X3, Prediction = X4) %>%
+    kable()
+```
+
+Based on the 2017 results I decided to go with  the Margin model. Despite being
+optimised for margin accuracy it also performed the best at predicting results
+in 2017. This might suggest that the optimisation procedure is not ideal, but
+that is a problem for another day... Encouragingly, all three of my models
+outperform the defaults, which suggests that the results will be somewhere in
+the range of the The Arc, and I am more than happy with that.
+
+If you are interested in how I have done things I have made an
+[`aflelo`][aflelo] R package which you can install from GitHub and my analysis
+and predictions for each round will be available [here][afl2018].
+
+Now that I have a model I can use it to make predictions about the 2018 season!
+
+Round 5
+=======
+
+Summary
+-------
+
+```{r summ_table}
+summ_table <- read_rds(here("data/afl2018/R5/summary_table.Rds"))
+summ_table
+```
+
+Predictions
+-----------
+
+![](/post/2018-04-21-my-afl-elo-model_files/predictions.png)
+
+Projections
+-----------
+
+### Ladder
+
+![](/post/2018-04-21-my-afl-elo-model_files/ladder.png)
+
+### Premiership points
+
+![](/post/2018-04-21-my-afl-elo-model_files/points.png)
+
+History
+-------
+
+![](/post/2018-04-21-my-afl-elo-model_files/history.png)
+
+[FiveThirtyEight]: http://fivethirtyeight.com/ "FiveThirtyEight"
+[TheArc]: https://thearcfooty.com/ "The Arc"
+[Squiggle]: https://squiggle.com.au/ "Squiggle"
+[MoS]: http://www.matterofstats.com/ "Matter of Stats"
+[HPN]: http://www.hpnfooty.com/ "Hurling People Now"
+[Elo]: https://en.wikipedia.org/wiki/Elo_rating_system "Elo system"
+[TheArcModel]: https://thearcfooty.com/2016/12/29/introducing-the-arcs-ratings-system/ "The Arc model"
+[GA]: https://en.wikipedia.org/wiki/Genetic_algorithm "Genetic optimisation"
+[aflelo]: https://github.com/lazappi/aflelo "aflelo"
+[afl2018]: https://github.com/lazappi/afl-2018 "afl2018"
+

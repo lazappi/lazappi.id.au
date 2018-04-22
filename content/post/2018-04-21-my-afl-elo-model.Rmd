@@ -27,7 +27,6 @@ knitr::opts_chunk$set(autodep        = TRUE,
 ```{r libraries}
 library("knitr")
 library("formattable")
-library("here")
 library("tidyverse")
 ```
 
@@ -90,7 +89,7 @@ parameters. Here the best performing parameter sets from each of the
 optimisations compared to the default parameters based on The Arc:
 
 ```{r opt-summary}
-opt_summ <- read_tsv(here("data/afl2018/optimisation_summary.tsv"),
+opt_summ <- read_tsv("data/afl2018/optimisation_summary.tsv",
                      col_types = cols(
                          .default = col_double(),
                          Version = col_character()
@@ -145,7 +144,7 @@ Summary
 -------
 
 ```{r summ_table}
-summ_table <- read_rds(here("data/afl2018/R5/summary_table.Rds"))
+summ_table <- read_rds("data/afl2018/R5/summary_table.Rds")
 summ_table
 ```
 

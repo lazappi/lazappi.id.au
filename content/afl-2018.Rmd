@@ -1,0 +1,82 @@
+---
+title: AFL 2018
+author: Luke Zappia
+slug: afl2018
+categories:
+  - afl
+tags:
+  - afl2018
+  - elo
+  - sport
+comments:       false
+showMeta:       false
+showActions:    false
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(autodep        = TRUE,
+                      cache          = FALSE,
+                      cache.comments = TRUE,
+                      echo           = FALSE,
+                      error          = FALSE,
+                      fig.align      = "center",
+                      fig.width      = 10,
+                      fig.height     = 8,
+                      message        = FALSE,
+                      warning        = FALSE)
+```
+
+```{r libraries}
+library("here")
+library("formattable")
+library("tidyverse")
+```
+
+Round 6
+=======
+
+## Summary
+
+```{r summ_table}
+summ_table <- read_rds(here("static/data/afl2018/R6/summary_table.Rds"))
+summ_table
+```
+
+## Last round
+
+![](/afl-2018_files/last_round.png)
+
+## Predictions
+
+![](/afl-2018_files/R6_predictions.png)
+
+### Projections
+
+#### Ladder
+
+![](/afl-2018_files/ladder.png)
+
+#### Premiership points
+
+![](/afl-2018_files/points.png)
+
+## History
+
+![](/afl-2018_files/history.png)
+
+Previous rounds
+===============
+
+Round 5
+-------
+
+### Summary
+
+```{r R5_summ_table}
+summ_table <- read_rds(here("static/data/afl2018/R5/summary_table.Rds"))
+summ_table
+```
+
+### Predictions
+
+![](/post/2018-04-21-my-afl-elo-model_files/predictions.png)

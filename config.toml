@@ -77,7 +77,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   weight = 5
   identifier = "afl2018"
   name = "AFL 2018"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-football-ball\"></i>"
+  pre = "<i class=\"sidebar-button-icon fas fa-football-ball\"></i>"
   url = "/afl2018/index.html"
 [[menu.main]]
   weight = 6

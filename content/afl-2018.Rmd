@@ -86,7 +86,7 @@ Round 6
 
 ### Summary
 
-```{r R6_summ_table}
+```{r R7_summ_table}
 summ_table <- read_rds(here("static/data/afl2018/R7/summary_table.Rds"))
 summ_table
 ```

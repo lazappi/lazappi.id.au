@@ -38,7 +38,7 @@ Current Round
 ## Summary
 
 ```{r summ_table}
-summ_table <- read_rds(here("static/data/afl2018/R10/summary_table.Rds"))
+summ_table <- read_rds(here("static/data/afl2018/R11/summary_table.Rds"))
 summ_table
 ```
 
@@ -48,7 +48,7 @@ summ_table
 
 ## Predictions
 
-![](/afl-2018_files/R10_predictions.png)
+![](/afl-2018_files/R11_predictions.png)
 
 ### Projections
 
@@ -67,6 +67,21 @@ summ_table
 Previous rounds
 ===============
 
+Round 10
+-------
+
+### Summary
+
+```{r R10_summ_table}
+summ_table <- read_rds(here("static/data/afl2018/R10/summary_table.Rds"))
+summ_table
+```
+
+
+### Predictions
+
+![](/afl-2018_files/R10_predictions.png)
+
 Round 9
 -------
 
@@ -80,7 +95,7 @@ summ_table
 
 ### Predictions
 
-![](/afl-2018_files/R8_predictions.png)
+![](/afl-2018_files/R9_predictions.png)
 
 Round 8
 -------

@@ -250,3 +250,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
      copyright = "<a href=\"https://github.com/lazappi\">lazappi</a>"
+
+  customJS = ["https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"]

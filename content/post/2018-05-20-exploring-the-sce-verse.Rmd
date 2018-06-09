@@ -186,9 +186,9 @@ We can now visualise the relationships using [ggraph][ggraph]:
 
 ```{r plot-graph}
 ggraph(graph, layout = "fr") +
-    geom_edge_link(aes(colour = uses),
-                   arrow = arrow(length = unit(4, 'mm')), 
-                   end_cap = circle(3, 'mm')) +
+    geom_edge_arc(aes(colour = uses),
+                  arrow = arrow(length = unit(4, 'mm')), 
+                  end_cap = circle(3, 'mm')) +
     geom_node_point(aes(colour = repo)) +
     geom_node_text(aes(label = package, colour = repo), repel = TRUE) +
     scale_color_brewer(palette = "Set1") +
@@ -253,9 +253,9 @@ edges <- more_deps %>%
 graph <- tbl_graph(nodes = nodes, edges = edges)
 
 ggraph(graph, layout = "fr") +
-    geom_edge_link(aes(colour = uses),
-                   arrow = arrow(length = unit(4, 'mm')), 
-                   end_cap = circle(3, 'mm')) +
+    geom_edge_arc(aes(colour = uses),
+                  arrow = arrow(length = unit(4, 'mm')), 
+                  end_cap = circle(3, 'mm')) +
     geom_node_point(aes(colour = repo)) +
     #geom_node_text(aes(label = package, colour = repo), repel = TRUE) +
     scale_color_brewer(palette = "Set1") +
@@ -327,10 +327,6 @@ tags that describe software in various ways. Let's summarise those for the
 packages that use SingleCellExperiment. 
 
 ```{r biocViews}
-bpi %>%
-    filter(Package %in% bioc_revdeps$package1) %>%
-    select(Package, biocViews)
-
 plot_data <- bpi %>%
     filter(Package %in% bioc_revdeps$package1) %>%
     select(Package, biocViews) %>%

@@ -10,7 +10,6 @@ tags:
   - R
   - scRNA-seq
   - SingleCellExperiment
-draft: true
 ---
 
 Over the last few years the number of methods for analysing scRNA-seq has

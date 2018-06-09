@@ -186,7 +186,7 @@ We can now visualise the relationships using [ggraph][ggraph]:
 
 ```{r plot-graph}
 ggraph(graph, layout = "fr") +
-    geom_edge_arc(aes(colour = uses),
+    geom_edge_fan(aes(colour = uses),
                   arrow = arrow(length = unit(4, 'mm')), 
                   end_cap = circle(3, 'mm')) +
     geom_node_point(aes(colour = repo)) +
@@ -253,7 +253,7 @@ edges <- more_deps %>%
 graph <- tbl_graph(nodes = nodes, edges = edges)
 
 ggraph(graph, layout = "fr") +
-    geom_edge_arc(aes(colour = uses),
+    geom_edge_fan(aes(colour = uses),
                   arrow = arrow(length = unit(4, 'mm')), 
                   end_cap = circle(3, 'mm')) +
     geom_node_point(aes(colour = repo)) +

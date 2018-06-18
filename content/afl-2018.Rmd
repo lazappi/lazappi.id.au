@@ -38,7 +38,7 @@ Current Round
 ## Summary
 
 ```{r summ_table}
-summ_table <- read_rds(here("static/data/afl2018/R13/summary_table.Rds"))
+summ_table <- read_rds(here("static/data/afl2018/R14/summary_table.Rds"))
 summ_table
 ```
 
@@ -76,7 +76,6 @@ Round 13
 summ_table <- read_rds(here("static/data/afl2018/R13/summary_table.Rds"))
 summ_table
 ```
-
 
 ### Predictions
 

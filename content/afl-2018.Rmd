@@ -38,7 +38,7 @@ Current Round
 ## Summary
 
 ```{r summ_table}
-summ_table <- read_rds(here("static/data/afl2018/R14/summary_table.Rds"))
+summ_table <- read_rds(here("static/data/afl2018/R15/summary_table.Rds"))
 summ_table
 ```
 
@@ -48,7 +48,7 @@ summ_table
 
 ## Predictions
 
-![](/afl-2018_files/R14_predictions.png)
+![](/afl-2018_files/R15_predictions.png)
 
 ### Projections
 
@@ -67,6 +67,20 @@ summ_table
 Previous rounds
 ===============
 
+Round 14
+--------
+
+### Summary
+
+```{r R14_summ_table}
+summ_table <- read_rds(here("static/data/afl2018/R14/summary_table.Rds"))
+summ_table
+```
+
+### Predictions
+
+![](/afl-2018_files/R13_predictions.png)
+
 Round 13
 --------
 
@@ -79,7 +93,7 @@ summ_table
 
 ### Predictions
 
-![](/afl-2018_files/R12_predictions.png)
+![](/afl-2018_files/R13_predictions.png)
 
 
 Round 12

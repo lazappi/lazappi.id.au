@@ -38,7 +38,7 @@ Current Round
 ## Summary
 
 ```{r summ_table}
-summ_table <- read_rds(here("static/data/afl2018/R22/summary_table.Rds"))
+summ_table <- read_rds(here("static/data/afl2018/R23/summary_table.Rds"))
 summ_table
 ```
 
@@ -48,7 +48,7 @@ summ_table
 
 ## Predictions
 
-![](/afl-2018_files/R22_predictions.png)
+![](/afl-2018_files/R23_predictions.png)
 
 ### Projections
 
@@ -66,6 +66,20 @@ summ_table
 
 Previous rounds
 ===============
+
+Round 22
+--------
+
+### Summary
+
+```{r R22_summ_table}
+summ_table <- read_rds(here("static/data/afl2018/R22/summary_table.Rds"))
+summ_table
+```
+
+### Predictions
+
+![](/afl-2018_files/R22_predictions.png)
 
 Round 21
 --------

@@ -1,12 +1,13 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Splatter"
-summary: "Bioconductor R package for simulating scRNA-seq data."
-authors: ["**Luke Zappia**", "Belinda Phipson", "Alicia Oshlack"]
-tags: ["single-cell", "rna-seq", "simulation", "software", "R"]
+title: "clustree"
+summary: "CRAN R package for creating clustering trees, a visualisation for
+  looking at clustering across resolutions."
+authors: ["**Luke Zappia**", "Alicia Oshlack"]
+tags: ["clustering", "visualisation", "software", "R"]
 categories: ["software"]
-date: 2016-10-06T11:26:59+01:00
+date: 2018-03-27T11:26:59+01:00
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -18,7 +19,7 @@ image:
   caption: ""
   focal_point: ""
   preview_only: false
-  alt_text: Splatter logo
+  alt_text: clustree logo
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
@@ -28,9 +29,9 @@ image:
 #   icon_pack: fab
 #   icon: twitter
 
-url_code: "https://github.com/Oshlack/splatter"
-url_project: "https://bioconductor.org/packages/splatter/"
-doi: "10.1186/s13059-017-1305-0"
+url_code: "https://github.com/lazappi/clustree"
+url_project: "https://cran.r-project.org/package=clustree"
+doi: "10.1093/gigascience/giy083"
 
 # Slides (optional).
 #   Associate this project with Markdown slides.
@@ -40,8 +41,9 @@ doi: "10.1186/s13059-017-1305-0"
 slides: ""
 ---
 
-Splatter is a Bioconductor R package for the simulation of single-cell RNA 
-sequencing count data (https://bioconductor.org/packages/splatter/). It
-provides a simple interface for creating complex simulations that are 
-reproducible and well-documented. Parameters can be estimated from real data and 
-functions are provided for comparing real and simulated datasets.
+Deciding what resolution to use can be a difficult question when approaching a 
+clustering analysis. One way to approach this problem is to look at how samples 
+move as the number of clusters increases. The clustree package is availavble 
+from CRAN (https://cran.r-project.org/package=clustree) allows you to produce 
+clustering trees, a visualisation for interrogating clusterings as resolution 
+increases.

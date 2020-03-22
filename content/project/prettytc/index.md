@@ -1,12 +1,12 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Splatter"
-summary: "Bioconductor R package for simulating scRNA-seq data."
-authors: ["**Luke Zappia**", "Belinda Phipson", "Alicia Oshlack"]
-tags: ["single-cell", "rna-seq", "simulation", "software", "R"]
+title: "prettytc"
+summary: "A Python script for pretty printing of TeXcount output"
+authors: ["**Luke Zappia**"]
+tags: ["software", "python"]
 categories: ["software"]
-date: 2016-10-06T11:26:59+01:00
+date: 2016-03-30T18:22:07+01:00
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -18,7 +18,7 @@ image:
   caption: ""
   focal_point: ""
   preview_only: false
-  alt_text: Splatter logo
+  alt_tex: Image showing the output of prettytc
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
@@ -28,9 +28,7 @@ image:
 #   icon_pack: fab
 #   icon: twitter
 
-url_code: "https://github.com/Oshlack/splatter"
-url_project: "https://bioconductor.org/packages/splatter/"
-doi: "10.1186/s13059-017-1305-0"
+url_code: "https://github.com/lazappi/prettytc"
 
 # Slides (optional).
 #   Associate this project with Markdown slides.
@@ -40,8 +38,11 @@ doi: "10.1186/s13059-017-1305-0"
 slides: ""
 ---
 
-Splatter is a Bioconductor R package for the simulation of single-cell RNA 
-sequencing count data (https://bioconductor.org/packages/splatter/). It
-provides a simple interface for creating complex simulations that are 
-reproducible and well-documented. Parameters can be estimated from real data and 
-functions are provided for comparing real and simulated datasets.
+TeXcount is excellent and by far the best way to produce wordcounts of LaTeX
+documents but I found the output became hard to read for large documents.
+
+prettytc is a Python script that runs TeXcount and parses the output in a way
+that shows more of the document structure and provides totals at each level. It
+can be run from the command line and any options are passed to TeXcount.
+
+Available from my GitHub https://github.com/lazappi/prettytc.

@@ -18,24 +18,27 @@ role: Bioinformatician (he/him)
 #   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include methods development and analysis of single-cell RNA sequencing data.
+bio: I am a postdoctoral researcher in bioinformatics.
 
-# interests:
-# - Artificial Intelligence
-# - Computational Linguistics
-# - Information Retrieval
-# 
-# education:
-#   courses:
-#   - course: PhD in Artificial Intelligence
-#     institution: Stanford University
-#     year: 2012
-#   - course: MEng in Artificial Intelligence
-#     institution: Massachusetts Institute of Technology
-#     year: 2009
-#   - course: BSc in Artificial Intelligence
-#     institution: Massachusetts Institute of Technology
-#     year: 2008
+interests:
+- scRNA-seq analysis
+- Data visualisation
+- R programming
+
+education:
+  courses:
+  - course: Doctor of Philosophy (Bioinformatics)
+    institution: The University of Melbourne/Murdoch Children's Research Institute
+    year: 2019
+  - course: Master of Science (Bioinformatics)
+    institution: The University of Melbourne
+    year: 2015
+  - course: Bachelor of Science (Chemistry)
+    institution: The University of Melbourne
+    year: 2011
+  - course: Diploma in Informatics
+    institution: The University of Melbourne
+    year: 2011
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -76,6 +79,17 @@ user_groups:
 - Visitors
 ---
 
-I am a bioinformatics postdoctoral reseracher in the Theis Lab at the
-Helmholtz Zentrum München Institute of Computational Biology and the
-Technische Universität München.
+I am a bioinformatics postdoctoral researcher in the [Theis Lab][Theis] at the
+[Helmholtz Zentrum München][HMGU] [Institute of Computational Biology][ICB] and
+the [Technische Universität München][TUM]. My research focuses on the analysis
+of single-cell RNA sequencing data including the development and benchmarking
+of computational methods. I am also interested in how best to visualise data
+more generally.
+
+I completed my PhD in the [Oshlack Lab][Oshlack].
+
+[Theis]: https://www.helmholtz-muenchen.de/icb/research/groups/theis-lab/overview/index.html "Theis Lab"
+[HMGU]: https://www.helmholtz-muenchen.de/en/helmholtz-zentrum-muenchen/index.html "Helmholtz Zentrum München"
+[ICB]: https://www.helmholtz-muenchen.de/icb/index.html "Institute of Computational Biology"
+[TUM]: https://www.tum.de/en/ "Technische Universität München"
+[Oshlack]: http://oshlacklab.com/ "Oshlack Lab"

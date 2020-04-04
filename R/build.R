@@ -23,23 +23,32 @@ knitr::opts_chunk$set(
 )
 
 # Get Rmd files
-Rmd_files <- list.files("content", "\\.Rmd$", recursive = TRUE,
+rmd_files <- list.files("content", "\\.Rmd$", recursive = TRUE,
                         full.names = TRUE)
 
 # Get md files
-md_files  <- sub("\\.Rmd$", ".md", Rmd_files)
-names(md_files) <- Rmd_files
+md_files  <- sub("\\.Rmd$", ".md", rmd_files)
+names(md_files) <- rmd_files
+
+message("Found ", length(md_files), " Markdown files")
+message("Found ", length(rmd_files), " R Markdown files")
+message()
 
 # Knit an Rmd file when:
 #   1) the correspondent md file does not exist yet
 #   2) the Rmd file was modified after the md file ('-ot' means older than)
-to_knit <- !file.exists(md_files) | utils::file_test("-ot", md_files, Rmd_files)
+to_knit <- !file.exists(md_files) | utils::file_test("-ot", md_files, rmd_files)
 
-message("Skip: \n    ", paste(Rmd_files[!to_knit], collapse = "\n    "))
+message("Skipping ", sum(!to_knit), " R Markdown files...")
+message(glue::glue("Skipping {rmd_files[!to_knit]}"))
+message()
+
+message("Rendering ", sum(to_knit), " R Markdown files...")
 
 # Knit required Rmd files
-for (rmd in Rmd_files[to_knit]) {
+for (rmd in rmd_files[to_knit]) {
 
+    message("Rendering ", rmd)
     post_path <- fs::path_split(rmd)[[1]]
     post_name <- post_path[length(post_path) - 1]
     base_name <- tools::file_path_sans_ext(basename(rmd))
@@ -47,13 +56,16 @@ for (rmd in Rmd_files[to_knit]) {
                           "figure-html")
 
     knitr::opts_chunk$set(
-        fig.path = normalizePath(paste0(fig_path, "/"))
+        fig.path = paste0(fig_path, "/")
     )
 
     set.seed(1)
     knitr::knit(input = rmd, output = md_files[rmd], encoding = "UTF-8")
 
 }
+message()
 
 # Build website
+message("Building site...")
 blogdown::hugo_build(local = local)
+message("Done!")

@@ -40,10 +40,14 @@ message("Skip: \n    ", paste(Rmd_files[!to_knit], collapse = "\n    "))
 # Knit required Rmd files
 for (rmd in Rmd_files[to_knit]) {
 
+    post_path <- fs::path_split(rmd)[[1]]
+    post_name <- post_path[length(post_path) - 1]
     base_name <- tools::file_path_sans_ext(basename(rmd))
+    fig_path  <- fs::path("post", post_name, glue::glue("{base_name}_files"),
+                          "figure-html")
 
     knitr::opts_chunk$set(
-        fig.path = glue::glue("post/{base_name}_files/figure-html/")
+        fig.path = normalizePath(paste0(fig_path, "/"))
     )
 
     set.seed(1)

@@ -4,11 +4,11 @@
 title: "Markdown reference"
 subtitle: "A reference for markdown syntax"
 summary: "A selection of useful markdown syntax"
-authors: []
-tags: []
+authors: ["Luke Zappia"]
+tags: ["Test"]
 categories: []
 date: 2020-04-03T16:58:57+02:00
-lastmod: 2020-04-03T16:58:57+02:00
+# lastmod: 2020-04-03T16:58:57+02:00
 featured: false
 draft: true
 
@@ -25,7 +25,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects: []
+projects: ["clustree"]
 
 # References
 references:
@@ -45,9 +45,11 @@ references:
   issued:
     year: 2012
     month: 3
+
+output:
+  blogdown::html_page:
+    number_sections: true
 ---
-
-
 
 # Heading 1
 
@@ -91,7 +93,7 @@ OR
 
 * An
 * Unnordered
-* Lists
+* List
     * With
     * A
     * Sub-list
@@ -186,7 +188,7 @@ A citation [@fenner2012a] for @fenner2012a.
 # A plot
 
 ```{r plot}
-plot(1:10)
+plot(1:20)
 ```
 
 # References

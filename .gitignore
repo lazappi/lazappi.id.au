@@ -1,7 +1,9 @@
+# RStudio
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 
-public
-blogdown
+# Hugo
+resources/
+public/

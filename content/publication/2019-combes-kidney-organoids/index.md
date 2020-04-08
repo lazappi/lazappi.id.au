@@ -2,7 +2,7 @@
 title: "Single-cell analysis reveals congruence between kidney organoids and human fetal kidney"
 date: 2019-01-01
 publishDate: 2020-03-14T13:18:37.643444Z
-authors: ["Alexander N Combes#", "**Luke Zappia#**", "Pei Xuan Er", "Alicia Oshlack", "Melissa H Little"]
+authors: ["Alexander N Combes^", "**Luke Zappia^**", "Pei Xuan Er", "Alicia Oshlack", "Melissa H Little"]
 publication_types: ["2"]
 abstract: "
 **Background**
@@ -35,4 +35,3 @@ url_code: "https://github.com/Oshlack/combes-organoid-paper"
 url_project: "http://oshlacklab.com/combes-organoid-paper/"
 doi: "10.1186/s13073-019-0615-0"
 ---
-

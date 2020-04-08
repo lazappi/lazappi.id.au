@@ -1,0 +1,17 @@
+<footer class="site-footer">
+    {{ with site.GetPage "license.md" }}
+    <p class="powered-by">
+        {{ printf "<a href=\"%s\">%s <br> %s </a>" .RelPermalink .Title .LinkTitle  | safeHTML }}<br>
+    </p>
+    {{ end }}
+
+    <p class="powered-by">
+        {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}
+    </p>
+    <p>
+        Made with <a href="https://github.com/lazappi" target="_blank" rel="noopener"><i class="fas fa-code-branch" style="color:#eb008d"></i></a>,
+        the <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package,
+        and the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+        <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+    </p>
+</footer>

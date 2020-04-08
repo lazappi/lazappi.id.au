@@ -11,6 +11,6 @@ and [blogdown](https://bookdown.org/yihui/blogdown/).
 
 ## License
 
-Code associated with the blog and repository are released under the [MIT](https://github.com/sourcethemes/academic-kickstart/blob/master/LICENSE.md) license.
+Code associated with the blog and repository are released under the [MIT](https://choosealicense.com/licenses/mit/) license.
 
 Blog text is covered by a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.

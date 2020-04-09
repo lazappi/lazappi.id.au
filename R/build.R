@@ -20,7 +20,7 @@ render_rmd <- function(rmd, base) {
     x <- blogdown:::encode_paths(x, blogdown:::by_products(rmd, "_files"),
                                  dir_name, base, to_md)
     if (to_md) {
-        write_utf8(x, out)
+        xfun::write_utf8(x, out)
     } else {
         if (getOption("blogdown.widgetsID", TRUE)) {
             x <- blogdown:::clean_widget_html(x)

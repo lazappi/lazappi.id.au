@@ -1,0 +1,182 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "Caching blogdown posts"
+subtitle: ""
+summary: "Description of how I cache blogdown Markdown files."
+authors: ["Luke Zappia"]
+tags: ["blogdown", "R"]
+categories: []
+date: 2020-04-09T13:41:09+02:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+<script src="index_files/header-attrs-2.1/header-attrs.js"></script>
+
+
+<p>This website is built using <a href="https://bookdown.org/yihui/blogdown/" title="blogdown website"><strong>blogdown</strong></a> which is a great package
+that let’s you easily turn <a href="https://rmarkdown.rstudio.com/" title="R Markdown website">R Markdown</a> documents into a
+<a href="https://gohugo.io/" title="Hugo website"><strong>Hugo</strong></a> blog. While a normal Markdown blog can include code a
+<strong>blogdown</strong> blog runs that code and includes the output. One thing that
+<strong>blogdown</strong> does which isn’t necessarily desirable is re-knit every R Markdown
+document whenever the site is built.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> This can slow down the build process but
+it can also result in changes to the content of a post. For example imagine a
+post that scraps some data from the internet. If that code is run a month or a
+year from now that data could have changed in a way that affects the meaning of
+the post. Perhaps a more likely scenario is changes to package functionality
+which change results or stop code working altogether. This post describes the
+build process I have come up with to try and avoid this happening.</p>
+<div id="blogdown-file-formats" class="section level1">
+<h1><strong>blogdown</strong> file formats</h1>
+<p>I mentioned that <strong>blogdown</strong> works with R Markdown files but it actually
+handles three different file types which are treated in different ways (see
+<a href="https://bookdown.org/yihui/blogdown/output-format.html" title="blogdown file formats">here</a> for more details):</p>
+<ol style="list-style-type: decimal">
+<li><code>.Rmd</code> - R Markdown files that are rendered directly to <code>.html</code> by
+<strong>blogdown</strong> and friends (including <a href="https://pandoc.org/" title="Pandoc website"><strong>Pandoc</strong></a>)</li>
+<li><code>.rmarkdown</code> - R Markdown files that are knitted to <code>.markdown</code> files by
+<strong>blogdown</strong> and then rendered to <code>.html</code> by <strong>Hugo</strong>.</li>
+<li><code>.md</code> - Standard Markdown files which are ignored by <strong>blogdown</strong> and
+rendered by <strong>Hugo</strong>.</li>
+</ol>
+<p>The <code>.Rmd</code> workflow is usually recommended and because it makes use of
+<strong>Pandoc</strong> it enables several features including citations which are useful for
+an academic blog. However it also comes with the (potential) problem with
+re-running code mentioned above. What I would like to have is something like the
+<code>.rmarkdown</code> workflow but where the intermediate Markdown file is still rendered
+to <code>.html</code> using <strong>Pandoc</strong> instead of <strong>Hugo</strong>.</p>
+</div>
+<div id="the-blogdown-build-process" class="section level1">
+<h1>The <strong>blogdown</strong> build process</h1>
+<p>Before we try and modify it let’s have a look at how the standard <strong>blogdown</strong>
+build process works. To build the website we use the
+<a href="https://github.com/rstudio/blogdown/blob/86ea620d6dfbe0f745ad89dc131b0dc6662e572c/R/render.R#L36" title="blogdown::build_site() function"><code>blogdown::build_site()</code></a> function. This takes a <code>local</code> argument
+which sets whether the site is being viewed locally or not as well as a <code>method</code>
+argument (which we will get to later). This is (briefly) what happens when you
+call <code>build_site()</code>:</p>
+<ol style="list-style-type: decimal">
+<li>Checks arguments and gets a list of files to build</li>
+<li>Calls the <a href="https://github.com/rstudio/blogdown/blob/86ea620d6dfbe0f745ad89dc131b0dc6662e572c/R/render.R#L68" title="blogdown:::build_rmds() function"><code>blogdown:::build_rmds()</code></a> function
+<ol style="list-style-type: decimal">
+<li>This function copies by-product files (such as plot output) from where
+they have been stored to the build directory</li>
+<li>Each file is passed to the <a href="https://github.com/rstudio/blogdown/blob/86ea620d6dfbe0f745ad89dc131b0dc6662e572c/R/render.R#L115" title="blogdown:::render_page() function"><code>blogdown:::render_page()</code></a>
+function
+<ol style="list-style-type: decimal">
+<li>This function is a wrapper which calls the
+<a href="https://github.com/rstudio/blogdown/blob/86ea620d6dfbe0f745ad89dc131b0dc6662e572c/inst/scripts/render_page.R" title="render_page.R script"><code>render_page.R</code></a> script</li>
+<li>The script creates a new local environment (I assume there is a good
+reason to do this)</li>
+<li>The file is rendered in the new environment (with some
+post-processing if the output is Markdown)</li>
+</ol></li>
+<li>After rendering (if the output is Markdown) the YAML frontmatter is
+copied to the output file</li>
+</ol></li>
+<li>By-products are moved back to their storage locations</li>
+<li><strong>Hugo</strong> is called to build the website</li>
+</ol>
+</div>
+<div id="my-modifications" class="section level1">
+<h1>My modifications</h1>
+<p>I mentioned earlier that <code>blogdown::build_site()</code> has a <code>method</code> argument. This
+can take values of <code>"html"</code> which is the default process I have just described
+or <code>"custom"</code> which replaces this process by running a <code>R/build.R</code> script which
+can do whatever you like.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> I have created a
+custom build script which is very similar to the <strong>blogdown</strong> functions with a
+few modifications. It is also inspired by <a href="https://yutani.rbind.io/post/2017-10-25-blogdown-custom/" title="How Not To Knit All Rmd Files With Blogdown">this post</a> but this
+method caches <code>.md</code> files which are rendered by <strong>Hugo</strong> rather than <strong>Pandoc</strong>.
+I’ll include some snippets below but the full script is <a href="https://github.com/lazappi/lazappi_blog/blob/0efce159942167b35649c4dfb0f7b832fab9a137/R/build.R" title="Custom build.R script">here</a> if
+you are interested.</p>
+<div id="only-render-some-.rmd-files" class="section level2">
+<h2>Only render some <code>.Rmd</code> files</h2>
+<p>When finding files to render the script also checks to see if there is a
+<code>.md.cached</code> file in the same directory and that it is newer than the <code>.Rmd</code>
+file.</p>
+<pre class="r"><code>rmd_files &lt;- blogdown:::list_rmds(&quot;content&quot;, TRUE)
+message(&quot;Found &quot;, length(rmd_files), &quot; R Markdown files&quot;)
+md_files &lt;- sub(&quot;\\.Rmd$&quot;, &quot;.md.cached&quot;, rmd_files)
+
+# Only knit Rmd files if...
+to_render &lt;- !file.exists(md_files) |             # md file does not exist OR
+    utils::file_test(&quot;-ot&quot;, md_files, rmd_files)  # it is older than the Rmd</code></pre>
+<p>If the <code>.md.cached</code> file exists (and is newer) it is rendered instead of the
+<code>.Rmd</code> file.</p>
+<pre class="r"><code>message(&quot;Rendering &quot;, sum(!to_render), &quot; cached Markdown files...&quot;)
+for (md in md_files[!to_render]) {
+    message(&quot;Rendering &quot;, md, &quot;...&quot;)
+    render_md(md, base)
+}</code></pre>
+<p>Otherwise the <code>.Rmd</code> file is rendered when required.</p>
+<pre class="r"><code>message(&quot;Rendering &quot;, sum(to_render), &quot; R Markdown files...&quot;)
+for (rmd in rmd_files[to_render]) {
+    message(&quot;Rendering &quot;, rmd, &quot;...&quot;)
+    render_rmd(rmd, base)
+}</code></pre>
+<p>One thing I found is important during the rendering process is that the YAML
+frontmatter is preprended to the output HTML file. I’m not entirely sure why
+but if you don’t do this the files aren’t included in the website properly by
+<strong>Hugo</strong>.</p>
+<pre class="r"><code>blogdown:::prepend_yaml(md, out, x, callback = function(s) {
+    if (!getOption(&quot;blogdown.draft.output&quot;, FALSE)) {
+        return(s)
+    }
+    if (length(s) &lt; 2 || length(grep(&quot;^draft: &quot;, s)) &gt; 0) {
+        return(s)
+    }
+    append(s, &quot;draft: yes&quot;, 1)
+})</code></pre>
+</div>
+<div id="keeping-intermediate-markdown-files" class="section level2">
+<h2>Keeping intermediate Markdown files</h2>
+<p>In theory it should be possible to keep the intermediate Markdown file simply
+by setting <code>keep_md: true</code> in the document YAML frontmatter (or a central
+<code>_output.yml</code> file). Unfortunately that argument currently isn’t passed on in a
+way that works (see issue <a href="https://github.com/rstudio/blogdown/issues/445" title="keep_md GitHub issue">here</a>). This means that we also need
+to create a <a href="https://github.com/lazappi/lazappi_blog/blob/0efce159942167b35649c4dfb0f7b832fab9a137/R/render_page.R" title="Custom render_page.R script">custom <code>render_page.R</code></a> script. This script
+makes sure that the <code>keep_md</code> option is set when rendering <code>.Rmd</code> files.</p>
+<pre class="r"><code>output_format &lt;- rmarkdown::resolve_output_format(input)
+output_format$keep_md &lt;- TRUE</code></pre>
+<p>The other thing we do is rename the kept intermediate Markdown files. If we Left
+them with the <code>.md</code> extension they would be rendered by <strong>Hugo</strong> after running
+the build script. I chose to name them <code>.md.cached</code> but they could have any
+extension.</p>
+</div>
+</div>
+<div id="wrapping-up" class="section level1">
+<h1>Wrapping up</h1>
+<p>These scripts are now being used to build this blog. They seem to work 🤞 but I
+haven’t tested them extensively and I expect there will be some issues if I try
+some posts with more complex code in them (for example I’m not sure what will
+happen if I try and include a HTML widget). I’m still not certain this is the
+best approach but I have learnt a lot about how <strong>blogdown</strong> work (although
+there is still a lot I don’t understand 😸).</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I’m not entirely sure this is correct and
+based on some comments from Yihui it might be possible to avoid this happening
+in a standard way but I have seen enough similar questions that it seems other
+people have run into the same problem.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>It is acutally slightly more complicated than that.
+When <code>method = "html"</code> the <code>R/build.R</code> script is actually run after the normal
+process (if it exists) and can be used to do various things.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>

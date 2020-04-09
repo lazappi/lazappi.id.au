@@ -1,3 +1,8 @@
+# This file contains code borrowed from the blogdown package
+# (https://github.com/rstudio/blogdown) and is therefore covered by a GPL-3
+# license (https://choosealicense.com/licenses/gpl-3.0/) NOT the MIT license
+# which covers code in blog posts
+
 # Based on https://github.com/rstudio/blogdown/blob/master/inst/scripts/render_page.R
 
 local({

@@ -1,6 +1,6 @@
 <p align="center"><a href="https://lazappi.id.au" target="_blank" rel="noopener"><img src="content/authors/admin/avatar.jpg" alt="Academic logo"></a></p>
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/5eca3cc1-a042-44c9-bb0d-41c471c27885/deploy-status)](https://app.netlify.com/sites/lazappi/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5eca3cc1-a042-44c9-bb0d-41c471c27885/deploy-status)](https://app.netlify.com/sites/lazappi/deploys)
 
 # lazappi blog
 

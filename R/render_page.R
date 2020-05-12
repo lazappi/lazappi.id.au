@@ -26,7 +26,10 @@ local({
         )
     }
 
-    output_format <- rmarkdown::resolve_output_format(input)
+    output_format <- rmarkdown::resolve_output_format(
+        input,
+        output_options = list(self_contained = FALSE)
+    )
     output_format$keep_md <- TRUE
 
     out <- rmarkdown::render(

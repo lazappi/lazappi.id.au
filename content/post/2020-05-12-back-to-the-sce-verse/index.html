@@ -9,7 +9,7 @@ authors: ["**Luke Zappia**"]
 tags: ["Bioconductor", "R", "scRNA-seq", "SingleCellExperiment"]
 categories: ["analysis"]
 date: 2020-05-12
-featured: true
+featured: false
 draft: false
 
 # Featured image
@@ -68,7 +68,7 @@ to loop over the different types of dependencies and calls the
 <code>tools::package_dependencies()</code> function.</p>
 <pre class="r"><code>get_cran_deps &lt;- function(pkgs, db, reverse = FALSE,
                           types = c(&quot;Depends&quot;, &quot;Imports&quot;, &quot;Suggests&quot;)) {
-    
+
     deps &lt;- purrr::map_dfr(types, function(.type) {
         deps_list &lt;- tools::package_dependencies(
             pkgs, db,
@@ -78,7 +78,7 @@ to loop over the different types of dependencies and calls the
         tibble(Package = pkgs, dependency = deps_list, edgetype = .type)
     }) %&gt;%
         unnest(dependency)
-    
+
     if (reverse) {
         deps &lt;- dplyr::select(
                 deps,
@@ -87,7 +87,7 @@ to loop over the different types of dependencies and calls the
                 edgetype
             )
     }
-    
+
     return(deps)
 }
 

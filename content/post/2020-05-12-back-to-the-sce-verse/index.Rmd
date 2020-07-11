@@ -9,7 +9,7 @@ authors: ["**Luke Zappia**"]
 tags: ["Bioconductor", "R", "scRNA-seq", "SingleCellExperiment"]
 categories: ["analysis"]
 date: 2020-05-12
-featured: true
+featured: false
 draft: false
 
 # Featured image
@@ -49,7 +49,7 @@ Getting package network
 =======================
 
 [**{BiocPkgTools}**][BiocPkgTools] is now a fully-fledged Bioconductor package
-and has some new functionst that make it easy to get information about the 
+and has some new functionst that make it easy to get information about the
 packages connected to **{SingleCellExperiment}**.
 
 ```{r bioc-deps}
@@ -66,7 +66,7 @@ bioc_edges <- bioc_revdeps %>%
     )
 ```
 
-The information from **{BiocPkgTools}** includes CRAN packages that are 
+The information from **{BiocPkgTools}** includes CRAN packages that are
 dependencies of Bioconductor packages but doesn't include any CRAN packages that
 depend on **{SingleCellExperiment}**. To get those we will use a tidier version
 of the function in the previous blog post. This function just uses  **{purr}**
@@ -76,7 +76,7 @@ to loop over the different types of dependencies and calls the
 ```{r cran-deps}
 get_cran_deps <- function(pkgs, db, reverse = FALSE,
                           types = c("Depends", "Imports", "Suggests")) {
-    
+
     deps <- purrr::map_dfr(types, function(.type) {
         deps_list <- tools::package_dependencies(
             pkgs, db,
@@ -86,7 +86,7 @@ get_cran_deps <- function(pkgs, db, reverse = FALSE,
         tibble(Package = pkgs, dependency = deps_list, edgetype = .type)
     }) %>%
         unnest(dependency)
-    
+
     if (reverse) {
         deps <- dplyr::select(
                 deps,
@@ -95,7 +95,7 @@ get_cran_deps <- function(pkgs, db, reverse = FALSE,
                 edgetype
             )
     }
-    
+
     return(deps)
 }
 
@@ -152,10 +152,10 @@ ggplot(revdeps, aes(x = Repo, fill = Repo)) +
 ```
 
 There are only `r english::english(sum(revdeps$Repo == "CRAN"))` packages
-from CRAN, which are the same two we saw last time. These are 
-[**{Seurat}**][Seurat], which contains the other major R object for scRNA-seq 
-data and includes  functions for converting from **{SingleCellExperiment}** 
-objects, and [**{clustree}**][clustree], my package for visualising clustering 
+from CRAN, which are the same two we saw last time. These are
+[**{Seurat}**][Seurat], which contains the other major R object for scRNA-seq
+data and includes  functions for converting from **{SingleCellExperiment}**
+objects, and [**{clustree}**][clustree], my package for visualising clustering
 across resolutions which includes a **{SingleCellExperiment}** interface.
 
 What dependency do they have?
@@ -311,11 +311,11 @@ Conclusion
 
 It is great to see the expansion of the SCE-verse! The object has been well
 taken up by the community and I think there is now a better understanding of the
-value of using standard objects, both in increased interoperabilty between 
+value of using standard objects, both in increased interoperabilty between
 packages but all time and effort saved during development. I had hoped to see
 more connections between packages though. Apart from a few central packages
 there aren't that many dependencies with the SCE-verse which suggests there
-could be a lot of duplicated functionality within packages. Now that we have a 
+could be a lot of duplicated functionality within packages. Now that we have a
 common object to work with perhaps the next step forward in the development of
 the ecosystem is to centralise and reuse common functions so that developers
 can focus on innovative new methods? I have been fairly selective in this

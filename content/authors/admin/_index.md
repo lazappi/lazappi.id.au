@@ -50,7 +50,7 @@ social:
 #   link: 'mailto:luke@lazappi.id.au'  # For a page link, use "#contact".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/_GeorgeCushen_lazappi_
+  link: https://twitter.com/_lazappi_
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/lazappi/

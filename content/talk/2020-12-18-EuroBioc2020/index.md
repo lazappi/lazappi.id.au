@@ -29,9 +29,9 @@ state transitions will also be briefly described."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2019-03-22
-# date_end: 2020-03-28T18:48:03+01:00
-all_day: true
+date: 2020-12-18T14:00:00+01:00
+date_end: 2020-12-18T14:45:00+01:00
+all_day: false
 
 # Schedule page publish date (NOT talk date).
 publishDate: 2020-12-11T12:00:00+02:00

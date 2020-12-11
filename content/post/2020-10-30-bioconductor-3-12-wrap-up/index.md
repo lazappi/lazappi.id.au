@@ -8,7 +8,7 @@ authors: ["**Luke Zappia**"]
 tags: ["Bioconductor", "R"]
 categories: []
 date: 2020-10-30
-featured: true
+featured: false
 draft: false
 
 # Featured image

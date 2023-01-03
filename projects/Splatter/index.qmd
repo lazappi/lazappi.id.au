@@ -1,0 +1,16 @@
+---
+title: "Splatter"
+summary: "Bioconductor R package for simulating scRNA-seq data."
+authors: ["**Luke Zappia**", "Belinda Phipson", "Alicia Oshlack"]
+categories: ["single-cell", "rna-seq", "simulation", "software", "R"]
+date: 2016-10-06T11:26:59+01:00
+code: "https://github.com/Oshlack/splatter"
+package: "https://bioconductor.org/packages/splatter/"
+doi: "10.1186/s13059-017-1305-0"
+image: "thumbnail.png"
+image-alt: "Splatter logo"
+---
+
+Splatter is a Bioconductor R package for the simulation of single-cell RNA sequencing count data ([https://bioconductor.org/packages/splatter/]()).
+It provides a simple interface for creating complex simulations that are reproducible and well-documented.
+Parameters can be estimated from real data and functions are provided for comparing real and simulated datasets.

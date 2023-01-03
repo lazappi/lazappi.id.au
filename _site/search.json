@@ -68,5 +68,12 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "projects/Splatter/index.html",
+    "href": "projects/Splatter/index.html",
+    "title": "Splatter",
+    "section": "",
+    "text": "Splatter is a Bioconductor R package for the simulation of single-cell RNA sequencing count data (https://bioconductor.org/packages/splatter/). It provides a simple interface for creating complex simulations that are reproducible and well-documented. Parameters can be estimated from real data and functions are provided for comparing real and simulated datasets."
   }
 ]

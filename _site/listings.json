@@ -1,51 +1,25 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/posts/index.html",
     "items": [
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/posts.html",
+    "listing": "/publications/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/publications/example/index.html"
     ]
   },
   {
-    "listing": "/projects.html",
-    "items": [
-      "/projects/example/index.html"
-    ]
+    "listing": "/projects/index.html",
+    "items": []
   },
   {
-    "listing": "/talks.html",
+    "listing": "/talks/index.html",
     "items": [
       "/talks/example/index.html"
     ]
-  },
-  {
-    "listing": "/publications.html",
-    "items": [
-      "/publications/example/index.html"
-    ]
-  },
-  {
-    "listing": "/publications/listing.html",
-    "items": [
-      "/publications/example/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/listing.html",
-    "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/projects/listing.html",
-    "items": []
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-blog - Projects</title>
+<title>quarto-blog - Talks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -112,19 +112,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../posts/listing.html">
- <span class="menu-text">quarto-blog</span></a>
+    <a class="nav-link" href="../posts/index.html">
+ <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../projects/listing.html" aria-current="page">
+    <a class="nav-link" href="../projects/index.html">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../talks/listing.html">
+    <a class="nav-link active" href="../talks/index.html" aria-current="page">
  <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/listing.html">
+    <a class="nav-link" href="../publications/index.html">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
-      <h1 class="title">Projects</h1>
+      <h1 class="title">Talks</h1>
                       </div>
   </div>
     
@@ -178,7 +178,34 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1672441200000" data-listing-file-modified-sort="1672763563301" data-listing-reading-time-sort="0.16">
+<div class="thumbnail">
+<p><a href="../talks/example/index.html"> <img src="../talks/example/thumbnail.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="../talks/example/index.html">
+<h3 class="no-anchor listing-title">
+Example
+</h3>
+<div class="listing-subtitle">
 
+</div>
+<div class="listing-description">
+This is the first post in a Quarto blog. Welcome!
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../talks/example/index.html">
+<div class="listing-date">
+Dec 31, 2022
+</div>
+<div class="listing-author">
+Tristan O’Malley
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items

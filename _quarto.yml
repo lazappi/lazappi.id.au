@@ -5,10 +5,10 @@ website:
   title: "quarto-blog"
   navbar:
     left:
-      - posts.qmd
-      - projects.qmd
-      - talks.qmd
-      - publications.qmd
+      - posts/listing.qmd
+      - projects/listing.qmd
+      - talks/listing.qmd
+      - publications/listing.qmd
     right:
       - icon: github
         href: https://github.com/

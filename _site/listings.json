@@ -30,5 +30,22 @@
     "items": [
       "/publications/example/index.html"
     ]
+  },
+  {
+    "listing": "/publications/listing.html",
+    "items": [
+      "/publications/example/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/listing.html",
+    "items": [
+      "/posts/post-with-code/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/projects/listing.html",
+    "items": []
   }
 ]

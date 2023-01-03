@@ -24,5 +24,11 @@
     "items": [
       "/talks/example/index.html"
     ]
+  },
+  {
+    "listing": "/publications.html",
+    "items": [
+      "/publications/example/index.html"
+    ]
   }
 ]

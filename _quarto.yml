@@ -4,8 +4,9 @@ project:
 website:
   title: "quarto-blog"
   navbar:
+    left:
+      - posts.qmd
     right:
-      - about.qmd
       - icon: github
         href: https://github.com/
       - icon: twitter
@@ -16,4 +17,3 @@ format:
     css: styles.css
 
 editor: visual
-

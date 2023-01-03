@@ -7,6 +7,7 @@ website:
     left:
       - posts.qmd
       - projects.qmd
+      - talks.qmd
     right:
       - icon: github
         href: https://github.com/

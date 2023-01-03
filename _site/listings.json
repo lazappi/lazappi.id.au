@@ -18,5 +18,11 @@
     "items": [
       "/projects/example/index.html"
     ]
+  },
+  {
+    "listing": "/talks.html",
+    "items": [
+      "/talks/example/index.html"
+    ]
   }
 ]

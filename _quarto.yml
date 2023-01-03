@@ -6,6 +6,7 @@ website:
   navbar:
     left:
       - posts.qmd
+      - projects.qmd
     right:
       - icon: github
         href: https://github.com/

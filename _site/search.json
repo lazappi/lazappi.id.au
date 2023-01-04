@@ -60,7 +60,7 @@
     "href": "talks/index.html",
     "title": "Talks",
     "section": "",
-    "text": "Example\n\n\n\n\n\n\n\n\n\n\n\n\nDec 31, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Interoperability between Bioconductor and Python for scRNA-seq analysis\n\n\n\n\n\nUnlike traditional bulk RNA-seq analysis which is dominated by Bioconductor, packages for analysing single-cell RNA sequencing data are more fragmented. Currently, there are three key ecosystems, the Seurat package (available from CRAN), Bioconductor’s SingleCellExperiment object and the AnnData Python object used by the Scanpy package. While these platforms each have strengths and weaknesses most analysts are likely to only use one of them. In this talk, I discuss how interoperability between R and Python can allow us to take advantage of these platforms strengths and avoid unnecessary reimplementation of methods. I highlight the reticulate R package for interacting with Python, the basilisk package for encapsulating Python environments, my zellkonverter package for converting between AnnData and SingleCellExperiment objects and the velociraptor package as an example of wrapping a Python package. The methods in the scVelo (package wrapped by velociraptor) for calculating RNA velocity and the CellRank package for estimating state transitions will also be briefly described.”\n\n\n\n\n\n\nDec 18, 2020\n\n\nLuke Zappia\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -82,5 +82,12 @@
     "title": "Benchmarking atlas-level data integration in single-cell genomics",
     "section": "",
     "text": "CitationBibTeX citation:@misc{dluecken2020,\n  author = {Malte D Luecken and Maren Buttner and Kridsadakorn\n    Chaichoompu and Anna Danese and Marta Interlandi and Michaela F\n    Mueller and Daniel C Strobl and **Luke Zappia** and Martin Dugas and\n    Maria Colome-Tatche and Fabian J Theis},\n  title = {Benchmarking Atlas-Level Data Integration in Single-Cell\n    Genomics},\n  pages = {2020.05.22.111161},\n  date = {2020-05-23},\n  doi = {10.1101/2020.05.22.111161},\n  langid = {en},\n  abstract = {Cell atlases often include samples that span locations,\n    labs, and conditions, leading to complex, nested batch effects in\n    data. Thus, joint analysis of atlas datasets requires reliable data\n    integration. Choosing a data integration method is a challenge due\n    to the difficulty of defining integration success. Here, we\n    benchmark 38 method and preprocessing combinations on 77 batches of\n    gene expression, chromatin accessibility, and simulation data from\n    23 publications, altogether representing \\textgreater1.2 million\n    cells distributed in nine atlas-level integration tasks. Our\n    integration tasks span several common sources of variation such as\n    individuals, species, and experimental labs. We evaluate methods\n    according to scalability, usability, and their ability to remove\n    batch effects while retaining biological variation. Using 14\n    evaluation metrics, we find that highly variable gene selection\n    improves the performance of data integration methods, whereas\n    scaling pushes methods to prioritize batch removal over conservation\n    of biological variation. Overall, BBKNN, Scanorama, and scVI perform\n    well, particularly on complex integration tasks; Seurat v3 performs\n    well on simpler tasks with distinct biological signals; and methods\n    that prioritize batch removal perform best for ATAC-seq data\n    integration. Our freely available reproducible python module can be\n    used to identify optimal data integration methods for new data,\n    benchmark new methods, and improve method development.}\n}\nFor attribution, please cite this work as:\nMalte D Luecken, Maren Buttner, Kridsadakorn Chaichoompu, Anna Danese,\nMarta Interlandi, Michaela F Mueller, Daniel C Strobl, et al. 2020.\n“Benchmarking Atlas-Level Data Integration in Single-Cell\nGenomics.” bioRxiv. https://doi.org/10.1101/2020.05.22.111161."
+  },
+  {
+    "objectID": "talks/2020-12-18-EuroBioc2020/index.html",
+    "href": "talks/2020-12-18-EuroBioc2020/index.html",
+    "title": "Interoperability between Bioconductor and Python for scRNA-seq analysis",
+    "section": "",
+    "text": "dSAF"
   }
 ]

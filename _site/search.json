@@ -1,80 +1,31 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/2020-07-11-requestival/index.html",
+    "href": "posts/2020-07-11-requestival/index.html",
+    "title": "triple j’s Requestival",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "From 25 to 31 May triple j ran an event they called the “Requestival”. For anyone not from Australia, triple j is a national public radio station with a mandate to target a youth audience and promote alternative and Australian music. For many Australians, particularly those that grew up in regional areas, triple j is responsible for providing their first exposure to music outside the current top 50 or golden oldies. The idea behind the Requestival was fairly simple. To make up for the cancellation of many music festivals due to the coronavirus triple j would hold their own virtual festival with the twist being that every song they played would be requested by listeners. The second twist was that they would play any request, not just the kind of new alternative they usually play. And they did mean anything including Beethoven, TV show themes and Taylor Swift who all got some air time during the week.\nI thought this would be a cool dataset to have a play around with. I’ll show some of the highlights here but have a look at the {workflowr} analysis website for more details or check out the code on GitHub."
+  },
+  {
+    "objectID": "posts/2020-07-11-requestival/index.html#exploration",
+    "href": "posts/2020-07-11-requestival/index.html#exploration",
+    "title": "triple j’s Requestival",
+    "section": "Exploration",
+    "text": "Exploration\nThe first kind of analysis I wanted to do was some basic exploration of the final dataset. What I did was plot a histogram or barplot of each column and pick out the top and bottom five scoring songs. You can see all the details on the exploration page but I’ll just list a few highlights here.\n\nThere were 43 songs played more than once (some of these are probably errors)\nThe most played artists were BENEE, Childish Gambino, CHVRCHES, DMA’s and The Chats with five plays each. There were 209 artists with more than one play.\nThe most played release was “Live At The Wireless” with 32 plays. These are songs that triple j have recorded at festivals, concerts etc. The “Like A Version” segment from triple j also contributed nine plays.\n312 songs (26%) of played songs are available on Unearthed.\nMost of the songs are fairly recent but there are some older ones (and probably a few where the dates are wrong)\n\n\n\nThe longest song played was “Fools Gold” by The Stone Roses at almost 10 minutes long (9:54) and the shortest was “Counting Worms” by “Knocked Loose” at just over a minute (1:12)\nThe most popular songs played (according to Spotify) were “goosebumps” and “HIGHEST IN THE ROOM” by Travis Scott and “WHATS POPPIN” by Jack Harlow\nThe loudest song was “Ask For The Anthem” by Ocean Grove and the quietest was “What’s Up” by 4 Non Blondes\nThe fastest song was “93 ’Til Infinity” by Souls of Mischief and the slowest was “Soon” by Angie McMahon\nThe song with highest “valence” was “September” by Earth, Wind & Fire and the lowest was “Raining Blood” by Slayer\nThe song with highest “energy” was “Raining Blood” by Slayer and the lowest was “In Disguise” by Ashe\nThe song with highest “danceability” was “Wash & Set” by Leikeli47 and the lowest was “I Still Dream About You” by The Smith Street Band\nThe song with highest “speechiness” was “RNP” by YBN Cordae and the lowest was “Strangers” by Tia Gostelow\nThe song with highest “acousticness” was “Punching In A Dream” by The Naked And Famous1 and the lowest was “Go” by Pearl Jam\nThe song with highest “liveness” was “Formation” by Beyoncé2 and the lowest was “Fit But You Know It” by The Streets"
+  },
+  {
+    "objectID": "posts/2020-07-11-requestival/index.html#embedding",
+    "href": "posts/2020-07-11-requestival/index.html#embedding",
+    "title": "triple j’s Requestival",
+    "section": "Embedding",
+    "text": "Embedding\nNow that I had a look at each variable individually I wanted to see what the dataset looked like as a whole. The first thing you always do with a new dataset is a PCA so for the songs with Spotify data I took the duration, loudness, tempo, valence, energy, danceability, speechiness, acousticness and liveness. The scatter plots don’t look great but the loadings are interesting.\n\nFor example you can see that PC1 separates loudness and enery from acousticness and PC6 separates speeciness from valence and tempo.\nI then did a t-SNE using these principal components. I had hoped that this information might be enough to see some clear separation between genres or styles but this isn’t really the case. There are few variable which are restricted to one part of the space, for example liveness:\n\nBut most of the other variables just show a general trend like loudness.\n\nSee the embedding page if you would like to see what all the other variables look like."
   },
   {
     "objectID": "posts/index.html",
     "href": "posts/index.html",
     "title": "Posts",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJan 3, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nDec 31, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "publications/example/index.html",
-    "href": "publications/example/index.html",
-    "title": "Example",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "publications/index.html",
-    "href": "publications/index.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Benchmarking atlas-level data integration in single-cell genomics\n\n\n\n\n\nCell atlases often include samples that span locations, labs, and conditions, leading to complex, nested batch effects in data. Thus, joint analysis of atlas datasets requires reliable data integration. Choosing a data integration method is a challenge due to the difficulty of defining integration success. Here, we benchmark 38 method and preprocessing combinations on 77 batches of gene expression, chromatin accessibility, and simulation data from 23 publications, altogether representing >1.2 million cells distributed in nine atlas-level integration tasks. Our integration tasks span several common sources of variation such as individuals, species, and experimental labs. We evaluate methods according to scalability, usability, and their ability to remove batch effects while retaining biological variation. Using 14 evaluation metrics, we find that highly variable gene selection improves the performance of data integration methods, whereas scaling pushes methods to prioritize batch removal over conservation of biological variation. Overall, BBKNN, Scanorama, and scVI perform well, particularly on complex integration tasks; Seurat v3 performs well on simpler tasks with distinct biological signals; and methods that prioritize batch removal perform best for ATAC-seq data integration. Our freely available reproducible python module can be used to identify optimal data integration methods for new data, benchmark new methods, and improve method development.\n\n\n\n\n\n\nMay 23, 2020\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/example/index.html",
-    "href": "projects/example/index.html",
-    "title": "Example",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
-    "objectID": "talks/example/index.html",
-    "href": "talks/example/index.html",
-    "title": "Example",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Interoperability between Bioconductor and Python for scRNA-seq analysis\n\n\n\n\n\nUnlike traditional bulk RNA-seq analysis which is dominated by Bioconductor, packages for analysing single-cell RNA sequencing data are more fragmented. Currently, there are three key ecosystems, the Seurat package (available from CRAN), Bioconductor’s SingleCellExperiment object and the AnnData Python object used by the Scanpy package. While these platforms each have strengths and weaknesses most analysts are likely to only use one of them. In this talk, I discuss how interoperability between R and Python can allow us to take advantage of these platforms strengths and avoid unnecessary reimplementation of methods. I highlight the reticulate R package for interacting with Python, the basilisk package for encapsulating Python environments, my zellkonverter package for converting between AnnData and SingleCellExperiment objects and the velociraptor package as an example of wrapping a Python package. The methods in the scVelo (package wrapped by velociraptor) for calculating RNA velocity and the CellRank package for estimating state transitions will also be briefly described.”\n\n\n\n\n\n\nDec 18, 2020\n\n\nLuke Zappia\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "projects/Splatter/index.html",
-    "href": "projects/Splatter/index.html",
-    "title": "Splatter",
-    "section": "",
-    "text": "Splatter is a Bioconductor R package for the simulation of single-cell RNA sequencing count data (https://bioconductor.org/packages/splatter/). It provides a simple interface for creating complex simulations that are reproducible and well-documented. Parameters can be estimated from real data and functions are provided for comparing real and simulated datasets."
+    "text": "triple j’s Requestival\n\n\n\n\n\nAnalysis of the songs played during triple j’s Requestival event\n\n\n\n\n\n\nJul 11, 2020\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publications/2020-luecken-scIB/index.html",
@@ -84,10 +35,38 @@
     "text": "CitationBibTeX citation:@misc{dluecken2020,\n  author = {Malte D Luecken and Maren Buttner and Kridsadakorn\n    Chaichoompu and Anna Danese and Marta Interlandi and Michaela F\n    Mueller and Daniel C Strobl and **Luke Zappia** and Martin Dugas and\n    Maria Colome-Tatche and Fabian J Theis},\n  title = {Benchmarking Atlas-Level Data Integration in Single-Cell\n    Genomics},\n  pages = {2020.05.22.111161},\n  date = {2020-05-23},\n  doi = {10.1101/2020.05.22.111161},\n  langid = {en},\n  abstract = {Cell atlases often include samples that span locations,\n    labs, and conditions, leading to complex, nested batch effects in\n    data. Thus, joint analysis of atlas datasets requires reliable data\n    integration. Choosing a data integration method is a challenge due\n    to the difficulty of defining integration success. Here, we\n    benchmark 38 method and preprocessing combinations on 77 batches of\n    gene expression, chromatin accessibility, and simulation data from\n    23 publications, altogether representing \\textgreater1.2 million\n    cells distributed in nine atlas-level integration tasks. Our\n    integration tasks span several common sources of variation such as\n    individuals, species, and experimental labs. We evaluate methods\n    according to scalability, usability, and their ability to remove\n    batch effects while retaining biological variation. Using 14\n    evaluation metrics, we find that highly variable gene selection\n    improves the performance of data integration methods, whereas\n    scaling pushes methods to prioritize batch removal over conservation\n    of biological variation. Overall, BBKNN, Scanorama, and scVI perform\n    well, particularly on complex integration tasks; Seurat v3 performs\n    well on simpler tasks with distinct biological signals; and methods\n    that prioritize batch removal perform best for ATAC-seq data\n    integration. Our freely available reproducible python module can be\n    used to identify optimal data integration methods for new data,\n    benchmark new methods, and improve method development.}\n}\nFor attribution, please cite this work as:\nMalte D Luecken, Maren Buttner, Kridsadakorn Chaichoompu, Anna Danese,\nMarta Interlandi, Michaela F Mueller, Daniel C Strobl, et al. 2020.\n“Benchmarking Atlas-Level Data Integration in Single-Cell\nGenomics.” bioRxiv. https://doi.org/10.1101/2020.05.22.111161."
   },
   {
-    "objectID": "talks/2020-12-18-EuroBioc2020/index.html",
-    "href": "talks/2020-12-18-EuroBioc2020/index.html",
-    "title": "Interoperability between Bioconductor and Python for scRNA-seq analysis",
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications",
     "section": "",
-    "text": "dSAF"
+    "text": "Benchmarking atlas-level data integration in single-cell genomics\n\n\n\n\n\nCell atlases often include samples that span locations, labs, and conditions, leading to complex, nested batch effects in data. Thus, joint analysis of atlas datasets requires reliable data integration. Choosing a data integration method is a challenge due to the difficulty of defining integration success. Here, we benchmark 38 method and preprocessing combinations on 77 batches of gene expression, chromatin accessibility, and simulation data from 23 publications, altogether representing >1.2 million cells distributed in nine atlas-level integration tasks. Our integration tasks span several common sources of variation such as individuals, species, and experimental labs. We evaluate methods according to scalability, usability, and their ability to remove batch effects while retaining biological variation. Using 14 evaluation metrics, we find that highly variable gene selection improves the performance of data integration methods, whereas scaling pushes methods to prioritize batch removal over conservation of biological variation. Overall, BBKNN, Scanorama, and scVI perform well, particularly on complex integration tasks; Seurat v3 performs well on simpler tasks with distinct biological signals; and methods that prioritize batch removal perform best for ATAC-seq data integration. Our freely available reproducible python module can be used to identify optimal data integration methods for new data, benchmark new methods, and improve method development.\n\n\n\n\n\n\nMay 23, 2020\n\n\nMalte D Luecken, Maren Buttner, Kridsadakorn Chaichoompu, Anna Danese, Marta Interlandi, Michaela F Mueller, Daniel C Strobl, Luke Zappia, Martin Dugas, Maria Colome-Tatche, Fabian J Theis\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "projects/Splatter/index.html",
+    "href": "projects/Splatter/index.html",
+    "title": "Splatter",
+    "section": "",
+    "text": "Splatter is a Bioconductor R package for the simulation of single-cell RNA sequencing count data (https://bioconductor.org/packages/splatter/). It provides a simple interface for creating complex simulations that are reproducible and well-documented. Parameters can be estimated from real data and functions are provided for comparing real and simulated datasets."
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Interoperability between Bioconductor and Python for scRNA-seq analysis\n\n\n\n\n\nUnlike traditional bulk RNA-seq analysis which is dominated by Bioconductor, packages for analysing single-cell RNA sequencing data are more fragmented. Currently, there are three key ecosystems, the Seurat package (available from CRAN), Bioconductor’s SingleCellExperiment object and the AnnData Python object used by the Scanpy package. While these platforms each have strengths and weaknesses most analysts are likely to only use one of them. In this talk, I discuss how interoperability between R and Python can allow us to take advantage of these platforms strengths and avoid unnecessary reimplementation of methods. I highlight the reticulate R package for interacting with Python, the basilisk package for encapsulating Python environments, my zellkonverter package for converting between AnnData and SingleCellExperiment objects and the velociraptor package as an example of wrapping a Python package. The methods in the scVelo (package wrapped by velociraptor) for calculating RNA velocity and the CellRank package for estimating state transitions will also be briefly described.\n\n\n\n\n\n\nDec 18, 2020\n\n\nLuke Zappia\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
   }
 ]

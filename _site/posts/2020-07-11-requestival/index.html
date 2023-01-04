@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2020-07-11">
+
+<title>quarto-blog - triple j’s Requestival</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">quarto-blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks/index.html">
+ <span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">triple j’s Requestival</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">analysis</div>
+    <div class="quarto-category">music</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><strong>Luke Zappia</strong> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 11, 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    Analysis of the songs played during triple j’s Requestival event
+  </div>
+</div>
+
+</header>
+
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>From 25 to 31 May triple j ran an event they called the <a href="https://www.abc.net.au/triplej/the-latest/what-is-requestival-and-how-can-you-get-involved/12254122" title="What is requestival?">“Requestival”</a>. For anyone not from Australia, <a href="https://www.abc.net.au/triplej/" title="triple j website">triple j</a> is a national public radio station with a mandate to target a youth audience and promote alternative and Australian music. For many Australians, particularly those that grew up in regional areas, triple j is responsible for providing their first exposure to music outside the current top 50 or golden oldies. The idea behind the Requestival was fairly simple. To make up for the cancellation of many music festivals due to the coronavirus triple j would hold their own virtual festival with the twist being that every song they played would be requested by listeners. The second twist was that they would play any request, not just the kind of new alternative they usually play. And they did mean anything including Beethoven, TV show themes and Taylor Swift who all got some air time during the week.</p>
+<p>I thought this would be a cool dataset to have a play around with. I’ll show some of the highlights here but have a look at the <a href="https://jdblischak.github.io/workflowr/index.html" title="workflowr website"><strong>{workflowr}</strong></a> <a href="https://lazappi.github.io/requestival/" title="Requesitval analysis website">analysis website</a> for more details or check out the code on <a href="https://github.com/lazappi/requestival" title="Requesitval analysis GitHub repository">GitHub</a>.</p>
+</section>
+<section id="getting-the-data" class="level1">
+<h1>Getting the data</h1>
+<p>triple j has a recently played page on their website that has a live stream of the songs they are playing. This page also has a search function that let’s you find which song was played at a particular time. I will note that there may be some errors in this list, there was at least one time I heard a song played but saw something else get added to the list. To get the raw data I simply searched for each day of the Requestival, clicked the “Show more” button until all the songs for that day were shown and then downloaded the HTML page. It’s probably possible to do this all programmatically but it was only a few pages so it didn’t seem worth the effort. Thankfully the HTML was fairly simple and neat so it was relatively easy to extract the information I wanted using <a href="https://rvest.tidyverse.org/" title="rvest website"><strong>{rvest}</strong></a>. What I ended up with was a <code>tibble</code> with times, song name, artist and release and links to Spotify, YouTube and the triple j Unearthed website. There were 27 songs that didn’t have release information on the website for some reason. See the <a href="https://lazappi.github.io/requestival/01-scraping.html" title="Analysis website - scraping">scraping page</a> of the analysis website for more details of this part.</p>
+<p>There was a bit more tidying I wanted to before any analysis. This was things like converting the file names into days, converting the time strings to <code>hms</code> objects in the correct timezone and replacing Unicode characters. The Spotify and YouTube links included queries which it might be useful to have so I also extracted those into new columns and created a column to indicate if a song was from Unearthed. The final tidying step was to select songs played between 6 am and 9 pm as these were the official hours of the Requestival. See the details <a href="https://lazappi.github.io/requestival/02-tidying.html" title="Analysis website - tidying">here</a>.</p>
+<p><img src="play_times.png" class="img-fluid"></p>
+<p>After all this I ended up with a dataset with 1187 songs from 896 artists off 1049 releases.</p>
+</section>
+<section id="augmentation" class="level1">
+<h1>Augmentation</h1>
+<p>There isn’t much analysis you can do on a simple list of songs so I wanted to augment the data in some way. I have seen some cool analysis using information from Spotify before so I thought that would be a good source to try. Despite the <a href="https://www.rcharlie.com/spotifyr/" title="spotifyr website"><strong>{spotifyr}</strong></a> package providing a nice interface to the Spotify API this wasn’t quite as easy as I had hoped. I initially wanted to use the queries I had extracted from the Spotify links but these weren’t in the format that <strong>{spotifyr}</strong> needs so I had to construct them manually. I also ran into the problem that the combination of song, artist and release was both too specific and not specific enough. For some songs I got no results when I searched for all this information while for other songs I got many results. These were often duplicates due to releases with slight differences in different countries etc. but sometimes they were unrelated songs that just happened to have enough key words in common.</p>
+<p>In the end I searched first for song, artist and release and took the first result if there was one, if not I searched for just song and artist. The only other constraint I had was that the album release date had to have a precision of “day” (an exact date, not just a month/year). I found that was able rule out some bad matches. In the end I was able to find matches for 994 songs but these aren’t perfect. There are probably some incorrect matches and there are a few I have seen where the song was correct but the best version wasn’t selected, for example the match for The Mamas &amp; The Papas “California Dreamin’” had an album date from 2020 even though the album “If You Can Believe Your Eyes And Ears” was first released in 1966. This is the reality of working with real world data I guess and the majority of matches should be close enough to still be useful. See the <a href="#augmentation">augmentation page</a> if you are interested in all the details.</p>
+<p>Once I had the track ideas for these songs it was relatively simple to extract more information about them from Spotify including the album release date, song duration, whether it is marked as explicit and a Spotify “popularity” score. Spotify also has more musical information about each track. There are some basic things like whether the track is in a major key, the loudness and tempo but also complex scores between zero and one for “valence”, “energy”, “danceability”, “speechiness”, “acousticness” and “liveness”. See the <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/" title="Spotify audio features">Spotify page</a> for more details but basically these try to capture the general feel of each song.</p>
+</section>
+<section id="analysis" class="level1">
+<h1>Analysis</h1>
+<section id="exploration" class="level2">
+<h2 class="anchored" data-anchor-id="exploration">Exploration</h2>
+<p>The first kind of analysis I wanted to do was some basic exploration of the final dataset. What I did was plot a histogram or barplot of each column and pick out the top and bottom five scoring songs. You can see all the details on the <a href="https://lazappi.github.io/requestival/04-exploration.html" title="Analysis website - exploration">exploration page</a> but I’ll just list a few highlights here.</p>
+<ul>
+<li>There were 43 songs played more than once (some of these are probably errors)</li>
+<li>The most played artists were BENEE, Childish Gambino, CHVRCHES, DMA’s and The Chats with five plays each. There were 209 artists with more than one play.</li>
+<li>The most played release was “Live At The Wireless” with 32 plays. These are songs that triple j have recorded at festivals, concerts etc. The “Like A Version” segment from triple j also contributed nine plays.</li>
+<li>312 songs (26%) of played songs are available on Unearthed.</li>
+<li>Most of the songs are fairly recent but there are some older ones (and probably a few where the dates are wrong)</li>
+</ul>
+<p><img src="album_date.png" class="img-fluid"></p>
+<ul>
+<li>The longest song played was “Fools Gold” by The Stone Roses at almost 10 minutes long (9:54) and the shortest was “Counting Worms” by “Knocked Loose” at just over a minute (1:12)</li>
+<li>The most popular songs played (according to Spotify) were “goosebumps” and “HIGHEST IN THE ROOM” by Travis Scott and “WHATS POPPIN” by Jack Harlow</li>
+<li>The loudest song was “Ask For The Anthem” by Ocean Grove and the quietest was “What’s Up” by 4 Non Blondes</li>
+<li>The fastest song was “93 ’Til Infinity” by Souls of Mischief and the slowest was “Soon” by Angie McMahon</li>
+<li>The song with highest “valence” was “September” by Earth, Wind &amp; Fire and the lowest was “Raining Blood” by Slayer</li>
+<li>The song with highest “energy” was “Raining Blood” by Slayer and the lowest was “In Disguise” by Ashe</li>
+<li>The song with highest “danceability” was “Wash &amp; Set” by Leikeli47 and the lowest was “I Still Dream About You” by The Smith Street Band</li>
+<li>The song with highest “speechiness” was “RNP” by YBN Cordae and the lowest was “Strangers” by Tia Gostelow</li>
+<li>The song with highest “acousticness” was “Punching In A Dream” by The Naked And Famous<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and the lowest was “Go” by Pearl Jam</li>
+<li>The song with highest “liveness” was “Formation” by Beyoncé<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and the lowest was “Fit But You Know It” by The Streets</li>
+</ul>
+</section>
+<section id="embedding" class="level2">
+<h2 class="anchored" data-anchor-id="embedding">Embedding</h2>
+<p>Now that I had a look at each variable individually I wanted to see what the dataset looked like as a whole. The first thing you always do with a new dataset is a PCA so for the songs with Spotify data I took the duration, loudness, tempo, valence, energy, danceability, speechiness, acousticness and liveness. The scatter plots don’t look great but the loadings are interesting.</p>
+<p><img src="pca_loadings.png" class="img-fluid"></p>
+<p>For example you can see that PC1 separates loudness and enery from acousticness and PC6 separates speeciness from valence and tempo.</p>
+<p>I then did a t-SNE using these principal components. I had hoped that this information might be enough to see some clear separation between genres or styles but this isn’t really the case. There are few variable which are restricted to one part of the space, for example liveness:</p>
+<p><img src="tsne_liveness.png" class="img-fluid"></p>
+<p>But most of the other variables just show a general trend like loudness.</p>
+<p><img src="tsne_loudness.png" class="img-fluid"></p>
+<p>See the <a href="https://lazappi.github.io/requestival/05-embedding.html" title="Analysis website - embedding">embedding page</a> if you would like to see what all the other variables look like.</p>
+</section>
+</section>
+<section id="outro" class="level1">
+<h1>Outro</h1>
+<p>This is really only an exploratory analysis and there are lots more things you could do: clustering to group songs, looking at correlations, text analysis etc. I had hoped to find some of the really unusal things that were played (like the Pokemon theme song) but I don’t think they are musically different enough for these characteristics to pull them out. In the end I would call this project a partial success, I didn’t find anything super interesting but I need learn some things and it was fun to play around with. The dataset is available on <a href="https://github.com/lazappi/requestival" title="Requesitval analysis GitHub repository">GitHub</a> and I would be interested to see if you can pull anything else out of it. Maybe I will return to it and do something more detailed in the future.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This got matched to the “Stripped” version on Spotify<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This got matched to the version from “Homecoming: The Live Album”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

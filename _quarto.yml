@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "quarto-blog"
+  title: "lazappi"
   navbar:
     left:
       - posts/index.qmd
@@ -11,9 +11,9 @@ website:
       - publications/index.qmd
     right:
       - icon: github
-        href: https://github.com/
+        href: https://github.com/lazappi
       - icon: twitter
-        href: https://twitter.com
+        href: https://twitter.com/_lazappi_
 format:
   html:
     theme: cosmo

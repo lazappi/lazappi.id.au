@@ -110,6 +110,11 @@ $endif$
 $if(image)$
 <div class="quarto-title-meta-contents">
     <img src="$image$" class="img-fluid" alt="$image-alt$">
+    $if(image-caption)$
+    <p></p>
+    <figcaption class="figure-caption">$image-caption$</figcaption>
+    <p></p>
+    $endif$
 </div>
 $endif$
 

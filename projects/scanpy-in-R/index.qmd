@@ -1,0 +1,17 @@
+---
+title: Scanpy in R
+summary: Tutorial describing how to interact with the Scanpy Python package from R
+authors:
+ - "**Luke Zappia**"
+categories: ["single-cell", "rna-seq", "interoperability", "python", "scanpy", "R", "tutorial"]
+date: 2020-04-17T13:31:20+02:00
+links:
+  code: https://github.com/theislab/scanpy-in-R/
+  website: https://theislab.github.io/scanpy-in-R/
+image: thumbnail.png
+image-alt: Scanpy in R logo
+---
+
+This tutorial covers how to set up a environment that lets you interact with [Scanpy](https://scanpy.readthedocs.io/en/stable/) from R.
+This includes converting Python [AnnData objects](https://anndata.readthedocs.io/en/latest/index.html) to R [SingleCellExperiment](https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html) and [Seurat](https://satijalab.org/seurat/) objects as well as interacting with a Python environment directly in an [R Markdown](https://rmarkdown.rstudio.com/) document.
+It demonstrates some of the functions in Scanpy but doesn't cover everything the package can do or how best to use Scanpy for your analysis.

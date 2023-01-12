@@ -1,0 +1,18 @@
+---
+title: PhD commits
+summary: Functions for scraping git commits from repositories associated with a PhD (or anything else) and plotting them
+authors:
+ - "**Luke Zappia**"
+categories: ["visualisation", "R"]
+date: 2019-08-08T17:45:06+01:00
+links:
+  code: https://github.com/lazappi/phd-commits
+image: thumbnail.png
+image-alt: Plot showing git commits over time divided by category
+---
+
+R scripts that can be used to scrape the git commit history of a project.
+The commits can then be categorised and used to produce a animated plot of the project over time as shown below.
+This was originally created as a way of displaying activity of my PhD but could be used for any project.
+
+![](https://raw.githubusercontent.com/lazappi/phd-commits/master/phd_commits.gif)

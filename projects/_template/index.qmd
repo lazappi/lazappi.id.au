@@ -1,17 +1,20 @@
 ---
-title: "Template project"
-summary: "An example template project"
+title: Template project
+summary: An example template project
 authors:
  - "**Luke Zappia**"
  - Another author
  - Somebody else
 categories: ["category1", "category2"]
 date: 2023-01-01T00:00:00+00:00
-code: "https://github.com/lazappi/project"
-package: "https://bioconductor.org/packages/project/"
-doi: "10.1186/s13059-017-1305-0"
-image: "thumbnail.png"
-image-alt: "Thumbnail image"
+links:
+  code: https://github.com/lazappi/project
+  package: https://bioconductor.org/packages/project/
+  doi: 10.1186/s13059-017-1305-0
+  website: https://a.website
+image: thumbnail.png
+image-alt: Thumbnail image
+image-caption: A caption for the thumbnail image
 ---
 
 A few sentences describing the project

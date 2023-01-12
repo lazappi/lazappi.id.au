@@ -1,0 +1,22 @@
+---
+title: scRNA-tools
+summary: Database and website cataloguing software tools for analysing single-cell RNA sequencing data
+authors:
+ - "**Luke Zappia**"
+ - Belinda Phipson
+ - Alicia Oshlack
+ - Fabian Theis
+ - Contributors
+categories: ["single-cell", "rna-seq", "database", "website"]
+date: 2017-06-05T11:26:59+01:00
+links:
+  code: https://github.com/scRNA-tools/scRNA-tools
+  doi: 10.1371/journal.pcbi.1006245
+  website: https://www.scrna-tools.org/
+image: thumbnail.png
+image-alt: scRNA-tools logo
+---
+
+The scRNA-tools database and website (<https://www.scRNA-tools.org>) is a catalogue of software tools for the analysis of single-cell RNA sequencing data.
+We record details about what the tools can be used as well as where they are available and any associated publications.
+This is designed to be an open resource and we welcome submissions and other contributions from the community.

@@ -1,0 +1,20 @@
+---
+title: R Package Development Workshop
+summary: Materials for the COMBINE Australia R package development workshop
+authors:
+ - "**Luke Zappia**"
+ - COMBINE Australia
+categories: ["workshop", "package development", "R", "training"]
+date: 2019-08-03T18:37:13+01:00
+links:
+  code: https://github.com/COMBINE-Australia/r-pkg-dev
+  website: https://combine-australia.github.io/r-pkg-dev/index.html
+image: thumbnail.png
+image-alt: Clip art of a package by OpenClipart-Vectors (https://pixabay.com/de/users/OpenClipart-Vectors-30363/) from Pixabay (https://pixabay.com/)
+image-caption: Image by [OpenClipart-Vectors](https://pixabay.com/de/users/OpenClipart-Vectors-30363/) from [Pixabay](https://pixabay.com/)
+---
+
+[COMBINE](https://combine.org.au/) is an Australian organisation for student in bioinformatics, computational biology and related fields.
+One way in which COMBINE aims to support the student community is by providing training.
+I was the lead author on the materials for this workshop which covers an introduction to developing an R package and were produced using [bookdown](https://bookdown.org/).
+The workshop was first run in Melbourne in September 2019 where I was the lead instructor.

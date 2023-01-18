@@ -1,0 +1,23 @@
+---
+title: Tools and techniques for single-cell RNA sequencing data
+summary: My PhD completion seminar
+authors:
+ - "**Luke Zappia**"
+event:
+  name: PhD Completion Seminar
+  location: Murdoch Children's Research Institute, Melbourne, Australia
+  url: https://eurobioc2020.bioconductor.org/
+abstract: |
+  RNA sequencing of individual cells allows us to take a snapshot of the dynamic processes within a cell and explore the differences between cell types.
+  As this technology has developed over the last few years it has been rapidly adopted by researchers in areas such as developmental biology.
+  Along with the development of protocols for producing this data has been a simultaneous burst in the development of computational methods for analysing it.
+  My thesis explores the computational tools and techniques for analysing single-cell RNA-sequencing data.
+  I will present a database that charts the release of analysis software (https://scrna-tools.org), Splatter, a software package for easily simulating single-cell datasets from multiple models (http://bioconductor.org/packages/splatter/) and clustering trees, a visualisation approach for inspecting clustering results at multiple resolutions (https://CRAN.R-project.org/package=clustree).
+  In the final part of my thesis, I use an analysis of a kidney organoid dataset to demonstrate and compare some of the current analysis methods.
+categories: ["single-cell", "rna-seq", "simulation", "database", "visualisation", "kidney", "organoids", "analysis", "software", "splatter", "clustree", "scRNA-tools", "PhD"]
+date: 2019-03-22
+links:
+  code: https://github.com/lazappi/phd-thesis
+  slides: https://speakerdeck.com/lazappi/tools-and-techniques-for-single-cell-rna-sequencing-data
+speakerdeck: 441412c0b4b247f1be212d4f6e07504e
+---

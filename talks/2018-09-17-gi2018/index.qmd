@@ -1,0 +1,33 @@
+---
+title: Using clustering trees to visualise scRNA-seq data
+summary: Selected talk at the Genome Informatics 2018 conference where I described how clustering trees can be used with scRNA-seq data
+authors:
+ - "**Luke Zappia**"
+ - Alicia Oshlack
+event:
+  name: Genome Informatics 2018
+  location: Wellcome Trust Genome Campus, Hinxton, UK
+  url: https://coursesandconferences.wellcomegenomecampus.org/our-events/genome-informatics-2018/
+abstract: |
+  Single-cell RNA-sequencing is commonly used to interrogate complex tissues in order to identify and compare the cell types present.
+  This type of experiment is particularly prevalent in the developmental setting.
+  A key step in this approach is assigning cells to different clusters that are assumed to be distinct cell types.
+  Although this can be done by comparison with reference datasets, cells are more routinely grouped using unsupervised clustering and we have catalogued more than 60 currently available scRNA-seq clustering methods.
+  Most clustering methods have parameters which affect the number of clusters produced, either by specifying an exact number, a parameter which controls the clustering resolution or indirectly through other parameters.
+  The clustering resolution that is chosen can have a profound effect on further analysis but it is unclear how to make this choice. Existing clustering metrics often score only single clusters or resolutions, or require datasets to be perturbed and clustered multiple times which can be infeasible for large datasets.
+
+  Here we present clustering trees, a visualisation that shows the relationship between clusters as the clustering resolution increases.
+  In a clustering tree each cluster is represented as a graph node with edges representing the overlap in samples between clusters at different resolutions.
+  These trees can highlight instability that may indicate over clustering and help choose which resolution to use, particularly when combined with existing domain knowledge such as the expression of marker genes.
+  More generally, clustering trees are a compact, information-dense visualisation that can serve as an alternative to plotting cells in reduced dimensions such as t-SNE.
+  Importantly clustering trees display information across resolutions, in contrast to more common visualisation which only show results of a single clustering.
+  Here we explain how clustering trees are produced using the clustree R package (http://cran.r-project.org/package=clustree) and illustrate how they can be used with an example of scRNA-seq data from kidney organoids.
+categories: ["single-cell", "rna-seq", "clustering", "visualisation", "software", "clustree", "R", "CRAN"]
+date: 2018-09-17T15:40:00+00:00
+date_end: 2018-09-17T16:00:00+00:00
+links:
+  code: https://github.com/lazappi/clustree
+  package: http://cran.r-project.org/package=clustree
+  slides: https://speakerdeck.com/lazappi/visualising-trees-to-choose-clusters-for-scrna-seq-data
+speakerdeck: 66c6b37735744f19a8c6fb7e93017583
+---

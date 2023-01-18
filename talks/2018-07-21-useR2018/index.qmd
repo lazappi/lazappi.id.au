@@ -1,0 +1,27 @@
+---
+title: "clustree: producing clustering trees using ggraph"
+summary: Presentation at the userR! 2018 conference introducing the clustree package and demonstrating how it makes use of the ggraph package
+authors:
+ - "**Luke Zappia**"
+event:
+  name: useR! 2018
+  location: Brisbane Convention and Exhibition Centre, Brisbane, Australia
+  url: https://www.r-project.org/conferences/useR-2018/
+abstract: |
+  Clustering analysis is commonly used in many fields to group together similar samples. Many clustering algorithms exist, but all of them require some sort of user input to set parameters that affect the number of clusters produced.
+  Deciding on the correct number of clusters for a given dataset is a difficult problem that can be tackled by looking at the relationships between samples at different resolutions.
+  Here I will present clustree, an R package for producing clustering tree visualisations.
+  These visualisations combine information from multiple clusterings with different resolutions, showing where new clusters come from and how samples change clusters as the number of clusters increases.
+  Summarised information describing the samples in each cluster can be overlaid on the tree to give additional insight.
+  I will also describe my experience developing clustree, particularly how I have made use of the ggraph package.
+  The clustree package is available at https://github.com/lazappi/clustree and a preprint describing clustering trees can be read at https://www.biorxiv.org/content/early/2018/03/02/274035.
+categories: ["visualisation", "software", "R"]
+date: 2018-07-21T16:30:00+10:00
+date_end: 2018-07-21T16:50:00+10:00
+links:
+  code: https://github.com/lazappi/clustree
+  slides: https://speakerdeck.com/lazappi/clustree-a-package-for-producing-clustering-trees-using-ggraph
+  video: https://youtu.be/FQVq8k-w828
+speakerdeck: 340035860071436b89989a4e24268849
+youtube: FQVq8k-w828
+---

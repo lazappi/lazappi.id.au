@@ -1,0 +1,35 @@
+---
+title: Simulation and analysis tools for single-cell RNA sequencing data
+summary: Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database
+authors:
+ - "**Luke Zappia**"
+ - Belinda Phipson
+ - Alicia Oshlack
+event:
+  name: Genome Informatics 2017
+  location: Cold Spring Harbor Labs, Cold Spring Harbor, USA
+  url: https://meetings.cshl.edu/meetings.aspx?meet=INFO&year=17
+abstract: |
+  Single-cell RNA sequencing (scRNA-seq) is rapidly becoming a tool of choice for biologists who wish to investigate gene expression.
+  In contrast to traditional bulk RNA-seq experiments, which measure expression averaged across millions of cells, single-cell experiments can be used to observe how genes are expressed in individual cells.
+  Along with the dramatic increase in resolution provided by scRNA-seq comes an array of bioinformatics challenges.
+  Single-cell data is relatively sparse (for both biological and technical reasons), quality control is difficult and it is unclear how to replicate measurements.
+  Researchers have risen to address these challenges and there are currently more than 125 software tools available for analysing scRNA-seq data.
+  We have catalogued these software tools in the scRNA-tools database (www.scRNA-tools.org).
+  Analysis of this database shows that there are now methods available for a wide range of tasks, from pre-processing unique molecular identifiers to detecting allele-specific expression.
+  However, the biggest areas of development have been in clustering cells to identify cell types and ordering of cells to understand dynamic processes.
+  We also find that the R statistical programming language is the most popular platform for scRNA-seq analysis tools, followed by Python, and that the majority of tools have been described in peer-reviewed papers or preprints and are available under open-source software licenses.
+
+  With the ever increasing number of analysis methods available it is important to be able to assess and compare the performance, quality and limitations of an analysis tool.
+  This is often done, at least in part, by testing methods on simulated datasets where the true answers are known.
+  Unfortunately, current scRNA-seq simulations are frequently poorly documented, not reproducible and do not demonstrate similarity to real data or experimental designs.
+  To address these concerns we have developed Splatter, a Bioconductor R package for reproducible simulation of scRNA-seq datasets.
+  Splatter is a simulation framework that currently includes four previously published simulation models, allowing users to estimate parameters from real data in order to easily generate realistic synthetic scRNA-seq datasets.
+  Here we discuss some of the challenges of simulating scRNA-seq data and present a comparison of the simulation methods available in Splatter (bioconductor.org/packages/splatter).
+  As part of Splatter we also introduce our own simulation model, Splat, capable of reproducing scRNA-seq datasets with multiple groups of cells, differentiation paths or batch effects.
+categories: ["single-cell", "rna-seq", "simulation", "database", "splatter", "scRNA-tools", "software"]
+date: 2017-11-01
+links:
+  slides: https://speakerdeck.com/lazappi/gi2017-simulation-and-analysis-tools-for-single-cell-rna-sequencing-data
+speakerdeck: 8b940093154f442a9c05eb0efda3a8d5
+---

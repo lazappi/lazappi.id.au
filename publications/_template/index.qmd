@@ -1,0 +1,24 @@
+---
+title: Template publication
+authors:
+ - "**Luke Zappia**"
+abstract: |
+  An abstract describing the publication.
+  It can be split across lines.
+categories: ["category1", "category2"]
+date: 2023-01-01T00:00:00+00:00
+links:
+  code: https://github.com/lazappi/project
+  package: https://bioconductor.org/packages/project/
+  doi: 10.1186/s13059-017-1305-0
+  website: https://a.website
+  slides: https://speakerdeck.com/lazappi/slides
+image: thumbnail.png
+image-alt: Thumbnail image
+image-caption: A caption for the thumbnail image
+citation:
+  type: article
+  doi: 10.1101/2020.05.22.111161
+  container-title: bioRxiv
+  page: 2020.05.22.111161
+---

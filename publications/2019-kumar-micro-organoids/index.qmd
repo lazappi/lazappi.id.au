@@ -1,0 +1,36 @@
+---
+title: Kidney micro-organoids in suspension culture as a scalable source of human pluripotent stem cell-derived kidney cells
+author:
+  - Santhosh V Kumar
+  - Pei X Er
+  - Kynan T Lawlor
+  - Ali Motazedian
+  - Michelle Scurr
+  - Irene Ghobrial
+  - Alexander N Combes
+  - name: Luke Zappia
+    me: true
+  - Alicia Oshlack
+  - Edouard G Stanley
+  - Melissa H Little
+abstract: |
+  Kidney organoids have potential uses in disease modelling, drug screening and regenerative medicine.
+  However, novel cost-effective techniques are needed to enable scaled-up production of kidney cell types in vitro.
+  We describe here a modified suspension culture method for the generation of kidney micro-organoids from human pluripotent stem cells.
+  Optimisation of differentiation conditions allowed the formation of micro-organoids, each containing six to ten nephrons that were surrounded by endothelial and stromal populations.
+  Single cell transcriptional profiling confirmed the presence and transcriptional equivalence of all anticipated renal cell types consistent with a previous organoid culture method.
+  This suspension culture micro-organoid methodology resulted in a three- to fourfold increase in final cell yield compared with static culture, thereby representing an economical approach to the production of kidney cells for various biological applications.
+categories: ["nephron", "stem cell", "suspension culture", "single-cell", "rna-seq", "kidney", "organoids"]
+date: 2019-03-01
+links:
+  doi: 10.1242/dev.172361
+  pdf: https://dev.biologists.org/content/develop/146/5/dev172361.full.pdf
+citation:
+  type: article-journal
+  doi: 10.1242/dev.172361
+  pmid: "30846463"
+  issn: "0950-1991, 1477-9129"
+  container-title: Development
+  number: 5
+  volume: 146
+---

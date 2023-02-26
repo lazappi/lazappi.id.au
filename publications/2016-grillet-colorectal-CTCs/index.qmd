@@ -1,27 +1,28 @@
 ---
 title: Circulating tumour cells from patients with colorectal cancer have cancer stem cell hallmarks in ex vivo culture
-authors:
- - Fanny Grillet
- - Elsa Bayet
- - Olivia Villeronce
- - "**Luke Zappia**"
- - Ebba Louise Lagerqvist
- - Sebastian Lunke
- - Emmanuelle Charafe-Jauffret
- - Kym Pham
- - Christina Molck
- - Nathalie Rolland
- - Jean François Bourgaux
- - Michel Prudhomme
- - Claire Philippe
- - Sophie Bravo
- - Jean Christophe Boyer
- - Lucile Canterel-Thouennon
- - Graham Roy Taylor
- - Arthur Hsu
- - Jean Marc Pascussi
- - Frédéric Hollande
- - Julie Pannequin
+author:
+  - Fanny Grillet
+  - Elsa Bayet
+  - Olivia Villeronce
+  - name: Luke Zappia
+    me: true
+  - Ebba Louise Lagerqvist
+  - Sebastian Lunke
+  - Emmanuelle Charafe-Jauffret
+  - Kym Pham
+  - Christina Molck
+  - Nathalie Rolland
+  - Jean François Bourgaux
+  - Michel Prudhomme
+  - Claire Philippe
+  - Sophie Bravo
+  - Jean Christophe Boyer
+  - Lucile Canterel-Thouennon
+  - Graham Roy Taylor
+  - Arthur Hsu
+  - Jean Marc Pascussi
+  - Frédéric Hollande
+  - Julie Pannequin
 abstract: |
   **Objective**
 
@@ -50,7 +51,9 @@ links:
   doi: 10.1136/gutjnl-2016-311447
   pdf: https://gut.bmj.com/content/gutjnl/66/10/1802.full.pdf
 citation:
-  type: article
+  type: article-journal
   doi: 10.1136/gutjnl-2016-311447
+  pmid: "27456153"
+  issn: "0017-5749, 1468-3288"
   container-title: Gut
 ---

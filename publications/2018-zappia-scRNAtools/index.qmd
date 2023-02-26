@@ -1,0 +1,33 @@
+---
+title: Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database
+author:
+  - name: Luke Zappia
+    me: true
+  - Belinda Phipson
+  - Alicia Oshlack
+abstract: |
+  As single-cell RNA-sequencing (scRNA-seq) datasets have become more widespread the number of tools designed to analyse these data has dramatically increased.
+  Navigating the vast sea of tools now available is becoming increasingly challenging for researchers.
+  In order to better facilitate selection of appropriate analysis tools we have created the scRNA-tools database (www.scRNA-tools.org) to catalogue and curate analysis tools as they become available.
+  Our database collects a range of information on each scRNA-seq analysis tool and categorises them according to the analysis tasks they perform. Exploration of this database gives insights into the areas of rapid development of analysis methods for scRNA-seq data.
+  We see that many tools perform tasks specific to scRNA-seq analysis, particularly clustering and ordering of cells.
+  We also find that the scRNA-seq community embraces an open-source and open-science approach, with most tools available under open-source licenses and preprints being extensively used as a means to describe methods.
+  The scRNA-tools database provides a valuable resource for researchers embarking on scRNA-seq analysis and records the growth of the field over time.
+categories: ["single-cell", "rna-seq", "database"]
+date: 2018-06-01
+links:
+  code: https://github.com/Oshlack/scRNAtools-paper
+  doi: 10.1371/journal.pcbi.1006245
+  pdf: https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006245&type=printable
+  preprint: https://doi.org/10.1101/206573
+  website: https://www.scrna-tools.org/
+citation:
+  type: article-journal
+  doi: 10.1371/journal.pcbi.1006245
+  pmid: "29939984"
+  issn: "1553-734X, 1553-7358"
+  container-title: PLoS computational biology
+  number: 6
+  volume: 14
+  page: "e1006245"
+---

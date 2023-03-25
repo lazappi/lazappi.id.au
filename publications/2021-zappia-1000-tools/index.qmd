@@ -1,0 +1,30 @@
+---
+title: Over 1000 tools reveal trends in the single-cell RNA-seq analysis landscape
+author:
+  - name: Luke Zappia
+    me: true
+  - Fabian J Theis
+abstract: |
+  Recent years have seen a revolution in single-cell RNA-sequencing (scRNA-seq) technologies, datasets, and analysis methods.
+  Since 2016, the scRNA-tools database has cataloged software tools for analyzing scRNA-seq data. With the number of tools in the database passing 1000, we provide an update on the state of the project and the field.
+  This data shows the evolution of the field and a change of focus from ordering cells on continuous trajectories to integrating multiple samples and making use of reference datasets.
+  We also find that open science practices reward developers with increased recognition and help accelerate the field.
+categories: ["single-cell", "rna-seq", "database"]
+date: 2021-10-29
+links:
+  code: https://github.com/scRNA-tools/1000-tools-paper
+  package: https://github.com/scRNA-tools/scRNA-tools
+  doi: 10.1186/s13059-021-02519-4
+  pdf: https://link.springer.com/content/pdf/10.1186/s13059-021-02519-4.pdf
+  preprint: https://www.biorxiv.org/content/10.1101/2021.08.13.456196v1
+  website: https://www.scrna-tools.org/
+citation:
+  type: article-journal
+  doi: 10.1186/s13059-021-02519-4
+  pmid: "34715899"
+  issn: "1465-6906"
+  container-title: Genome biology
+  issue: 1
+  volume: 22
+  page: "301"
+---

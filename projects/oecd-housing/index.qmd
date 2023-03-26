@@ -1,0 +1,21 @@
+---
+title: OECD housing
+summary: Some basic analysis of housing data from the OECD
+authors:
+ - "**Luke Zappia**"
+categories: ["analysis", "housing", "python"]
+date: 2023-02-08
+links:
+  code: https://github.com/lazappi/oecd-housing
+  website: https://lazappi.github.io/oecd-housing/
+image: thumbnail.png
+image-alt: Thumbnail image
+image-caption: A caption for the thumbnail image
+---
+
+A short analysis of housing data from the Organisation for Economic Co-operation and Development (OECD).
+I looked at two aspects, the cost and affordability of housing and the amount of taxation associated with it.
+I was interested both in how this aspects have changed in different countries over time but also how they relate to each other.
+For example it could be that countries with higher rates of housing taxation have lower housing costs (because taxation increases the cost of purchasing a house) or that that countries with higher tax rates are encouraged to increase the cost of housing in order to generate more tax revenue.
+I highlighted a few countries of interest that stand out in the dataset, specifically New Zealand, Canada, Sweden and Japan.
+The analysis was performed in Python with the final analysis displayed in a Quarto document.

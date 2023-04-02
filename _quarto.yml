@@ -19,6 +19,12 @@ website:
         href: https://twitter.com/_lazappi_
       - icon: rss
         href: posts/index.xml
+  page-footer:
+    left:
+      - text: "© 2016-2023, Luke Zappia"
+    right:
+      - text: "License"
+        href: license.qmd
   twitter-card:
     creator: "@_lazappi_"
     site: "@_lazappi_"

@@ -3,6 +3,7 @@ project:
 
 website:
   title: "lazappi"
+  favicon: icon.png
   navbar:
     left:
       - posts/index.qmd

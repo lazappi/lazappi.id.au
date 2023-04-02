@@ -4,6 +4,7 @@ subtitle: "Bioinformatician (he/him)"
 image: profile.png
 about:
   template: trestles
+  image-shape: round
   links:
     - icon: twitter
       text: Twitter
@@ -22,6 +23,8 @@ about:
       href: https://github.com/lazappi
 ---
 
+:::{#hero-heading}
+
 # Hi, I'm Luke 👋🏻
 
 I am a bioinformatics postdoctoral researcher in the [Theis Lab][Theis] at the
@@ -32,6 +35,12 @@ of computational methods. I am also interested in how best to visualise data
 more generally.
 
 I completed my PhD in the [Oshlack Lab][Oshlack].
+
+:::
+
+<a href="https://info.flagcounter.com/6RVN">
+  <img src="https://s01.flagcounter.com/count2/6RVN/bg_FFFFFF/txt_000000/border_CCCCCC/columns_6/maxflags_250/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" style="  display: block;margin-left: auto;margin-right: auto;width:100%">
+</a>
 
 [Theis]: https://www.helmholtz-muenchen.de/icb/research/groups/theis-lab/overview/index.html "Theis Lab"
 [HMGU]: https://www.helmholtz-muenchen.de/en/helmholtz-zentrum-muenchen/index.html "Helmholtz Zentrum München"

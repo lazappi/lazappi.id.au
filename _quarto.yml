@@ -3,6 +3,8 @@ project:
 
 website:
   title: "lazappi"
+  site-url: https://lazappi.id.au
+  description: "Luke Zappia's personal website"
   favicon: icon.png
   navbar:
     left:
@@ -15,12 +17,19 @@ website:
         href: https://github.com/lazappi
       - icon: twitter
         href: https://twitter.com/_lazappi_
+      - icon: rss
+        href: posts/index.xml
   twitter-card:
     creator: "@_lazappi_"
     site: "@_lazappi_"
   open-graph:
     locale: en_AU
     site-name: lazappi
+  cookie-consent:
+    palette: dark
+  google-analytics:
+    tracking-id: "G-20JH368VMR"
+    anonymize-ip: true
 format:
   html:
     theme: cosmo

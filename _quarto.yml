@@ -36,9 +36,16 @@ website:
   google-analytics:
     tracking-id: "G-20JH368VMR"
     anonymize-ip: true
+header-includes: |
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Rubik&display=swap" rel="stylesheet">
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme:
+      light: [flatly, css/custom.scss]
+      dark: [darkly, css/custom.scss, css/dark.scss]
+    mainfont: "Rubik"
+    monofont: "Fira Code"
 
 editor: visual

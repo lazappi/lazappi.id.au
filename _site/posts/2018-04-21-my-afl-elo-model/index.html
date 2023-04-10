@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2018-04-21">
+<meta name="description" content="My Elo model for predicting AFL games">
+
+<title>lazappi - My AFL-Elo model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-20JH368VMR"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-20JH368VMR', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+
+
+<meta property="og:title" content="lazappi - My AFL-Elo model">
+<meta property="og:description" content="My Elo model for predicting AFL games">
+<meta property="og:site-name" content="lazappi">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:title" content="lazappi - My AFL-Elo model">
+<meta name="twitter:description" content="My Elo model for predicting AFL games">
+<meta name="twitter:creator" content="@_lazappi_">
+<meta name="twitter:site" content="@_lazappi_">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">lazappi</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks/index.html">
+ <span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lazappi"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/_lazappi_"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts/index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#round-5" id="toc-round-5" class="nav-link active" data-scroll-target="#round-5">Round 5</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#predictions" id="toc-predictions" class="nav-link" data-scroll-target="#predictions">Predictions</a></li>
+  <li><a href="#projections" id="toc-projections" class="nav-link" data-scroll-target="#projections">Projections</a>
+  <ul class="collapse">
+  <li><a href="#ladder" id="toc-ladder" class="nav-link" data-scroll-target="#ladder">Ladder</a></li>
+  <li><a href="#premiership-points" id="toc-premiership-points" class="nav-link" data-scroll-target="#premiership-points">Premiership points</a></li>
+  </ul></li>
+  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">My AFL-Elo model</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">afl</div>
+    <div class="quarto-category">elo</div>
+    <div class="quarto-category">sport</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    My Elo model for predicting AFL games
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><strong>Luke Zappia</strong> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 21, 2018</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- ```{r knitr, include = FALSE}
+knitr::opts_chunk$set(autodep        = TRUE,
+                      cache          = FALSE,
+                      cache.comments = TRUE,
+                      echo           = FALSE,
+                      error          = FALSE,
+                      fig.align      = "center",
+                      fig.width      = 10,
+                      fig.height     = 8,
+                      message        = FALSE,
+                      warning        = FALSE)
+``` -->
+
+<!-- ```{r libraries}
+library("knitr")
+library("here")
+library("formattable")
+library("tidyverse")
+``` -->
+<p>Over the last few years I have followed a lot of the work done by <a href="http://fivethirtyeight.com/" title="FiveThirtyEight">FiveThiryEight</a>, particularly their attempts to model and predict sport. More recently I have discovered there is a community of people trying to do similar things for the AFL, including <a href="https://thearcfooty.com/" title="The Arc">The Arc</a>, <a href="https://squiggle.com.au/" title="Squiggle">Squiggle</a>, <a href="http://www.matterofstats.com/" title="Matter of Stats">Matter of Stats</a> and <a href="http://www.hpnfooty.com/" title="Hurling People Now">Hurling People Now</a>.</p>
+<p>Many of these modelling projects are based around the <a href="https://en.wikipedia.org/wiki/Elo_rating_system" title="Elo system">Elo system</a>. If you haven’t heard of it before this model is a ranking system originally designed for chess by a Hungarian physicist. In the simplest form each player (or team) is assigned a ranking. When a match is played you can estimate a win probability based on the differences between the rankings. The rankings are then adjusted based on the result in such a way that unexpected results cause bigger changes than those that are closer to what was predicted. This model is relatively naive and simple to implement, no knowledge of the players or teams themselves is required, just the results of matches, but can still produce good predictions.</p>
+<p>Given this I thought it would be a good place to start. My version of the model is closely based on the one described by The Arc <a href="https://thearcfooty.com/2016/12/29/introducing-the-arcs-ratings-system/" title="The Arc model">here</a>. There were a few different things I wanted to try but (as always) everything took longer than I planned, so what I have done in the end is very similar. The one area where I have done things differently is the process used to select the parameters of the model. This part wasn’t really described in the post on The Arc so I was left to my own devices. Here are brief descriptions of the parameters, but if you are interested I suggest you check out the outline of the model on The Arc which has a lot more detail:</p>
+<ul>
+<li><strong>New team rating</strong> - The starting rating for new teams that enter the competition (Gold Coast and GWS). Original teams start with a rating of 1500.</li>
+<li><strong>New season adjustment</strong> - Amount to regress to the mean at the beginning of a new season</li>
+<li><strong>HGA alpha</strong> - Weighting given to travel distance when calculating home ground advantage (HGA)</li>
+<li><strong>HGA beta</strong> - Weighting given to ground experience when calculating HGA</li>
+<li><strong>p</strong> - Controls how win probabilities are converted to margins</li>
+<li><strong>k</strong> - Controls how differences between predicted and actual results affect ratings. Greater values cause greater changes, meaning the the model reacts quicker to what has happened but also that it is more unstable. In many ways this is the critical parameter for the Elo model. For this version of the model we use three different values:
+<ul>
+<li><strong>Early</strong> - Used for the first five rounds of the regular season</li>
+<li><strong>Normal</strong> - Used for the remainder of the regular season</li>
+<li><strong>Finals</strong> - Used for finals matches</li>
+</ul></li>
+</ul>
+<p>To select these parameters I chose to use a <a href="https://en.wikipedia.org/wiki/Genetic_algorithm" title="Genetic optimisation">genetic optimisation algorithm</a>. Partly because it is potentially able to explore a wider parameter space, but also because I think they are cool. To do this we need a measure of fitness that we are aiming for. For sport predictions there are generally two things we want to know, who is going to win and by how much. Estimating these can often be best done using different sets of parameters. For this reason I ran the optimisation procedure three times, once optimising for win prediction accuracy, once optimising for the mean absolute error in predicting the margin and once for a 50/50 balance between the two. Each optimisation procedure was run for 100 generations with 100 individuals in each generation, training the model on all AFL games from 1997 to 2016 and assessing performance on the games from 2000 to 2016. This leaves the 2017 season as a validation set to check the selected parameters. Here the best performing parameter sets from each of the optimisations compared to the default parameters based on The Arc:</p>
+<!-- ```{r opt-summary}
+opt_summ <- read_tsv(here("static/data/afl2018/optimisation_summary.tsv"),
+                     col_types = cols(
+                         .default = col_double(),
+                         Version = col_character()
+                     ))
+opt_summ %>%
+    mutate(new_team_rating = round(new_team_rating),
+           new_season_adjustment = round(new_season_adjustment, 2),
+           hga_alpha = round(hga_alpha, 2),
+           hga_beta = round(hga_beta, 2),
+           pred_p = round(pred_p, 4),
+           adjust_k_early = round(adjust_k_early),
+           adjust_k_normal = round(adjust_k_normal),
+           adjust_k_finals = round(adjust_k_finals),
+           Margin2016 = round(Margin2016, 2),
+           Predict2016 = round(Predict2016, 2),
+           Margin2017 = round(Margin2017, 2),
+           Predict2017 = round(Predict2017, 2)) %>%
+    mutate_all(as.character) %>%
+    select(-Version) %>%
+    rename(NewTeamRating = new_team_rating,
+           NewSeasonAdjustment = new_season_adjustment,
+           HGA_Alpha = hga_alpha,
+           HGA_Beta = hga_beta,
+           p = pred_p,
+           k_Early = adjust_k_early,
+           k_Normal = adjust_k_normal,
+           k_Finals = adjust_k_finals) %>%
+    t() %>%
+    data.frame() %>%
+    rename(Default = X1, Margin = X2, Balanced = X3, Prediction = X4) %>%
+    kable()
+``` -->
+
+<table class="table">
+<thead>
+<tr class="header">
+<th>
+</th>
+<th align="left">
+Default
+</th>
+<th align="left">
+Margin
+</th>
+<th align="left">
+Balanced
+</th>
+<th align="left">
+Prediction
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+NewTeamRating
+</td>
+<td align="left">
+1090
+</td>
+<td align="left">
+1292
+</td>
+<td align="left">
+1284
+</td>
+<td align="left">
+1106
+</td>
+</tr>
+<tr class="even">
+<td>
+NewSeasonAdjustment
+</td>
+<td align="left">
+0.1
+</td>
+<td align="left">
+0.33
+</td>
+<td align="left">
+0.39
+</td>
+<td align="left">
+0.54
+</td>
+</tr>
+<tr class="odd">
+<td>
+HGA_Alpha
+</td>
+<td align="left">
+6
+</td>
+<td align="left">
+1.33
+</td>
+<td align="left">
+2.89
+</td>
+<td align="left">
+2.05
+</td>
+</tr>
+<tr class="even">
+<td>
+HGA_Beta
+</td>
+<td align="left">
+15
+</td>
+<td align="left">
+12.89
+</td>
+<td align="left">
+2.1
+</td>
+<td align="left">
+5.68
+</td>
+</tr>
+<tr class="odd">
+<td>
+p
+</td>
+<td align="left">
+0.0464
+</td>
+<td align="left">
+0.027
+</td>
+<td align="left">
+0.0204
+</td>
+<td align="left">
+0.078
+</td>
+</tr>
+<tr class="even">
+<td>
+k_Early
+</td>
+<td align="left">
+82
+</td>
+<td align="left">
+92
+</td>
+<td align="left">
+92
+</td>
+<td align="left">
+55
+</td>
+</tr>
+<tr class="odd">
+<td>
+k_Normal
+</td>
+<td align="left">
+62
+</td>
+<td align="left">
+62
+</td>
+<td align="left">
+42
+</td>
+<td align="left">
+38
+</td>
+</tr>
+<tr class="even">
+<td>
+k_Finals
+</td>
+<td align="left">
+72
+</td>
+<td align="left">
+33
+</td>
+<td align="left">
+80
+</td>
+<td align="left">
+43
+</td>
+</tr>
+<tr class="odd">
+<td>
+Margin2016
+</td>
+<td align="left">
+29.9
+</td>
+<td align="left">
+29.82
+</td>
+<td align="left">
+29.76
+</td>
+<td align="left">
+32.51
+</td>
+</tr>
+<tr class="even">
+<td>
+Predict2016
+</td>
+<td align="left">
+0.68
+</td>
+<td align="left">
+0.68
+</td>
+<td align="left">
+0.68
+</td>
+<td align="left">
+0.69
+</td>
+</tr>
+<tr class="odd">
+<td>
+Margin2017
+</td>
+<td align="left">
+29.09
+</td>
+<td align="left">
+28.94
+</td>
+<td align="left">
+29.23
+</td>
+<td align="left">
+30.18
+</td>
+</tr>
+<tr class="even">
+<td>
+Predict2017
+</td>
+<td align="left">
+0.61
+</td>
+<td align="left">
+0.63
+</td>
+<td align="left">
+0.61
+</td>
+<td align="left">
+0.62
+</td>
+</tr>
+</tbody>
+
+</table>
+<p>Based on the 2017 results I decided to go with the Margin model. Despite being optimised for margin accuracy it also performed the best at predicting results in 2017. This might suggest that the optimisation procedure is not ideal, but that is a problem for another day… Encouragingly, all three of my models outperform the defaults, which suggests that the results will be somewhere in the range of the The Arc, and I am more than happy with that.</p>
+<p>If you are interested in how I have done things I have made an <a href="https://github.com/lazappi/aflelo" title="aflelo"><code>aflelo</code></a> R package which you can install from GitHub and my analysis and predictions for each round will be available <a href="https://github.com/lazappi/afl-2018" title="afl2018">here</a>.</p>
+<p>Now that I have a model I can use it to make predictions about the 2018 season!</p>
+<section id="round-5" class="level1">
+<h1>Round 5</h1>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+
+<!-- ```{r summ_table}
+summ_table <- read_rds(here("static/data/afl2018/R5/summary_table.Rds"))
+summ_table
+``` -->
+<table class="table table-condensed">
+<thead>
+<tr>
+<th style="text-align:right;">
+Team
+</th>
+<th style="text-align:right;">
+Rating
+</th>
+<th style="text-align:right;">
+Change
+</th>
+<th style="text-align:right;">
+Points
+</th>
+<th style="text-align:right;">
+Percentage
+</th>
+<th style="text-align:right;">
+ProjRating
+</th>
+<th style="text-align:right;">
+ProjPoints
+</th>
+<th style="text-align:right;">
+Top2
+</th>
+<th style="text-align:right;">
+Top4
+</th>
+<th style="text-align:right;">
+Top8
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+Richmond
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6">1570</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">19</span>
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+130
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #add8e6">1555</span>
+</td>
+<td style="text-align:right;">
+56.5
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">28.2</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">49.8</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">78.9</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Sydney
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b1d9e7">1561</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-6</span>
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b2dae7">1546</span>
+</td>
+<td style="text-align:right;">
+56.9
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">27.9</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">49.4</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">79.0</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+GW Sydney
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b2dae7">1558</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">0</span>
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+140
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b3dbe7">1544</span>
+</td>
+<td style="text-align:right;">
+56.3
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb7c2">27.5</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb7c2">48.7</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">79.4</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+West Coast
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b3dbe7">1556</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">21</span>
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+136
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b2dae7">1545</span>
+</td>
+<td style="text-align:right;">
+54.7
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffc3cc">23.0</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffc0c9">42.7</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffbac4">74.9</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Hawthorn
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b4dbe8">1553</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">34</span>
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b6dce8">1539</span>
+</td>
+<td style="text-align:right;">
+56.3
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb9c3">26.9</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb8c2">48.2</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffb6c1">78.7</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Adelaide
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b7dde9">1546</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-44</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b8dde9">1535</span>
+</td>
+<td style="text-align:right;">
+50.7
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffdce1">13.3</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffd3da">29.7</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffc5cd">63.1</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Geelong
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #b9dee9">1542</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">10</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #badeea">1532</span>
+</td>
+<td style="text-align:right;">
+50.0
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffdfe4">12.0</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffd6dc">27.6</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffc6cf">61.3</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Collingwood
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #bfe0eb">1530</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">44</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #c0e1ec">1521</span>
+</td>
+<td style="text-align:right;">
+49.6
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffe2e6">11.1</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffd7dd">26.8</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffc8d1">59.1</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Port Adelaide
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #bfe0eb">1529</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-18</span>
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #c0e1eb">1522</span>
+</td>
+<td style="text-align:right;">
+51.9
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffd7dd">15.4</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffcfd6">32.5</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffc3cc">64.6</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+North Melbourne
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #cee7f0">1497</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">28</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+134
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #cde7f0">1499</span>
+</td>
+<td style="text-align:right;">
+43.2
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff2f4">4.7</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffecef">12.6</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffdce1">38.4</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Essendon
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #cfe8f0">1494</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">18</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #cde7f0">1499</span>
+</td>
+<td style="text-align:right;">
+40.7
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff7f8">3.0</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff2f4">8.5</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffe5e9">28.2</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Melbourne
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d0e8f0">1493</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-34</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+98
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d0e8f0">1495</span>
+</td>
+<td style="text-align:right;">
+43.1
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff5f6">3.8</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffeef1">11.3</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffdee3">35.5</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Western Bulldogs
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ddeff4">1463</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">6</span>
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #deeff5">1470</span>
+</td>
+<td style="text-align:right;">
+36.0
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffdfd">0.7</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffafb">3.2</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff0f3">16.3</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Fremantle
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e0f0f5">1458</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">0</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e1f0f5">1466</span>
+</td>
+<td style="text-align:right;">
+39.3
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffafb">1.8</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff6f7">5.9</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffeaed">23.3</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+St Kilda
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e9f4f8">1438</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-10</span>
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6f3f7">1456</span>
+</td>
+<td style="text-align:right;">
+29.4
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffefe">0.2</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffdfd">1.1</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffafa">6.4</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Gold Coast
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f3f9fb">1415</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-21</span>
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f4f9fb">1433</span>
+</td>
+<td style="text-align:right;">
+32.7
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffdfe">0.4</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffcfd">1.6</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff7f8">9.1</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Brisbane
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f7fbfc">1407</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-19</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f8fbfd">1426</span>
+</td>
+<td style="text-align:right;">
+24.3
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffefe">0.1</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffefe">0.3</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffdfd">2.7</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Carlton
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">1390</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">-28</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">1415</span>
+</td>
+<td style="text-align:right;">
+20.5
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.0</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">0.1</span>
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">1.2</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+</section>
+<section id="predictions" class="level2">
+<h2 class="anchored" data-anchor-id="predictions">Predictions</h2>
+<p><img src="predictions.png" class="img-fluid"></p>
+</section>
+<section id="projections" class="level2">
+<h2 class="anchored" data-anchor-id="projections">Projections</h2>
+<section id="ladder" class="level3">
+<h3 class="anchored" data-anchor-id="ladder">Ladder</h3>
+<p><img src="ladder.png" class="img-fluid"></p>
+</section>
+<section id="premiership-points" class="level3">
+<h3 class="anchored" data-anchor-id="premiership-points">Premiership points</h3>
+<p><img src="points.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="history" class="level2">
+<h2 class="anchored" data-anchor-id="history">History</h2>
+<p><img src="history.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2016-2023, Luke Zappia
+  </li>  
+</ul>
+    </div>   
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">License</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-blog - Publications</title>
+<title>lazappi - Publications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,17 +30,22 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../icon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -89,10 +94,44 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-20JH368VMR"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-20JH368VMR', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="lazappi - Publications">
+<meta property="og:site-name" content="lazappi">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:title" content="lazappi - Publications">
+<meta name="twitter:creator" content="@_lazappi_">
+<meta name="twitter:site" content="@_lazappi_">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed">
@@ -103,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">quarto-blog</span>
+    <span class="navbar-title">lazappi</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -130,16 +169,24 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lazappi"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/_lazappi_"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../posts/index.xml"><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -148,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Publications</h1>
                       </div>
   </div>
@@ -161,15 +208,20 @@ ul.task-list li input[type="checkbox"] {
     
     
     
+    
   </div>
+
+
 
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(22)</span></div><div class="category" data-category="PhD">PhD <span class="quarto-category-count">(1)</span></div><div class="category" data-category="atlas">atlas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="benchmarking">benchmarking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="best practices">best practices <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cancer">cancer <span class="quarto-category-count">(1)</span></div><div class="category" data-category="clustering">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="colorectal">colorectal <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data analysis">data analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="database">database <span class="quarto-category-count">(4)</span></div><div class="category" data-category="development">development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="drug toxicity">drug toxicity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gene length">gene length <span class="quarto-category-count">(1)</span></div><div class="category" data-category="immune">immune <span class="quarto-category-count">(1)</span></div><div class="category" data-category="integration">integration <span class="quarto-category-count">(2)</span></div><div class="category" data-category="kidney">kidney <span class="quarto-category-count">(5)</span></div><div class="category" data-category="long read">long read <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lung">lung <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mass spectrometry">mass spectrometry <span class="quarto-category-count">(1)</span></div><div class="category" data-category="methods">methods <span class="quarto-category-count">(5)</span></div><div class="category" data-category="mouse">mouse <span class="quarto-category-count">(4)</span></div><div class="category" data-category="multiomics">multiomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="nephron">nephron <span class="quarto-category-count">(3)</span></div><div class="category" data-category="organogenesis">organogenesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="organoids">organoids <span class="quarto-category-count">(3)</span></div><div class="category" data-category="pancreas">pancreas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="population">population <span class="quarto-category-count">(1)</span></div><div class="category" data-category="review">review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="rna-seq">rna-seq <span class="quarto-category-count">(18)</span></div><div class="category" data-category="simulation">simulation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="single-cell">single-cell <span class="quarto-category-count">(17)</span></div><div class="category" data-category="software">software <span class="quarto-category-count">(5)</span></div><div class="category" data-category="stem cell">stem cell <span class="quarto-category-count">(2)</span></div><div class="category" data-category="suspension culture">suspension culture <span class="quarto-category-count">(1)</span></div><div class="category" data-category="thesis">thesis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="variability">variability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="virus">virus <span class="quarto-category-count">(1)</span></div><div class="category" data-category="visualisation">visualisation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -180,27 +232,846 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="single-cell,rna-seq,integration,benchmarking" data-listing-date-sort="1590242520000" data-listing-file-modified-sort="1672843327679" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="0" data-categories="single-cell,multiomics,best practices,review" data-listing-date-sort="1680213600000" data-listing-file-modified-sort="1681119418453" data-listing-reading-time-sort="0.005">
 <div class="body">
-<a href="../publications/2020-luecken-scIB/index.html">
+<a href="../publications/2023-heumos-best-practices/index.html">
+<h3 class="no-anchor listing-title">
+Best practices for single-cell analysis across modalities
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('multiomics'); return false;">
+multiomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('best practices'); return false;">
+best practices
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('review'); return false;">
+review
+</div>
+</div>
+<a href="../publications/2023-heumos-best-practices/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2023-heumos-best-practices/index.html">
+<div class="listing-date">
+Mar 31, 2023
+</div>
+<div class="listing-author">
+Lukas Heumos, Anna C. Schaar, Christopher Lance, Anastasia Litinetskaya, Felix Drost, Luke Zappia, Malte D. Lücken, Daniel C. Strobl, Juan Henao, Fabiola Curion, Single-cell Best Practices Consortium, Herbert B. Schiller, Fabian J. Theis
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="single-cell,rna-seq,mouse,pancreas,atlas" data-listing-date-sort="1671663600000" data-listing-file-modified-sort="1679752128378" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2022-hrovatin-MIA/index.html">
+<h3 class="no-anchor listing-title">
+Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mouse'); return false;">
+mouse
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('pancreas'); return false;">
+pancreas
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('atlas'); return false;">
+atlas
+</div>
+</div>
+<a href="../publications/2022-hrovatin-MIA/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2022-hrovatin-MIA/index.html">
+<div class="listing-date">
+Dec 22, 2022
+</div>
+<div class="listing-author">
+Karin Hrovatin, Aimée Bastidas-Ponce, Mostafa Bakhti, Luke Zappia, Maren Büttner, Ciro Sallino, Michael Sterr, Anika Böttcher, Adriana Migliorini, Heiko Lickert, Fabian J Theis
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="single-cell,rna-seq,methods,integration,software" data-listing-date-sort="1669676400000" data-listing-file-modified-sort="1679752158545" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2022-deDonno-scPoli/index.html">
+<h3 class="no-anchor listing-title">
+Population-level integration of single-cell datasets enables multi-scale analysis across samples
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('methods'); return false;">
+methods
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('integration'); return false;">
+integration
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('software'); return false;">
+software
+</div>
+</div>
+<a href="../publications/2022-deDonno-scPoli/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2022-deDonno-scPoli/index.html">
+<div class="listing-date">
+Nov 29, 2022
+</div>
+<div class="listing-author">
+Carlo De Donno, Soroor Hediyeh-Zadeh, Marco Wagenstetter, Amir Ali Moinfar, Luke Zappia, Mohammad Lotfollahi, Fabian J Theis
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="single-cell,rna-seq,lung,atlas" data-listing-date-sort="1646953200000" data-listing-file-modified-sort="1679751208828" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2022-sikkema-HLCA/index.html">
+<h3 class="no-anchor listing-title">
+An integrated cell atlas of the human lung in health and disease
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('lung'); return false;">
+lung
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('atlas'); return false;">
+atlas
+</div>
+</div>
+<a href="../publications/2022-sikkema-HLCA/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2022-sikkema-HLCA/index.html">
+<div class="listing-date">
+Mar 11, 2022
+</div>
+<div class="listing-author">
+Lisa Sikkema, Daniel C Strobl, Luke Zappia, Elo Madissoon, Nikolay S Markov, Laure-Emmanuelle Zaragosi, Meshal Ansari, Marie-Jeanne Arguel, Leonie Apperloo, Christophe Becavin, Marijn Berg, Evgeny Chichelnitskiy, Mei-I Chung, Antoine Collin, Aurore C A Gay, Baharak Hooshiar Kashani, Manu Jain, Theodore Kapellos, Tessa M Kole, Christoph H Mayr, Michael von Papen, Lance Peter, Ciro Ramirez-Suastegui, Janine Schniering, Chase J Taylor, Thomas Walzthoeni, Chuan Xu, Linh T Bui, Carlo de Donno, Leander Dony, Minzhe Guo, Austin J Gutierrez, Lukas Heumos, Ni Huang, Ignacio L Ibarra, Nathan D Jackson, Preetish Kadur Lakshminarasimha Murthy, Mohammad Lotfollahi, Tracy Tabib, Carlos Talavera-Lopez, Kyle J Travaglini, Anna Wilbrey-Clark, Kaylee B Worlock, Masahiro Yoshida, Tushar J Desai, Oliver Eickelberg, Christine Falk, Naftali Kaminski, Mark A Krasnow, Robert Lafyatis, Marko Z Nikoli, Joseph E Powell, Jayaraj Rajagopal, Orit Rozenblatt-Rosen, Max A Seibold, Dean Sheppard, Douglas P Shepherd, Sarah A Teichmann, Alexander M Tsankov, Jeffrey Whitsett, Yan Xu, Nicholas E Banovich, Pascal Barbry, Thu E Duong, Kerstin B Meyer, Jonathan A Kropski, Dana Pe’er, Herbert B Schiller, Purushothama Rao Tata, Joachim L Schultze, Alexander V Misharin, Martijn C Nawijn, Malte D Luecken, Fabian J Theis
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="single-cell,rna-seq,integration,benchmarking" data-listing-date-sort="1640214000000" data-listing-file-modified-sort="1679750135259" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2021-luecken-scIB/index.html">
 <h3 class="no-anchor listing-title">
 Benchmarking atlas-level data integration in single-cell genomics
 </h3>
 <div class="listing-subtitle">
 
 </div>
-<div class="listing-description">
-<p>Cell atlases often include samples that span locations, labs, and conditions, leading to complex, nested batch effects in data. Thus, joint analysis of atlas datasets requires reliable data integration. Choosing a data integration method is a challenge due to the difficulty of defining integration success. Here, we benchmark 38 method and preprocessing combinations on 77 batches of gene expression, chromatin accessibility, and simulation data from 23 publications, altogether representing &gt;1.2 million cells distributed in nine atlas-level integration tasks. Our integration tasks span several common sources of variation such as individuals, species, and experimental labs. We evaluate methods according to scalability, usability, and their ability to remove batch effects while retaining biological variation. Using 14 evaluation metrics, we find that highly variable gene selection improves the performance of data integration methods, whereas scaling pushes methods to prioritize batch removal over conservation of biological variation. Overall, BBKNN, Scanorama, and scVI perform well, particularly on complex integration tasks; Seurat v3 performs well on simpler tasks with distinct biological signals; and methods that prioritize batch removal perform best for ATAC-seq data integration. Our freely available reproducible python module can be used to identify optimal data integration methods for new data, benchmark new methods, and improve method development.</p>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('integration'); return false;">
+integration
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('benchmarking'); return false;">
+benchmarking
+</div>
+</div>
+<a href="../publications/2021-luecken-scIB/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2021-luecken-scIB/index.html">
+<div class="listing-date">
+Dec 23, 2021
+</div>
+<div class="listing-author">
+Malte D Luecken, Maren Büttner, Kridsadakorn Chaichoompu, Anna Danese, Marta Interlandi, Michaela F Mueller, Daniel C Strobl, Luke Zappia, Martin Dugas, Maria Colomé-Tatché, Fabian J Theis
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="single-cell,rna-seq,simulation,population,software,methods" data-listing-date-sort="1639522800000" data-listing-file-modified-sort="1679749806372" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2021-azodi-splatPop/index.html">
+<h3 class="no-anchor listing-title">
+splatPop: simulating population scale single-cell RNA sequencing data
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('simulation'); return false;">
+simulation
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('population'); return false;">
+population
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('software'); return false;">
+software
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('methods'); return false;">
+methods
+</div>
+</div>
+<a href="../publications/2021-azodi-splatPop/index.html"> </a>
+</div>
 <div class="metadata">
-<a href="../publications/2020-luecken-scIB/index.html">
+<a href="../publications/2021-azodi-splatPop/index.html">
 <div class="listing-date">
-May 23, 2020
+Dec 15, 2021
 </div>
 <div class="listing-author">
-Malte D Luecken, Maren Buttner, Kridsadakorn Chaichoompu, Anna Danese, Marta Interlandi, Michaela F Mueller, Daniel C Strobl, <strong>Luke Zappia</strong>, Martin Dugas, Maria Colome-Tatche, Fabian J Theis
+Christina B Azodi, Luke Zappia, Alicia Oshlack, Davis J McCarthy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="single-cell,rna-seq,database" data-listing-date-sort="1635458400000" data-listing-file-modified-sort="1679749788200" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2021-zappia-1000-tools/index.html">
+<h3 class="no-anchor listing-title">
+Over 1000 tools reveal trends in the single-cell RNA-seq analysis landscape
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('database'); return false;">
+database
+</div>
+</div>
+<a href="../publications/2021-zappia-1000-tools/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2021-zappia-1000-tools/index.html">
+<div class="listing-date">
+Oct 29, 2021
+</div>
+<div class="listing-author">
+Luke Zappia, Fabian J Theis
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="single-cell,rna-seq,database,website" data-listing-date-sort="1629842400000" data-listing-file-modified-sort="1679749798157" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2021-fischer-sfaira/index.html">
+<h3 class="no-anchor listing-title">
+Sfaira accelerates data and model reuse in single cell genomics
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('database'); return false;">
+database
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('website'); return false;">
+website
+</div>
+</div>
+<a href="../publications/2021-fischer-sfaira/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2021-fischer-sfaira/index.html">
+<div class="listing-date">
+Aug 25, 2021
+</div>
+<div class="listing-author">
+David S Fischer, Leander Dony, Martin König, Abdul Moeed, Luke Zappia, Lukas Heumos, Sophie Tritschler, Olle Holmberg, Hananeh Aliee, Fabian J Theis
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="mass spectrometry,software" data-listing-date-sort="1594072800000" data-listing-file-modified-sort="1677417935649" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2020-leeming-HiTIME/index.html">
+<h3 class="no-anchor listing-title">
+HiTIME: An efficient model-selection approach for the detection of unknown drug metabolites in LC-MS data
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('mass spectrometry'); return false;">
+mass spectrometry
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('software'); return false;">
+software
+</div>
+</div>
+<a href="../publications/2020-leeming-HiTIME/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2020-leeming-HiTIME/index.html">
+<div class="listing-date">
+Jul 7, 2020
+</div>
+<div class="listing-author">
+Michael G Leeming, Andrew P Isaac, Luke Zappia, Richard A J O’Hair, William A Donald, Bernard J Pope
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="data analysis,long read,database,website" data-listing-date-sort="1580511600000" data-listing-file-modified-sort="1677417725675" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2020-amarasinghe-long-read-tools/index.html">
+<h3 class="no-anchor listing-title">
+Opportunities and challenges in long-read sequencing data analysis
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('data analysis'); return false;">
+data analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('long read'); return false;">
+long read
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('database'); return false;">
+database
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('website'); return false;">
+website
+</div>
+</div>
+<a href="../publications/2020-amarasinghe-long-read-tools/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2020-amarasinghe-long-read-tools/index.html">
+<div class="listing-date">
+Feb 1, 2020
+</div>
+<div class="listing-author">
+Shanika L Amarasinghe, Shian Su, Xueyi Dong, Luke Zappia, Matthew E Ritchie, Quentin Gouil
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="single-cell,rna-seq,methods,thesis,PhD" data-listing-date-sort="1565560800000" data-listing-file-modified-sort="1677416380467" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2019-zappia-thesis/index.html">
+<h3 class="no-anchor listing-title">
+Tools and techniques for single-cell RNA sequencing data
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('methods'); return false;">
+methods
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('thesis'); return false;">
+thesis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('PhD'); return false;">
+PhD
+</div>
+</div>
+<a href="../publications/2019-zappia-thesis/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2019-zappia-thesis/index.html">
+<div class="listing-date">
+Aug 12, 2019
+</div>
+<div class="listing-author">
+Luke Zappia
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="organogenesis,single-cell,rna-seq,mouse,kidney,development,nephron" data-listing-date-sort="1559340000000" data-listing-file-modified-sort="1677415657567" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2019-combes-mouse-kidney/index.html">
+<h3 class="no-anchor listing-title">
+Single cell analysis of the developing mouse kidney provides deeper insight into marker gene expression and ligand-receptor crosstalk
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('organogenesis'); return false;">
+organogenesis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mouse'); return false;">
+mouse
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kidney'); return false;">
+kidney
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('development'); return false;">
+development
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('nephron'); return false;">
+nephron
+</div>
+</div>
+<a href="../publications/2019-combes-mouse-kidney/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2019-combes-mouse-kidney/index.html">
+<div class="listing-date">
+Jun 1, 2019
+</div>
+<div class="listing-author">
+Alexander N Combes, Belinda Phipson, Kynan T Lawlor, Aude Dorison, Ralph Patrick, Luke Zappia, Richard P Harvey, Alicia Oshlack, Melissa H Little
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="nephron,stem cell,suspension culture,single-cell,rna-seq,kidney,organoids" data-listing-date-sort="1551394800000" data-listing-file-modified-sort="1677415652051" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2019-kumar-micro-organoids/index.html">
+<h3 class="no-anchor listing-title">
+Kidney micro-organoids in suspension culture as a scalable source of human pluripotent stem cell-derived kidney cells
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('nephron'); return false;">
+nephron
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('stem cell'); return false;">
+stem cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('suspension culture'); return false;">
+suspension culture
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kidney'); return false;">
+kidney
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('organoids'); return false;">
+organoids
+</div>
+</div>
+<a href="../publications/2019-kumar-micro-organoids/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2019-kumar-micro-organoids/index.html">
+<div class="listing-date">
+Mar 1, 2019
+</div>
+<div class="listing-author">
+Santhosh V Kumar, Pei X Er, Kynan T Lawlor, Ali Motazedian, Michelle Scurr, Irene Ghobrial, Alexander N Combes, Luke Zappia, Alicia Oshlack, Edouard G Stanley, Melissa H Little
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="rna-seq,mouse,virus,immune" data-listing-date-sort="1546297200000" data-listing-file-modified-sort="1677418258093" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2019-ma-influenza/index.html">
+<h3 class="no-anchor listing-title">
+Unique transcriptional architecture in airway epithelial cells and macrophages shapes distinct responses following influenza virus infection ex vivo
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mouse'); return false;">
+mouse
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('virus'); return false;">
+virus
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('immune'); return false;">
+immune
+</div>
+</div>
+<a href="../publications/2019-ma-influenza/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2019-ma-influenza/index.html">
+<div class="listing-date">
+Jan 1, 2019
+</div>
+<div class="listing-author">
+Joel Z Ma, Wy Ching Ng, Luke Zappia, Linden J Gearing, Moshe Olshansky, Kym Pham, Karey Cheong, Arthur Hsu, Stephen J Turner, Odilia Wijburg, Sarah L Londrigan, Andrew G Brooks, Patrick C Reading
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="single-cell,rna-seq,mouse,kidney,nephron" data-listing-date-sort="1546297200000" data-listing-file-modified-sort="1677415642508" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2019-lawlor-nephron-commitment/index.html">
+<h3 class="no-anchor listing-title">
+Nephron progenitor commitment is a stochastic process influenced by cell migration
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mouse'); return false;">
+mouse
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kidney'); return false;">
+kidney
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('nephron'); return false;">
+nephron
+</div>
+</div>
+<a href="../publications/2019-lawlor-nephron-commitment/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2019-lawlor-nephron-commitment/index.html">
+<div class="listing-date">
+Jan 1, 2019
+</div>
+<div class="listing-author">
+Kynan T Lawlor, Luke Zappia, James Lefevre, Joo-Seop Park, Nicholas A Hamilton, Alicia Oshlack, Melissa H Little, Alexander Nicholas Combes
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="single-cell,rna-seq,kidney,organoids" data-listing-date-sort="1546297200000" data-listing-file-modified-sort="1677415662459" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2019-combes-kidney-organoids/index.html">
+<h3 class="no-anchor listing-title">
+Single-cell analysis reveals congruence between kidney organoids and human fetal kidney
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kidney'); return false;">
+kidney
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('organoids'); return false;">
+organoids
+</div>
+</div>
+<a href="../publications/2019-combes-kidney-organoids/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2019-combes-kidney-organoids/index.html">
+<div class="listing-date">
+Jan 1, 2019
+</div>
+<div class="listing-author">
+Alexander N Combes, Luke Zappia, Pei Xuan Er, Alicia Oshlack, Melissa H Little
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="kidney,organoids,variability,rna-seq,single-cell" data-listing-date-sort="1543618800000" data-listing-file-modified-sort="1677415682063" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2018-phipson-variability/index.html">
+<h3 class="no-anchor listing-title">
+Evaluation of variability in human kidney organoids
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('kidney'); return false;">
+kidney
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('organoids'); return false;">
+organoids
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('variability'); return false;">
+variability
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+</div>
+<a href="../publications/2018-phipson-variability/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2018-phipson-variability/index.html">
+<div class="listing-date">
+Dec 1, 2018
+</div>
+<div class="listing-author">
+Belinda Phipson, Pei X Er, Alexander N Combes, Thomas A Forbes, Sara E Howden, Luke Zappia, Hsan-Jan Yen, Kynan T Lawlor, Lorna J Hale, Jane Sun, Ernst Wolvetang, Minoru Takasato, Alicia Oshlack, Melissa H Little
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="methods,visualisation,clustering,software" data-listing-date-sort="1530396000000" data-listing-file-modified-sort="1677415675755" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2018-zappia-clustree/index.html">
+<h3 class="no-anchor listing-title">
+Clustering trees: a visualization for evaluating clusterings at multiple resolutions
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('methods'); return false;">
+methods
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('visualisation'); return false;">
+visualisation
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('clustering'); return false;">
+clustering
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('software'); return false;">
+software
+</div>
+</div>
+<a href="../publications/2018-zappia-clustree/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2018-zappia-clustree/index.html">
+<div class="listing-date">
+Jul 1, 2018
+</div>
+<div class="listing-author">
+Luke Zappia, Alicia Oshlack
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="single-cell,rna-seq,database" data-listing-date-sort="1527804000000" data-listing-file-modified-sort="1677415669401" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2018-zappia-scRNAtools/index.html">
+<h3 class="no-anchor listing-title">
+Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('database'); return false;">
+database
+</div>
+</div>
+<a href="../publications/2018-zappia-scRNAtools/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2018-zappia-scRNAtools/index.html">
+<div class="listing-date">
+Jun 1, 2018
+</div>
+<div class="listing-author">
+Luke Zappia, Belinda Phipson, Alicia Oshlack
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="single-cell,rna-seq,methods,software,simulation" data-listing-date-sort="1504216800000" data-listing-file-modified-sort="1677415687587" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2017-zappia-splatter/index.html">
+<h3 class="no-anchor listing-title">
+Splatter: simulation of single-cell RNA sequencing data
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('methods'); return false;">
+methods
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('software'); return false;">
+software
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('simulation'); return false;">
+simulation
+</div>
+</div>
+<a href="../publications/2017-zappia-splatter/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2017-zappia-splatter/index.html">
+<div class="listing-date">
+Sep 1, 2017
+</div>
+<div class="listing-author">
+Luke Zappia, Belinda Phipson, Alicia Oshlack
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="single-cell,rna-seq,gene length" data-listing-date-sort="1490997600000" data-listing-file-modified-sort="1677413032546" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2017-phipson-gene-length/index.html">
+<h3 class="no-anchor listing-title">
+Gene length and detection bias in single cell RNA sequencing protocols
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('single-cell'); return false;">
+single-cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('gene length'); return false;">
+gene length
+</div>
+</div>
+<a href="../publications/2017-phipson-gene-length/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2017-phipson-gene-length/index.html">
+<div class="listing-date">
+Apr 1, 2017
+</div>
+<div class="listing-author">
+Belinda Phipson, Luke Zappia, Alicia Oshlack
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="drug toxicity,cancer,colorectal,stem cell,rna-seq" data-listing-date-sort="1467324000000" data-listing-file-modified-sort="1677415696900" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="../publications/2016-grillet-colorectal-CTCs/index.html">
+<h3 class="no-anchor listing-title">
+Circulating tumour cells from patients with colorectal cancer have cancer stem cell hallmarks in ex vivo culture
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('drug toxicity'); return false;">
+drug toxicity
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cancer'); return false;">
+cancer
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('colorectal'); return false;">
+colorectal
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('stem cell'); return false;">
+stem cell
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rna-seq'); return false;">
+rna-seq
+</div>
+</div>
+<a href="../publications/2016-grillet-colorectal-CTCs/index.html"> </a>
+</div>
+<div class="metadata">
+<a href="../publications/2016-grillet-colorectal-CTCs/index.html">
+<div class="listing-date">
+Jul 1, 2016
+</div>
+<div class="listing-author">
+Fanny Grillet, Elsa Bayet, Olivia Villeronce, Luke Zappia, Ebba Louise Lagerqvist, Sebastian Lunke, Emmanuelle Charafe-Jauffret, Kym Pham, Christina Molck, Nathalie Rolland, Jean François Bourgaux, Michel Prudhomme, Claire Philippe, Sophie Bravo, Jean Christophe Boyer, Lucile Canterel-Thouennon, Graham Roy Taylor, Arthur Hsu, Jean Marc Pascussi, Frédéric Hollande, Julie Pannequin
 </div>
 </a>
 </div>
@@ -230,6 +1101,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -344,6 +1330,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2016-2023, Luke Zappia
+  </li>  
+</ul>
+    </div>   
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../license.html">License</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

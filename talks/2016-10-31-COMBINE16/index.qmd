@@ -1,6 +1,6 @@
 ---
 title: Simplifying simulation of single-cell RNA-seq
-summary: Presentation at the 2016 COMBINE student symposium introducing the Splatter package and the Splat scRNA-seq simulation model
+description: Presentation at the 2016 COMBINE student symposium introducing the Splatter package and the Splat scRNA-seq simulation model
 authors:
  - "**Luke Zappia**"
  - Belinda Phipson

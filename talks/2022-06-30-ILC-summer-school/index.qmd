@@ -1,6 +1,6 @@
 ---
 title: Successful scRNA-seq analysis
-summary: Presentation at the ILC Summer School 2022 on planning a successful scRNA-seq experiment
+description: Presentation at the ILC Summer School 2022 on planning a successful scRNA-seq experiment
 authors:
  - "**Luke Zappia**"
 event:
@@ -9,7 +9,7 @@ event:
 abstract: |
   A brief introduction to how single-cell technologies work, how to plan a successful experiment (from an analyst's point of view), the steps in a standard scRNA-seq analysis and touching on some more advanced topics.
   Presented at the ILC Summer School 2022.
-categories: ["category1", "category2"]
+categories: ["single-cell", "rna-seq", "analysis", "best practices"]
 date: 2022-06-30T00:00:00+00:00
 links:
   slides: https://speakerdeck.com/lazappi/successful-scrna-seq-analysis

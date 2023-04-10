@@ -1,6 +1,6 @@
 ---
 title: Building a clustering tree
-summary: Joining the Dots Visualisation Symposium talk describing the clustering tree visualisation algorithm
+description: Joining the Dots Visualisation Symposium talk describing the clustering tree visualisation algorithm
 authors:
  - "**Luke Zappia**"
 event:

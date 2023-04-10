@@ -1,6 +1,6 @@
 ---
 title: Tools, simulations and trees for scRNA-seq
-summary: Presentation at the Institute of Computational Biology where I described my PhD projects
+description: Presentation at the Institute of Computational Biology where I described my PhD projects
 authors:
  - "**Luke Zappia**"
 event:

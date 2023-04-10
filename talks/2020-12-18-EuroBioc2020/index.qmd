@@ -1,6 +1,6 @@
 ---
 title: Interoperability between Bioconductor and Python for scRNA-seq analysis
-summary: Invited keynote at the European Bioconductor meeting 2020
+description: Invited keynote at the European Bioconductor meeting 2020
 authors:
  - "**Luke Zappia**"
 event:

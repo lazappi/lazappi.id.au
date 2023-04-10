@@ -1,6 +1,6 @@
 ---
 title: "clustree: producing clustering trees using ggraph"
-summary: Presentation at the userR! 2018 conference introducing the clustree package and demonstrating how it makes use of the ggraph package
+description: Presentation at the userR! 2018 conference introducing the clustree package and demonstrating how it makes use of the ggraph package
 authors:
  - "**Luke Zappia**"
 event:

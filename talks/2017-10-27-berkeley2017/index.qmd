@@ -1,6 +1,6 @@
 ---
 title: Single cells, simulation and kidneys in a dish
-summary: Presentation at the Berkeley Statistics and Genomics Seminar describing my PhD projects
+description: Presentation at the Berkeley Statistics and Genomics Seminar describing my PhD projects
 authors:
  - "**Luke Zappia**"
 event:

@@ -1,6 +1,6 @@
 ---
 title: Tools and techniques for single-cell RNA sequencing data
-summary: My PhD completion seminar
+description: My PhD completion seminar
 authors:
  - "**Luke Zappia**"
 event:

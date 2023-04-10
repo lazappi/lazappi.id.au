@@ -1,6 +1,6 @@
 ---
 title: Clustering trees for visualising scRNA-seq data
-summary: Selected talk at the Oz Single Cells 2018 conference where I presented clustering trees and the clustree package
+description: Selected talk at the Oz Single Cells 2018 conference where I presented clustering trees and the clustree package
 authors:
  - "**Luke Zappia**"
  - Alicia Oshlack

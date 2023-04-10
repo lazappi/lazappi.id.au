@@ -1,6 +1,6 @@
 ---
 title: Using clustering trees to visualise scRNA-seq data
-summary: Selected talk at the Genome Informatics 2018 conference where I described how clustering trees can be used with scRNA-seq data
+description: Selected talk at the Genome Informatics 2018 conference where I described how clustering trees can be used with scRNA-seq data
 authors:
  - "**Luke Zappia**"
  - Alicia Oshlack

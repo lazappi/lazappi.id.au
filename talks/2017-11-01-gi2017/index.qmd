@@ -1,6 +1,6 @@
 ---
 title: Simulation and analysis tools for single-cell RNA sequencing data
-summary: Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database
+description: Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database
 authors:
  - "**Luke Zappia**"
  - Belinda Phipson

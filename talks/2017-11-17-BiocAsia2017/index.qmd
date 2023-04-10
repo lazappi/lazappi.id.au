@@ -1,6 +1,6 @@
 ---
 title: Splatter, a package for simulating single-cell RNA sequencing data
-summary: Selected talk at the 2017 Bioconductor Asia Meeting where I presented technical details of the Splatter package
+description: Selected talk at the 2017 Bioconductor Asia Meeting where I presented technical details of the Splatter package
 authors:
  - "**Luke Zappia**"
 event:

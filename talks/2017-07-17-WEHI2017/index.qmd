@@ -1,6 +1,6 @@
 ---
 title: Single-cells, simulation and kidneys in a dish
-summary: WEHI Bioinformatics seminar series presenting my PhD projects
+description: WEHI Bioinformatics seminar series presenting my PhD projects
 authors:
  - "**Luke Zappia**"
 event:

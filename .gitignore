@@ -1,9 +1,0 @@
-# RStudio
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-
-# Hugo
-resources/
-public/

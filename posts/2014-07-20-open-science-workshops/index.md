@@ -1,6 +1,6 @@
 ---
 title: "Open science workshops"
-abstract: "This Saturday I attended the first workshop run by Open Science Workshops at the Inspire9 collaborative workspace."
+description: "This Saturday I attended the first workshop run by Open Science Workshops at the Inspire9 collaborative workspace"
 authors: ["**Luke Zappia**"]
 categories: ["open science", "workshop", "collaboration"]
 date: 2014-07-20

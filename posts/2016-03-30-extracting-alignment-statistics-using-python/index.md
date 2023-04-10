@@ -1,6 +1,6 @@
 ---
 title: "Extracting alignment statistics using Python"
-abstract: "A Python script for extracting alignment statistics from BAM files."
+description: "A Python script for extracting alignment statistics from BAM files"
 authors: ["**Luke Zappia**"]
 categories: ["python", "alignment", "statistics"]
 date: 2016-03-30

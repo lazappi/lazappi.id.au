@@ -1,6 +1,6 @@
 ---
 title: "Caching blogdown posts"
-abstract: "Description of how I cache blogdown Markdown files."
+description: "Description of how I cache blogdown Markdown files"
 authors: ["Luke Zappia"]
 categories: ["blogdown", "R"]
 date: 2020-04-09T13:41:09+02:00

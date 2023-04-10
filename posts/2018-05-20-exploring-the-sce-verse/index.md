@@ -1,8 +1,8 @@
 ---
 title: "Exploring the SCE-verse"
-abstract: "Analysis of packages that use the SingleCellExperiment object"
+description: "Analysis of packages that use the SingleCellExperiment object"
 authors: ["**Luke Zappia**"]
-categories: ["Bioconductor", "R", "scRNA-seq", "SingleCellExperiment", "analysis"]
+categories: ["bioconductor", "R", "scrna-seq", "SingleCellExperiment", "analysis"]
 date: 2018-06-09
 ---
 

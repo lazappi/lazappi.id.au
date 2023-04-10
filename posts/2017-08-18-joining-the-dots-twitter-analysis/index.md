@@ -1,8 +1,8 @@
 ---
 title: "Joining the Dots Twitter analysis"
-abstract: "Analysis of Twitter activity at the Joining the Dots visualisation symposium."
+description: "Analysis of Twitter activity at the Joining the Dots visualisation symposium"
 authors: ["**Luke Zappia**"]
-categories: ["conference", "visualisation", "Twitter"]
+categories: ["conference", "visualisation", "twitter"]
 date: 2017-08-18
 image: featured.png
 image-alt: Graph of connections between Twitter users during the Joining the Dots visualisation symposium

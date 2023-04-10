@@ -1,6 +1,6 @@
 ---
 title: "My Markdown thesis"
-abstract: "A description of the setup for building my Masters thesis using Markdown and Pandoc."
+description: "A description of the setup for building my Masters thesis using Markdown and Pandoc"
 authors: ["**Luke Zappia**"]
 categories: ["writing", "markdown", "thesis", "latex"]
 date: 2015-09-13

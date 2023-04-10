@@ -1,8 +1,8 @@
 ---
 title: "Building a clustering tree"
-abstract: "Introductory post to building a clustering tree"
+description: "Introductory post to building a clustering tree"
 authors: ["**Luke Zappia**"]
-categories: ["R", "scRNA-seq", "clustering tree"]
+categories: ["R", "scrna-seq", "clustering tree"]
 date: 2017-07-19
 image: featured.png
 image-alt: Image of a clustering tree visualisation

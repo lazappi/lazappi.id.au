@@ -1,6 +1,6 @@
 ---
 title: triple j's Requestival
-abstract: "Analysis of the songs played during triple j's Requestival event"
+description: "Analysis of the songs played during triple j's Requestival event"
 authors: ["**Luke Zappia**"]
 categories: ["analysis", "music"]
 date: 2020-07-11

@@ -1,8 +1,8 @@
 ---
 title: "Bioconductor 3.12 wrap-up"
-abstract: "My wrap-up of the Bioconductor 3.12 release."
+description: "My wrap-up of the Bioconductor 3.12 release"
 authors: ["**Luke Zappia**"]
-categories: ["Bioconductor", "R"]
+categories: ["bioconductor", "R"]
 date: 2020-10-30
 ---
 

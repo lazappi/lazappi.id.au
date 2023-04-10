@@ -1,8 +1,8 @@
 ---
 title: "Gantt charts in R"
-abstract: "Steps for creating Gantt charts in R"
+description: "Steps for creating Gantt charts in R"
 authors: ["**Luke Zappia**"]
-categories: ["R", "project management", "gantt chart", "Excel"]
+categories: ["R", "project management", "gantt chart", "excel"]
 date: 2016-06-13
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Blogdown!"
-abstract: "My new Blogdown blog."
+description: "My new Blogdown blog"
 authors: ["**Luke Zappia**"]
 categories: ["blogdown"]
 date: 2018-03-24

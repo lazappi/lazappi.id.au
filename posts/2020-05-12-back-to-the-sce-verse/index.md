@@ -1,9 +1,8 @@
 ---
 title: "Back to the SCE-verse!"
-subtitle: ""
-summary: "Updated analysis of packages that use the SingleCellExperiment object in 2020"
+description: "Updated analysis of packages that use the SingleCellExperiment object in 2020"
 authors: ["**Luke Zappia**"]
-categories: ["Bioconductor", "R", "scRNA-seq", "SingleCellExperiment", "analysis"]
+categories: ["bioconductor", "R", "scrna-seq", "SingleCellExperiment", "analysis"]
 date: 2020-05-12
 ---
 

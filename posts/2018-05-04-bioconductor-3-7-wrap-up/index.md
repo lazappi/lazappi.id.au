@@ -1,8 +1,8 @@
 ---
 title: "Bioconductor 3.7 wrap-up"
-abstract: "A wrap-up of the Bioconductor 3.7 release."
+description: "A wrap-up of the Bioconductor 3.7 release"
 authors: ["**Luke Zappia**"]
-categories: ["Bioconductor", "R", "scRNA-seq"]
+categories: ["bioconductor", "R", "scrna-seq"]
 date: 2018-05-04
 ---
 

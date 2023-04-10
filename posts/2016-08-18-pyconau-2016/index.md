@@ -1,8 +1,8 @@
 ---
 title: "PyConAU 2016"
-abstract: "My thoughts after attending PyConAU 2016."
+description: "My thoughts after attending PyConAU 2016"
 authors: ["**Luke Zappia**"]
-categories: ["Python", "conference", "thoughts"]
+categories: ["python", "conference", "thoughts"]
 date: 2016-08-18
 ---
 

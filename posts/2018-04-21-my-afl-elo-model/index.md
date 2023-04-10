@@ -1,6 +1,6 @@
 ---
 title: "My AFL-Elo model"
-abstract: "My Elo model for predicting AFL games."
+description: "My Elo model for predicting AFL games"
 authors: ["**Luke Zappia**"]
 categories: ["afl", "elo", "sport"]
 date: 2018-04-21

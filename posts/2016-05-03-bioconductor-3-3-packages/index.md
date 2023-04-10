@@ -1,8 +1,8 @@
 ---
 title: "Bioconductor 3.3 packages"
-abstract: "Wrap up of new packages in the Bioconductor 3.3 release."
+description: "Wrap up of new packages in the Bioconductor 3.3 release"
 authors: ["**Luke Zappia**"]
-categories: ["R", "Bioconductor"]
+categories: ["R", "bioconductor"]
 date: 2016-05-03
 ---
 

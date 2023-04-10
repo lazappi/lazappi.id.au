@@ -6,7 +6,7 @@
 
 This is the repository for my personal blog available at https://lazappi.id.au.
 
-The blog was created using the [Quarto](https://quarto.org).
+The blog was created using [Quarto](https://quarto.org).
 
 ## License
 

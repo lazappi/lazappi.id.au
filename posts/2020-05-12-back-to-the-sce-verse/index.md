@@ -135,7 +135,7 @@ ggplot(revdeps, aes(x = Repo, fill = Repo)) +
     theme_minimal()
 ```
 
-<img src="index_files/figure-html/repos-1.png" width="672" />
+![](repos-1.png)
 
 There are only 2 packages
 from CRAN, which are the same two we saw last time. These are
@@ -149,7 +149,6 @@ What dependency do they have?
 
 What about the types of dependencies?
 
-
 ```r
 edges %>%
     filter(dependency == "SingleCellExperiment") %>%
@@ -159,7 +158,7 @@ edges %>%
     theme_minimal()
 ```
 
-<img src="index_files/figure-html/dep-types-1.png" width="672" />
+![](dep-types-1.png)
 
 Most of the packages either "import" or "depend" on **{SingleCellExperiment}**.
 This is unsurprising given that is a core data structure. I suspect most of the
@@ -190,7 +189,7 @@ ggplot(bioc_views, aes(x = fct_rev(biocViews))) +
     theme(axis.title.y = element_blank())
 ```
 
-<img src="index_files/figure-html/biocViews-1.png" width="672" />
+![](bioViews-1.png)
 
 Many of the most common biocViews are fairly general terms but there is a set
 that stands out as being specific to scRNA-seq data including "SingleCell",
@@ -223,7 +222,7 @@ ggraph(graph, layout = "fr") +
     theme_graph()
 ```
 
-<img src="index_files/figure-html/graph-all-1.png" width="672" />
+![](graph-all-1.png)
 
 A lot of these packages have no other dependencies in this community except for
 **{SingleCellExperiment}**. While I'm sure that they are very useful they aren't
@@ -248,7 +247,7 @@ ggraph(graph_deg2, layout = "fr") +
     theme_graph()
 ```
 
-<img src="index_files/figure-html/graph-deg2-1.png" width="672" />
+![](graph-deg2-1.png)
 
 That's better but it's still pretty crowded. Let's see if we can pick out the
 most important nodes using a centrality measure.
@@ -271,7 +270,7 @@ ggraph(graph_central, layout = "fr") +
     theme_graph()
 ```
 
-<img src="index_files/figure-html/graph-central-1.png" width="672" />
+![](graph-central-1.png)
 
 No surprises there! This has picked out what are probably the most used and
 influential R packages for scRNA-seq analysis. The central Bioconductor packages
@@ -303,7 +302,7 @@ ggraph(graph_central, layout = "fr") +
     theme_graph()
 ```
 
-<img src="index_files/figure-html/graph-central2-1.png" width="672" />
+![](graph-central2-1.png)
 
 This has added a few more central packages: **{iSEE}** which is a Shiny app for
 interacting with **{SingleCellExperiment}** objects, **{MAST}** for differential

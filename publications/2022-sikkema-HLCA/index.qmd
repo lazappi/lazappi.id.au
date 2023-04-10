@@ -1,0 +1,99 @@
+---
+title: An integrated cell atlas of the human lung in health and disease
+author:
+  - Lisa Sikkema
+  - Daniel C Strobl
+  - name: Luke Zappia
+    me: true
+  - Elo Madissoon
+  - Nikolay S Markov
+  - Laure-Emmanuelle Zaragosi
+  - Meshal Ansari
+  - Marie-Jeanne Arguel
+  - Leonie Apperloo
+  - Christophe Becavin
+  - Marijn Berg
+  - Evgeny Chichelnitskiy
+  - Mei-I Chung
+  - Antoine Collin
+  - Aurore C A Gay
+  - Baharak Hooshiar Kashani
+  - Manu Jain
+  - Theodore Kapellos
+  - Tessa M Kole
+  - Christoph H Mayr
+  - Michael von Papen
+  - Lance Peter
+  - Ciro Ramirez-Suastegui
+  - Janine Schniering
+  - Chase J Taylor
+  - Thomas Walzthoeni
+  - Chuan Xu
+  - Linh T Bui
+  - Carlo de Donno
+  - Leander Dony
+  - Minzhe Guo
+  - Austin J Gutierrez
+  - Lukas Heumos
+  - Ni Huang
+  - Ignacio L Ibarra
+  - Nathan D Jackson
+  - Preetish Kadur Lakshminarasimha Murthy
+  - Mohammad Lotfollahi
+  - Tracy Tabib
+  - Carlos Talavera-Lopez
+  - Kyle J Travaglini
+  - Anna Wilbrey-Clark
+  - Kaylee B Worlock
+  - Masahiro Yoshida
+  - Tushar J Desai
+  - Oliver Eickelberg
+  - Christine Falk
+  - Naftali Kaminski
+  - Mark A Krasnow
+  - Robert Lafyatis
+  - Marko Z Nikoli
+  - Joseph E Powell
+  - Jayaraj Rajagopal
+  - Orit Rozenblatt-Rosen
+  - Max A Seibold
+  - Dean Sheppard
+  - Douglas P Shepherd
+  - Sarah A Teichmann
+  - Alexander M Tsankov
+  - Jeffrey Whitsett
+  - Yan Xu
+  - Nicholas E Banovich
+  - Pascal Barbry
+  - Thu E Duong
+  - Kerstin B Meyer
+  - Jonathan A Kropski
+  - Dana Pe'er
+  - Herbert B Schiller
+  - Purushothama Rao Tata
+  - Joachim L Schultze
+  - Alexander V Misharin
+  - Martijn C Nawijn
+  - Malte D Luecken
+  - Fabian J Theis
+abstract: |
+  Organ- and body-scale cell atlases have the potential to transform our understanding of human biology.
+  To capture the variability present in the population, these atlases must include diverse demographics such as age and ethnicity from both healthy and diseased individuals.
+  The growth in both size and number of single-cell datasets, combined with recent advances in computational techniques, for the first time makes it possible to generate such comprehensive large-scale atlases through integration of multiple datasets.
+  Here, we present the integrated Human Lung Cell Atlas (HLCA) combining 46 datasets of the human respiratory system into a single atlas spanning over 2.2 million cells from 444 individuals across health and disease.
+  The HLCA contains a consensus re-annotation of published and newly generated datasets, resolving under- or misannotation of 59% of cells in the original datasets.
+  The HLCA enables recovery of rare cell types, provides consensus marker genes for each cell type, and uncovers gene modules associated with demographic covariates and anatomical location within the respiratory system.
+  To facilitate the use of the HLCA as a reference for single-cell lung research and allow rapid analysis of new data, we provide an interactive web portal to project datasets onto the HLCA.
+  Finally, we demonstrate the value of the HLCA reference for interpreting disease-associated changes.
+  Thus, the HLCA outlines a roadmap for the development and use of organ-scale cell atlases within the Human Cell Atlas.
+categories: ["single-cell", "rna-seq", "lung", "atlas"]
+date: 2022-03-11
+links:
+  code: https://github.com/LungCellAtlas/HLCA_reproducibility
+  doi: 10.1101/2022.03.10.483747
+  pdf: https://www.biorxiv.org/content/10.1101/2022.03.10.483747v1.full.pdf
+citation:
+  type: article
+  doi: 10.1101/2022.03.10.483747
+  container-title: bioRxiv
+---

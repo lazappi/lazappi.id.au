@@ -1,0 +1,6 @@
+format:
+  html:
+    template-partials: ../partials/title-metadata.html
+
+sidebar: false
+author-title: Authors

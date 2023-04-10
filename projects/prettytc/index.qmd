@@ -1,0 +1,19 @@
+---
+title: prettytc
+description: A Python script for pretty printing of TeXcount output
+authors:
+ - "**Luke Zappia**"
+categories: ["software", "python"]
+date: 2016-03-30T18:22:07+01:00
+links:
+  code: https://github.com/lazappi/prettytc
+image: thumbnail.png
+image-alt: Image showing the output of prettytc
+---
+
+TeXcount is excellent and by far the best way to produce wordcounts of LaTeX documents but I found the output became hard to read for large documents.
+
+prettytc is a Python script that runs TeXcount and parses the output in a way that shows more of the document structure and provides totals at each level.
+It can be run from the command line and any options are passed to TeXcount.
+
+Available from my GitHub <https://github.com/lazappi/prettytc>.

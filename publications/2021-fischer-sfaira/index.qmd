@@ -1,0 +1,39 @@
+---
+title: Sfaira accelerates data and model reuse in single cell genomics
+author:
+  - David S Fischer
+  - Leander Dony
+  - Martin König
+  - Abdul Moeed
+  - name: Luke Zappia
+    me: true
+  - Lukas Heumos
+  - Sophie Tritschler
+  - Olle Holmberg
+  - Hananeh Aliee
+  - Fabian J Theis
+abstract: |
+  Single-cell RNA-seq datasets are often first analyzed independently without harnessing model fits from previous studies, and are then contextualized with public data sets, requiring time-consuming data wrangling.
+  We address these issues with sfaira, a single-cell data zoo for public data sets paired with a model zoo for executable pre-trained models.
+  The data zoo is designed to facilitate contribution of data sets using ontologies for metadata.
+  We propose an adaption of cross-entropy loss for cell type classification tailored to datasets annotated at different levels of coarseness.
+  We demonstrate the utility of sfaira by training models across anatomic data partitions on 8 million cells.
+categories: ["single-cell", "rna-seq", "database", "website"]
+date: 2021-08-25
+links:
+  code: https://github.com/theislab/sfaira
+  package: https://pypi.org/project/sfaira/
+  doi: 10.1186/s13059-021-02452-6
+  pdf: https://link.springer.com/content/pdf/10.1186/s13059-021-02452-6.pdf?pdf=button
+  preprint: https://www.biorxiv.org/content/10.1101/2020.12.16.419036v1
+  website: https://theislab.github.io/sfaira-portal/
+citation:
+  type: article-journal
+  doi: 10.1186/s13059-021-02452-6
+  pmid: "34433466"
+  issn: "1465-6906"
+  container-title: Genome biology
+  issue: 1
+  volume: 22
+  page: "248"
+---

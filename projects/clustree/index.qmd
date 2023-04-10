@@ -1,0 +1,19 @@
+---
+title: clustree
+description: CRAN R package for creating clustering trees, a visualisation for looking at clustering across resolutions
+authors:
+ - "**Luke Zappia**"
+ - Alicia Oshlack
+categories: ["clustering", "visualisation", "software", "R"]
+date: 2018-03-27T11:26:59+01:00
+links:
+  code: https://github.com/lazappi/clustree
+  package: https://cran.r-project.org/package=clustree
+  doi: 10.1093/gigascience/giy083
+image: thumbnail.png
+image-alt: clustree logo
+---
+
+Deciding what resolution to use can be a difficult question when approaching a clustering analysis.
+One way to approach this problem is to look at how samples move as the number of clusters increases.
+The clustree package is available from CRAN (<https://cran.r-project.org/package=clustree>) and allows you to produce clustering trees, a visualisation for interrogating clusterings as resolution increases.

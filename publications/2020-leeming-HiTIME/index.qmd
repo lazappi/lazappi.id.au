@@ -1,0 +1,27 @@
+---
+title: "HiTIME: An efficient model-selection approach for the detection of unknown drug metabolites in LC-MS data"
+author:
+  - Michael G Leeming
+  - Andrew P Isaac
+  - name: Luke Zappia
+    me: true
+  - Richard A J O'Hair
+  - William A Donald
+  - Bernard J Pope
+abstract: |
+  The identification of metabolites plays an important role in understanding drug efficacy and safety however these compounds are often difficult to identify in complex mixtures.
+  One approach to identify drug metabolites involves utilising differentially isotopically labelled drug compounds to create unique isotopic signals that can be detected by liquid chromatography-mass spectrometry (LC-MS). User-friendly, efficient, computational tools that allow selective detection of these signals are lacking.
+  We have developed an efficient open-source software tool called HiTIME (High-Resolution Twin-Ion Metabolite Extraction) which filters twin-ion signals in LC-MS data.
+  The intensity of each data point in the input is replaced by a Z-score describing how well the point matches an idealised twin-ion signal versus alternative ion signatures.
+  Here we provide a detailed description of the algorithm and demonstrate its performance on simulated and experimental data.
+categories: ["mass spectrometry", "software"]
+date: 2020-07-07
+links:
+  code: https://github.com/bjpop/HiTIME-CPP
+  doi: 10.1016/j.softx.2020.100559
+citation:
+  type: article-journal
+  doi: 10.1016/j.softx.2020.100559
+  container-title: SoftwareX
+  page: "100559"
+---

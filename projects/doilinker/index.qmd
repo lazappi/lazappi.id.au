@@ -1,0 +1,15 @@
+---
+title: doilinker
+description: An R package for linking DOIs between preprints and publications
+authors:
+ - "**Luke Zappia**"
+categories: ["software", "R"]
+date: 2021-06-25
+links:
+  code: https://github.com/lazappi/doilinker
+  doi: 10.1007/s11192-021-03900-7
+---
+
+**{doilinker}** allows you to link related DOIs.
+Usually this is to find the published version of a preprint (or the reverse)
+ It does this by querying the [Crossref database](https://www.crossref.org/) using [**{rcrossref}**](https://github.com/ropensci/rcrossref) and matching DOIs using the method described by [Cabanac, Oikonomidi and Boutron](https://doi.org/10.1007/s11192-021-03900-7).

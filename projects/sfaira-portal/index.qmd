@@ -1,0 +1,22 @@
+---
+title: sfaira portal
+description: A website built using Vue for viewing the sfaira database
+authors:
+ - "**Luke Zappia**"
+ - David Fischer
+ - Leander Dony
+ - Lukas Heumos
+categories: ["single-cell", "rna-seq", "database", "website", "JavaScript"]
+date: 2021-05-10
+links:
+  code: https://github.com/theislab/sfaira-portal
+  doi: 10.1186/s13059-021-02452-6
+  website: https://theislab.github.io/sfaira-portal/
+image: thumbnail.png
+image-alt: The sfaira portal logo
+---
+
+sfaira is a single-cell data zoo for public data sets paired with a model zoo for executable pre-trained models.
+The sfaira portal is a website displaying the datasets available through sfaira with an easy-to-use interactive interface.
+The interface allows users to search for datasets using metadata such as organism, tissue, cell type labels, source, assay or publication date.
+sfaira portal was built using the Vue JavaScript framework.

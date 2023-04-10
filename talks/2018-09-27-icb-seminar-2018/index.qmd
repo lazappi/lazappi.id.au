@@ -1,0 +1,32 @@
+---
+title: Tools, simulations and trees for scRNA-seq
+description: Presentation at the Institute of Computational Biology where I described my PhD projects
+authors:
+ - "**Luke Zappia**"
+event:
+  name: Institute of Computational Biology
+  location: Institute of Computational Biology, Helmholtz Zentrum München, Munich, Germany
+abstract: |
+  The past few years have seen an explosion in the development of single-cell RNA-sequencing technology and it has quickly become a commonly used tool for interrogating complex tissues.
+  Access to this new type of data has lead to a corresponding surge in the production of statistical and computational tools to analyse it.
+  We are cataloguing in the scRNA-tools database (www.scRNA-tools.org).
+  Deciding which of these tools to use for a specific task is difficult and comprehensive evaluations and comparisons are required.
+  One way to demonstrate how well tools perform at their selected task is by testing them on simulated data.
+  To make this easier we developed Splatter, a Bioconductor R package that provides a consistent, easy-to-use interface for multiple models for simulating scRNA-seq data (https://bioconductor.org/packages/splatter).
+  Providing independent simulation software avoids relying on simulations that are not reproducible, match the tools assumptions and do not demonstrate similarity to real datasets.
+
+  Even the most effective methods usually have parameters that affect how they perform.
+  For scRNA-seq data one of the analysis tasks that has received the most attention is defining groups of similar cells, usually through unsupervised clustering.
+  Most clustering methods have parameters which, directly or indirectly, affect the number of clusters produced.
+  The clustering resolution that is chosen can have a profound effect on further analysis and interpretation but it is unclear how to make this choice.
+  To aid analysts in deciding which clustering resolution to use we have developed clustering trees, a visualisation that shows how clusters form and change as the resolution increases.
+  These trees can be produced using the clustree R package (http://cran.r-project.org/package=clustree) and are applicable to any clustering method.
+  Clustering trees highlight instability that may indicate over clustering and help choose which resolution to use, particularly when combined with existing domain knowledge such as the expression of marker genes.
+  This presentation will demonstrate our methods and tools using an scRNA-seq dataset we have generated to explore the cell type composition of kidney organoids.
+categories: ["single-cell", "rna-seq", "simulation", "database", "visualisation", "splatter", "clustree", "scrna-tools", "software", "kidney", "organoids", "analysis", "PhD"]
+date: 2018-09-27
+date_end: 2023-01-01T01:00:00+01:00
+links:
+  slides: https://speakerdeck.com/lazappi/phd-europe-2018
+speakerdeck: b0da440f95fe42ec91e1237f740b3c7a
+---

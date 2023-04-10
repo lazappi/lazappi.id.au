@@ -1,0 +1,32 @@
+---
+title: Template publication
+author:
+  - name: Luke Zappia
+    me: true
+abstract: |
+  An abstract describing the publication.
+  It can be split across lines.
+categories: ["category1", "category2"]
+date: 2023-01-01T00:00:00+00:00
+links:
+  code: https://github.com/lazappi/project
+  package: https://bioconductor.org/packages/project/
+  doi: 10.1186/s13059-017-1305-0
+  pdf: https://a.website/paper.pdf
+  preprint: https://doi.org/DOI
+  website: https://a.website
+  slides: https://speakerdeck.com/lazappi/slides
+image: thumbnail.png
+image-alt: Thumbnail image
+image-caption: A caption for the thumbnail image
+citation:
+  type: article-journal
+  doi: 10.1136/gutjnl-2016-311447
+  pmid: "111111"
+  issn: "118232-23232"
+  container-title: Gut
+  number: 1
+  issue: 1
+  volume: 1
+  page: "1-2"
+---

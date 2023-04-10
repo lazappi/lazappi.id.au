@@ -1,0 +1,18 @@
+---
+title: zellkonverter
+description: Bioconductor R package for converting between scRNA-seq objects
+authors:
+ - "**Luke Zappia**"
+ - Aaron Lun
+categories: ["single-cell", "rna-seq", "interoperability", "software", "R", "Bioconductor"]
+date: 2020-07-12T15:17:55+02:00
+links:
+  code: https://github.com/theislab/zellkonverter
+  package: https://bioconductor.org/packages/zellkonverter/
+image: thumbnail.png
+image-alt: zellkonverter logo
+---
+
+zellkonverter is a Bioconductor R package that provides methods to convert between Python [AnnData](https://anndata.readthedocs.io/en/latest/index.html) objects and [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment/) objects (https://bioconductor.org/packages/zellkonveter/).
+These are primarily intended for use by downstream Bioconductor packages that wrap Python methods for single-cell data analysis.
+It also includes functions to read and write H5AD files used for saving AnnData objects to disk.

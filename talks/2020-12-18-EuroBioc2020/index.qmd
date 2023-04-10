@@ -1,0 +1,25 @@
+---
+title: Interoperability between Bioconductor and Python for scRNA-seq analysis
+description: Invited keynote at the European Bioconductor meeting 2020
+authors:
+ - "**Luke Zappia**"
+event:
+  name: European Bioconductor Meeting 2020
+  location: Virtual
+  url: https://eurobioc2020.bioconductor.org/
+abstract: |
+  Unlike traditional bulk RNA-seq analysis which is dominated by Bioconductor, packages for analysing single-cell RNA sequencing data are more fragmented.
+  Currently, there are three key ecosystems, the [Seurat](https://satijalab.org/seurat/) package (available from CRAN), Bioconductor's [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment/) object and the [AnnData](https://anndata.readthedocs.io/en/latest/index.html) Python object used by the [Scanpy](https://scanpy.readthedocs.io/en/stable/) package.
+  While these platforms each have strengths and weaknesses most analysts are likely to only use one of them.
+  In this talk, I discuss how interoperability between R and Python can allow us to take advantage of these platforms strengths and avoid unnecessary reimplementation of methods.
+  I highlight the [reticulate](https://rstudio.github.io/reticulate/) R package for interacting with Python, the [basilisk](https://bioconductor.org/packages/basilisk/) package for encapsulating Python environments, my [zellkonverter](https://bioconductor.org/packages/zellkonverter/) package for converting between AnnData and SingleCellExperiment objects and the [velociraptor](https://bioconductor.org/packages/velociraptor/) package as an example of wrapping a Python package.
+  The methods in the [scVelo](http://scvelo.org/) (package wrapped by velociraptor) for calculating RNA velocity and the [CellRank](http://cellrank.org/) package for estimating state transitions will also be briefly described.
+categories: ["single-cell", "rna-seq", "software", "interoperability", "R", "python", "Bioconductor"]
+date: 2020-12-18T14:00:00+01:00
+date_end: 2020-12-18T14:45:00+01:00
+links:
+  code: https://github.com/theislab/zellkonverter
+  package: https://bioconductor.org/packages/zellkonverter/
+  slides: https://speakerdeck.com/lazappi/interoperability-between-bioconductor-and-python-for-scrna-seq-analysis
+speakerdeck: 4cfe6c53c027493da7a69b421bfe14dc
+---

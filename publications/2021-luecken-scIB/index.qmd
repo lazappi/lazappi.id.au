@@ -1,0 +1,39 @@
+---
+title: Benchmarking atlas-level data integration in single-cell genomics
+author:
+  - Malte D Luecken
+  - Maren Büttner
+  - Kridsadakorn Chaichoompu
+  - Anna Danese
+  - Marta Interlandi
+  - Michaela F Mueller
+  - Daniel C Strobl
+  - name: Luke Zappia
+    me: true
+  - Martin Dugas
+  - Maria Colomé-Tatché
+  - Fabian J Theis
+abstract: |
+  Single-cell atlases often include samples that span locations, laboratories and conditions, leading to complex, nested batch effects in data.
+  Thus, joint analysis of atlas datasets requires reliable data integration.
+  To guide integration method choice, we benchmarked 68 method and preprocessing combinations on 85 batches of gene expression, chromatin accessibility and simulation data from 23 publications, altogether representing >1.2 million cells distributed in 13 atlas-level integration tasks.
+  We evaluated methods according to scalability, usability and their ability to remove batch effects while retaining biological variation using 14 evaluation metrics.
+  We show that highly variable gene selection improves the performance of data integration methods, whereas scaling pushes methods to prioritize batch removal over conservation of biological variation.
+  Overall, scANVI, Scanorama, scVI and scGen perform well, particularly on complex integration tasks, while single-cell ATAC-sequencing integration performance is strongly affected by choice of feature space.
+  Our freely available Python module and benchmarking pipeline can identify optimal data integration methods for new data, benchmark new methods and improve method development.
+categories: ["single-cell", "rna-seq", "integration", "benchmarking"]
+date: 2021-12-23
+links:
+  code: https://github.com/theislab/scib
+  doi: 10.1038/s41592-021-01336-8
+  pdf: https://www.nature.com/articles/s41592-021-01336-8.pdf
+  preprint: https://doi.org/10.1101/2020.05.22.111161
+  package: https://pypi.org/project/scib/
+  website: https://theislab.github.io/scib-reproducibility/
+citation:
+  type: article-journal
+  doi: 10.1038/s41592-021-01336-8
+  pmid: "34949812"
+  issn: "1548-7091"
+  container-title: Nature methods
+---

@@ -1,0 +1,59 @@
+---
+title: Circulating tumour cells from patients with colorectal cancer have cancer stem cell hallmarks in ex vivo culture
+author:
+  - Fanny Grillet
+  - Elsa Bayet
+  - Olivia Villeronce
+  - name: Luke Zappia
+    me: true
+  - Ebba Louise Lagerqvist
+  - Sebastian Lunke
+  - Emmanuelle Charafe-Jauffret
+  - Kym Pham
+  - Christina Molck
+  - Nathalie Rolland
+  - Jean François Bourgaux
+  - Michel Prudhomme
+  - Claire Philippe
+  - Sophie Bravo
+  - Jean Christophe Boyer
+  - Lucile Canterel-Thouennon
+  - Graham Roy Taylor
+  - Arthur Hsu
+  - Jean Marc Pascussi
+  - Frédéric Hollande
+  - Julie Pannequin
+abstract: |
+  **Objective**
+
+  Although counting of circulating tumour cells (CTC) has attracted a broad interest as potential markers of tumour progression and treatment response, the lack of functional characterisation of these cells had become a bottleneck in taking these observations to the clinic.
+  Our objective was to culture these cells in order to understand them and exploit their therapeutic potential to the full.
+
+  **Design**
+
+  Here, hypothesising that some CTC potentially have cancer stem cell (CSC) phenotype, we generated several CTC lines from the blood of patients with advanced metastatic colorectal cancer (CRC) based on their self-renewal abilities.
+  Multiple standard tests were then employed to characterise these cells.
+
+  **Results**
+
+  Our CTC lines self-renew, express CSC markers and have multilineage differentiation ability, both in vitro and in vivo.
+  Patient-derived CTC lines are tumorigenic in subcutaneous xenografts and are also able to colonise the liver after intrasplenic injection.
+  RNA sequencing analyses strikingly demonstrate that drug metabolising pathways represent the most upregulated feature among CTC lines in comparison with primary CRC cells grown under similar conditions.
+  This result is corroborated by the high resistance of the CTC lines to conventional cytotoxic compounds.
+
+  **Conclusions**
+
+  Taken together, our results directly demonstrate the existence of patient-derived colorectal CTCs that bear all the functional attributes of CSCs.
+  The CTC culture model described here is simple and takes <1 month from blood collection to drug testing, therefore, routine clinical application could facilitate access to personalised medicine.
+categories: ["drug toxicity", "cancer", "colorectal", "stem cell", "rna-seq"]
+date: 2016-07-01
+links:
+  doi: 10.1136/gutjnl-2016-311447
+  pdf: https://gut.bmj.com/content/gutjnl/66/10/1802.full.pdf
+citation:
+  type: article-journal
+  doi: 10.1136/gutjnl-2016-311447
+  pmid: "27456153"
+  issn: "0017-5749, 1468-3288"
+  container-title: Gut
+---

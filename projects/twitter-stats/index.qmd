@@ -1,0 +1,17 @@
+---
+title: Twitter stats
+description: Analysis of Twitter activity for hashtags from various events, usually academic conferences
+authors:
+ - "**Luke Zappia**"
+categories: ["website", "twitter", "analysis", "R"]
+date: 2018-10-03T17:34:05+01:00
+links:
+  code: https://github.com/lazappi/twitter-stats
+  website: https://lazappi.github.io/twitter-stats/index.html
+image: thumbnail.jpg
+image-alt: Illustration of a man in a suit holding the Twitter logo Image by mohamed Hassan (https://pixabay.com/de/users/mohamed_hassan-5229782) from Pixabay (https://pixabay.com/)
+image-caption: Image by [mohamed Hassan](https://pixabay.com/de/users/mohamed_hassan-5229782) from [Pixabay](https://pixabay.com/)
+---
+
+Website displaying analysis of Twitter activity from various event hashtags, usually academic conferences (<https://lazappi.github.io/twitter-stats/index.html>).
+Includes information such as when people were tweeting, who there were connected to and the most common topics during the event.

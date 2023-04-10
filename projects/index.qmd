@@ -1,0 +1,70 @@
+---
+title: "Projects"
+listing:
+  - id: packages
+    contents:
+    - "Splatter/index.qmd"
+    - "zellkonverter/index.qmd"
+    - "clustree/index.qmd"
+    - "clamour/index.qmd"
+    - "doilinker/index.qmd"
+    - "prettytc/index.qmd"
+    type: grid
+    sort: "false"
+    categories: true
+    fields: [image, title, description, categories]
+    image-placeholder: "../icon.png"
+  - id: analysis
+    contents:
+    - "oecd-housing/index.qmd"
+    - "phd-commits/index.qmd"
+    - "twitter-stats/index.qmd"
+    - "nba-positions/index.qmd"
+    type: grid
+    sort: "false"
+    categories: true
+    fields: [image, title, description, categories]
+    image-placeholder: "../icon.png"
+  - id: web
+    contents:
+    - "scRNA-tools/index.qmd"
+    - "sfaira-portal/index.qmd"
+    type: grid
+    sort: "false"
+    categories: true
+    fields: [image, title, description, categories]
+    image-placeholder: "../icon.png"
+  - id: community
+    contents:
+    - "open-problems-single-cell/index.qmd"
+    - "single-cell-best-practices/index.qmd"
+    - "scanpy-in-R/index.qmd"
+    - "r-pkg-dev/index.qmd"
+    type: grid
+    sort: "false"
+    categories: true
+    fields: [image, title, description, categories]
+    image-placeholder: "../icon.png"
+page-layout: full
+title-block-banner: true
+---
+
+# Packages and scripts
+
+:::{#packages}
+:::
+
+## Analysis and data
+
+:::{#analysis}
+:::
+
+## Web
+
+:::{#web}
+:::
+
+## Community and training
+
+:::{#community}
+:::

@@ -1,0 +1,49 @@
+---
+title: "Luke Zappia"
+subtitle: "Bioinformatician (he/him)"
+image: profile.png
+about:
+  template: trestles
+  image-shape: round
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/_lazappi_
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/lazappi/
+    - text: "{{< ai google-scholar >}} Scholar"
+      href: https://scholar.google.com/citations?user=F_LxcIoAAAAJ&hl=en
+    - text: "{{< ai orcid >}} ORCiD"
+      href: https://orcid.org/0000-0001-7744-8565
+    - text: "{{< ai impactstory >}} Impactstory"
+      href: https://profiles.impactstory.org/u/0000-0001-7744-8565
+    - icon: github
+      text: Github
+      href: https://github.com/lazappi
+---
+
+:::{#hero-heading}
+
+# Hi, I'm Luke 👋🏻
+
+I am a bioinformatics postdoctoral researcher in the [Theis Lab][Theis] at the
+[Helmholtz Zentrum München][HMGU] [Institute of Computational Biology][ICB] and
+the [Technische Universität München][TUM]. My research focuses on the analysis
+of single-cell RNA sequencing data including the development and benchmarking
+of computational methods. I am also interested in how best to visualise data
+more generally.
+
+I completed my PhD in the [Oshlack Lab][Oshlack].
+
+:::
+
+<a href="https://info.flagcounter.com/6RVN">
+  <img src="https://s01.flagcounter.com/count2/6RVN/bg_FFFFFF/txt_000000/border_CCCCCC/columns_6/maxflags_250/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" style="  display: block;margin-left: auto;margin-right: auto;width:100%">
+</a>
+
+[Theis]: https://www.helmholtz-muenchen.de/icb/research/groups/theis-lab/overview/index.html "Theis Lab"
+[HMGU]: https://www.helmholtz-muenchen.de/en/helmholtz-zentrum-muenchen/index.html "Helmholtz Zentrum München"
+[ICB]: https://www.helmholtz-muenchen.de/icb/index.html "Institute of Computational Biology"
+[TUM]: https://www.tum.de/en/ "Technische Universität München"
+[Oshlack]: http://oshlacklab.com/ "Oshlack Lab"

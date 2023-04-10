@@ -1,0 +1,10 @@
+---
+title: "Publications"
+listing:
+  type: default
+  sort: "date desc"
+  categories: true
+  fields: [date, title, author, categories]
+page-layout: full
+title-block-banner: true
+---

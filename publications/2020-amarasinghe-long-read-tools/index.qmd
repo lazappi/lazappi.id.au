@@ -1,0 +1,32 @@
+---
+title: Opportunities and challenges in long-read sequencing data analysis
+author:
+  - Shanika L Amarasinghe
+  - Shian Su
+  - Xueyi Dong
+  - name: Luke Zappia
+    me: true
+  - Matthew E Ritchie
+  - Quentin Gouil
+abstract: |
+  Long-read technologies are overcoming early limitations in accuracy and throughput, broadening their application domains in genomics.
+  Dedicated analysis tools that take into account the characteristics of long-read data are thus required, but the fast pace of development of such tools can be overwhelming.
+  To assist in the design and analysis of long-read sequencing projects, we review the current landscape of available tools and present an online interactive database, long-read-tools.org, to facilitate their browsing.
+  We further focus on the principles of error correction, base modification detection, and long-read transcriptomics analysis and highlight the challenges that remain.
+categories: ["data analysis", "long read", "database", "website"]
+date: 2020-02-01
+links:
+  code: https://github.com/mritchielab/long_read_tools
+  doi: 10.1186/s13059-020-1935-5
+  pdf: https://genomebiology.biomedcentral.com/track/pdf/10.1186/s13059-020-1935-5
+  website: https://long-read-tools.org/
+citation:
+  type: article-journal
+  doi: 10.1186/s13059-020-1935-5
+  pmid: "32033565"
+  issn: "1465-6906"
+  container-title: Genome biology
+  number: 1
+  volume: 21
+  page: "30"
+---

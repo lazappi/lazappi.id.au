@@ -1,0 +1,17 @@
+---
+title: clamour
+description: An R package for setting up a website to display analysis of Twitter hashtags
+authors:
+ - "**Luke Zappia**"
+categories: ["twitter", "analysis", "software", "R"]
+date: 2019-07-08T18:01:13+01:00
+links:
+  code: https://github.com/lazappi/clamour
+image: thumbnail.jpg
+image-alt: Illustration of man shouting into megaphone and Twitter logo from Pikrepo https://www.pikrepo.com/fyhus/illustration-of-marketing-on-twitter-social-media-platform
+image-caption: Image from [Pikrepo](https://www.pikrepo.com/fyhus/illustration-of-marketing-on-twitter-social-media-platform)
+---
+
+The **{clamour}** packages provides a template for setting up a website to display the results of analysis of Twitter hashtags, usually associated with an event such as an academic conference.
+More details can be found on the project website (<https://lazappi.github.io/clamour/index.html>).
+There is also an example website showing what the results look like (<https://lazappi.github.io/clamour-example/>) or you can have a look at my personal Twitter stats site (<https://lazappi.github.io/twitter-stats/>).

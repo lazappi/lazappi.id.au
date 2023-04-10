@@ -1,0 +1,28 @@
+---
+title: Splatter, a package for simulating single-cell RNA sequencing data
+description: Selected talk at the 2017 Bioconductor Asia Meeting where I presented technical details of the Splatter package
+authors:
+ - "**Luke Zappia**"
+event:
+  name: Bioconductor Asia Meeting 2017
+  location: South Australian Health and Medical Research Institute, Adelaide, Australia
+abstract: |
+  Single-cell RNA sequencing (scRNA-seq) has opened up a range of opportunities for investigating the transcriptome, but with the dramatic increase in resolution comes an array of bioinformatics challenges.
+  Single-cell data is relatively sparse (for both biological and technical reasons), quality control is difficult and it is unclear if methods designed for bulk RNA-seq are appropriate for scRNA-seq data.
+  Researchers have risen to address these challenges and there are now more than 140 scRNA-seq analysis tools available.
+  However, with so many tools available researchers are faced with the difficult task of choosing which to use, making it important to be able to assess and compare the performance, quality and limitations of each tool.
+  One common approach is to test methods on simulated datasets where the true answers are known.
+  To aid this process we have developed Splatter, a Bioconductor R package for reproducible simulation of scRNA-seq datasets (bioconductor.org/packages/splatter).
+
+  Splatter is a simulation framework that provides access to a variety of simulation models, allowing users to estimate parameters from real data in order to easily generate realistic synthetic scRNA-seq datasets.
+  As part of Splatter we also introduce our own simulation model, Splat, capable of reproducing scRNA-seq datasets with multiple groups of cells, differentiation paths or batch effects.
+  Here we will discuss some how Splatter can be used to develop and compare analysis tools.
+  We will also touch on our experience developing Splatter, some of the design choices we made and how we have integrated other Bioconductor packages such as the SingleCellExperiment class.
+categories: ["single-cell", "RNA-seq", "simulation", "software", "splatter", "R", "bioconductor"]
+date: 2017-11-17
+links:
+  code: https://github.com/Oshlack/splatter
+  package: https://bioconductor.org/packages/splatter/
+  slides: https://speakerdeck.com/lazappi/biocasia-2017
+speakerdeck: b57ff63f5ec04a6c907e742109aef4db
+---

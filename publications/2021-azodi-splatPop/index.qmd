@@ -1,0 +1,31 @@
+---
+title: "splatPop: simulating population scale single-cell RNA sequencing data"
+author:
+  - Christina B Azodi
+  - name: Luke Zappia
+    me: true
+  - Alicia Oshlack
+  - Davis J McCarthy
+abstract: |
+  Population-scale single-cell RNA sequencing (scRNA-seq) is now viable, enabling finer resolution functional genomics studies and leading to a rush to adapt bulk methods and develop new single-cell-specific methods to perform these studies.
+  Simulations are useful for developing, testing, and benchmarking methods but current scRNA-seq simulation frameworks do not simulate population-scale data with genetic effects.
+  Here, we present splatPop, a model for flexible, reproducible, and well-documented simulation of population-scale scRNA-seq data with known expression quantitative trait loci.
+  splatPop can also simulate complex batch, cell group, and conditional effects between individuals from different cohorts as well as genetically-driven co-expression.
+categories: ["single-cell", "rna-seq", "simulation", "population", "software", "methods"]
+date: 2021-12-15
+links:
+  code: https://github.com/Oshlack/splatter
+  package: https://bioconductor.org/packages/splatter/
+  doi: 10.1186/s13059-021-02546-1
+  pdf: https://genomebiology.biomedcentral.com/counter/pdf/10.1186/s13059-021-02546-1.pdf
+  preprint: https://www.biorxiv.org/content/10.1101/2021.06.17.448806v1.full
+citation:
+  type: article-journal
+  doi: 10.1186/s13059-021-02546-1
+  pmid: "34911537"
+  issn: "1465-6906"
+  container-title: Genome biology
+  issue: 1
+  volume: 22
+  page: "341"
+---

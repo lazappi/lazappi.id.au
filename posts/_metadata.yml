@@ -1,0 +1,6 @@
+# Freeze computational output
+# See https://quarto.org/docs/projects/code-execution.html#freeze
+freeze: true
+toc: true
+toc-depth: 3
+toc-title: Contents

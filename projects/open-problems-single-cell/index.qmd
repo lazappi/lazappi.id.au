@@ -1,0 +1,22 @@
+---
+title: Open Problems in Single-Cell Analysis
+description: An effort to formalise and benchmark open problems in single-cell genomics analysis
+authors:
+ -  The Open Problems core team
+ - "**Luke Zappia**"
+ - The Open Problems scientific advisors
+categories: ["benchmarking", "single-cell", "website"]
+date: 2021-04-07
+links:
+  code: https://github.com/openproblems-bio/openproblems
+  website: https://openproblems.bio/
+image: thumbnail.png
+image-alt: The Open Problems logo
+---
+
+The ability to profile individual cells has revolutionised biological research but analysing this data is complex and there are now thousands of analysis tools available.
+Benchmarking studies provide a valuable insight into how tools perform at various tasks but have an inherent limitation in that they only capture a snapshot of the analysis landscape at a given time.
+Open Problems aims to define a set of standard problems in single-cell analysis and transform them into a living benchmark, inspired by standard tasks in maching learning fields.
+This relies on a community driven approach where tasks are defined by the community, methods, metrics and datasets are contributed and results are provided to help guide analysis decisions and inspire the development of new approaches.
+I participated in the jamboree in 2021 where I became the leader for the [dimensionality reduction for 2D visualisation](https://openproblems.bio/results/dimensionality_reduction/) task.
+This involves coordinating code contributions to the task, as well as contributing to the overall project.

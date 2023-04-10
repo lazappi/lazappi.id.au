@@ -1,0 +1,17 @@
+---
+title: NBA positions
+description: A dataset of NBA positions designed to replace the iris dataset
+authors:
+ - "**Luke Zappia**"
+categories: ["dataset"]
+date: 2020-06-12T12:00:00+02:00
+links:
+  code: https://github.com/lazappi/nba_positions
+image: thumbnail.png
+image-alt: Clip art of a basketball from CLEANPNG https://de.cleanpng.com/png-i95tba/
+image-caption: Image from [CLEANPNG](https://de.cleanpng.com/png-i95tba/)
+---
+
+This repository contains the NBA positions dataset.
+The main dataset is designed to replace the iris dataset and contains basic statistics about 150 NBA Centers, Point Guards and Shooting Guards from 2017.
+There is a also a expanded dataset (nba_positions_full) the includes the same statistics for all NBA players in 2017.

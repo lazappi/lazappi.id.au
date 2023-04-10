@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2017-08-18">
+<meta name="description" content="Analysis of Twitter activity at the Joining the Dots visualisation symposium">
+
+<title>lazappi - Joining the Dots Twitter analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-20JH368VMR"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-20JH368VMR', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+
+
+<meta property="og:title" content="lazappi - Joining the Dots Twitter analysis">
+<meta property="og:description" content="Analysis of Twitter activity at the Joining the Dots visualisation symposium">
+<meta property="og:image" content="https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/featured.png">
+<meta property="og:site-name" content="lazappi">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image:height" content="768">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:alt" content="Graph of connections between Twitter users during the Joining the Dots visualisation symposium">
+<meta name="twitter:title" content="lazappi - Joining the Dots Twitter analysis">
+<meta name="twitter:description" content="Analysis of Twitter activity at the Joining the Dots visualisation symposium">
+<meta name="twitter:image" content="https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/featured.png">
+<meta name="twitter:creator" content="@_lazappi_">
+<meta name="twitter:site" content="@_lazappi_">
+<meta name="twitter:image-height" content="768">
+<meta name="twitter:image-width" content="1024">
+<meta name="twitter:image:alt" content="Graph of connections between Twitter users during the Joining the Dots visualisation symposium">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">lazappi</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks/index.html">
+ <span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lazappi"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/_lazappi_"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts/index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#search-all-the-hashtags" id="toc-search-all-the-hashtags" class="nav-link" data-scroll-target="#search-all-the-hashtags">Search all the hashtags!</a></li>
+  </ul></li>
+  <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">Timeline</a>
+  <ul class="collapse">
+  <li><a href="#tweets-by-day" id="toc-tweets-by-day" class="nav-link" data-scroll-target="#tweets-by-day">Tweets by day</a></li>
+  <li><a href="#tweets-by-day-and-time" id="toc-tweets-by-day-and-time" class="nav-link" data-scroll-target="#tweets-by-day-and-time">Tweets by day and time</a></li>
+  </ul></li>
+  <li><a href="#users" id="toc-users" class="nav-link" data-scroll-target="#users">Users</a>
+  <ul class="collapse">
+  <li><a href="#top-tweeters" id="toc-top-tweeters" class="nav-link" data-scroll-target="#top-tweeters">Top tweeters</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  </ul></li>
+  <li><a href="#networks" id="toc-networks" class="nav-link" data-scroll-target="#networks">Networks</a>
+  <ul class="collapse">
+  <li><a href="#replies" id="toc-replies" class="nav-link" data-scroll-target="#replies">Replies</a></li>
+  <li><a href="#mentions" id="toc-mentions" class="nav-link" data-scroll-target="#mentions">Mentions</a></li>
+  </ul></li>
+  <li><a href="#retweets" id="toc-retweets" class="nav-link" data-scroll-target="#retweets">Retweets</a>
+  <ul class="collapse">
+  <li><a href="#retweet-proportion" id="toc-retweet-proportion" class="nav-link" data-scroll-target="#retweet-proportion">Retweet proportion</a></li>
+  <li><a href="#retweet-count" id="toc-retweet-count" class="nav-link" data-scroll-target="#retweet-count">Retweet count</a></li>
+  <li><a href="#top-retweets" id="toc-top-retweets" class="nav-link" data-scroll-target="#top-retweets">Top retweets</a></li>
+  </ul></li>
+  <li><a href="#favourites" id="toc-favourites" class="nav-link" data-scroll-target="#favourites">Favourites</a>
+  <ul class="collapse">
+  <li><a href="#favourite-proportion" id="toc-favourite-proportion" class="nav-link" data-scroll-target="#favourite-proportion">Favourite proportion</a></li>
+  <li><a href="#favourite-count" id="toc-favourite-count" class="nav-link" data-scroll-target="#favourite-count">Favourite count</a></li>
+  <li><a href="#top-favourites" id="toc-top-favourites" class="nav-link" data-scroll-target="#top-favourites">Top favourites</a></li>
+  </ul></li>
+  <li><a href="#quotes" id="toc-quotes" class="nav-link" data-scroll-target="#quotes">Quotes</a>
+  <ul class="collapse">
+  <li><a href="#quote-proportion" id="toc-quote-proportion" class="nav-link" data-scroll-target="#quote-proportion">Quote proportion</a></li>
+  <li><a href="#quote-count" id="toc-quote-count" class="nav-link" data-scroll-target="#quote-count">Quote count</a></li>
+  <li><a href="#top-quotes" id="toc-top-quotes" class="nav-link" data-scroll-target="#top-quotes">Top quotes</a></li>
+  </ul></li>
+  <li><a href="#media" id="toc-media" class="nav-link" data-scroll-target="#media">Media</a>
+  <ul class="collapse">
+  <li><a href="#media-count" id="toc-media-count" class="nav-link" data-scroll-target="#media-count">Media count</a></li>
+  <li><a href="#top-media" id="toc-top-media" class="nav-link" data-scroll-target="#top-media">Top media</a>
+  <ul class="collapse">
+  <li><a href="#most-liked-media-image" id="toc-most-liked-media-image" class="nav-link" data-scroll-target="#most-liked-media-image">Most liked media image</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#tweet-text" id="toc-tweet-text" class="nav-link" data-scroll-target="#tweet-text">Tweet text</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Joining the Dots Twitter analysis</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">conference</div>
+    <div class="quarto-category">visualisation</div>
+    <div class="quarto-category">twitter</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Analysis of Twitter activity at the Joining the Dots visualisation symposium
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><strong>Luke Zappia</strong> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 18, 2017</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Today I attended the <a href="https://joiningthedots.github.io/">Joining the Dots</a> visualisation symposium. You can see the slides for my talk about clustering trees <a href="https://speakerdeck.com/lazappi/building-a-clustering-tree">here</a>. It was a great event and hope we see more meetings like this in the future. Here is an analysis of the Twitter activity on the <a href="https://twitter.com/search?q=%23jtdwehi&amp;src=typd">#jtdwehi</a> hashtag, thanks to code from <a href="https://nsaunders.wordpress.com">Neil Saunders</a>. You can see it on <a href="https://github.com/lazappi/jtdwehi-twitter">Github</a>.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>An analysis of tweets from the Joining the Dots symposium. 1237 tweets were collected using the <code>rtweet</code> R package:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>jtdwehi <span class="ot">&lt;-</span> <span class="fu">search_tweets</span>(<span class="st">"#jtdwehi"</span>, <span class="dv">10000</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(jtdwehi, <span class="st">"data/jtdwehi.Rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="search-all-the-hashtags" class="level2">
+<h2 class="anchored" data-anchor-id="search-all-the-hashtags">Search all the hashtags!</h2>
+<p><img src="hashtags-1.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="timeline" class="level1">
+<h1>Timeline</h1>
+<section id="tweets-by-day" class="level2">
+<h2 class="anchored" data-anchor-id="tweets-by-day">Tweets by day</h2>
+<p><img src="tweets-by-day-1.png" class="img-fluid"></p>
+</section>
+<section id="tweets-by-day-and-time" class="level2">
+<h2 class="anchored" data-anchor-id="tweets-by-day-and-time">Tweets by day and time</h2>
+<p>Filtered for dates July 21-26, Prague time.</p>
+<p><img src="tweets-by-day-hour-1.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="users" class="level1">
+<h1>Users</h1>
+<section id="top-tweeters" class="level2">
+<h2 class="anchored" data-anchor-id="top-tweeters">Top tweeters</h2>
+<p><img src="tweets-top-users-1.png" class="img-fluid"></p>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p><img src="tweets-top-sources-1.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="networks" class="level1">
+<h1>Networks</h1>
+<section id="replies" class="level2">
+<h2 class="anchored" data-anchor-id="replies">Replies</h2>
+<p>The “replies network”, composed from users who reply directly to one another, coloured by page rank.</p>
+<p>Better to view the original PNG file in the <code>data</code> directory.</p>
+<p><img src="jtdwehi_replies.png" class="img-fluid"></p>
+</section>
+<section id="mentions" class="level2">
+<h2 class="anchored" data-anchor-id="mentions">Mentions</h2>
+<p>The “mentions network”, where users mention other users in their tweets. Filtered for k-core &gt;= 4 and coloured by modularity class.</p>
+<p>Better to view the original PNG file in the <code>data</code> directory.</p>
+<p><img src="jtdwehi_mentions-1.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="retweets" class="level1">
+<h1>Retweets</h1>
+<section id="retweet-proportion" class="level2">
+<h2 class="anchored" data-anchor-id="retweet-proportion">Retweet proportion</h2>
+<p><img src="is-retweet-1.png" class="img-fluid"></p>
+</section>
+<section id="retweet-count" class="level2">
+<h2 class="anchored" data-anchor-id="retweet-count">Retweet count</h2>
+<p><img src="retweet-count-1.png" class="img-fluid"></p>
+</section>
+<section id="top-retweets" class="level2">
+<h2 class="anchored" data-anchor-id="top-retweets">Top retweets</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+retweet_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<em>lazappi</em>
+</td>
+<td style="text-align:left;">
+Slides from my #jtdwehi talk today about building a clustering tree https://t.co/lwTztVstOC
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>lazappi</em>
+</td>
+<td style="text-align:left;">
+.@bestqualitycrab Visualising creative research (more creatively) #jtdwehi #sketchnotes https://t.co/DXhk1u22nf
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+.@claresloggett’s tips on where to start with data viz in Python #jtdwehi https://t.co/jN626uOAqd
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+Visualising grant recipients: Davids most funded but Richards get more money #jtdwehi https://t.co/iPImbK4paf
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mikejonesmelb
+</td>
+<td style="text-align:left;">
+Really valuable point from <span class="citation" data-cites="KathyReid">@KathyReid</span>: sometimes #dataviz decisions affected by need to consider political priorities and buy-in #jtdwehi
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gravitron
+</td>
+<td style="text-align:left;">
+<span class="citation" data-cites="bestqualitycrab">@bestqualitycrab</span> demoing dataviz: ask the tricky Q’s not the obvious. Consider the felt not just the instrumental.… https://t.co/ca1zCn4oSO
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mikejonesmelb
+</td>
+<td style="text-align:left;">
+More on the Transport Network Strategic Investment Tool (TraNSIT) here https://t.co/z5v827bfjd <span class="citation" data-cites="Xavier_Ho">@Xavier_Ho</span> #jtdwehi
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mikejonesmelb
+</td>
+<td style="text-align:left;">
+To visualise data is to encode it; how can we decode it? So Isabelle created Tracey McTraceface https://t.co/4YoxS4T6OS #jtdwehi
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+oldmateo
+</td>
+<td style="text-align:left;">
+:: "Research publishing methods stuck in the Stone Age" :: Brendan Ansell on balancing completeness and salience i… https://t.co/7WVV2Ni31U
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gravitron
+</td>
+<td style="text-align:left;">
+<span class="citation" data-cites="bestqualitycrab">@bestqualitycrab</span> leading a chorus of Slipping Away. Just your run of the mill dataviz conference. #JoiningTheDots… https://t.co/6oxUMXZfpm
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+</tbody>
+
+</table>
+</section>
+</section>
+<section id="favourites" class="level1">
+<h1>Favourites</h1>
+<section id="favourite-proportion" class="level2">
+<h2 class="anchored" data-anchor-id="favourite-proportion">Favourite proportion</h2>
+<p><img src="has-favorite-1.png" class="img-fluid"></p>
+</section>
+<section id="favourite-count" class="level2">
+<h2 class="anchored" data-anchor-id="favourite-count">Favourite count</h2>
+<p><img src="favorite-count-1.png" class="img-fluid"></p>
+</section>
+<section id="top-favourites" class="level2">
+<h2 class="anchored" data-anchor-id="top-favourites">Top favourites</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<em>lazappi</em>
+</td>
+<td style="text-align:left;">
+Slides from my #jtdwehi talk today about building a clustering tree https://t.co/lwTztVstOC
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Xavier_Ho
+</td>
+<td style="text-align:left;">
+People are flowing back in #jtdwehi https://t.co/t4aU8WXoX9
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WEHI_research
+</td>
+<td style="text-align:left;">
+Welcome to delegates attending today’s symposium Joining the Dots: The Art and Science of Data Visualisation! #jtdwehi #dataviz
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+Visualising grant recipients: Davids most funded but Richards get more money #jtdwehi https://t.co/iPImbK4paf
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>lazappi</em>
+</td>
+<td style="text-align:left;">
+.@bestqualitycrab Visualising creative research (more creatively) #jtdwehi #sketchnotes https://t.co/DXhk1u22nf
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+robbie_bonelli
+</td>
+<td style="text-align:left;">
+So inspired by the talk given by <span class="citation" data-cites="bestqualitycrab">@bestqualitycrab</span> on the problem of #genderequality and how #dataviz can help us! Thanks Deb! #jtdwehi
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KathyReid
+</td>
+<td style="text-align:left;">
+The incredible <span class="citation" data-cites="bestqualitycrab">@bestqualitycrab</span> keynoting #jtdwehi https://t.co/mLgKdVt4IX
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+.@claresloggett’s tips on where to start with data viz in Python #jtdwehi https://t.co/jN626uOAqd
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peterneish
+</td>
+<td style="text-align:left;">
+Building a clustering tree https://t.co/KDgdRfBejZ #jtdwehi
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+Representing Greek films via olive trees (which are are actually Markov chains) #jtdwehi https://t.co/SB2CG4oH8D
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+</tbody>
+
+</table>
+</section>
+</section>
+<section id="quotes" class="level1">
+<h1>Quotes</h1>
+<section id="quote-proportion" class="level2">
+<h2 class="anchored" data-anchor-id="quote-proportion">Quote proportion</h2>
+<p><img src="is-quote-1.png" class="img-fluid"></p>
+</section>
+<section id="quote-count" class="level2">
+<h2 class="anchored" data-anchor-id="quote-count">Quote count</h2>
+<p><img src="quotes-count-1.png" class="img-fluid"></p>
+</section>
+<section id="top-quotes" class="level2">
+<h2 class="anchored" data-anchor-id="top-quotes">Top quotes</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+quote_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+peterneish
+</td>
+<td style="text-align:left;">
+Would love to see some taxonomic data plotted like this. #jtdwehi https://t.co/EbBL872fum
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Xavier_Ho
+</td>
+<td style="text-align:left;">
+overlaying clusters: the datavis movie #jtdwehi https://t.co/KA5ovvvW6r
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+frostickle
+</td>
+<td style="text-align:left;">
+<p>Where can people go from here, to take advantage of things they’ve learnt at #jtdwehi? <span class="citation" data-cites="ResPlat">@ResPlat</span>? <span class="citation" data-cites="OKFNau">@OKFNau</span>?</p>
+#dataviz https://t.co/TM6ngns9RS
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rowlandm
+</td>
+<td style="text-align:left;">
+The money shot from <span class="citation" data-cites="_lazappi_">@_lazappi_</span> ! #jtdwehi https://t.co/nqynLrC7Vg
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Xavier_Ho
+</td>
+<td style="text-align:left;">
+Slide here: https://t.co/o2E59HHoZE #jtdwehi https://t.co/L98WV1tXgu
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+karinv
+</td>
+<td style="text-align:left;">
+Thanks to <span class="citation" data-cites="FCTweedie">@FCTweedie</span> and <span class="citation" data-cites="rubin_af">@rubin_af</span> for a great day of #dataviz! #jtdwehi https://t.co/Hti5FQtMGz
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rowlandm
+</td>
+<td style="text-align:left;">
+LImited funding … sounds like research! #jtdwehi https://t.co/gZwllFhtRe
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peterneish
+</td>
+<td style="text-align:left;">
+Fascinating insights into the life sciences #jtdwehi https://t.co/LpRwfP00ns
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+karinv
+</td>
+<td style="text-align:left;">
+Adding the correct hashtag! (sorry folks) #jtdwehi https://t.co/PoGZe8k1k8
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+robbie_bonelli
+</td>
+<td style="text-align:left;">
+Depressing and motivating! #jtdwehi https://t.co/YCGB1ibYkw
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+
+</table>
+</section>
+</section>
+<section id="media" class="level1">
+<h1>Media</h1>
+<section id="media-count" class="level2">
+<h2 class="anchored" data-anchor-id="media-count">Media count</h2>
+<p><img src="has-media-1.png" class="img-fluid"></p>
+</section>
+<section id="top-media" class="level2">
+<h2 class="anchored" data-anchor-id="top-media">Top media</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Xavier_Ho
+</td>
+<td style="text-align:left;">
+People are flowing back in #jtdwehi https://t.co/t4aU8WXoX9
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+Visualising grant recipients: Davids most funded but Richards get more money #jtdwehi https://t.co/iPImbK4paf
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>lazappi</em>
+</td>
+<td style="text-align:left;">
+.@bestqualitycrab Visualising creative research (more creatively) #jtdwehi #sketchnotes https://t.co/DXhk1u22nf
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KathyReid
+</td>
+<td style="text-align:left;">
+The incredible <span class="citation" data-cites="bestqualitycrab">@bestqualitycrab</span> keynoting #jtdwehi https://t.co/mLgKdVt4IX
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+.@claresloggett’s tips on where to start with data viz in Python #jtdwehi https://t.co/jN626uOAqd
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+Representing Greek films via olive trees (which are are actually Markov chains) #jtdwehi https://t.co/SB2CG4oH8D
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+frostickle
+</td>
+<td style="text-align:left;">
+<p>Now <span class="citation" data-cites="Xavier_Ho">@Xavier_Ho</span> from the <span class="citation" data-cites="CSIROnews">@CSIROnews</span> is talking about Visualising the Australian Transport Network</p>
+#jtdwehi #dataviz https://t.co/DcvXYmD45F
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+Getting underway for #jtdwehi with acknowledgement of country from <span class="citation" data-cites="WEHI_research">@WEHI_research</span>’s director https://t.co/oNcnu5wtd9
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCTweedie
+</td>
+<td style="text-align:left;">
+Patriarchy looks like this! What happens when we can describe the shape of injustice #jtdwehi https://t.co/8A7EhnFmt5
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gravitron
+</td>
+<td style="text-align:left;">
+Best URL of the day goes to <span class="citation" data-cites="Isa_Kiko">@Isa_Kiko</span>’s https://t.co/kapY0Aeacy A great looking tool! #JoiningTheDots #jtdwehi https://t.co/gal2v1PUJY
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+</tbody>
+
+</table>
+<section id="most-liked-media-image" class="level3">
+<h3 class="anchored" data-anchor-id="most-liked-media-image">Most liked media image</h3>
+<p><img src="most_liked_media.jpg" class="img-fluid"></p>
+</section>
+</section>
+</section>
+<section id="tweet-text" class="level1">
+<h1>Tweet text</h1>
+<p>The 100 words used 3 or more times.</p>
+<p><img src="count-words-1.png" class="img-fluid"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2016-2023, Luke Zappia
+  </li>  
+</ul>
+    </div>   
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">License</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

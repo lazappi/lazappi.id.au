@@ -4,3 +4,10 @@ freeze: true
 toc: true
 toc-depth: 3
 toc-title: Contents
+comments:
+  giscus:
+    repo: lazappi/lazappi.id.au
+    repo-id: "MDEwOlJlcG9zaXRvcnkxMjUwMjE0MDM="
+    category: "Website comments"
+    category-id: "DIC_kwDOB3Os284CVrHE"
+    mapping: "pathname"

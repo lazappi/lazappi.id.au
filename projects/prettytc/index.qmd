@@ -1,6 +1,6 @@
 ---
 title: prettytc
-summary: A Python script for pretty printing of TeXcount output
+description: A Python script for pretty printing of TeXcount output
 authors:
  - "**Luke Zappia**"
 categories: ["software", "python"]

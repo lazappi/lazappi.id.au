@@ -1,11 +1,11 @@
 ---
 title: Open Problems in Single-Cell Analysis
-summary: An effort to formalise and benchmark open problems in single-cell genomics analysis
+description: An effort to formalise and benchmark open problems in single-cell genomics analysis
 authors:
  -  The Open Problems core team
  - "**Luke Zappia**"
  - The Open Problems scientific advisors
-categories: ["benchmarking", "website"]
+categories: ["benchmarking", "single-cell", "website"]
 date: 2021-04-07
 links:
   code: https://github.com/openproblems-bio/openproblems

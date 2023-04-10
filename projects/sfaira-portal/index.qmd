@@ -1,6 +1,6 @@
 ---
 title: sfaira portal
-summary: A website built using Vue for viewing the sfaira database
+description: A website built using Vue for viewing the sfaira database
 authors:
  - "**Luke Zappia**"
  - David Fischer

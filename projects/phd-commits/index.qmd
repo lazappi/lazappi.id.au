@@ -1,6 +1,6 @@
 ---
 title: PhD commits
-summary: Functions for scraping git commits from repositories associated with a PhD (or anything else) and plotting them
+description: Functions for scraping git commits from repositories associated with a PhD (or anything else) and plotting them
 authors:
  - "**Luke Zappia**"
 categories: ["visualisation", "R"]

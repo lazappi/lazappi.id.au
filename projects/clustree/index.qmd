@@ -1,6 +1,6 @@
 ---
 title: clustree
-summary: CRAN R package for creating clustering trees, a visualisation for looking at clustering across resolutions
+description: CRAN R package for creating clustering trees, a visualisation for looking at clustering across resolutions
 authors:
  - "**Luke Zappia**"
  - Alicia Oshlack

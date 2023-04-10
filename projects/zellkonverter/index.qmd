@@ -1,6 +1,6 @@
 ---
 title: zellkonverter
-summary: Bioconductor R package converting between scRNA-seq objects
+description: Bioconductor R package for converting between scRNA-seq objects
 authors:
  - "**Luke Zappia**"
  - Aaron Lun

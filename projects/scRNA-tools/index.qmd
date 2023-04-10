@@ -1,6 +1,6 @@
 ---
 title: scRNA-tools
-summary: Database and website cataloguing software tools for analysing single-cell RNA sequencing data
+description: Database and website cataloguing software tools for analysing single-cell RNA sequencing data
 authors:
  - "**Luke Zappia**"
  - Belinda Phipson

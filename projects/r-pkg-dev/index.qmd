@@ -1,6 +1,6 @@
 ---
 title: R Package Development Workshop
-summary: Materials for the COMBINE Australia R package development workshop
+description: Materials for the COMBINE Australia R package development workshop
 authors:
  - "**Luke Zappia**"
  - COMBINE Australia

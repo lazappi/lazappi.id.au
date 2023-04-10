@@ -1,6 +1,6 @@
 ---
 title: Scanpy in R
-summary: Tutorial describing how to interact with the Scanpy Python package from R
+description: Tutorial describing how to interact with the Scanpy Python package from R
 authors:
  - "**Luke Zappia**"
 categories: ["single-cell", "rna-seq", "interoperability", "python", "scanpy", "R", "tutorial"]

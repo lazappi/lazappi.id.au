@@ -1,6 +1,6 @@
 ---
 title: Twitter stats
-summary: Analysis of Twitter activity for hashtags from various events, usually academic conferences
+description: Analysis of Twitter activity for hashtags from various events, usually academic conferences
 authors:
  - "**Luke Zappia**"
 categories: ["website", "twitter", "analysis", "R"]

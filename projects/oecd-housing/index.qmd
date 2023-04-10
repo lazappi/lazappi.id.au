@@ -1,6 +1,6 @@
 ---
 title: OECD housing
-summary: Some basic analysis of housing data from the OECD
+description: Some basic analysis of housing data from the OECD performed in Python
 authors:
  - "**Luke Zappia**"
 categories: ["analysis", "housing", "python"]

@@ -1,6 +1,6 @@
 ---
 title: Single-cell best practices
-summary: An online book covering the best practices for multiomic single-cell analysis with extensive tutorials and code examples
+description: An online book covering the best practices for multiomic single-cell analysis with extensive tutorials and code examples
 authors:
  - Lukas Heumos
  - Anna C. Schaar

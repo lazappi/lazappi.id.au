@@ -1,6 +1,6 @@
 ---
 title: Splatter
-summary: Bioconductor R package for simulating scRNA-seq data
+description: Bioconductor R package for simulating scRNA-seq data
 authors:
  - "**Luke Zappia**"
  - Belinda Phipson

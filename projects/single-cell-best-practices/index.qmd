@@ -1,0 +1,24 @@
+---
+title: Single-cell best practices
+summary: An online book covering the best practices for multiomic single-cell analysis with extensive tutorials and code examples
+authors:
+ - Lukas Heumos
+ - Anna C. Schaar
+ - "**Luke Zappia**"
+ - Single-cell Best Practices Consortium
+ - Theis lab
+ - Single-cell analysis community
+categories: ["single-cell", "analysis", "multiomics", "best practices", "book"]
+date: 2022-11-22
+links:
+  code: https://github.com/theislab/single-cell-best-practices
+  doi: 10.1038/s41576-023-00586-w
+  website: https://www.sc-best-practices.org/
+image: thumbnail.png
+image-alt: The single-cell best practices cover page
+---
+
+Single-cell best practices is an online book that attempts to draw together established best practices for multiomic single-cell analysis, including extensive tutorials and code examples.
+It is not limited to any particular tools or platforms but instead tries to promote the best performing approaches for different tasks as determined by independent projects.
+This is intended to be a living resource that will be updated as best practices evole with contributions of all kinds welcome from the community.
+I was part of the team involved in planning the project within the Theis lab and have written the [integration](https://www.sc-best-practices.org/cellular_structure/integration.html) and [interoperability](https://www.sc-best-practices.org/introduction/interoperability.html) chapters as well as contibuting to other parts of the book.

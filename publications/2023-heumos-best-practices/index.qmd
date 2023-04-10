@@ -1,0 +1,40 @@
+---
+title: Best practices for single-cell analysis across modalities
+author:
+  - Lukas Heumos
+  - Anna C. Schaar
+  - Christopher Lance
+  - Anastasia Litinetskaya
+  - Felix Drost
+  - name: Luke Zappia
+    me: true
+  - Malte D. Lücken
+  - Daniel C. Strobl
+  - Juan Henao
+  - Fabiola Curion
+  - Single-cell Best Practices Consortium
+  - Herbert B. Schiller
+  - Fabian J. Theis
+abstract: |
+  Recent advances in single-cell technologies have enabled high-throughput molecular profiling of cells across modalities and locations.
+  Single-cell transcriptomics data can now be complemented by chromatin accessibility, surface protein expression, adaptive immune receptor repertoire profiling and spatial information.
+  The increasing availability of single-cell data across modalities has motivated the development of novel computational methods to help analysts derive biological insights.
+  As the field grows, it becomes increasingly difficult to navigate the vast landscape of tools and analysis steps.
+  Here, we summarize independent benchmarking studies of unimodal and multimodal single-cell analysis across modalities to suggest comprehensive best-practice workflows for the most common analysis steps.
+  Where independent benchmarks are not available, we review and contrast popular methods.
+  Our article serves as an entry point for novices in the field of single-cell (multi-)omic analysis and guides advanced users to the most recent best practices.
+categories: ["single-cell", "multiomics", "best practices", "review"]
+date: 2023-03-31
+links:
+  code: https://github.com/theislab/single-cell-best-practices
+  doi: 10.1038/s41576-023-00586-w
+  pdf: https://www.nature.com/articles/s41576-023-00586-w.pdf
+  website: https://www.sc-best-practices.org/
+citation:
+  type: article-journal
+  doi: 10.1038/s41576-023-00586-w
+  pmid: "37002403"
+  issn: "1471-0056"
+  container-title: Nature reviews genetics
+  page: "1-23"
+---

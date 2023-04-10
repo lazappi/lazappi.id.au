@@ -1,6 +1,6 @@
 ---
 title: sfaira portal
-summary: An example template project
+summary: A website built using Vue for viewing the sfaira database
 authors:
  - "**Luke Zappia**"
  - David Fischer
@@ -13,8 +13,7 @@ links:
   doi: 10.1186/s13059-021-02452-6
   website: https://theislab.github.io/sfaira-portal/
 image: thumbnail.png
-image-alt: Thumbnail image
-image-caption: The sfaira portal logo
+image-alt: The sfaira portal logo
 ---
 
 sfaira is a single-cell data zoo for public data sets paired with a model zoo for executable pre-trained models.

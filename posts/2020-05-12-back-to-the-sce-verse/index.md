@@ -188,7 +188,7 @@ ggplot(bioc_views, aes(x = fct_rev(biocViews))) +
     theme(axis.title.y = element_blank())
 ```
 
-![](bioViews-1.png)
+![](biocViews-1.png)
 
 Many of the most common biocViews are fairly general terms but there is a set
 that stands out as being specific to scRNA-seq data including "SingleCell",

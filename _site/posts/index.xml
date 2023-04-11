@@ -288,7 +288,7 @@
 <span id="cb7-11">    <span class="fu" style="color: #4758AB;">ylab</span>(<span class="st" style="color: #20794D;">"Number of packages"</span>) <span class="sc" style="color: #5E5E5E;">+</span></span>
 <span id="cb7-12">    <span class="fu" style="color: #4758AB;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;">+</span></span>
 <span id="cb7-13">    <span class="fu" style="color: #4758AB;">theme</span>(<span class="at" style="color: #657422;">axis.title.y =</span> <span class="fu" style="color: #4758AB;">element_blank</span>())</span></code></pre></div>
-<p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/bioViews-1.png" class="img-fluid"></p>
+<p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/biocViews-1.png" class="img-fluid"></p>
 <p>Many of the most common biocViews are fairly general terms but there is a set that stands out as being specific to scRNA-seq data including “SingleCell”, “GeneExpression”, “RNASeq” and “Transcriptomics”. Further down the list we see terms related to specific analysis tasks (“Clustering”, “Visualization”, “DifferentialExpression”, “DimensionReduction”, “Normalization” etc.). Many of these are similar to the categories we came up with to group tools on <a href="https://www.scrna-tools.org" title="scRNA-tools analysis page">scRNA-tools</a>. It would be interesting to look at the differences in ranking but I suspect there are enough differences in how the terms are used that it would be difficult to compare them.</p>
 </section>
 </section>

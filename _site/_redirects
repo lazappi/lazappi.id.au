@@ -1,1 +1,4 @@
-_redirects
+/post/*         /posts/:splat
+/project/*      /projects/:splat
+/talk/*         /talks/:splat
+/publication/*  /publications/:splat

@@ -9,6 +9,12 @@ about:
     - icon: twitter
       text: Twitter
       href: https://twitter.com/_lazappi_
+    - icon: mastodon
+      text: Mastodon
+      href: https://mastodon.au/@lazappi
+    - icon: square
+      text: Bluesky
+      href: https://bsky.app/profile/lazappi.bsky.social
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/in/lazappi/

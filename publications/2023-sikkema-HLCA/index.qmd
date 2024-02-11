@@ -1,0 +1,117 @@
+---
+title: An integrated cell atlas of the lung in health and disease
+author:
+  - Lisa Sikkema
+  - Ciro Ramírez-Suástegui
+  - Daniel C. Strobl
+  - Tessa E. Gillett
+  - name: Luke Zappia
+    me: true
+  - Elo Madissoon
+  - Nikolay S. Markov
+  - Laure-Emmanuelle Zaragosi
+  - Yuge Ji
+  - Meshal Ansari
+  - Marie-Jeanne Arguel
+  - Leonie Apperloo
+  - Martin Banchero
+  - Christophe Bécavin
+  - Marijn Berg
+  - Evgeny Chichelnitskiy
+  - Mei-i Chung
+  - Antoine Collin
+  - Aurore C. A. Gay
+  - Janine Gote-Schniering
+  - Baharak Hooshiar Kashani
+  - Kemal Inecik
+  - Manu Jain
+  - Theodore S. Kapellos
+  - Tessa M. Kole
+  - Sylvie Leroy
+  - Christoph H. Mayr
+  - Amanda J. Oliver
+  - Michael von Papen
+  - Lance Peter
+  - Chase J. Taylor
+  - Thomas Walzthoeni
+  - Chuan Xu
+  - Linh T. Bui
+  - Carlo De Donno
+  - Leander Dony
+  - Alen Faiz
+  - Minzhe Guo
+  - Austin J. Gutierrez
+  - Lukas Heumos
+  - Ni Huang
+  - Ignacio L. Ibarra
+  - Nathan D. Jackson
+  - Preetish Kadur Lakshminarasimha Murthy
+  - Mohammad Lotfollahi
+  - Tracy Tabib
+  - Carlos Talavera-López
+  - Kyle J. Travaglini
+  - Anna Wilbrey-Clark
+  - Kaylee B. Worlock
+  - Masahiro Yoshida
+  - Lung Biological Network Consortium
+  - Maarten van den Berge
+  - Yohan Bossé
+  - Tushar J. Desai
+  - Oliver Eickelberg
+  - Naftali Kaminski
+  - Mark A. Krasnow
+  - Robert Lafyatis
+  - Marko Z. Nikolic
+  - Joseph E. Powell
+  - Jayaraj Rajagopal
+  - Mauricio Rojas
+  - Orit Rozenblatt-Rosen
+  - Max A. Seibold
+  - Dean Sheppard
+  - Douglas P. Shepherd
+  - Don D. Sin
+  - Wim Timens
+  - Alexander M. Tsankov
+  - Jeffrey Whitsett
+  - Yan Xu
+  - Nicholas E. Banovich
+  - Pascal Barbry
+  - Thu Elizabeth Duong
+  - Christine S. Falk
+  - Kerstin B. Meyer
+  - Jonathan A. Kropski
+  - Dana Pe’er
+  - Herbert B. Schiller
+  - Purushothama Rao Tata
+  - Joachim L. Schultze
+  - Sara A. Teichmann
+  - Alexander V. Misharin
+  - Martijn C. Nawijn
+  - Malte D. Luecken
+  - Fabian J. Theis
+abstract: |
+  Single-cell technologies have transformed our understanding of human tissues.
+  Yet, studies typically capture only a limited number of donors and disagree on cell type definitions.
+  Integrating many single-cell datasets can address these limitations of individual studies and capture the variability present in the population.
+  Here we present the integrated Human Lung Cell Atlas (HLCA), combining 49 datasets of the human respiratory system into a single atlas spanning over 2.4 million cells from 486 individuals.
+  The HLCA presents a consensus cell type re-annotation with matching marker genes, including annotations of rare and previously undescribed cell types.
+  Leveraging the number and diversity of individuals in the HLCA, we identify gene modules that are associated with demographic covariates such as age, sex and body mass index, as well as gene modules changing expression along the proximal-to-distal axis of the bronchial tree.
+  Mapping new data to the HLCA enables rapid data annotation and interpretation. Using the HLCA as a reference for the study of disease, we identify shared cell states across multiple lung diseases, including SPP1+ profibrotic monocyte-derived macrophages in COVID-19, pulmonary fibrosis and lung carcinoma.
+  Overall, the HLCA serves as an example for the development and use of large-scale, cross-dataset organ atlases within the Human Cell Atlas.
+categories: ["single-cell", "rna-seq", "lung", "atlas"]
+date: 2023-08-06
+links:
+  code: https://github.com/LungCellAtlas/HLCA_reproducibility
+  doi: 10.1038/s41591-023-02327-2
+  pdf: https://www.nature.com/articles/s41591-023-02327-2.pdf
+  preprint: https://doi.org/10.1101/2022.03.10.483747
+citation:
+  type: article-journal
+  doi: 10.1038/s41591-023-02327-2
+  pmid: "37291214"
+  issn: "1078-8956"
+  container-title: Nature Medicine
+  issue: 6
+  volume: 29
+  page: "1563-1577"
+---

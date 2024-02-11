@@ -1,0 +1,37 @@
+---
+title: Population-level integration of single-cell datasets enables multi-scale analysis across samples
+author:
+  - Carlo De Donno
+  - Soroor Hediyeh-Zadeh
+  - Amir Ali Moinfar
+  - Marco Wagenstetter
+  - name: Luke Zappia
+    me: true
+  - Mohammad Lotfollahi
+  - Fabian J. Theis
+abstract: |
+  The increasing generation of population-level single-cell atlases has the potential to link sample metadata with cellular data.
+  Constructing such references requires integration of heterogeneous cohorts with varying metadata.
+  Here we present single-cell population level integration (scPoli), an open-world learner that incorporates generative models to learn sample and cell representations for data integration, label transfer and reference mapping.
+  We applied scPoli on population-level atlases of lung and peripheral blood mononuclear cells, the latter consisting of 7.8 million cells across 2,375 samples.
+  We demonstrate that scPoli can explain sample-level biological and technical variations using sample embeddings revealing genes associated with batch effects and biological effects.
+  scPoli is further applicable to single-cell sequencing assay for transposase-accessible chromatin and cross-species datasets, offering insights into chromatin accessibility and comparative genomics.
+  We envision scPoli becoming an important tool for population-level single-cell data integration facilitating atlas use but also interpretation by means of multi-scale analyses.
+categories: ["single-cell", "rna-seq", "methods", "integration", "software"]
+date: 2023-10-09
+links:
+  code: http://github.com/theislab/scPoli_reproduce
+  package: https://pypi.org/project/scArches/
+  doi: 10.1038/s41592-023-02035-2
+  pdf: https://www.nature.com/articles/s41592-023-02035-2.pdf
+  preprint: https://doi.org/10.1101/2022.11.28.517803
+citation:
+  type: article-journal
+  doi: 10.1038/s41592-023-02035-2
+  pmid: "37813989"
+  issn: "1548-7091"
+  container-title: Nature Methods
+  issue: 11
+  volume: 20
+  page: "1683-1692"
+---

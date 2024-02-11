@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -67,7 +67,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-20JH368VMR"></script>
@@ -101,11 +102,11 @@ cookieconsent.run({
 
 
 <meta property="og:title" content="lazappi - HiTIME: An efficient model-selection approach for the detection of unknown drug metabolites in LC-MS data">
-<meta property="og:description" content="The identification of metabolites plays an important role in understanding drug efficacy and safety however these compounds are often difficult to identify in complex mixtures.">
+<meta property="og:description" content="The identification of metabolites plays an important role in understanding drug efficacy and safety however these compounds are often difficult to identify in complex mixtures. One approach to identify drug metabolites involves utilising differentially isotopically labelled drug compounds to create unique isotopic signals that can be detected by liquid chromatography-mass spectrometry (LC-MS). User-friendly, efficient, computational tools that allow selective detection of these signals are lacking. We have developed an efficient open-source software tool called HiTIME (High-Resolution Twin-Ion Metabolite Extraction) which filters twin-ion signals in LC-MS data. The intensity of each data point in the input is replaced by a Z-score describing how well the point matches an idealised twin-ion signal versus alternative ion signatures. Here we provide a detailed description of the algorithm and demonstrate its performance on simulated and experimental data.">
 <meta property="og:site-name" content="lazappi">
 <meta property="og:locale" content="en_AU">
 <meta name="twitter:title" content="lazappi - HiTIME: An efficient model-selection approach for the detection of unknown drug metabolites in LC-MS data">
-<meta name="twitter:description" content="The identification of metabolites plays an important role in understanding drug efficacy and safety however these compounds are often difficult to identify in complex mixtures.">
+<meta name="twitter:description" content="The identification of metabolites plays an important role in understanding drug efficacy and safety however these compounds are often difficult to identify in complex mixtures. One approach to identify drug metabolites involves utilising differentially isotopically labelled drug compounds to create unique isotopic signals that can be detected by liquid chromatography-mass spectrometry (LC-MS). User-friendly, efficient, computational tools that allow selective detection of these signals are lacking. We have developed an efficient open-source software tool called HiTIME (High-Resolution Twin-Ion Metabolite Extraction) which filters twin-ion signals in LC-MS data. The intensity of each data point in the input is replaced by a Z-score describing how well the point matches an idealised twin-ion signal versus alternative ion signatures. Here we provide a detailed description of the algorithm and demonstrate its performance on simulated and experimental data.">
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
@@ -122,49 +123,49 @@ cookieconsent.run({
     <span class="navbar-title">lazappi</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../posts/index.html">
+    <a class="nav-link" href="../../posts/index.html" rel="" target="">
  <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects/index.html">
+    <a class="nav-link" href="../../projects/index.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../talks/index.html">
+    <a class="nav-link" href="../../talks/index.html" rel="" target="">
  <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications/index.html">
+    <a class="nav-link" href="../../publications/index.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lazappi"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lazappi" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/_lazappi_"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/lazappi" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../posts/index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../posts/index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -260,9 +261,9 @@ cookieconsent.run({
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{gleeming2020,
-  author = {Michael G Leeming and Andrew P Isaac and Luke Zappia and
-    Richard A J O’Hair and William A Donald and Bernard J Pope},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{g leeming2020,
+  author = {G Leeming, Michael and P Isaac, Andrew and Zappia, Luke and
+    A J O’Hair, Richard and A Donald, William and J Pope, Bernard},
   title = {HiTIME: {An} Efficient Model-Selection Approach for the
     Detection of Unknown Drug Metabolites in {LC-MS} Data},
   journal = {SoftwareX},
@@ -287,8 +288,8 @@ cookieconsent.run({
     signatures. Here we provide a detailed description of the algorithm
     and demonstrate its performance on simulated and experimental data.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-gleeming2020" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Michael G Leeming, Andrew P Isaac, Luke Zappia, Richard A J O’Hair,
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-g leeming2020" class="csl-entry quarto-appendix-citeas" role="listitem">
+G Leeming, Michael, Andrew P Isaac, Luke Zappia, Richard A J O’Hair,
 William A Donald, and Bernard J Pope. 2020. <span>“HiTIME: An Efficient
 Model-Selection Approach for the Detection of Unknown Drug Metabolites
 in LC-MS Data.”</span> <em>SoftwareX</em>, July, 100559. <a href="https://doi.org/10.1016/j.softx.2020.100559">https://doi.org/10.1016/j.softx.2020.100559</a>.
@@ -435,9 +436,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -502,6 +517,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -547,11 +648,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2016-2023, Luke Zappia
+ © 2016-2024, Luke Zappia
   </li>  
 </ul>
     </div>   
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

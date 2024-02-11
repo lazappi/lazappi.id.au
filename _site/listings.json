@@ -1,5 +1,23 @@
 [
   {
+    "listing": "/talks/index.html",
+    "items": [
+      "/talks/2022-06-30-ILC-summer-school/index.html",
+      "/talks/2020-12-18-EuroBioc2020/index.html",
+      "/talks/2019-03-22-phd-completion/index.html",
+      "/talks/2018-09-27-icb-seminar-2018/index.html",
+      "/talks/2018-09-17-gi2018/index.html",
+      "/talks/2018-07-21-useR2018/index.html",
+      "/talks/2018-07-16-OzSingleCells2018/index.html",
+      "/talks/2017-11-17-BiocAsia2017/index.html",
+      "/talks/2017-11-01-gi2017/index.html",
+      "/talks/2017-10-27-berkeley2017/index.html",
+      "/talks/2017-08-18-joining-the-dots/index.html",
+      "/talks/2017-07-17-WEHI2017/index.html",
+      "/talks/2016-10-31-COMBINE16/index.html"
+    ]
+  },
+  {
     "listing": "/posts/index.html",
     "items": [
       "/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html",
@@ -24,10 +42,13 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/2023-ji-distance-metrics/index.html",
+      "/publications/2023-huemos-ehrapy/index.html",
+      "/publications/2023-hrovatin-batch-effects/index.html",
+      "/publications/2023-deDonno-scPoli/index.html",
+      "/publications/2023-hrovatin-MIA/index.html",
+      "/publications/2023-sikkema-HLCA/index.html",
       "/publications/2023-heumos-best-practices/index.html",
-      "/publications/2022-hrovatin-MIA/index.html",
-      "/publications/2022-deDonno-scPoli/index.html",
-      "/publications/2022-sikkema-HLCA/index.html",
       "/publications/2021-luecken-scIB/index.html",
       "/publications/2021-azodi-splatPop/index.html",
       "/publications/2021-zappia-1000-tools/index.html",
@@ -67,24 +88,6 @@
       "/projects/single-cell-best-practices/index.html",
       "/projects/scanpy-in-R/index.html",
       "/projects/r-pkg-dev/index.html"
-    ]
-  },
-  {
-    "listing": "/talks/index.html",
-    "items": [
-      "/talks/2022-06-30-ILC-summer-school/index.html",
-      "/talks/2020-12-18-EuroBioc2020/index.html",
-      "/talks/2019-03-22-phd-completion/index.html",
-      "/talks/2018-09-27-icb-seminar-2018/index.html",
-      "/talks/2018-09-17-gi2018/index.html",
-      "/talks/2018-07-21-useR2018/index.html",
-      "/talks/2018-07-16-OzSingleCells2018/index.html",
-      "/talks/2017-11-17-BiocAsia2017/index.html",
-      "/talks/2017-11-01-gi2017/index.html",
-      "/talks/2017-10-27-berkeley2017/index.html",
-      "/talks/2017-08-18-joining-the-dots/index.html",
-      "/talks/2017-07-17-WEHI2017/index.html",
-      "/talks/2016-10-31-COMBINE16/index.html"
     ]
   }
 ]

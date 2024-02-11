@@ -2,24 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Karin Hrovatin">
-<meta name="author" content="Aimée Bastidas-Ponce">
-<meta name="author" content="Mostafa Bakhti">
+<meta name="author" content="Carlo De Donno">
+<meta name="author" content="Soroor Hediyeh-Zadeh">
+<meta name="author" content="Amir Ali Moinfar">
+<meta name="author" content="Marco Wagenstetter">
 <meta name="author" content="Luke Zappia">
-<meta name="author" content="Maren Büttner">
-<meta name="author" content="Ciro Sallino">
-<meta name="author" content="Michael Sterr">
-<meta name="author" content="Anika Böttcher">
-<meta name="author" content="Adriana Migliorini">
-<meta name="author" content="Heiko Lickert">
-<meta name="author" content="Fabian J Theis">
-<meta name="dcterms.date" content="2022-12-22">
+<meta name="author" content="Mohammad Lotfollahi">
+<meta name="author" content="Fabian J. Theis">
+<meta name="dcterms.date" content="2023-10-09">
 
-<title>lazappi - Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas</title>
+<title>lazappi - Population-level integration of single-cell datasets enables multi-scale analysis across samples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +25,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -72,7 +68,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-20JH368VMR"></script>
@@ -105,12 +102,12 @@ cookieconsent.run({
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
 
 
-<meta property="og:title" content="lazappi - Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas">
-<meta property="og:description" content="Multiple single-cell RNA sequencing (scRNA-seq) datasets have been generated to study pancreatic islet cells during development, homeostasis, and diabetes progression.">
+<meta property="og:title" content="lazappi - Population-level integration of single-cell datasets enables multi-scale analysis across samples">
+<meta property="og:description" content="The increasing generation of population-level single-cell atlases has the potential to link sample metadata with cellular data. Constructing such references requires integration of heterogeneous cohorts with varying metadata. Here we present single-cell population level integration (scPoli), an open-world learner that incorporates generative models to learn sample and cell representations for data integration, label transfer and reference mapping. We applied scPoli on population-level atlases of lung and peripheral blood mononuclear cells, the latter consisting of 7.8 million cells across 2,375 samples. We demonstrate that scPoli can explain sample-level biological and technical variations using sample embeddings revealing genes associated with batch effects and biological effects. scPoli is further applicable to single-cell sequencing assay for transposase-accessible chromatin and cross-species datasets, offering insights into chromatin accessibility and comparative genomics. We envision scPoli becoming an important tool for population-level single-cell data integration facilitating atlas use but also interpretation by means of multi-scale analyses.">
 <meta property="og:site-name" content="lazappi">
 <meta property="og:locale" content="en_AU">
-<meta name="twitter:title" content="lazappi - Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas">
-<meta name="twitter:description" content="Multiple single-cell RNA sequencing (scRNA-seq) datasets have been generated to study pancreatic islet cells during development, homeostasis, and diabetes progression.">
+<meta name="twitter:title" content="lazappi - Population-level integration of single-cell datasets enables multi-scale analysis across samples">
+<meta name="twitter:description" content="The increasing generation of population-level single-cell atlases has the potential to link sample metadata with cellular data. Constructing such references requires integration of heterogeneous cohorts with varying metadata. Here we present single-cell population level integration (scPoli), an open-world learner that incorporates generative models to learn sample and cell representations for data integration, label transfer and reference mapping. We applied scPoli on population-level atlases of lung and peripheral blood mononuclear cells, the latter consisting of 7.8 million cells across 2,375 samples. We demonstrate that scPoli can explain sample-level biological and technical variations using sample embeddings revealing genes associated with batch effects and biological effects. scPoli is further applicable to single-cell sequencing assay for transposase-accessible chromatin and cross-species datasets, offering insights into chromatin accessibility and comparative genomics. We envision scPoli becoming an important tool for population-level single-cell data integration facilitating atlas use but also interpretation by means of multi-scale analyses.">
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
@@ -127,49 +124,49 @@ cookieconsent.run({
     <span class="navbar-title">lazappi</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../posts/index.html">
+    <a class="nav-link" href="../../posts/index.html" rel="" target="">
  <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects/index.html">
+    <a class="nav-link" href="../../projects/index.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../talks/index.html">
+    <a class="nav-link" href="../../talks/index.html" rel="" target="">
  <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications/index.html">
+    <a class="nav-link" href="../../publications/index.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lazappi"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lazappi" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/_lazappi_"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/lazappi" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../posts/index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../posts/index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -184,13 +181,13 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas</h1>
+<h1 class="title">Population-level integration of single-cell datasets enables multi-scale analysis across samples</h1>
   <div class="quarto-categories">
     <div class="quarto-category">single-cell</div>
     <div class="quarto-category">rna-seq</div>
-    <div class="quarto-category">mouse</div>
-    <div class="quarto-category">pancreas</div>
-    <div class="quarto-category">atlas</div>
+    <div class="quarto-category">methods</div>
+    <div class="quarto-category">integration</div>
+    <div class="quarto-category">software</div>
   </div>
   </div>
 
@@ -202,13 +199,16 @@ cookieconsent.run({
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
               <p>
-                              Karin Hrovatin
+                              Carlo De Donno
                                       </p>
               <p>
-                              Aimée Bastidas-Ponce
+                              Soroor Hediyeh-Zadeh
                                       </p>
               <p>
-                              Mostafa Bakhti
+                              Amir Ali Moinfar
+                                      </p>
+              <p>
+                              Marco Wagenstetter
                                       </p>
               <p>
                                 <strong>
@@ -216,25 +216,10 @@ cookieconsent.run({
                       </strong>
                                       </p>
               <p>
-                              Maren Büttner
+                              Mohammad Lotfollahi
                                       </p>
               <p>
-                              Ciro Sallino
-                                      </p>
-              <p>
-                              Michael Sterr
-                                      </p>
-              <p>
-                              Anika Böttcher
-                                      </p>
-              <p>
-                              Adriana Migliorini
-                                      </p>
-              <p>
-                              Heiko Lickert
-                                      </p>
-              <p>
-                              Fabian J Theis
+                              Fabian J. Theis
                                       </p>
           </div>
   </div>
@@ -242,7 +227,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 22, 2022</p>
+      <p class="date">October 9, 2023</p>
     </div>
   </div>
   
@@ -251,17 +236,18 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Links</div>
     <div class="quarto-title-meta-contents">
-                          <a type="button" class="btn btn-outline-primary" href="https://github.com/theislab/mouse_cross-condition_pancreatic_islet_atlas">Code</a>
-                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1101/2022.12.22.521557">DOI</a>
-                    <a type="button" class="btn btn-outline-primary" href="https://www.biorxiv.org/content/10.1101/2022.12.22.521557v1.full.pdf">PDF</a>
-                          <a type="button" class="btn btn-outline-primary" href="https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070">Website</a>
-                      </div>
+                    <a type="button" class="btn btn-outline-primary" href="https://pypi.org/project/scArches/">Package</a>
+                    <a type="button" class="btn btn-outline-primary" href="http://github.com/theislab/scPoli_reproduce">Code</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1038/s41592-023-02035-2">DOI</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://www.nature.com/articles/s41592-023-02035-2.pdf">PDF</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1101/2022.11.28.517803">Preprint</a>
+                            </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Citation stats</div>
     <div class="quarto-title-meta-contents">
-      <div class="scite-badge" data-doi="10.1101/2022.12.22.521557" data-layout="vertical" data-show-zero="true" data-small="false" data-show-labels="true" data-tally-show="true">
+      <div class="scite-badge" data-doi="10.1038/s41592-023-02035-2" data-layout="vertical" data-show-zero="true" data-small="false" data-show-labels="true" data-tally-show="true">
       </div>
     </div>
   </div>
@@ -274,7 +260,7 @@ cookieconsent.run({
 <div>
   <div class="abstract">
     <div class="abstract-title">Abstract</div>
-    <p>Multiple single-cell RNA sequencing (scRNA-seq) datasets have been generated to study pancreatic islet cells during development, homeostasis, and diabetes progression. However, despite the time and resources invested into the past scRNA-seq studies, there is still no consensus on islet cell states and associated pathways in health and dysfunction as well as the value of frequently used preclinical mouse diabetes models. Since these challenges can be only resolved with a joint analysis of multiple datasets, we present a scRNA-seq cross-condition mouse islet atlas (MIA). We integrated over 300,000 cells from nine datasets with 56 samples, varying in age, sex, and diabetes models, including autoimmune type 1 diabetes (T1D) model (NOD), gluco-/lipotoxicity T2D model (db/db), and chemical streptozotocin (STZ) β-cell ablation model. MIA is a curated resource that enables interactive exploration of gene expression and transfer of cell types and states. We use MIA to obtain new insights into islet cells in health and disease that cannot be reached from individual datasets. Based on the MIA β-cell landscape we report cross-publication differences between previously suggested marker genes of individual phenotypes. We further show that in the STZ model β-cells transcriptionally correlate to human T2D and mouse db/db model β-cells, but are less similar to human T1D and mouse NOD model β-cells. We define new cell states involved in disease progression across diabetes models. We also observe different pathways shared between immature, aged, and diabetes model β-cell states. In conclusion, our work presents the first comprehensive analysis of β-cell responses to different stressors, providing a roadmap for the understanding of β-cell plasticity, compensation, and demise.</p>
+    <p>The increasing generation of population-level single-cell atlases has the potential to link sample metadata with cellular data. Constructing such references requires integration of heterogeneous cohorts with varying metadata. Here we present single-cell population level integration (scPoli), an open-world learner that incorporates generative models to learn sample and cell representations for data integration, label transfer and reference mapping. We applied scPoli on population-level atlases of lung and peripheral blood mononuclear cells, the latter consisting of 7.8 million cells across 2,375 samples. We demonstrate that scPoli can explain sample-level biological and technical variations using sample embeddings revealing genes associated with batch effects and biological effects. scPoli is further applicable to single-cell sequencing assay for transposase-accessible chromatin and cross-species datasets, offering insights into chromatin accessibility and comparative genomics. We envision scPoli becoming an important tool for population-level single-cell data integration facilitating atlas use but also interpretation by means of multi-scale analyses.</p>
   </div>
 </div>
 
@@ -285,51 +271,47 @@ cookieconsent.run({
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{hrovatin2022,
-  author = {Karin Hrovatin and Aimée Bastidas-Ponce and Mostafa Bakhti
-    and Luke Zappia and Maren Büttner and Ciro Sallino and Michael Sterr
-    and Anika Böttcher and Adriana Migliorini and Heiko Lickert and
-    Fabian J Theis},
-  title = {Delineating Mouse β-Cell Identity During Lifetime and in
-    Diabetes with a Single Cell Atlas},
-  date = {2022-12-22},
-  url = {https://lazappi.id.au/publications/2022-hrovatin-MIA},
-  doi = {10.1101/2022.12.22.521557},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{de donno2023,
+  author = {De Donno, Carlo and Hediyeh-Zadeh, Soroor and Ali Moinfar,
+    Amir and Wagenstetter, Marco and Zappia, Luke and Lotfollahi,
+    Mohammad and J. Theis, Fabian},
+  title = {Population-Level Integration of Single-Cell Datasets Enables
+    Multi-Scale Analysis Across Samples},
+  journal = {Nature Methods},
+  volume = {20},
+  number = {11},
+  pages = {1683-1692},
+  date = {2023-10-09},
+  url = {https://lazappi.id.au/publications/2023-deDonno-scPoli},
+  doi = {10.1038/s41592-023-02035-2},
+  issn = {1548-7091},
   langid = {en},
-  abstract = {Multiple single-cell RNA sequencing (scRNA-seq) datasets
-    have been generated to study pancreatic islet cells during
-    development, homeostasis, and diabetes progression. However, despite
-    the time and resources invested into the past scRNA-seq studies,
-    there is still no consensus on islet cell states and associated
-    pathways in health and dysfunction as well as the value of
-    frequently used preclinical mouse diabetes models. Since these
-    challenges can be only resolved with a joint analysis of multiple
-    datasets, we present a scRNA-seq cross-condition mouse islet atlas
-    (MIA). We integrated over 300,000 cells from nine datasets with 56
-    samples, varying in age, sex, and diabetes models, including
-    autoimmune type 1 diabetes (T1D) model (NOD), gluco-/lipotoxicity
-    T2D model (db/db), and chemical streptozotocin (STZ) β-cell ablation
-    model. MIA is a curated resource that enables interactive
-    exploration of gene expression and transfer of cell types and
-    states. We use MIA to obtain new insights into islet cells in health
-    and disease that cannot be reached from individual datasets. Based
-    on the MIA β-cell landscape we report cross-publication differences
-    between previously suggested marker genes of individual phenotypes.
-    We further show that in the STZ model β-cells transcriptionally
-    correlate to human T2D and mouse db/db model β-cells, but are less
-    similar to human T1D and mouse NOD model β-cells. We define new cell
-    states involved in disease progression across diabetes models. We
-    also observe different pathways shared between immature, aged, and
-    diabetes model β-cell states. In conclusion, our work presents the
-    first comprehensive analysis of β-cell responses to different
-    stressors, providing a roadmap for the understanding of β-cell
-    plasticity, compensation, and demise.}
+  abstract = {The increasing generation of population-level single-cell
+    atlases has the potential to link sample metadata with cellular
+    data. Constructing such references requires integration of
+    heterogeneous cohorts with varying metadata. Here we present
+    single-cell population level integration (scPoli), an open-world
+    learner that incorporates generative models to learn sample and cell
+    representations for data integration, label transfer and reference
+    mapping. We applied scPoli on population-level atlases of lung and
+    peripheral blood mononuclear cells, the latter consisting of 7.8
+    million cells across 2,375 samples. We demonstrate that scPoli can
+    explain sample-level biological and technical variations using
+    sample embeddings revealing genes associated with batch effects and
+    biological effects. scPoli is further applicable to single-cell
+    sequencing assay for transposase-accessible chromatin and
+    cross-species datasets, offering insights into chromatin
+    accessibility and comparative genomics. We envision scPoli becoming
+    an important tool for population-level single-cell data integration
+    facilitating atlas use but also interpretation by means of
+    multi-scale analyses.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hrovatin2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Karin Hrovatin, Aimée Bastidas-Ponce, Mostafa Bakhti, Luke Zappia, Maren
-Büttner, Ciro Sallino, Michael Sterr, et al. 2022. <span>“Delineating
-Mouse β-Cell Identity During Lifetime and in Diabetes with a Single Cell
-Atlas.”</span> <em>bioRxiv</em>. <a href="https://doi.org/10.1101/2022.12.22.521557">https://doi.org/10.1101/2022.12.22.521557</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-de donno2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+De Donno, Carlo, Soroor Hediyeh-Zadeh, Amir Ali Moinfar, Marco
+Wagenstetter, Luke Zappia, Mohammad Lotfollahi, and Fabian J. Theis.
+2023. <span>“Population-Level Integration of Single-Cell Datasets
+Enables Multi-Scale Analysis Across Samples.”</span> <em>Nature
+Methods</em> 20 (11): 1683–92. <a href="https://doi.org/10.1038/s41592-023-02035-2">https://doi.org/10.1038/s41592-023-02035-2</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -473,9 +455,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -540,6 +536,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -585,11 +667,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2016-2023, Luke Zappia
+ © 2016-2024, Luke Zappia
   </li>  
 </ul>
     </div>   
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

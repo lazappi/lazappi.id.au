@@ -6,10 +6,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2019-08-03">
-<meta name="description" content="Materials for the COMBINE Australia R package development workshop">
+<meta name="author" content="Karin Hrovatin">
+<meta name="author" content="Aimée Bastidas-Ponce">
+<meta name="author" content="Mostafa Bakhti">
+<meta name="author" content="Luke Zappia">
+<meta name="author" content="Maren Büttner">
+<meta name="author" content="Ciro Sallino">
+<meta name="author" content="Michael Sterr">
+<meta name="author" content="Anika Böttcher">
+<meta name="author" content="Adriana Migliorini">
+<meta name="author" content="Heiko Lickert">
+<meta name="author" content="Fabian J Theis">
+<meta name="dcterms.date" content="2023-09-11">
 
-<title>lazappi - R Package Development Workshop</title>
+<title>lazappi - Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,23 +106,15 @@ cookieconsent.run({
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
 
 
-<meta property="og:title" content="lazappi - R Package Development Workshop">
-<meta property="og:description" content="Materials for the COMBINE Australia R package development workshop">
-<meta property="og:image" content="https://lazappi.id.au/projects/r-pkg-dev/thumbnail.png">
+<meta property="og:title" content="lazappi - Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas">
+<meta property="og:description" content="Although multiple pancreatic islet single-cell RNA-sequencing (scRNA-seq) datasets have been generated, a consensus on pancreatic cell states in development, homeostasis and diabetes as well as the value of preclinical animal models is missing. Here, we present an scRNA-seq cross-condition mouse islet atlas (MIA), a curated resource for interactive exploration and computational querying. We integrate over 300,000 cells from nine scRNA-seq datasets consisting of 56 samples, varying in age, sex and diabetes models, including an autoimmune type 1 diabetes model (NOD), a glucotoxicity/lipotoxicity type 2 diabetes model (db/db) and a chemical streptozotocin β-cell ablation model. The β-cell landscape of MIA reveals new cell states during disease progression and cross-publication differences between previously suggested marker genes. We show that β-cells in the streptozotocin model transcriptionally correlate with those in human type 2 diabetes and mouse db/db models, but are less similar to human type 1 diabetes and mouse NOD β-cells. We also report pathways that are shared between β-cells in immature, aged and diabetes models. MIA enables a comprehensive analysis of β-cell responses to different stressors, providing a roadmap for the understanding of β-cell plasticity, compensation and demise.">
 <meta property="og:site-name" content="lazappi">
 <meta property="og:locale" content="en_AU">
-<meta property="og:image:height" content="636">
-<meta property="og:image:width" content="640">
-<meta property="og:image:alt" content="Clip art of a package by OpenClipart-Vectors (https://pixabay.com/de/users/OpenClipart-Vectors-30363/) from Pixabay (https://pixabay.com/)">
-<meta name="twitter:title" content="lazappi - R Package Development Workshop">
-<meta name="twitter:description" content="Materials for the COMBINE Australia R package development workshop">
-<meta name="twitter:image" content="https://lazappi.id.au/projects/r-pkg-dev/thumbnail.png">
+<meta name="twitter:title" content="lazappi - Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas">
+<meta name="twitter:description" content="Although multiple pancreatic islet single-cell RNA-sequencing (scRNA-seq) datasets have been generated, a consensus on pancreatic cell states in development, homeostasis and diabetes as well as the value of preclinical animal models is missing. Here, we present an scRNA-seq cross-condition mouse islet atlas (MIA), a curated resource for interactive exploration and computational querying. We integrate over 300,000 cells from nine scRNA-seq datasets consisting of 56 samples, varying in age, sex and diabetes models, including an autoimmune type 1 diabetes model (NOD), a glucotoxicity/lipotoxicity type 2 diabetes model (db/db) and a chemical streptozotocin β-cell ablation model. The β-cell landscape of MIA reveals new cell states during disease progression and cross-publication differences between previously suggested marker genes. We show that β-cells in the streptozotocin model transcriptionally correlate with those in human type 2 diabetes and mouse db/db models, but are less similar to human type 1 diabetes and mouse NOD β-cells. We also report pathways that are shared between β-cells in immature, aged and diabetes models. MIA enables a comprehensive analysis of β-cell responses to different stressors, providing a roadmap for the understanding of β-cell plasticity, compensation and demise.">
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
-<meta name="twitter:image-height" content="636">
-<meta name="twitter:image-width" content="640">
-<meta name="twitter:image:alt" content="Clip art of a package by OpenClipart-Vectors (https://pixabay.com/de/users/OpenClipart-Vectors-30363/) from Pixabay (https://pixabay.com/)">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -183,20 +185,16 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R Package Development Workshop</h1>
+<h1 class="title">Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">workshop</div>
-    <div class="quarto-category">package development</div>
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">training</div>
+    <div class="quarto-category">single-cell</div>
+    <div class="quarto-category">rna-seq</div>
+    <div class="quarto-category">mouse</div>
+    <div class="quarto-category">pancreas</div>
+    <div class="quarto-category">atlas</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    Materials for the COMBINE Australia R package development workshop
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -205,10 +203,39 @@ cookieconsent.run({
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
               <p>
-                              <strong>Luke Zappia</strong>
+                              Karin Hrovatin
                                       </p>
               <p>
-                              COMBINE Australia
+                              Aimée Bastidas-Ponce
+                                      </p>
+              <p>
+                              Mostafa Bakhti
+                                      </p>
+              <p>
+                                <strong>
+                    Luke Zappia
+                      </strong>
+                                      </p>
+              <p>
+                              Maren Büttner
+                                      </p>
+              <p>
+                              Ciro Sallino
+                                      </p>
+              <p>
+                              Michael Sterr
+                                      </p>
+              <p>
+                              Anika Böttcher
+                                      </p>
+              <p>
+                              Adriana Migliorini
+                                      </p>
+              <p>
+                              Heiko Lickert
+                                      </p>
+              <p>
+                              Fabian J Theis
                                       </p>
           </div>
   </div>
@@ -216,7 +243,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 3, 2019</p>
+      <p class="date">September 11, 2023</p>
     </div>
   </div>
   
@@ -225,31 +252,86 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Links</div>
     <div class="quarto-title-meta-contents">
-                          <a type="button" class="btn btn-outline-primary" href="https://github.com/COMBINE-Australia/r-pkg-dev">Code</a>
-                                      <a type="button" class="btn btn-outline-primary" href="https://combine-australia.github.io/r-pkg-dev/index.html">Website</a>
+                          <a type="button" class="btn btn-outline-primary" href="https://github.com/theislab/mouse_cross-condition_pancreatic_islet_atlas">Code</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1038/s42255-023-00876-x">DOI</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://www.nature.com/articles/s42255-023-00876-x.pdf">PDF</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1101/2022.12.22.521557">Preprint</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070">Website</a>
                       </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Citation stats</div>
+    <div class="quarto-title-meta-contents">
+      <div class="scite-badge" data-doi="10.1038/s42255-023-00876-x" data-layout="vertical" data-show-zero="true" data-small="false" data-show-labels="true" data-tally-show="true">
+      </div>
+    </div>
+  </div>
+  <script async="" type="application/javascript" src="https://cdn.scite.ai/badge/scite-badge-latest.min.js">
+  </script>
   
 </div>
 
-<div class="quarto-title-meta-contents">
-    <img src="thumbnail.png" class="img-fluid" alt="Clip art of a package by OpenClipart-Vectors (https://pixabay.com/de/users/OpenClipart-Vectors-30363/) from Pixabay (https://pixabay.com/)">
-        <p></p>
-    <figcaption class="figure-caption">Image by <a href="https://pixabay.com/de/users/OpenClipart-Vectors-30363/">OpenClipart-Vectors</a> from <a href="https://pixabay.com/">Pixabay</a></figcaption>
-    <p></p>
-    </div>
 
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>Although multiple pancreatic islet single-cell RNA-sequencing (scRNA-seq) datasets have been generated, a consensus on pancreatic cell states in development, homeostasis and diabetes as well as the value of preclinical animal models is missing. Here, we present an scRNA-seq cross-condition mouse islet atlas (MIA), a curated resource for interactive exploration and computational querying. We integrate over 300,000 cells from nine scRNA-seq datasets consisting of 56 samples, varying in age, sex and diabetes models, including an autoimmune type 1 diabetes model (NOD), a glucotoxicity/lipotoxicity type 2 diabetes model (db/db) and a chemical streptozotocin β-cell ablation model. The β-cell landscape of MIA reveals new cell states during disease progression and cross-publication differences between previously suggested marker genes. We show that β-cells in the streptozotocin model transcriptionally correlate with those in human type 2 diabetes and mouse db/db models, but are less similar to human type 1 diabetes and mouse NOD β-cells. We also report pathways that are shared between β-cells in immature, aged and diabetes models. MIA enables a comprehensive analysis of β-cell responses to different stressors, providing a roadmap for the understanding of β-cell plasticity, compensation and demise.</p>
+  </div>
+</div>
 
 
 
 </header>
 
-<p><a href="https://combine.org.au/">COMBINE</a> is an Australian organisation for student in bioinformatics, computational biology and related fields. One way in which COMBINE aims to support the student community is by providing training. I was the lead author on the materials for this workshop which covers an introduction to developing an R package and were produced using <a href="https://bookdown.org/">bookdown</a>. The workshop was first run in Melbourne in September 2019 where I was the lead instructor.</p>
 
 
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{hrovatin2023,
+  author = {Hrovatin, Karin and Bastidas-Ponce, Aimée and Bakhti,
+    Mostafa and Zappia, Luke and Büttner, Maren and Sallino, Ciro and
+    Sterr, Michael and Böttcher, Anika and Migliorini, Adriana and
+    Lickert, Heiko and J Theis, Fabian},
+  title = {Delineating Mouse β-Cell Identity During Lifetime and in
+    Diabetes with a Single Cell Atlas},
+  journal = {Nature Metabolism},
+  volume = {5},
+  number = {1},
+  pages = {1615-1637},
+  date = {2023-09-11},
+  url = {https://lazappi.id.au/publications/2023-hrovatin-MIA},
+  doi = {10.1038/s42255-023-00876-x},
+  issn = {2522-5812},
+  langid = {en},
+  abstract = {Although multiple pancreatic islet single-cell
+    RNA-sequencing (scRNA-seq) datasets have been generated, a consensus
+    on pancreatic cell states in development, homeostasis and diabetes
+    as well as the value of preclinical animal models is missing. Here,
+    we present an scRNA-seq cross-condition mouse islet atlas (MIA), a
+    curated resource for interactive exploration and computational
+    querying. We integrate over 300,000 cells from nine scRNA-seq
+    datasets consisting of 56 samples, varying in age, sex and diabetes
+    models, including an autoimmune type 1 diabetes model (NOD), a
+    glucotoxicity/lipotoxicity type 2 diabetes model (db/db) and a
+    chemical streptozotocin β-cell ablation model. The β-cell landscape
+    of MIA reveals new cell states during disease progression and
+    cross-publication differences between previously suggested marker
+    genes. We show that β-cells in the streptozotocin model
+    transcriptionally correlate with those in human type 2 diabetes and
+    mouse db/db models, but are less similar to human type 1 diabetes
+    and mouse NOD β-cells. We also report pathways that are shared
+    between β-cells in immature, aged and diabetes models. MIA enables a
+    comprehensive analysis of β-cell responses to different stressors,
+    providing a roadmap for the understanding of β-cell plasticity,
+    compensation and demise.}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hrovatin2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Hrovatin, Karin, Aimée Bastidas-Ponce, Mostafa Bakhti, Luke Zappia,
+Maren Büttner, Ciro Sallino, Michael Sterr, et al. 2023.
+<span>“Delineating Mouse β-Cell Identity During Lifetime and in Diabetes
+with a Single Cell Atlas.”</span> <em>Nature Metabolism</em> 5 (9):
+1615–37. <a href="https://doi.org/10.1038/s42255-023-00876-x">https://doi.org/10.1038/s42255-023-00876-x</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

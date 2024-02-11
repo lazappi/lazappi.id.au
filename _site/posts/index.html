@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -62,7 +62,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -123,6 +124,7 @@ cookieconsent.run({
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="alternate" type="application/rss+xml" title="lazappi" href="index.xml"><meta property="og:title" content="lazappi - Posts">
@@ -147,49 +149,49 @@ cookieconsent.run({
     <span class="navbar-title">lazappi</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../posts/index.html" aria-current="page">
+    <a class="nav-link active" href="../posts/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects/index.html">
+    <a class="nav-link" href="../projects/index.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../talks/index.html">
+    <a class="nav-link" href="../talks/index.html" rel="" target="">
  <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html">
+    <a class="nav-link" href="../publications/index.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lazappi"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lazappi" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/_lazappi_"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/lazappi" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../posts/index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../posts/index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -229,13 +231,9 @@ cookieconsent.run({
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bioconductor,R" data-listing-date-sort="1604012400000" data-listing-file-modified-sort="1681144381820" data-listing-reading-time-sort="2.765">
+<div class="quarto-post image-right" data-index="0" data-categories="bioconductor,R" data-listing-date-sort="1604012400000" data-listing-file-modified-sort="1681144381820" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="thumbnail">
-<a href="../posts/2020-10-30-bioconductor-3-12-wrap-up/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2020-10-30-bioconductor-3-12-wrap-up/index.html"></a></p>
+<p><a href="../posts/2020-10-30-bioconductor-3-12-wrap-up/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2020-10-30-bioconductor-3-12-wrap-up/index.html">
@@ -266,14 +264,14 @@ R
 Oct 30, 2020
 </div>
 <div class="listing-reading-time">
-2 min
+3 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="analysis,music" data-listing-date-sort="1594418400000" data-listing-file-modified-sort="1681144381810" data-listing-reading-time-sort="8.18">
+<div class="quarto-post image-right" data-index="1" data-categories="analysis,music" data-listing-date-sort="1594418400000" data-listing-file-modified-sort="1681144381810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <div class="thumbnail">
-<p><a href="../posts/2020-07-11-requestival/index.html"> <img src="../posts/2020-07-11-requestival/play_times.png" class="thumnail-image"> </a></p>
+<p><a href="../posts/2020-07-11-requestival/index.html"> <p class="card-img-top"><img src="2020-07-11-requestival/play_times.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2020-07-11-requestival/index.html">
@@ -304,14 +302,14 @@ music
 Jul 11, 2020
 </div>
 <div class="listing-reading-time">
-8 min
+9 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="bioconductor,R,scrna-seq,SingleCellExperiment,analysis" data-listing-date-sort="1589234400000" data-listing-file-modified-sort="1681201010623" data-listing-reading-time-sort="9.125">
+<div class="quarto-post image-right" data-index="2" data-categories="bioconductor,R,scrna-seq,SingleCellExperiment,analysis" data-listing-date-sort="1589234400000" data-listing-file-modified-sort="1681201010623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
 <div class="thumbnail">
-<p><a href="../posts/2020-05-12-back-to-the-sce-verse/index.html"> <img src="../posts/2020-05-12-back-to-the-sce-verse/repos-1.png" class="thumnail-image"> </a></p>
+<p><a href="../posts/2020-05-12-back-to-the-sce-verse/index.html"> <p class="card-img-top"><img src="2020-05-12-back-to-the-sce-verse/repos-1.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2020-05-12-back-to-the-sce-verse/index.html">
@@ -351,18 +349,14 @@ analysis
 May 12, 2020
 </div>
 <div class="listing-reading-time">
-9 min
+10 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="bioconductor,R" data-listing-date-sort="1588111200000" data-listing-file-modified-sort="1681144381798" data-listing-reading-time-sort="2.885">
+<div class="quarto-post image-right" data-index="3" data-categories="bioconductor,R" data-listing-date-sort="1588111200000" data-listing-file-modified-sort="1681144381798" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="thumbnail">
-<a href="../posts/2020-04-29-bioconductor-3-11-wrap-up/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2020-04-29-bioconductor-3-11-wrap-up/index.html"></a></p>
+<p><a href="../posts/2020-04-29-bioconductor-3-11-wrap-up/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2020-04-29-bioconductor-3-11-wrap-up/index.html">
@@ -393,18 +387,14 @@ R
 Apr 29, 2020
 </div>
 <div class="listing-reading-time">
-2 min
+3 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="blogdown,R" data-listing-date-sort="1586432469000" data-listing-file-modified-sort="1681144381797" data-listing-reading-time-sort="5.98">
+<div class="quarto-post image-right" data-index="4" data-categories="blogdown,R" data-listing-date-sort="1586432469000" data-listing-file-modified-sort="1681144381797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
 <div class="thumbnail">
-<a href="../posts/2020-04-09-caching-blogdown/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2020-04-09-caching-blogdown/index.html"></a></p>
+<p><a href="../posts/2020-04-09-caching-blogdown/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2020-04-09-caching-blogdown/index.html">
@@ -435,14 +425,14 @@ R
 Apr 9, 2020
 </div>
 <div class="listing-reading-time">
-5 min
+6 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="bioconductor,R,scrna-seq,SingleCellExperiment,analysis" data-listing-date-sort="1528495200000" data-listing-file-modified-sort="1681144381788" data-listing-reading-time-sort="13.27">
+<div class="quarto-post image-right" data-index="5" data-categories="bioconductor,R,scrna-seq,SingleCellExperiment,analysis" data-listing-date-sort="1528495200000" data-listing-file-modified-sort="1681144381788" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14">
 <div class="thumbnail">
-<p><a href="../posts/2018-05-20-exploring-the-sce-verse/index.html"> <img src="../posts/2018-05-20-exploring-the-sce-verse/summarized_experiment.png" class="thumnail-image"> </a></p>
+<p><a href="../posts/2018-05-20-exploring-the-sce-verse/index.html"> <p class="card-img-top"><img src="2018-05-20-exploring-the-sce-verse/summarized_experiment.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2018-05-20-exploring-the-sce-verse/index.html">
@@ -482,14 +472,14 @@ analysis
 Jun 9, 2018
 </div>
 <div class="listing-reading-time">
-13 min
+14 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="bioconductor,R,scrna-seq" data-listing-date-sort="1525384800000" data-listing-file-modified-sort="1681144381786" data-listing-reading-time-sort="3.035">
+<div class="quarto-post image-right" data-index="6" data-categories="bioconductor,R,scrna-seq" data-listing-date-sort="1525384800000" data-listing-file-modified-sort="1681144381786" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
-<p><a href="../posts/2018-05-04-bioconductor-3-7-wrap-up/index.html"> <img src="../posts/2018-05-04-bioconductor-3-7-wrap-up/iSEE.png" class="thumnail-image"> </a></p>
+<p><a href="../posts/2018-05-04-bioconductor-3-7-wrap-up/index.html"> <p class="card-img-top"><img src="2018-05-04-bioconductor-3-7-wrap-up/iSEE.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2018-05-04-bioconductor-3-7-wrap-up/index.html">
@@ -523,14 +513,14 @@ scrna-seq
 May 4, 2018
 </div>
 <div class="listing-reading-time">
-3 min
+4 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="afl,elo,sport" data-listing-date-sort="1524261600000" data-listing-file-modified-sort="1681144381776" data-listing-reading-time-sort="12.955">
+<div class="quarto-post image-right" data-index="7" data-categories="afl,elo,sport" data-listing-date-sort="1524261600000" data-listing-file-modified-sort="1681144381776" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
 <div class="thumbnail">
-<p><a href="../posts/2018-04-21-my-afl-elo-model/index.html"> <img src="../posts/2018-04-21-my-afl-elo-model/predictions.png" class="thumnail-image"> </a></p>
+<p><a href="../posts/2018-04-21-my-afl-elo-model/index.html"> <p class="card-img-top"><img src="2018-04-21-my-afl-elo-model/predictions.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2018-04-21-my-afl-elo-model/index.html">
@@ -564,14 +554,14 @@ sport
 Apr 21, 2018
 </div>
 <div class="listing-reading-time">
-12 min
+13 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="blogdown" data-listing-date-sort="1521846000000" data-listing-file-modified-sort="1681144381774" data-listing-reading-time-sort="0.38">
+<div class="quarto-post image-right" data-index="8" data-categories="blogdown" data-listing-date-sort="1521846000000" data-listing-file-modified-sort="1681144381774" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="../posts/2018-03-24-welcome-to-blogdown/index.html"> <img src="../posts/2018-03-24-welcome-to-blogdown/featured.jpg" class="thumnail-image" alt="Abstract purple photograph of water droplets"> </a></p>
+<p><a href="../posts/2018-03-24-welcome-to-blogdown/index.html"> <img src="../posts/2018-03-24-welcome-to-blogdown/featured.jpg" class="thumbnail-image" alt="Abstract purple photograph of water droplets"> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2018-03-24-welcome-to-blogdown/index.html">
@@ -599,14 +589,14 @@ blogdown
 Mar 24, 2018
 </div>
 <div class="listing-reading-time">
-0 min
+1 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="conference,visualisation,twitter" data-listing-date-sort="1503007200000" data-listing-file-modified-sort="1681144381764" data-listing-reading-time-sort="8.075">
+<div class="quarto-post image-right" data-index="9" data-categories="conference,visualisation,twitter" data-listing-date-sort="1503007200000" data-listing-file-modified-sort="1681144381764" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <div class="thumbnail">
-<p><a href="../posts/2017-08-18-joining-the-dots-twitter-analysis/index.html"> <img src="../posts/2017-08-18-joining-the-dots-twitter-analysis/featured.png" class="thumnail-image" alt="Graph of connections between Twitter users during the Joining the Dots visualisation symposium"> </a></p>
+<p><a href="../posts/2017-08-18-joining-the-dots-twitter-analysis/index.html"> <img src="../posts/2017-08-18-joining-the-dots-twitter-analysis/featured.png" class="thumbnail-image" alt="Graph of connections between Twitter users during the Joining the Dots visualisation symposium"> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2017-08-18-joining-the-dots-twitter-analysis/index.html">
@@ -640,14 +630,14 @@ twitter
 Aug 18, 2017
 </div>
 <div class="listing-reading-time">
-8 min
+9 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="R,scrna-seq,clustering tree" data-listing-date-sort="1500415200000" data-listing-file-modified-sort="1681144381757" data-listing-reading-time-sort="31.125">
+<div class="quarto-post image-right" data-index="10" data-categories="R,scrna-seq,clustering tree" data-listing-date-sort="1500415200000" data-listing-file-modified-sort="1681144381757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="32">
 <div class="thumbnail">
-<p><a href="../posts/2017-07-19-building-a-clustering-tree/index.html"> <img src="../posts/2017-07-19-building-a-clustering-tree/featured.png" class="thumnail-image" alt="Image of a clustering tree visualisation"> </a></p>
+<p><a href="../posts/2017-07-19-building-a-clustering-tree/index.html"> <img src="../posts/2017-07-19-building-a-clustering-tree/featured.png" class="thumbnail-image" alt="Image of a clustering tree visualisation"> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2017-07-19-building-a-clustering-tree/index.html">
@@ -681,14 +671,14 @@ clustering tree
 Jul 19, 2017
 </div>
 <div class="listing-reading-time">
-31 min
+32 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="python,conference,thoughts" data-listing-date-sort="1471471200000" data-listing-file-modified-sort="1681144381746" data-listing-reading-time-sort="4.325">
+<div class="quarto-post image-right" data-index="11" data-categories="python,conference,thoughts" data-listing-date-sort="1471471200000" data-listing-file-modified-sort="1681144381746" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
-<p><a href="../posts/2016-08-18-pyconau-2016/index.html"> <img src="../posts/2016-08-18-pyconau-2016/python_all_the_things.jpg" class="thumnail-image"> </a></p>
+<p><a href="../posts/2016-08-18-pyconau-2016/index.html"> <p class="card-img-top"><img src="2016-08-18-pyconau-2016/python_all_the_things.jpg" alt="Python All the Things"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2016-08-18-pyconau-2016/index.html">
@@ -722,18 +712,14 @@ thoughts
 Aug 18, 2016
 </div>
 <div class="listing-reading-time">
-4 min
+5 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="R,project management,gantt chart,excel" data-listing-date-sort="1465768800000" data-listing-file-modified-sort="1681144381745" data-listing-reading-time-sort="7.05">
+<div class="quarto-post image-right" data-index="12" data-categories="R,project management,gantt chart,excel" data-listing-date-sort="1465768800000" data-listing-file-modified-sort="1681144381745" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <div class="thumbnail">
-<a href="../posts/2016-06-13-gantt-charts-in-r/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2016-06-13-gantt-charts-in-r/index.html"></a></p>
+<p><a href="../posts/2016-06-13-gantt-charts-in-r/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2016-06-13-gantt-charts-in-r/index.html">
@@ -770,18 +756,14 @@ excel
 Jun 13, 2016
 </div>
 <div class="listing-reading-time">
-7 min
+8 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="R,bioconductor" data-listing-date-sort="1462226400000" data-listing-file-modified-sort="1681144381744" data-listing-reading-time-sort="0.83">
+<div class="quarto-post image-right" data-index="13" data-categories="R,bioconductor" data-listing-date-sort="1462226400000" data-listing-file-modified-sort="1681144381744" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<a href="../posts/2016-05-03-bioconductor-3-3-packages/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2016-05-03-bioconductor-3-3-packages/index.html"></a></p>
+<p><a href="../posts/2016-05-03-bioconductor-3-3-packages/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2016-05-03-bioconductor-3-3-packages/index.html">
@@ -812,18 +794,14 @@ bioconductor
 May 3, 2016
 </div>
 <div class="listing-reading-time">
-0 min
+1 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="python,alignment,statistics" data-listing-date-sort="1459288800000" data-listing-file-modified-sort="1681144381743" data-listing-reading-time-sort="1.755">
+<div class="quarto-post image-right" data-index="14" data-categories="python,alignment,statistics" data-listing-date-sort="1459288800000" data-listing-file-modified-sort="1681144381743" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
-<a href="../posts/2016-03-30-extracting-alignment-statistics-using-python/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2016-03-30-extracting-alignment-statistics-using-python/index.html"></a></p>
+<p><a href="../posts/2016-03-30-extracting-alignment-statistics-using-python/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2016-03-30-extracting-alignment-statistics-using-python/index.html">
@@ -857,18 +835,14 @@ statistics
 Mar 30, 2016
 </div>
 <div class="listing-reading-time">
-1 min
+2 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="writing,markdown,thesis,latex" data-listing-date-sort="1442095200000" data-listing-file-modified-sort="1681144381742" data-listing-reading-time-sort="2.28">
+<div class="quarto-post image-right" data-index="15" data-categories="writing,markdown,thesis,latex" data-listing-date-sort="1442095200000" data-listing-file-modified-sort="1681144381742" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="thumbnail">
-<a href="../posts/2015-09-13-my-markdown-thesis/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2015-09-13-my-markdown-thesis/index.html"></a></p>
+<p><a href="../posts/2015-09-13-my-markdown-thesis/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2015-09-13-my-markdown-thesis/index.html">
@@ -905,18 +879,14 @@ latex
 Sep 13, 2015
 </div>
 <div class="listing-reading-time">
-2 min
+3 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="open science,workshop,collaboration" data-listing-date-sort="1405807200000" data-listing-file-modified-sort="1681144381741" data-listing-reading-time-sort="1.655">
+<div class="quarto-post image-right" data-index="16" data-categories="open science,workshop,collaboration" data-listing-date-sort="1405807200000" data-listing-file-modified-sort="1681144381741" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
-<a href="../posts/2014-07-20-open-science-workshops/index.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="../posts/2014-07-20-open-science-workshops/index.html"></a></p>
+<p><a href="../posts/2014-07-20-open-science-workshops/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
 <a href="../posts/2014-07-20-open-science-workshops/index.html">
@@ -950,7 +920,7 @@ collaboration
 Jul 20, 2014
 </div>
 <div class="listing-reading-time">
-1 min
+2 min
 </div>
 </a>
 </div>
@@ -1102,9 +1072,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1169,6 +1153,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1216,11 +1286,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2016-2023, Luke Zappia
+ © 2016-2024, Luke Zappia
   </li>  
 </ul>
     </div>   
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

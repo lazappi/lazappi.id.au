@@ -1,0 +1,41 @@
+---
+title: Delineating mouse β-cell identity during lifetime and in diabetes with a single cell atlas
+author:
+  - Karin Hrovatin
+  - Aimée Bastidas-Ponce
+  - Mostafa Bakhti
+  - name: Luke Zappia
+    me: true
+  - Maren Büttner
+  - Ciro Sallino
+  - Michael Sterr
+  - Anika Böttcher
+  - Adriana Migliorini
+  - Heiko Lickert
+  - Fabian J Theis
+abstract: |
+  Although multiple pancreatic islet single-cell RNA-sequencing (scRNA-seq) datasets have been generated, a consensus on pancreatic cell states in development, homeostasis and diabetes as well as the value of preclinical animal models is missing.
+  Here, we present an scRNA-seq cross-condition mouse islet atlas (MIA), a curated resource for interactive exploration and computational querying.
+  We integrate over 300,000 cells from nine scRNA-seq datasets consisting of 56 samples, varying in age, sex and diabetes models, including an autoimmune type 1 diabetes model (NOD), a glucotoxicity/lipotoxicity type 2 diabetes model (db/db) and a chemical streptozotocin β-cell ablation model.
+  The β-cell landscape of MIA reveals new cell states during disease progression and cross-publication differences between previously suggested marker genes.
+  We show that β-cells in the streptozotocin model transcriptionally correlate with those in human type 2 diabetes and mouse db/db models, but are less similar to human type 1 diabetes and mouse NOD β-cells.
+  We also report pathways that are shared between β-cells in immature, aged and diabetes models. MIA enables a comprehensive analysis of β-cell responses to different stressors, providing a roadmap for the understanding of β-cell plasticity, compensation and demise.
+categories: ["single-cell", "rna-seq", "mouse", "pancreas", "atlas"]
+date: 2023-09-11
+links:
+  code: https://github.com/theislab/mouse_cross-condition_pancreatic_islet_atlas
+  doi: 10.1038/s42255-023-00876-x
+  pdf: https://www.nature.com/articles/s42255-023-00876-x.pdf
+  preprint: https://doi.org/10.1101/2022.12.22.521557
+  website: https://cellxgene.cziscience.com/collections/296237e2-393d-4e31-b590-b03f74ac5070
+citation:
+  type: article-journal
+  doi: 10.1038/s42255-023-00876-x
+  pmid: "37697055"
+  issn: "2522-5812"
+  container-title: Nature Metabolism
+  number: 1
+  issue: 9
+  volume: 5
+  page: "1615-1637"
+---

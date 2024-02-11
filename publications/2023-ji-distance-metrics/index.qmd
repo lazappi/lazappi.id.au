@@ -1,0 +1,32 @@
+---
+title: Optimal distance metrics for single-cell RNA-seq populations
+author:
+  - Yuge Ji
+  - Tessa D. Green
+  - Stefan Peidli
+  - Mojtaba Bahrami
+  - Meiqi Liu,
+  - name: Luke Zappia
+    me: true
+  - Karin Hrovatin
+  - Chris Sander
+  - Fabian J. Theis
+abstract: |
+  In single-cell data workflows and modeling, distance metrics are commonly used in loss functions, model evaluation, and subpopulation analysis.
+  However, these metrics behave differently depending on the source of variation, conditions and subpopulations in single-cell expression profiles due to data sparsity and high dimensionality.
+  Thus, the metrics used for downstream tasks in this domain should be carefully selected.
+  We establish a set of benchmarks with three evaluation measures, capturing desirable facets of absolute and relative distance behavior.
+  Based on seven datasets using perturbation as ground truth, we evaluated 16 distance metrics applied to scRNA-seq data and demonstrated their application to three use cases.
+  We find that linear metrics such as mean squared error (MSE) performed best across our three evaluation criteria.
+  Therefore, we recommend the use of MSE for comparing single-cell RNA-seq populations and evaluating gene expression prediction models.
+categories: ["scrna-seq", "rna-seq", "distances", "benchmarking"]
+date: 2023-12-26
+links:
+  code: https://github.com/theislab/perturbation-metrics
+  doi: 10.1101/2023.12.26.572833
+  pdf: https://www.biorxiv.org/content/10.1101/2023.12.26.572833v1.full.pdf
+citation:
+  type: article
+  doi: 10.1101/2023.12.26.572833
+  container-title: bioRxiv
+---

@@ -23,7 +23,7 @@ abstract: |
   We show that using it for datasets with substantial batch effects improves downstream interpretation of cell states and biological conditions.
   To ease the use of the newly proposed model, we make it available in the scvitools package as an external model named sysVI.
   Moreover, in the future, these regularization techniques could be added to other established cVAE based models to improve the integration of datasets with substantial batch effects.
-categories: ["single-cell", "integration", "batch effects", "methods"]
+categories: ["single-cell", "rna-seq", "integration", "batch effects", "methods"]
 date: 2023-11-03
 links:
   code: https://github.com/theislab/cross_system_integration

@@ -21,7 +21,7 @@ website:
         href: posts/index.xml
   page-footer:
     left:
-      - text: "© 2016-2023, Luke Zappia"
+      - text: "© 2016-2024, Luke Zappia"
     right:
       - text: "License"
         href: license.qmd

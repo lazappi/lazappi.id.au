@@ -10,7 +10,45 @@
 <atom:link href="https://lazappi.id.au/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Luke Zappia&#39;s personal website</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Thu, 29 Oct 2020 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 03 Mar 2024 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>scRNA-tools low-maintenance mode</title>
+  <link>https://lazappi.id.au/posts/2024-03-04-scRNAtools-low-maintenance/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>You are probably here because you have seen or heard that the <a href="https://www.scrna-tools.org/">scRNA-tools database</a> will be entering low-maintenance mode. This post explains a bit more about what that means and some of the motivation behind the decision.</p>
+<section id="hang-on-whats-scrna-tools" class="level2">
+<h2 class="anchored" data-anchor-id="hang-on-whats-scrna-tools">Hang on, what’s scRNA-tools?</h2>
+<p>scRNA-tools is a database that catalogues software tools for analysing scRNA-seq data which I created during my PhD and have curated and maintained ever since. You can read more about it on the <a href="../../projects/scRNA-tools">project page</a>, in the <a href="../../publications/2018-zappia-scrnatools">original paper</a> and in our analysis of the first <a href="../../publications/2021-zappia-1000-tools">1000 tools</a> in the database.</p>
+</section>
+<section id="so-whats-happening" class="level2">
+<h2 class="anchored" data-anchor-id="so-whats-happening">So, what’s happening?</h2>
+<p>In May 2024 I will be putting scRNA-tools into what I am calling “low-maintenance mode”. Basically, this means I will stop actively seeking out new tools to add to the database and updates for existing tools. I will still make changes based on <a href="https://www.scrna-tools.org/submit">user submissions</a> and the existing automated checks but the rate of updates will significantly decrease. Upgrades to the database, website and other code are unlikely to happen unless things break.</p>
+</section>
+<section id="thats-sad-why-now" class="level2">
+<h2 class="anchored" data-anchor-id="thats-sad-why-now">That’s sad 😿, why now?</h2>
+<p>I’m moving onto the next step in my career and can no longer justify the 2-3 hours per week it takes review new papers, curate them and add tools to the database. Transiting to low-maintenance mode means less frequent updates and should reduce the commitment to something I can keep up with, similar to the software packages I maintain. I would love to keep scRNA-tools running as it has but the continuous, ongoing nature of the curation makes it difficult when you can no-longer justify it as “work”, and this will only increase as the field continuous to grow.</p>
+<p>I also have to acknowledge that I haven’t developed scRNA-tools as I would have liked over the last few years. There are several new categories and features I wanted to add but, as the typical academic says, I never found the time.</p>
+</section>
+<section id="maybe-someone-else-could-take-over" class="level2">
+<h2 class="anchored" data-anchor-id="maybe-someone-else-could-take-over">Maybe someone else could take over?</h2>
+<p>I always wanted scRNA-tools to be a community project so I am definitely open to this but I would need to be convinced that whoever takes over would be able to commit to actively maintaining the project. In the past I have had people reach out to contribute, and even recruited a team to help with curation and expanding the database, but that always petered out after a few weeks or months. I totally don’t blame anyone for that, there is very little for a PhD student to gain from contributing to a project like this, but it does make me cautious about handing over the project to someone who may not end up putting more time into it than I can.</p>
+</section>
+<section id="last-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="last-thoughts">Last thoughts</h2>
+<p>scRNA-tools has helped record the first years of the single-cell genomics revolution and has been a big part of my work life for the last eight or so years. While I think it is a valuable resource it is also limited, especially as the field expands into other modalities. It will be sad it see it not updated as frequently but it’s time for us both to move on.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>scRNA-tools</category>
+  <category>database</category>
+  <guid>https://lazappi.id.au/posts/2024-03-04-scRNAtools-low-maintenance/index.html</guid>
+  <pubDate>Sun, 03 Mar 2024 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Bioconductor 3.12 wrap-up</title>
   <link>https://lazappi.id.au/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html</link>

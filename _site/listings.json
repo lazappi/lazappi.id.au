@@ -20,6 +20,7 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/2024-03-04-scRNAtools-low-maintenance/index.html",
       "/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html",
       "/posts/2020-07-11-requestival/index.html",
       "/posts/2020-05-12-back-to-the-sce-verse/index.html",

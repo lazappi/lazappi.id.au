@@ -1,0 +1,20 @@
+---
+title: tidydirectory
+description: A Python script for tidying directories
+authors:
+  - "**Luke Zappia**"
+categories: ["software", "python", "organisation"]
+date: 2024-06-24
+links:
+  code: https://github.com/lazappi/tidydirectory
+image: thumbnail.png
+image-alt: Image showing a directory tree after running tidydirectory
+---
+
+**tidydirectory** is a Python script for tidying directories which I wrote for automatically sorting my downloads folder.
+It checks the date that files in a directory were created or last accessed and moves old files to an archive directory.
+Separately, old files in the archive are deleted.
+
+Files in the archive are organised based on a custom mapping between file extensions and categories, for example to move all `.R`, `.py` and `.sh` files to a code directory.
+
+Available from my GitHub <https://github.com/lazappi/tidydirectory>.

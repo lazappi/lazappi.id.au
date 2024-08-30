@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lazappi - Projects</title>
+<title>Projects – lazappi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,7 +52,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -61,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -200,6 +207,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -208,16 +217,43 @@ cookieconsent.run({
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="lazappi - Projects">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Projects – lazappi">
 <meta property="og:image" content="https://lazappi.id.au/projects/Splatter/thumbnail.png">
-<meta property="og:site-name" content="lazappi">
+<meta property="og:site_name" content="lazappi">
 <meta property="og:locale" content="en_AU">
 <meta property="og:image:height" content="543">
 <meta property="og:image:width" content="800">
-<meta name="twitter:title" content="lazappi - Projects">
+<meta name="twitter:title" content="Projects – lazappi">
 <meta name="twitter:image" content="https://lazappi.id.au/projects/Splatter/thumbnail.png">
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
@@ -229,58 +265,58 @@ cookieconsent.run({
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">lazappi</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../posts/index.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../posts/index.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../projects/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link active" href="../projects/index.html" aria-current="page"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../talks/index.html" rel="" target="">
- <span class="menu-text">Talks</span></a>
+    <a class="nav-link" href="../talks/index.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lazappi" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lazappi"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/lazappi" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/lazappi"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../posts/index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../posts/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -293,7 +329,7 @@ cookieconsent.run({
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
     
     
@@ -311,9 +347,10 @@ cookieconsent.run({
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(16)</span></div><div class="category" data-category="Bioconductor">Bioconductor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="JavaScript">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(9)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="benchmarking">benchmarking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="best practices">best practices <span class="quarto-category-count">(1)</span></div><div class="category" data-category="book">book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="clustering">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="database">database <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dataset">dataset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="housing">housing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="interoperability">interoperability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="multiomics">multiomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="package development">package development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(3)</span></div><div class="category" data-category="rna-seq">rna-seq <span class="quarto-category-count">(5)</span></div><div class="category" data-category="scanpy">scanpy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="simulation">simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="single-cell">single-cell <span class="quarto-category-count">(7)</span></div><div class="category" data-category="software">software <span class="quarto-category-count">(6)</span></div><div class="category" data-category="training">training <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tutorial">tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="twitter">twitter <span class="quarto-category-count">(2)</span></div><div class="category" data-category="visualisation">visualisation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(4)</span></div><div class="category" data-category="workshop">workshop <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(17)</span></div><div class="category" data-category="Bioconductor">Bioconductor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="JavaScript">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(9)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="benchmarking">benchmarking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="best practices">best practices <span class="quarto-category-count">(1)</span></div><div class="category" data-category="book">book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="clustering">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="database">database <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dataset">dataset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="housing">housing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="interoperability">interoperability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="multiomics">multiomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="organisation">organisation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="package development">package development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="rna-seq">rna-seq <span class="quarto-category-count">(5)</span></div><div class="category" data-category="scanpy">scanpy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="simulation">simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="single-cell">single-cell <span class="quarto-category-count">(7)</span></div><div class="category" data-category="software">software <span class="quarto-category-count">(7)</span></div><div class="category" data-category="training">training <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tutorial">tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="twitter">twitter <span class="quarto-category-count">(2)</span></div><div class="category" data-category="visualisation">visualisation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(4)</span></div><div class="category" data-category="workshop">workshop <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
 
 
 
@@ -322,11 +359,11 @@ cookieconsent.run({
 <h1>Packages and scripts</h1>
 <div id="listing-packages" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="single-cell,rna-seq,simulation,software,R,Bioconductor" data-listing-date-sort="1475749619000" data-listing-file-modified-sort="1681144381826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-categories="single-cell,rna-seq,simulation,software,R,Bioconductor" data-listing-date-sort="1475749619000" data-listing-file-modified-sort="1681144381826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
 <a href="../projects/Splatter/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/Splatter/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Splatter logo">
+<img loading="lazy" src="../projects/Splatter/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Splatter logo">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -359,11 +396,11 @@ Bioconductor R package for simulating scRNA-seq data
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="single-cell,rna-seq,interoperability,software,R,Bioconductor" data-listing-date-sort="1594559875000" data-listing-file-modified-sort="1681144381852" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="1" data-categories="single-cell,rna-seq,interoperability,software,R,Bioconductor" data-listing-date-sort="1594559875000" data-listing-file-modified-sort="1681144381852" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
 <a href="../projects/zellkonverter/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/zellkonverter/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="zellkonverter logo">
+<img loading="lazy" src="../projects/zellkonverter/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="zellkonverter logo">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -396,11 +433,11 @@ Bioconductor R package for converting between scRNA-seq objects
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="clustering,visualisation,software,R" data-listing-date-sort="1522146419000" data-listing-file-modified-sort="1681144381831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="2" data-categories="clustering,visualisation,software,R" data-listing-date-sort="1522146419000" data-listing-file-modified-sort="1681144381831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="55">
 <a href="../projects/clustree/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/clustree/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="clustree logo">
+<img loading="lazy" src="../projects/clustree/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="clustree logo">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -427,11 +464,11 @@ CRAN R package for creating clustering trees, a visualisation for looking at clu
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="twitter,analysis,software,R" data-listing-date-sort="1562605273000" data-listing-file-modified-sort="1681144381830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="3" data-categories="twitter,analysis,software,R" data-listing-date-sort="1562605273000" data-listing-file-modified-sort="1681144381830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
 <a href="../projects/clamour/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/clamour/thumbnail.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Illustration of man shouting into megaphone and Twitter logo from Pikrepo https://www.pikrepo.com/fyhus/illustration-of-marketing-on-twitter-social-media-platform">
+<img loading="lazy" src="../projects/clamour/thumbnail.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Illustration of man shouting into megaphone and Twitter logo from Pikrepo https://www.pikrepo.com/fyhus/illustration-of-marketing-on-twitter-social-media-platform">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -458,12 +495,10 @@ An R package for setting up a website to display analysis of Twitter hashtags
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="software,R" data-listing-date-sort="1624572000000" data-listing-file-modified-sort="1681144381832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="4" data-categories="software,R" data-listing-date-sort="1624572000000" data-listing-file-modified-sort="1681144381832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42">
 <a href="../projects/doilinker/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../icon.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="../icon.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 doilinker
@@ -483,11 +518,11 @@ An R package for linking DOIs between preprints and publications
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="software,python" data-listing-date-sort="1459358527000" data-listing-file-modified-sort="1681144381840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="5" data-categories="software,python" data-listing-date-sort="1459358527000" data-listing-file-modified-sort="1681144381840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
 <a href="../projects/prettytc/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/prettytc/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Image showing the output of prettytc">
+<img loading="lazy" src="../projects/prettytc/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Image showing the output of prettytc">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -508,6 +543,34 @@ A Python script for pretty printing of TeXcount output
 </div>
 </a>
 </div>
+<div class="g-col-1" data-index="6" data-categories="software,python,organisation" data-listing-date-sort="1719180000000" data-listing-file-modified-sort="1725030256486" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="78">
+<a href="../projects/tidydirectory/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../projects/tidydirectory/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Image showing a directory tree after running tidydirectory">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+tidydirectory
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('software'); return false;">
+software
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
+python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('organisation'); return false;">
+organisation
+</div>
+</div>
+<div class="card-text listing-description">
+A Python script for tidying directories
+</div>
+</div>
+</div>
+</a>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
@@ -517,11 +580,11 @@ No matching items
 <h2 class="anchored" data-anchor-id="analysis-and-data">Analysis and data</h2>
 <div id="listing-analysis" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="analysis,housing,python" data-listing-date-sort="1675810800000" data-listing-file-modified-sort="1681144381836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-categories="analysis,housing,python" data-listing-date-sort="1675810800000" data-listing-file-modified-sort="1681144381836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="136">
 <a href="../projects/oecd-housing/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/oecd-housing/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Thumbnail image">
+<img loading="lazy" src="../projects/oecd-housing/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Thumbnail image">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -545,11 +608,11 @@ Some basic analysis of housing data from the OECD performed in Python
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="visualisation,R" data-listing-date-sort="1565282706000" data-listing-file-modified-sort="1681144381838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="1" data-categories="visualisation,R" data-listing-date-sort="1565282706000" data-listing-file-modified-sort="1681144381838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
 <a href="../projects/phd-commits/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/phd-commits/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Plot showing git commits over time divided by category">
+<img loading="lazy" src="../projects/phd-commits/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Plot showing git commits over time divided by category">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -570,11 +633,11 @@ Functions for scraping git commits from repositories associated with a PhD (or a
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="website,twitter,analysis,R" data-listing-date-sort="1538584445000" data-listing-file-modified-sort="1681144381851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="2" data-categories="website,twitter,analysis,R" data-listing-date-sort="1538584445000" data-listing-file-modified-sort="1681144381851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="34">
 <a href="../projects/twitter-stats/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/twitter-stats/thumbnail.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Illustration of a man in a suit holding the Twitter logo Image by mohamed Hassan (https://pixabay.com/de/users/mohamed_hassan-5229782) from Pixabay (https://pixabay.com/)">
+<img loading="lazy" src="../projects/twitter-stats/thumbnail.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Illustration of a man in a suit holding the Twitter logo Image by mohamed Hassan (https://pixabay.com/de/users/mohamed_hassan-5229782) from Pixabay (https://pixabay.com/)">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -601,11 +664,11 @@ Analysis of Twitter activity for hashtags from various events, usually academic 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="dataset" data-listing-date-sort="1591956000000" data-listing-file-modified-sort="1681144381834" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="3" data-categories="dataset" data-listing-date-sort="1591956000000" data-listing-file-modified-sort="1681144381834" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="49">
 <a href="../projects/nba-positions/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/nba-positions/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Clip art of a basketball from CLEANPNG https://de.cleanpng.com/png-i95tba/">
+<img loading="lazy" src="../projects/nba-positions/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Clip art of a basketball from CLEANPNG https://de.cleanpng.com/png-i95tba/">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -633,11 +696,11 @@ No matching items
 <h2 class="anchored" data-anchor-id="web">Web</h2>
 <div id="listing-web" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="single-cell,rna-seq,database,website" data-listing-date-sort="1496658419000" data-listing-file-modified-sort="1681144381843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-categories="single-cell,rna-seq,database,website" data-listing-date-sort="1496658419000" data-listing-file-modified-sort="1681144381843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="57">
 <a href="../projects/scRNA-tools/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/scRNA-tools/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="scRNA-tools logo">
+<img loading="lazy" src="../projects/scRNA-tools/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="scRNA-tools logo">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -664,11 +727,11 @@ Database and website cataloguing software tools for analysing single-cell RNA se
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="single-cell,rna-seq,database,website,JavaScript" data-listing-date-sort="1620597600000" data-listing-file-modified-sort="1681144381846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="1" data-categories="single-cell,rna-seq,database,website,JavaScript" data-listing-date-sort="1620597600000" data-listing-file-modified-sort="1681144381846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
 <a href="../projects/sfaira-portal/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/sfaira-portal/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="The sfaira portal logo">
+<img loading="lazy" src="../projects/sfaira-portal/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="The sfaira portal logo">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -708,11 +771,11 @@ No matching items
 <h2 class="anchored" data-anchor-id="community-and-training">Community and training</h2>
 <div id="listing-community" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="benchmarking,single-cell,website" data-listing-date-sort="1617746400000" data-listing-file-modified-sort="1681144381837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-categories="benchmarking,single-cell,website" data-listing-date-sort="1617746400000" data-listing-file-modified-sort="1681144381837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="153">
 <a href="../projects/open-problems-single-cell/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/open-problems-single-cell/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="The Open Problems logo">
+<img loading="lazy" src="../projects/open-problems-single-cell/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="The Open Problems logo">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -736,11 +799,11 @@ An effort to formalise and benchmark open problems in single-cell genomics analy
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="single-cell,analysis,multiomics,best practices,book" data-listing-date-sort="1669071600000" data-listing-file-modified-sort="1681144381848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="1" data-categories="single-cell,analysis,multiomics,best practices,book" data-listing-date-sort="1669071600000" data-listing-file-modified-sort="1681144381848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="107">
 <a href="../projects/single-cell-best-practices/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/single-cell-best-practices/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="The single-cell best practices cover page">
+<img loading="lazy" src="../projects/single-cell-best-practices/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="The single-cell best practices cover page">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -770,11 +833,11 @@ An online book covering the best practices for multiomic single-cell analysis wi
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="single-cell,rna-seq,interoperability,python,scanpy,R,tutorial" data-listing-date-sort="1587123080000" data-listing-file-modified-sort="1681144381845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="2" data-categories="single-cell,rna-seq,interoperability,python,scanpy,R,tutorial" data-listing-date-sort="1587123080000" data-listing-file-modified-sort="1681144381845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
 <a href="../projects/scanpy-in-R/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/scanpy-in-R/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Scanpy in R logo">
+<img loading="lazy" src="../projects/scanpy-in-R/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Scanpy in R logo">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -810,11 +873,11 @@ Tutorial describing how to interact with the Scanpy Python package from R
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="workshop,package development,R,training" data-listing-date-sort="1564853833000" data-listing-file-modified-sort="1681144381842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="3" data-categories="workshop,package development,R,training" data-listing-date-sort="1564853833000" data-listing-file-modified-sort="1681144381842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="67">
 <a href="../projects/r-pkg-dev/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="../projects/r-pkg-dev/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Clip art of a package by OpenClipart-Vectors (https://pixabay.com/de/users/OpenClipart-Vectors-30363/) from Pixabay (https://pixabay.com/)">
+<img loading="lazy" src="../projects/r-pkg-dev/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Clip art of a package by OpenClipart-Vectors (https://pixabay.com/de/users/OpenClipart-Vectors-30363/) from Pixabay (https://pixabay.com/)">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -896,6 +959,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -962,13 +1052,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1003,18 +1095,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1046,11 +1127,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lazappi\.id\.au");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1060,8 +1180,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1073,7 +1202,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1117,6 +1369,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1142,6 +1395,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1211,16 +1490,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../license.html">License</a>
+    <a class="nav-link" href="../license.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
     </div>
   </div>
 </footer>
+
 
 
 

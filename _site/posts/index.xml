@@ -6,15 +6,16 @@
       version="2.0">
 <channel>
 <title>lazappi</title>
-<link>https://lazappi.id.au/posts/index.html</link>
+<link>https://lazappi.id.au/posts/</link>
 <atom:link href="https://lazappi.id.au/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Luke Zappia&#39;s personal website</description>
-<generator>quarto-1.3.450</generator>
+<generator>quarto-1.5.57</generator>
 <lastBuildDate>Sun, 03 Mar 2024 23:00:00 GMT</lastBuildDate>
 <item>
   <title>scRNA-tools low-maintenance mode</title>
-  <link>https://lazappi.id.au/posts/2024-03-04-scRNAtools-low-maintenance/index.html</link>
+  <link>https://lazappi.id.au/posts/2024-03-04-scRNAtools-low-maintenance/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -46,13 +47,14 @@
  ]]></description>
   <category>scRNA-tools</category>
   <category>database</category>
-  <guid>https://lazappi.id.au/posts/2024-03-04-scRNAtools-low-maintenance/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2024-03-04-scRNAtools-low-maintenance/</guid>
   <pubDate>Sun, 03 Mar 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Bioconductor 3.12 wrap-up</title>
-  <link>https://lazappi.id.au/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html</link>
+  <link>https://lazappi.id.au/posts/2020-10-30-bioconductor-3-12-wrap-up/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -121,13 +123,14 @@
  ]]></description>
   <category>bioconductor</category>
   <category>R</category>
-  <guid>https://lazappi.id.au/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2020-10-30-bioconductor-3-12-wrap-up/</guid>
   <pubDate>Thu, 29 Oct 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
   <title>triple j’s Requestival</title>
-  <link>https://lazappi.id.au/posts/2020-07-11-requestival/index.html</link>
+  <link>https://lazappi.id.au/posts/2020-07-11-requestival/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -204,13 +207,14 @@
 </section></div> ]]></description>
   <category>analysis</category>
   <category>music</category>
-  <guid>https://lazappi.id.au/posts/2020-07-11-requestival/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2020-07-11-requestival/</guid>
   <pubDate>Fri, 10 Jul 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Back to the SCE-verse!</title>
-  <link>https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/index.html</link>
+  <link>https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -290,6 +294,7 @@ font-style: inherit;">$</span>Package)</span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(pkgs, db, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">reverse =</span> <span class="cn" style="color: #8f5902;
@@ -315,6 +320,7 @@ font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">map_dfr</span>(types, <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(.type) {</span>
 <span id="cb3-5">        deps_list <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -349,6 +355,7 @@ font-style: inherit;">unnest</span>(dependency)</span>
 <span id="cb3-13"></span>
 <span id="cb3-14">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (reverse) {</span>
 <span id="cb3-15">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1123,13 +1130,14 @@ font-style: inherit;">theme_graph</span>()</span></code></pre></div>
   <category>scrna-seq</category>
   <category>SingleCellExperiment</category>
   <category>analysis</category>
-  <guid>https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/</guid>
   <pubDate>Mon, 11 May 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Bioconductor 3.11 wrap-up</title>
-  <link>https://lazappi.id.au/posts/2020-04-29-bioconductor-3-11-wrap-up/index.html</link>
+  <link>https://lazappi.id.au/posts/2020-04-29-bioconductor-3-11-wrap-up/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1191,13 +1199,14 @@ font-style: inherit;">theme_graph</span>()</span></code></pre></div>
  ]]></description>
   <category>bioconductor</category>
   <category>R</category>
-  <guid>https://lazappi.id.au/posts/2020-04-29-bioconductor-3-11-wrap-up/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2020-04-29-bioconductor-3-11-wrap-up/</guid>
   <pubDate>Tue, 28 Apr 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Caching blogdown posts</title>
-  <link>https://lazappi.id.au/posts/2020-04-09-caching-blogdown/index.html</link>
+  <link>https://lazappi.id.au/posts/2020-04-09-caching-blogdown/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1309,8 +1318,10 @@ background-color: null;
 font-style: inherit;">" cached Markdown files..."</span>)</span>
 <span id="cb2-2"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> (md <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> md_files[<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span>to_render]) {</span>
@@ -1337,8 +1348,10 @@ background-color: null;
 font-style: inherit;">" R Markdown files..."</span>)</span>
 <span id="cb3-2"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> (rmd <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> rmd_files[to_render]) {</span>
 <span id="cb3-3">    <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1360,9 +1373,11 @@ font-style: inherit;">prepend_yaml</span>(md, out, x, <span class="at" style="co
 background-color: null;
 font-style: inherit;">callback =</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(s) {</span>
 <span id="cb4-2">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
@@ -1378,6 +1393,7 @@ font-style: inherit;">return</span>(s)</span>
 <span id="cb4-4">    }</span>
 <span id="cb4-5">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">length</span>(s) <span class="sc" style="color: #5E5E5E;
@@ -1447,13 +1463,14 @@ font-style: inherit;">TRUE</span></span></code></pre></div>
 </section></div> ]]></description>
   <category>blogdown</category>
   <category>R</category>
-  <guid>https://lazappi.id.au/posts/2020-04-09-caching-blogdown/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2020-04-09-caching-blogdown/</guid>
   <pubDate>Thu, 09 Apr 2020 11:41:09 GMT</pubDate>
 </item>
 <item>
   <title>Exploring the SCE-verse</title>
-  <link>https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/index.html</link>
+  <link>https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1464,7 +1481,7 @@ font-style: inherit;">TRUE</span></span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/summarized_experiment.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Diagram of a SummarizedExperiment object</figcaption>
+<figcaption>Diagram of a SummarizedExperiment object</figcaption>
 </figure>
 </div>
 <p>One of the key benefits of using a structure like the SummarizedExperiment is that all the data related to an analysis is held in one spot. This makes it easier to pass things between functions or output results as well as reducing the possibilities for mismatches. The SingleCellExperiment adds some extra features that are useful for scRNA-seq analysis including:</p>
@@ -1509,6 +1526,7 @@ font-style: inherit;">"tidyverse"</span>)</span></code></pre></div>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(bpi, pkg, reverse) {</span>
 <span id="cb2-2">    deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1523,6 +1541,7 @@ font-style: inherit;">==</span> pkg)</span>
 <span id="cb2-4"></span>
 <span id="cb2-5">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (reverse) {</span>
 <span id="cb2-6">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1541,6 +1560,7 @@ background-color: null;
 font-style: inherit;">suggests =</span> suggestsMe)</span>
 <span id="cb2-9">    } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="cb2-10">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1592,6 +1612,7 @@ font-style: inherit;">is.na</span>(package))</span>
 <span id="cb2-19"></span>
 <span id="cb2-20">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (reverse) {</span>
 <span id="cb2-21">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1612,6 +1633,7 @@ background-color: null;
 font-style: inherit;">package1 =</span> package)</span>
 <span id="cb2-24">    } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="cb2-25">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1667,6 +1689,7 @@ font-style: inherit;">head</span>(bioc_revdeps)</span></code></pre></div>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(pkg, db, reverse) {</span>
 <span id="cb4-2"></span>
 <span id="cb4-3">    types <span class="ot" style="color: #003B4F;
@@ -1687,6 +1710,7 @@ font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">sapply</span>(types, <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(type) {</span>
 <span id="cb4-6">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1756,6 +1780,7 @@ font-style: inherit;">separate_rows</span>(package)</span>
 <span id="cb4-17"></span>
 <span id="cb4-18">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">nrow</span>(deps) <span class="sc" style="color: #5E5E5E;
@@ -1785,6 +1810,7 @@ font-style: inherit;">character</span>()))</span>
 <span id="cb4-22"></span>
 <span id="cb4-23">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (reverse) {</span>
 <span id="cb4-24">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1805,6 +1831,7 @@ background-color: null;
 font-style: inherit;">package1 =</span> package)</span>
 <span id="cb4-27">    } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="cb4-28">        deps <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -2044,9 +2071,11 @@ font-style: inherit;">$</span>package, nodes<span class="sc" style="color: #5E5E
 background-color: null;
 font-style: inherit;">$</span>repo, <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x, y) {</span>
 <span id="cb7-2">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (y <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
@@ -2059,6 +2088,7 @@ background-color: null;
 font-style: inherit;">FALSE</span>)</span>
 <span id="cb7-4">    } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="cb7-5">        <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2118,9 +2148,11 @@ font-style: inherit;">$</span>package, nodes<span class="sc" style="color: #5E5E
 background-color: null;
 font-style: inherit;">$</span>repo, <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x, y) {</span>
 <span id="cb7-12">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (y <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
@@ -2133,6 +2165,7 @@ background-color: null;
 font-style: inherit;">TRUE</span>)</span>
 <span id="cb7-14">    } <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">else</span> {</span>
 <span id="cb7-15">        <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2692,13 +2725,14 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
   <category>scrna-seq</category>
   <category>SingleCellExperiment</category>
   <category>analysis</category>
-  <guid>https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/</guid>
   <pubDate>Fri, 08 Jun 2018 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Bioconductor 3.7 wrap-up</title>
-  <link>https://lazappi.id.au/posts/2018-05-04-bioconductor-3-7-wrap-up/index.html</link>
+  <link>https://lazappi.id.au/posts/2018-05-04-bioconductor-3-7-wrap-up/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2718,7 +2752,7 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lazappi.id.au/posts/2018-05-04-bioconductor-3-7-wrap-up/iSEE.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Example iSEE window</figcaption>
+<figcaption>Example iSEE window</figcaption>
 </figure>
 </div>
 <ul>
@@ -2756,7 +2790,7 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lazappi.id.au/posts/2018-05-04-bioconductor-3-7-wrap-up/enrichplot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">network plot from enrichplot</figcaption>
+<figcaption>network plot from enrichplot</figcaption>
 </figure>
 </div>
 <ul>
@@ -2770,7 +2804,7 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lazappi.id.au/posts/2018-05-04-bioconductor-3-7-wrap-up/vidger.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Example plot from vidger</figcaption>
+<figcaption>Example plot from vidger</figcaption>
 </figure>
 </div>
 <ul>
@@ -2796,13 +2830,14 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
   <category>bioconductor</category>
   <category>R</category>
   <category>scrna-seq</category>
-  <guid>https://lazappi.id.au/posts/2018-05-04-bioconductor-3-7-wrap-up/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2018-05-04-bioconductor-3-7-wrap-up/</guid>
   <pubDate>Thu, 03 May 2018 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>My AFL-Elo model</title>
-  <link>https://lazappi.id.au/posts/2018-04-21-my-afl-elo-model/index.html</link>
+  <link>https://lazappi.id.au/posts/2018-04-21-my-afl-elo-model/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2818,7 +2853,6 @@ knitr::opts_chunk$set(autodep        = TRUE,
                       message        = FALSE,
                       warning        = FALSE)
 ``` -->
-
 <!-- ```{r libraries}
 library("knitr")
 library("here")
@@ -2876,7 +2910,6 @@ opt_summ %>%
     rename(Default = X1, Margin = X2, Balanced = X3, Prediction = X4) %>%
     kable()
 ``` -->
-
 <table class="table">
 <thead>
 <tr class="header">
@@ -3102,7 +3135,6 @@ Predict2017
 </td>
 </tr>
 </tbody>
-
 </table>
 <p>Based on the 2017 results I decided to go with the Margin model. Despite being optimised for margin accuracy it also performed the best at predicting results in 2017. This might suggest that the optimisation procedure is not ideal, but that is a problem for another day… Encouragingly, all three of my models outperform the defaults, which suggests that the results will be somewhere in the range of the The Arc, and I am more than happy with that.</p>
 <p>If you are interested in how I have done things I have made an <a href="https://github.com/lazappi/aflelo" title="aflelo"><code>aflelo</code></a> R package which you can install from GitHub and my analysis and predictions for each round will be available <a href="https://github.com/lazappi/afl-2018" title="afl2018">here</a>.</p>
@@ -3111,7 +3143,6 @@ Predict2017
 <h1>Round 5</h1>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-
 <!-- ```{r summ_table}
 summ_table <- read_rds(here("static/data/afl2018/R5/summary_table.Rds"))
 summ_table
@@ -3729,7 +3760,6 @@ Carlton
 </td>
 </tr>
 </tbody>
-
 </table>
 </section>
 <section id="predictions" class="level2">
@@ -3759,13 +3789,14 @@ Carlton
   <category>afl</category>
   <category>elo</category>
   <category>sport</category>
-  <guid>https://lazappi.id.au/posts/2018-04-21-my-afl-elo-model/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2018-04-21-my-afl-elo-model/</guid>
   <pubDate>Fri, 20 Apr 2018 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Welcome to Blogdown!</title>
-  <link>https://lazappi.id.au/posts/2018-03-24-welcome-to-blogdown/index.html</link>
+  <link>https://lazappi.id.au/posts/2018-03-24-welcome-to-blogdown/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -3780,14 +3811,15 @@ Carlton
 
  ]]></description>
   <category>blogdown</category>
-  <guid>https://lazappi.id.au/posts/2018-03-24-welcome-to-blogdown/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2018-03-24-welcome-to-blogdown/</guid>
   <pubDate>Fri, 23 Mar 2018 23:00:00 GMT</pubDate>
   <media:content url="https://lazappi.id.au/posts/2018-03-24-welcome-to-blogdown/featured.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Joining the Dots Twitter analysis</title>
-  <link>https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/index.html</link>
+  <link>https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -3864,7 +3896,6 @@ font-style: inherit;">"data/jtdwehi.Rds"</span>)</span></code></pre></div>
 </section>
 <section id="top-retweets" class="level2">
 <h2 class="anchored" data-anchor-id="top-retweets">Top retweets</h2>
-
 <table>
 <thead>
 <tr>
@@ -3991,7 +4022,6 @@ gravitron
 </td>
 </tr>
 </tbody>
-
 </table>
 </section>
 </section>
@@ -4007,7 +4037,6 @@ gravitron
 </section>
 <section id="top-favourites" class="level2">
 <h2 class="anchored" data-anchor-id="top-favourites">Top favourites</h2>
-
 <table>
 <thead>
 <tr>
@@ -4134,7 +4163,6 @@ Representing Greek films via olive trees (which are are actually Markov chains) 
 </td>
 </tr>
 </tbody>
-
 </table>
 </section>
 </section>
@@ -4150,7 +4178,6 @@ Representing Greek films via olive trees (which are are actually Markov chains) 
 </section>
 <section id="top-quotes" class="level2">
 <h2 class="anchored" data-anchor-id="top-quotes">Top quotes</h2>
-
 <table>
 <thead>
 <tr>
@@ -4278,7 +4305,6 @@ Depressing and motivating! #jtdwehi https://t.co/YCGB1ibYkw
 </td>
 </tr>
 </tbody>
-
 </table>
 </section>
 </section>
@@ -4290,7 +4316,6 @@ Depressing and motivating! #jtdwehi https://t.co/YCGB1ibYkw
 </section>
 <section id="top-media" class="level2">
 <h2 class="anchored" data-anchor-id="top-media">Top media</h2>
-
 <table>
 <thead>
 <tr>
@@ -4418,7 +4443,6 @@ Best URL of the day goes to <span class="citation" data-cites="Isa_Kiko">@Isa_Ki
 </td>
 </tr>
 </tbody>
-
 </table>
 <section id="most-liked-media-image" class="level3">
 <h3 class="anchored" data-anchor-id="most-liked-media-image">Most liked media image</h3>
@@ -4438,14 +4462,15 @@ Best URL of the day goes to <span class="citation" data-cites="Isa_Kiko">@Isa_Ki
   <category>conference</category>
   <category>visualisation</category>
   <category>twitter</category>
-  <guid>https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/</guid>
   <pubDate>Thu, 17 Aug 2017 22:00:00 GMT</pubDate>
   <media:content url="https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/featured.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
   <title>Building a clustering tree</title>
-  <link>https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/index.html</link>
+  <link>https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -4543,9 +4568,11 @@ font-style: inherit;">"Group"</span>)</span></code></pre></div>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(sce) {</span>
 <span id="cb4-2">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
@@ -4570,6 +4597,7 @@ font-style: inherit;">counts</span>(sce)</span>
 <span id="cb4-7"></span>
 <span id="cb4-8">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">is.null</span>(counts)) {</span>
@@ -4712,8 +4740,10 @@ font-style: inherit;">TRUE</span>)</span></code></pre></div>
 <p>We can now loop over a range of resolutions that we are interested in. I have only tried a few values here but if this was a real dataset you might want to try some more.</p>
 <div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> (res <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
@@ -4790,6 +4820,7 @@ font-style: italic;">## Cell6     0       1       0       0       0</span></span
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(clusterings) {</span>
 <span id="cb10-2"></span>
 <span id="cb10-3">    <span class="co" style="color: #5E5E5E;
@@ -4811,6 +4842,7 @@ font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>), <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(i) {</span>
 <span id="cb10-5"></span>
 <span id="cb10-6">        <span class="co" style="color: #5E5E5E;
@@ -4878,6 +4910,7 @@ font-style: inherit;">apply</span>(trans.df, <span class="dv" style="color: #AD0
 background-color: null;
 font-style: inherit;">1</span>, <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(x) {</span>
 <span id="cb10-20">            from.clust <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -5099,6 +5132,7 @@ font-style: italic;">## 6         0       0     0.3   0.6          0     0.00000
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(clusterings) {</span>
 <span id="cb11-2">    nodes <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -6090,14 +6124,15 @@ font-style: italic;">##  zlibbioc         1.22.0   2017-04-25 Bioconductor</span
   <category>R</category>
   <category>scrna-seq</category>
   <category>clustering tree</category>
-  <guid>https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/</guid>
   <pubDate>Tue, 18 Jul 2017 22:00:00 GMT</pubDate>
   <media:content url="https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/featured.png" medium="image" type="image/png" height="103" width="144"/>
 </item>
 <item>
   <title>PyConAU 2016</title>
-  <link>https://lazappi.id.au/posts/2016-08-18-pyconau-2016/index.html</link>
+  <link>https://lazappi.id.au/posts/2016-08-18-pyconau-2016/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6125,13 +6160,14 @@ font-style: italic;">##  zlibbioc         1.22.0   2017-04-25 Bioconductor</span
   <category>python</category>
   <category>conference</category>
   <category>thoughts</category>
-  <guid>https://lazappi.id.au/posts/2016-08-18-pyconau-2016/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2016-08-18-pyconau-2016/</guid>
   <pubDate>Wed, 17 Aug 2016 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Gantt charts in R</title>
-  <link>https://lazappi.id.au/posts/2016-06-13-gantt-charts-in-r/index.html</link>
+  <link>https://lazappi.id.au/posts/2016-06-13-gantt-charts-in-r/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6164,6 +6200,7 @@ font-style: inherit;"># Take a data.frame containing tasks and build a Mermaid s
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tasks) {</span>
 <span id="cb3-5"></span>
 <span id="cb3-6">    tasks.list <span class="ot" style="color: #003B4F;
@@ -6192,6 +6229,7 @@ background-color: null;
 font-style: inherit;">names</span>(tasks.list),</span>
 <span id="cb3-10">                      <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(section) {</span>
 <span id="cb3-11">                          tasks.list[[section]] <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -6271,8 +6309,10 @@ font-style: inherit;">""</span></span>
 <span id="cb3-24"></span>
 <span id="cb3-25">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span>(section <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">names</span>(strings)) {</span>
@@ -6321,6 +6361,7 @@ font-style: inherit;"># Adds the Mermaid header to the tasks string</span></span
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tasks) {</span>
 <span id="cb3-38"></span>
 <span id="cb3-39">    gantt.string <span class="ot" style="color: #003B4F;
@@ -6424,6 +6465,7 @@ font-style: inherit;"># Read a file and return a Gantt chart</span></span>
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span>(tasks.file, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">format =</span> <span class="fu" style="color: #4758AB;
@@ -6442,6 +6484,7 @@ font-style: inherit;">match.arg</span>(format)</span>
 <span id="cb3-63"></span>
 <span id="cb3-64">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">switch</span>(format,</span>
 <span id="cb3-65">           <span class="at" style="color: #657422;
 background-color: null;
@@ -6483,13 +6526,14 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
   <category>project management</category>
   <category>gantt chart</category>
   <category>excel</category>
-  <guid>https://lazappi.id.au/posts/2016-06-13-gantt-charts-in-r/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2016-06-13-gantt-charts-in-r/</guid>
   <pubDate>Sun, 12 Jun 2016 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Bioconductor 3.3 packages</title>
-  <link>https://lazappi.id.au/posts/2016-05-03-bioconductor-3-3-packages/index.html</link>
+  <link>https://lazappi.id.au/posts/2016-05-03-bioconductor-3-3-packages/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6521,13 +6565,14 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
  ]]></description>
   <category>R</category>
   <category>bioconductor</category>
-  <guid>https://lazappi.id.au/posts/2016-05-03-bioconductor-3-3-packages/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2016-05-03-bioconductor-3-3-packages/</guid>
   <pubDate>Mon, 02 May 2016 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Extracting alignment statistics using Python</title>
-  <link>https://lazappi.id.au/posts/2016-03-30-extracting-alignment-statistics-using-python/index.html</link>
+  <link>https://lazappi.id.au/posts/2016-03-30-extracting-alignment-statistics-using-python/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6551,13 +6596,14 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
   <category>python</category>
   <category>alignment</category>
   <category>statistics</category>
-  <guid>https://lazappi.id.au/posts/2016-03-30-extracting-alignment-statistics-using-python/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2016-03-30-extracting-alignment-statistics-using-python/</guid>
   <pubDate>Tue, 29 Mar 2016 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>My Markdown thesis</title>
-  <link>https://lazappi.id.au/posts/2015-09-13-my-markdown-thesis/index.html</link>
+  <link>https://lazappi.id.au/posts/2015-09-13-my-markdown-thesis/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6584,13 +6630,14 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
   <category>markdown</category>
   <category>thesis</category>
   <category>latex</category>
-  <guid>https://lazappi.id.au/posts/2015-09-13-my-markdown-thesis/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2015-09-13-my-markdown-thesis/</guid>
   <pubDate>Sat, 12 Sep 2015 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Open science workshops</title>
-  <link>https://lazappi.id.au/posts/2014-07-20-open-science-workshops/index.html</link>
+  <link>https://lazappi.id.au/posts/2014-07-20-open-science-workshops/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6614,7 +6661,7 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
   <category>open science</category>
   <category>workshop</category>
   <category>collaboration</category>
-  <guid>https://lazappi.id.au/posts/2014-07-20-open-science-workshops/index.html</guid>
+  <guid>https://lazappi.id.au/posts/2014-07-20-open-science-workshops/</guid>
   <pubDate>Sat, 19 Jul 2014 22:00:00 GMT</pubDate>
 </item>
 </channel>

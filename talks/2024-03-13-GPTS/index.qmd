@@ -1,0 +1,17 @@
+---
+title: Suggestions for successful scRNA-seq analysis
+description: Presentation at the 9th German Pharm-Tox Summit on planning a successful scRNA-seq experiment from the analysts perspective
+authors:
+ - "**Luke Zappia**"
+event:
+  name: 9th German Pharm-Tox Summit
+  location: Munich, Germany
+abstract: |
+  A brief introduction to how single-cell technologies work, how to plan a successful experiment (from an analyst's point of view), the steps in a standard scRNA-seq analysis and touching on some more advanced topics.
+  Presented at the 9th German Pharm-Tox Summit.
+categories: ["single-cell", "rna-seq", "analysis", "best practices"]
+date: 2024-03-13T00:00:00+00:00
+links:
+  slides: https://speakerdeck.com/lazappi/suggestions-for-successful-scrna-seq
+speakerdeck: 7aacd7d7f2d64836909c304c529768f6
+---

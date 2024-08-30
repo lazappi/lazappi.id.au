@@ -1,0 +1,49 @@
+---
+title: Defining and benchmarking open problems in single-cell analysis
+author:
+  - Malte D. Luecken
+  - Scott Gigante
+  - Daniel B. Burkhardt
+  - Robrecht Cannoodt
+  - Daniel C. Strobl
+  - Nikolay S. Markov
+  - name: Luke Zappia
+    me: true
+  - Giovanni Palla
+  - Wesley Lewis
+  - Daniel Dimitrov
+  - Michael E. Vinyard
+  - D.S. Magruder
+  - Alma Andersson
+  - Emma Dann
+  - Qian Qin
+  - Dominik J. Otto
+  - Michal Klein
+  - Olga Borisovna Botvinnik
+  - Louise Deconinck
+  - Kai Waldrant
+  - The Open Problems Jamboree Members
+  - Jonathan M. Bloom
+  - Angela Oliveira Pisco
+  - Julio Saez-Rodriguez
+  - Drausin Wulsin
+  - Luca Pinello
+  - Yvan Saeys
+  - Fabian J Theis
+  - Smita Krishnaswamy
+abstract: |
+  With the growing number of single-cell analysis tools, benchmarks are increasingly important to guide analysis and method development.
+  However, a lack of standardisation and extensibility in current benchmarks limits their usability, longevity, and relevance to the community.
+  We present Open Problems, a living, extensible, community-guided benchmarking platform including 10 current single-cell tasks that we envision will raise standards for the selection, evaluation, and development of methods in single-cell analysis.
+categories: ["benchmarking", "scrna-seq", "website"]
+date: 2024-03-03
+links:
+  code: https://github.com/openproblems-bio/openproblems
+  doi: 10.21203/rs.3.rs-4181617/v1
+  pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11030530/pdf/nihpp-rs4181617v1.pdf
+  website: https://openproblems.bio/
+citation:
+  type: article
+  doi: 10.21203/rs.3.rs-4181617/v1
+  container-title: Research Square
+---

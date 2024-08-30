@@ -2,6 +2,7 @@
   {
     "listing": "/talks/index.html",
     "items": [
+      "/talks/2024-03-13-GPTS/index.html",
       "/talks/2022-06-30-ILC-summer-school/index.html",
       "/talks/2020-12-18-EuroBioc2020/index.html",
       "/talks/2019-03-22-phd-completion/index.html",
@@ -43,6 +44,7 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/2024-luecken-OpenProblems/index.html",
       "/publications/2023-ji-distance-metrics/index.html",
       "/publications/2023-huemos-ehrapy/index.html",
       "/publications/2023-hrovatin-batch-effects/index.html",
@@ -79,6 +81,7 @@
       "/projects/clamour/index.html",
       "/projects/doilinker/index.html",
       "/projects/prettytc/index.html",
+      "/projects/tidydirectory/index.html",
       "/projects/oecd-housing/index.html",
       "/projects/phd-commits/index.html",
       "/projects/twitter-stats/index.html",

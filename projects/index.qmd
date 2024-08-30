@@ -9,6 +9,7 @@ listing:
     - "clamour/index.qmd"
     - "doilinker/index.qmd"
     - "prettytc/index.qmd"
+    - "tidydirectory/index.qmd"
     type: grid
     sort: "false"
     categories: true

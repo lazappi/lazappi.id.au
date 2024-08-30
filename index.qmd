@@ -12,8 +12,7 @@ about:
     - icon: mastodon
       text: Mastodon
       href: https://mastodon.au/@lazappi
-    - icon: square
-      text: Bluesky
+    - text: "{{< iconify fa6-brands bluesky >}} Bluesky"
       href: https://bsky.app/profile/lazappi.bsky.social
     - icon: linkedin
       text: LinkedIn

@@ -21,6 +21,7 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/2024-09-15-scverse-conference/index.html",
       "/posts/2024-03-04-scRNAtools-low-maintenance/index.html",
       "/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html",
       "/posts/2020-07-11-requestival/index.html",
@@ -44,9 +45,9 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/2024-huemos-ehrapy/index.html",
       "/publications/2024-luecken-OpenProblems/index.html",
       "/publications/2023-ji-distance-metrics/index.html",
-      "/publications/2023-huemos-ehrapy/index.html",
       "/publications/2023-hrovatin-batch-effects/index.html",
       "/publications/2023-deDonno-scPoli/index.html",
       "/publications/2023-hrovatin-MIA/index.html",

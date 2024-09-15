@@ -6,29 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lukas Heumos">
-<meta name="author" content="Philipp Ehmele">
-<meta name="author" content="Tim Treis">
-<meta name="author" content="Julius Upmeier zu Belzen">
-<meta name="author" content="Altana Namsaraeva">
-<meta name="author" content="Nastassya Horlava">
-<meta name="author" content="Vladimir A. Shitov">
-<meta name="author" content="Xinyue Zhang">
-<meta name="author" content="Luke Zappia">
-<meta name="author" content="Rainer Knoll">
-<meta name="author" content="Niklas J. Lang">
-<meta name="author" content="Leon Hetzel">
-<meta name="author" content="Isaac Virshup">
-<meta name="author" content="Lisa Sikkema">
-<meta name="author" content="Eljas Roellin">
-<meta name="author" content="Fabiola Curion">
-<meta name="author" content="Roland Eils">
-<meta name="author" content="Herbert B. Schiller">
-<meta name="author" content="Anne Hilgendorff">
-<meta name="author" content="Fabian J. Theis">
-<meta name="dcterms.date" content="2023-12-11">
+<meta name="dcterms.date" content="2024-09-15">
+<meta name="description" content="Recap of the first scverse conference and sketchnotes of keynote talks">
 
-<title>Exploratory electronic health record analysis with ehrapy – lazappi</title>
+<title>scverse conference – lazappi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,18 +108,18 @@ cookieconsent.run({
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
 
 
-<meta property="og:title" content="Exploratory electronic health record analysis with ehrapy – lazappi">
-<meta property="og:description" content="With progressive digitalization of healthcare systems worldwide, large-scale collection of electronic health records (EHRs) has become commonplace. However, an extensible framework for comprehensive exploratory analysis that accounts for data heterogeneity is missing. Here, we introduce ehrapy, a modular open-source Python framework designed for exploratory end-to-end analysis of heterogeneous epidemiology and electronic health record data. Ehrapy incorporates a series of analytical steps, from data extraction and quality control to the generation of low-dimensional representations. Complemented by rich statistical modules, ehrapy facilitates associating patients with disease states, differential comparison between patient clusters, survival analysis, trajectory inference, causal inference, and more. Leveraging ontologies, ehrapy further enables data sharing and training EHR deep learning models paving the way for foundational models in biomedical research. We demonstrated ehrapy’s features in five distinct examples: We first applied ehrapy to stratify patients affected by unspecified pneumonia into finer-grained phenotypes. Furthermore, we revealed biomarkers for significant differences in survival among these groups. Additionally, we quantify medication-class effects of pneumonia medications on length of stay. We further leveraged ehrapy to analyze cardiovascular risks across different data modalities. Finally, we reconstructed disease state trajectories in SARS-CoV-2 patients based on imaging data. Ehrapy thus provides a framework that we envision will standardize analysis pipelines on EHR data and serve as a cornerstone for the community.">
+<meta property="og:title" content="scverse conference – lazappi">
+<meta property="og:description" content="Recap of the first scverse conference and sketchnotes of keynote talks">
 <meta property="og:site_name" content="lazappi">
 <meta property="og:locale" content="en_AU">
-<meta name="twitter:title" content="Exploratory electronic health record analysis with ehrapy – lazappi">
-<meta name="twitter:description" content="With progressive digitalization of healthcare systems worldwide, large-scale collection of electronic health records (EHRs) has become commonplace. However, an extensible framework for comprehensive exploratory analysis that accounts for data heterogeneity is missing. Here, we introduce ehrapy, a modular open-source Python framework designed for exploratory end-to-end analysis of heterogeneous epidemiology and electronic health record data. Ehrapy incorporates a series of analytical steps, from data extraction and quality control to the generation of low-dimensional representations. Complemented by rich statistical modules, ehrapy facilitates associating patients with disease states, differential comparison between patient clusters, survival analysis, trajectory inference, causal inference, and more. Leveraging ontologies, ehrapy further enables data sharing and training EHR deep learning models paving the way for foundational models in biomedical research. We demonstrated ehrapy’s features in five distinct examples: We first applied ehrapy to stratify patients affected by unspecified pneumonia into finer-grained phenotypes. Furthermore, we revealed biomarkers for significant differences in survival among these groups. Additionally, we quantify medication-class effects of pneumonia medications on length of stay. We further leveraged ehrapy to analyze cardiovascular risks across different data modalities. Finally, we reconstructed disease state trajectories in SARS-CoV-2 patients based on imaging data. Ehrapy thus provides a framework that we envision will standardize analysis pipelines on EHR data and serve as a cornerstone for the community.">
+<meta name="twitter:title" content="scverse conference – lazappi">
+<meta name="twitter:description" content="Recap of the first scverse conference and sketchnotes of keynote talks">
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -197,185 +181,131 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#keynote-sketchotes" id="toc-keynote-sketchotes" class="nav-link" data-scroll-target="#keynote-sketchotes">Keynote sketchotes</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploratory electronic health record analysis with ehrapy</h1>
+<h1 class="title">scverse conference</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">medical records</div>
-    <div class="quarto-category">software</div>
+    <div class="quarto-category">scverse</div>
+    <div class="quarto-category">conference</div>
+    <div class="quarto-category">sketchnotes</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Recap of the first scverse conference and sketchnotes of keynote talks
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-              <p>
-                              Lukas Heumos
-                                      </p>
-              <p>
-                              Philipp Ehmele
-                                      </p>
-              <p>
-                              Tim Treis
-                                      </p>
-              <p>
-                              Julius Upmeier zu Belzen
-                                      </p>
-              <p>
-                              Altana Namsaraeva
-                                      </p>
-              <p>
-                              Nastassya Horlava
-                                      </p>
-              <p>
-                              Vladimir A. Shitov
-                                      </p>
-              <p>
-                              Xinyue Zhang
-                                      </p>
-              <p>
-                                <strong>
-                    Luke Zappia
-                      </strong>
-                                      </p>
-              <p>
-                              Rainer Knoll
-                                      </p>
-              <p>
-                              Niklas J. Lang
-                                      </p>
-              <p>
-                              Leon Hetzel
-                                      </p>
-              <p>
-                              Isaac Virshup
-                                      </p>
-              <p>
-                              Lisa Sikkema
-                                      </p>
-              <p>
-                              Eljas Roellin
-                                      </p>
-              <p>
-                              Fabiola Curion
-                                      </p>
-              <p>
-                              Roland Eils
-                                      </p>
-              <p>
-                              Herbert B. Schiller
-                                      </p>
-              <p>
-                              Anne Hilgendorff
-                                      </p>
-              <p>
-                              Fabian J. Theis
-                                      </p>
+             <p><strong>Luke Zappia</strong> </p>
           </div>
   </div>
-  
+    
     <div>
-    <div class="quarto-title-meta-heading">Date</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 11, 2023</p>
+      <p class="date">September 15, 2024</p>
     </div>
   </div>
   
-  
-  
-    <div>
-    <div class="quarto-title-meta-heading">Links</div>
-    <div class="quarto-title-meta-contents">
-                    <a type="button" class="btn btn-outline-primary" href="https://github.com/theislab/ehrapy">Package</a>
-                    <a type="button" class="btn btn-outline-primary" href="https://github.com/theislab/ehrapy_reproducibility">Code</a>
-                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1101/2023.12.11.23299816">DOI</a>
-                    <a type="button" class="btn btn-outline-primary" href="https://www.medrxiv.org/content/10.1101/2023.12.11.23299816v2.full.pdf">PDF</a>
-                          <a type="button" class="btn btn-outline-primary" href="https://ehrapy.org/">Website</a>
-                      </div>
+    
   </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Citation stats</div>
-    <div class="quarto-title-meta-contents">
-      <div class="scite-badge" data-doi="10.1101/2023.12.11.23299816" data-layout="vertical" data-show-zero="true" data-small="false" data-show-labels="true" data-tally-show="true">
-      </div>
-    </div>
-  </div>
-  <script async="" type="application/javascript" src="https://cdn.scite.ai/badge/scite-badge-latest.min.js">
-  </script>
-  
-</div>
-
-
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    <p>With progressive digitalization of healthcare systems worldwide, large-scale collection of electronic health records (EHRs) has become commonplace. However, an extensible framework for comprehensive exploratory analysis that accounts for data heterogeneity is missing. Here, we introduce ehrapy, a modular open-source Python framework designed for exploratory end-to-end analysis of heterogeneous epidemiology and electronic health record data. Ehrapy incorporates a series of analytical steps, from data extraction and quality control to the generation of low-dimensional representations. Complemented by rich statistical modules, ehrapy facilitates associating patients with disease states, differential comparison between patient clusters, survival analysis, trajectory inference, causal inference, and more. Leveraging ontologies, ehrapy further enables data sharing and training EHR deep learning models paving the way for foundational models in biomedical research. We demonstrated ehrapy’s features in five distinct examples: We first applied ehrapy to stratify patients affected by unspecified pneumonia into finer-grained phenotypes. Furthermore, we revealed biomarkers for significant differences in survival among these groups. Additionally, we quantify medication-class effects of pneumonia medications on length of stay. We further leveraged ehrapy to analyze cardiovascular risks across different data modalities. Finally, we reconstructed disease state trajectories in SARS-CoV-2 patients based on imaging data. Ehrapy thus provides a framework that we envision will standardize analysis pipelines on EHR data and serve as a cornerstone for the community.</p>
-  </div>
-</div>
-
 
 
 </header>
 
 
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>This week was the first ever <a href="https://scverse.org/conference2024">scverse conference</a> held in Munich from 10-12 September. While it was based around the <a href="https://scverse.org/">scverse</a> software community the conference covered more than just those core packages for single-cell analysis and included talks on a range of biological topics as well as a diverse range of workshops. Putting together any conference is a lot of work, but particularly the first attempt for what is still a new community. I was very impressed with what the organisers were able to put together, how smoothly everything ran and the number of attendees from around the world. It is great to see these growing into a real community that is more than just the core maintainers from a few packages and I look forward to seeing what they do in the years ahead. As with any effort on the work of students, the difficulty is always maintaining momentum as those people move on and everything is based to a new generation but I am hopeful they are building something that will be sustainable with support from senior academics and industry.</p>
+</section>
+<section id="keynote-sketchotes" class="level1">
+<h1>Keynote sketchotes</h1>
+<p>Here are my sketchnotes summarising the keynote talks (click to expand):</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="1-RobPatro.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Rob Patro - “Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data”"><img src="1-RobPatro.jpg" class="img-fluid figure-img" alt="Sketchnotes of Rob Patro's scverse conference keynote 'Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data'"></a></p>
+<figcaption>Rob Patro - “Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="2-AngelaOlivieraPisco.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Angela Oliveira Pisco - “Multimodal Atlas for Biological Data Anlaysis and Drug Discovery”"><img src="2-AngelaOlivieraPisco.jpg" class="img-fluid figure-img" alt="Sketchnotes of Angela Oliveira Pisco's scverse conference keynote 'Multimodal Atlas for Biological Data Anlaysis and Drug Discovery'"></a></p>
+<figcaption>Angela Oliveira Pisco - “Multimodal Atlas for Biological Data Anlaysis and Drug Discovery”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="3-ChristinaLeslie.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Christina Leslie - “Machine learning for regulatory genomics at single-cell resolution”"><img src="3-ChristinaLeslie.jpg" class="img-fluid figure-img" alt="Sketchnotes of Christina Leslie's scverse conference keynote 'Machine learning for regulatory genomics at single-cell resolution'"></a></p>
+<figcaption>Christina Leslie - “Machine learning for regulatory genomics at single-cell resolution”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="4-AlexWolf.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Alex Wolf - “Many anecdotes make a novel? Study-centered analysis &amp; training models”"><img src="4-AlexWolf.jpg" class="img-fluid figure-img" alt="Sketchnotes of Alex Wolf's scverse conference keynote 'Many anecdotes make a novel? Study-centered analysis &amp; training models'"></a></p>
+<figcaption>Alex Wolf - “Many anecdotes make a novel? Study-centered analysis &amp; training models”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="5-MariaBrbic.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Maria Brbic - “Towards AI-driven discoveries in Single-Cell genomics”"><img src="5-MariaBrbic.jpg" class="img-fluid figure-img" alt="Sketchnotes of Maria Brbic's scverse conference keynote 'Towards AI-driven discoveries in Single-Cell genomics'"></a></p>
+<figcaption>Maria Brbic - “Towards AI-driven discoveries in Single-Cell genomics”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="6-FabianTheis.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Fabian Theis - “From scanpy to the virtual cell: the coming-of-age of single cell analysis”"><img src="6-FabianTheis.jpg" class="img-fluid figure-img" alt="Sketchnotes of Fabian Theis's scverse conference keynote 'From scanpy to the virtual cell: the coming-of-age of single cell analysis'"></a></p>
+<figcaption>Fabian Theis - “From scanpy to the virtual cell: the coming-of-age of single cell analysis”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{heumos2023,
-  author = {Heumos, Lukas and Ehmele, Philipp and Treis, Tim and Upmeier
-    zu Belzen, Julius and Namsaraeva, Altana and Horlava, Nastassya and
-    A. Shitov, Vladimir and Zhang, Xinyue and Zappia, Luke and Knoll,
-    Rainer and J. Lang, Niklas and Hetzel, Leon and Virshup, Isaac and
-    Sikkema, Lisa and Roellin, Eljas and Curion, Fabiola and Eils,
-    Roland and B. Schiller, Herbert and Hilgendorff, Anne and J. Theis,
-    Fabian},
-  title = {Exploratory Electronic Health Record Analysis with Ehrapy},
-  date = {2023-12-11},
-  url = {https://lazappi.id.au/publications/2023-huemos-ehrapy/},
-  doi = {10.1101/2023.12.11.23299816},
-  langid = {en},
-  abstract = {With progressive digitalization of healthcare systems
-    worldwide, large-scale collection of electronic health records
-    (EHRs) has become commonplace. However, an extensible framework for
-    comprehensive exploratory analysis that accounts for data
-    heterogeneity is missing. Here, we introduce ehrapy, a modular
-    open-source Python framework designed for exploratory end-to-end
-    analysis of heterogeneous epidemiology and electronic health record
-    data. Ehrapy incorporates a series of analytical steps, from data
-    extraction and quality control to the generation of low-dimensional
-    representations. Complemented by rich statistical modules, ehrapy
-    facilitates associating patients with disease states, differential
-    comparison between patient clusters, survival analysis, trajectory
-    inference, causal inference, and more. Leveraging ontologies, ehrapy
-    further enables data sharing and training EHR deep learning models
-    paving the way for foundational models in biomedical research. We
-    demonstrated ehrapy’s features in five distinct examples: We first
-    applied ehrapy to stratify patients affected by unspecified
-    pneumonia into finer-grained phenotypes. Furthermore, we revealed
-    biomarkers for significant differences in survival among these
-    groups. Additionally, we quantify medication-class effects of
-    pneumonia medications on length of stay. We further leveraged ehrapy
-    to analyze cardiovascular risks across different data modalities.
-    Finally, we reconstructed disease state trajectories in SARS-CoV-2
-    patients based on imaging data. Ehrapy thus provides a framework
-    that we envision will standardize analysis pipelines on EHR data and
-    serve as a cornerstone for the community.}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-heumos2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Heumos, Lukas, Philipp Ehmele, Tim Treis, Julius Upmeier zu Belzen,
-Altana Namsaraeva, Nastassya Horlava, Vladimir A. Shitov, et al. 2023.
-<span>“Exploratory Electronic Health Record Analysis with
-Ehrapy.”</span> <em>medRxiv</em>. <a href="https://doi.org/10.1101/2023.12.11.23299816">https://doi.org/10.1101/2023.12.11.23299816</a>.
-</div></div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -940,6 +870,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="lazappi/lazappi.id.au" data-repo-id="MDEwOlJlcG9zaXRvcnkxMjUwMjE0MDM=" data-category="Website comments" data-category-id="DIC_kwDOB3Os284CVrHE" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -964,6 +898,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

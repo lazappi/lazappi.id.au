@@ -10,7 +10,92 @@
 <atom:link href="https://lazappi.id.au/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Luke Zappia&#39;s personal website</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Sun, 03 Mar 2024 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 14 Sep 2024 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>scverse conference</title>
+  <link>https://lazappi.id.au/posts/2024-09-15-scverse-conference/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>This week was the first ever <a href="https://scverse.org/conference2024">scverse conference</a> held in Munich from 10-12 September. While it was based around the <a href="https://scverse.org/">scverse</a> software community the conference covered more than just those core packages for single-cell analysis and included talks on a range of biological topics as well as a diverse range of workshops. Putting together any conference is a lot of work, but particularly the first attempt for what is still a new community. I was very impressed with what the organisers were able to put together, how smoothly everything ran and the number of attendees from around the world. It is great to see these growing into a real community that is more than just the core maintainers from a few packages and I look forward to seeing what they do in the years ahead. As with any effort on the work of students, the difficulty is always maintaining momentum as those people move on and everything is based to a new generation but I am hopeful they are building something that will be sustainable with support from senior academics and industry.</p>
+</section>
+<section id="keynote-sketchotes" class="level1">
+<h1>Keynote sketchotes</h1>
+<p>Here are my sketchnotes summarising the keynote talks (click to expand):</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-nrow="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="1-RobPatro.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Rob Patro - “Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data”"><img src="https://lazappi.id.au/posts/2024-09-15-scverse-conference/1-RobPatro.jpg" class="img-fluid figure-img" alt="Sketchnotes of Rob Patro's scverse conference keynote 'Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data'"></a></p>
+<figcaption>Rob Patro - “Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="2-AngelaOlivieraPisco.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Angela Oliveira Pisco - “Multimodal Atlas for Biological Data Anlaysis and Drug Discovery”"><img src="https://lazappi.id.au/posts/2024-09-15-scverse-conference/2-AngelaOlivieraPisco.jpg" class="img-fluid figure-img" alt="Sketchnotes of Angela Oliveira Pisco's scverse conference keynote 'Multimodal Atlas for Biological Data Anlaysis and Drug Discovery'"></a></p>
+<figcaption>Angela Oliveira Pisco - “Multimodal Atlas for Biological Data Anlaysis and Drug Discovery”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="3-ChristinaLeslie.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Christina Leslie - “Machine learning for regulatory genomics at single-cell resolution”"><img src="https://lazappi.id.au/posts/2024-09-15-scverse-conference/3-ChristinaLeslie.jpg" class="img-fluid figure-img" alt="Sketchnotes of Christina Leslie's scverse conference keynote 'Machine learning for regulatory genomics at single-cell resolution'"></a></p>
+<figcaption>Christina Leslie - “Machine learning for regulatory genomics at single-cell resolution”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="4-AlexWolf.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Alex Wolf - “Many anecdotes make a novel? Study-centered analysis &amp; training models”"><img src="https://lazappi.id.au/posts/2024-09-15-scverse-conference/4-AlexWolf.jpg" class="img-fluid figure-img" alt="Sketchnotes of Alex Wolf's scverse conference keynote 'Many anecdotes make a novel? Study-centered analysis &amp; training models'"></a></p>
+<figcaption>Alex Wolf - “Many anecdotes make a novel? Study-centered analysis &amp; training models”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="5-MariaBrbic.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Maria Brbic - “Towards AI-driven discoveries in Single-Cell genomics”"><img src="https://lazappi.id.au/posts/2024-09-15-scverse-conference/5-MariaBrbic.jpg" class="img-fluid figure-img" alt="Sketchnotes of Maria Brbic's scverse conference keynote 'Towards AI-driven discoveries in Single-Cell genomics'"></a></p>
+<figcaption>Maria Brbic - “Towards AI-driven discoveries in Single-Cell genomics”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="6-FabianTheis.jpg" class="lightbox" data-gallery="scverse-sketchnotes" title="Fabian Theis - “From scanpy to the virtual cell: the coming-of-age of single cell analysis”"><img src="https://lazappi.id.au/posts/2024-09-15-scverse-conference/6-FabianTheis.jpg" class="img-fluid figure-img" alt="Sketchnotes of Fabian Theis's scverse conference keynote 'From scanpy to the virtual cell: the coming-of-age of single cell analysis'"></a></p>
+<figcaption>Fabian Theis - “From scanpy to the virtual cell: the coming-of-age of single cell analysis”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>scverse</category>
+  <category>conference</category>
+  <category>sketchnotes</category>
+  <guid>https://lazappi.id.au/posts/2024-09-15-scverse-conference/</guid>
+  <pubDate>Sat, 14 Sep 2024 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>scRNA-tools low-maintenance mode</title>
   <link>https://lazappi.id.au/posts/2024-03-04-scRNAtools-low-maintenance/</link>

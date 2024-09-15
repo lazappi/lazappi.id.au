@@ -1,0 +1,56 @@
+---
+title: An open-source framework for end-to-end analysis of electronic health record data
+author:
+  - Lukas Heumos
+  - Philipp Ehmele
+  - Tim Treis
+  - Julius Upmeier zu Belzen
+  - Eljas Roellin
+  - Lilly May
+  - Altana Namsaraeva
+  - Nastassya Horlava
+  - Vladimir A. Shitov
+  - Xinyue Zhang
+  - name: Luke Zappia
+    me: true
+  - Rainer Knoll
+  - Niklas J. Lang
+  - Leon Hetzel
+  - Isaac Virshup
+  - Lisa Sikkema
+  - Fabiola Curion
+  - Roland Eils
+  - Herbert B. Schiller
+  - Anne Hilgendorff
+  - Fabian J. Theis
+abstract: |
+  With progressive digitalization of healthcare systems worldwide, large-scale collection of electronic health records (EHRs) has become commonplace.
+  However, an extensible framework for comprehensive exploratory analysis that accounts for data heterogeneity is missing.
+  Here we introduce ehrapy, a modular open-source Python framework designed for exploratory analysis of heterogeneous epidemiology and EHR data.
+  ehrapy incorporates a series of analytical steps, from data extraction and quality control to the generation of low-dimensional representations.
+  Complemented by rich statistical modules, ehrapy facilitates associating patients with disease states, differential comparison between patient clusters, survival analysis, trajectory inference, causal inference and more.
+  Leveraging ontologies, ehrapy further enables data sharing and training EHR deep learning models, paving the way for foundational models in biomedical research.
+  We demonstrate ehrapy’s features in six distinct examples.
+  We applied ehrapy to stratify patients affected by unspecified pneumonia into finer-grained phenotypes.
+  Furthermore, we reveal biomarkers for significant differences in survival among these groups.
+  Additionally, we quantify medication-class effects of pneumonia medications on length of stay
+  We further leveraged ehrapy to analyze cardiovascular risks across different data modalities.
+  We reconstructed disease state trajectories in patients with severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) based on imaging data.
+  Finally, we conducted a case study to demonstrate how ehrapy can detect and mitigate biases in EHR data. ehrapy, thus, provides a framework that we envision will standardize analysis pipelines on EHR data and serve as a cornerstone for the community.
+categories: ["medical records", "software"]
+date: 2024-09-12
+links:
+  code: https://github.com/theislab/ehrapy_reproducibility
+  package: https://github.com/theislab/ehrapy
+  doi: 10.1038/s41591-024-03214-0
+  pdf: https://www.nature.com/articles/s41591-024-03214-0.pdf
+  website: https://ehrapy.org/
+  preprint: https://doi.org/10.1101/2023.12.11.23299816
+citation:
+  type: article-journal
+  doi: 10.1038/s41591-024-03214-0
+  pmid: "39266748"
+  issn: "1078-8956"
+  container-title: Nature Medicine
+  page: "1-12"
+---

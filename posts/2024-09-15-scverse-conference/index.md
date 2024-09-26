@@ -28,7 +28,7 @@ Here are my sketchnotes summarising the keynote talks (click to expand):
 
 ![Alex Wolf - "Many anecdotes make a novel? Study-centered analysis & training models"](4-AlexWolf.jpg){fig-alt="Sketchnotes of Alex Wolf's scverse conference keynote 'Many anecdotes make a novel? Study-centered analysis & training models'" .lightbox group="scverse-sketchnotes"}
 
-![Maria Brbic - "Towards AI-driven discoveries in Single-Cell genomics"](5-MariaBrbic.jpg){fig-alt="Sketchnotes of Maria Brbic's scverse conference keynote 'Towards AI-driven discoveries in Single-Cell genomics'" .lightbox}
+![Maria Brbic - "Towards AI-driven discoveries in Single-Cell genomics"](5-MariaBrbic.jpg){fig-alt="Sketchnotes of Maria Brbic's scverse conference keynote 'Towards AI-driven discoveries in Single-Cell genomics'" .lightbox group="scverse-sketchnotes"}
 
 ![Fabian Theis - "From scanpy to the virtual cell: the coming-of-age of single cell analysis"](6-FabianTheis.jpg){fig-alt="Sketchnotes of Fabian Theis's scverse conference keynote 'From scanpy to the virtual cell: the coming-of-age of single cell analysis'" .lightbox group="scverse-sketchnotes"}
 :::

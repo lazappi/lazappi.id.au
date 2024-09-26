@@ -1,48 +1,5 @@
 [
   {
-    "listing": "/talks/index.html",
-    "items": [
-      "/talks/2024-03-13-GPTS/index.html",
-      "/talks/2022-06-30-ILC-summer-school/index.html",
-      "/talks/2020-12-18-EuroBioc2020/index.html",
-      "/talks/2019-03-22-phd-completion/index.html",
-      "/talks/2018-09-27-icb-seminar-2018/index.html",
-      "/talks/2018-09-17-gi2018/index.html",
-      "/talks/2018-07-21-useR2018/index.html",
-      "/talks/2018-07-16-OzSingleCells2018/index.html",
-      "/talks/2017-11-17-BiocAsia2017/index.html",
-      "/talks/2017-11-01-gi2017/index.html",
-      "/talks/2017-10-27-berkeley2017/index.html",
-      "/talks/2017-08-18-joining-the-dots/index.html",
-      "/talks/2017-07-17-WEHI2017/index.html",
-      "/talks/2016-10-31-COMBINE16/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/index.html",
-    "items": [
-      "/posts/2024-09-15-scverse-conference/index.html",
-      "/posts/2024-03-04-scRNAtools-low-maintenance/index.html",
-      "/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html",
-      "/posts/2020-07-11-requestival/index.html",
-      "/posts/2020-05-12-back-to-the-sce-verse/index.html",
-      "/posts/2020-04-29-bioconductor-3-11-wrap-up/index.html",
-      "/posts/2020-04-09-caching-blogdown/index.html",
-      "/posts/2018-05-20-exploring-the-sce-verse/index.html",
-      "/posts/2018-05-04-bioconductor-3-7-wrap-up/index.html",
-      "/posts/2018-04-21-my-afl-elo-model/index.html",
-      "/posts/2018-03-24-welcome-to-blogdown/index.html",
-      "/posts/2017-08-18-joining-the-dots-twitter-analysis/index.html",
-      "/posts/2017-07-19-building-a-clustering-tree/index.html",
-      "/posts/2016-08-18-pyconau-2016/index.html",
-      "/posts/2016-06-13-gantt-charts-in-r/index.html",
-      "/posts/2016-05-03-bioconductor-3-3-packages/index.html",
-      "/posts/2016-03-30-extracting-alignment-statistics-using-python/index.html",
-      "/posts/2015-09-13-my-markdown-thesis/index.html",
-      "/posts/2014-07-20-open-science-workshops/index.html"
-    ]
-  },
-  {
     "listing": "/publications/index.html",
     "items": [
       "/publications/2024-huemos-ehrapy/index.html",
@@ -62,9 +19,9 @@
       "/publications/2019-zappia-thesis/index.html",
       "/publications/2019-combes-mouse-kidney/index.html",
       "/publications/2019-kumar-micro-organoids/index.html",
-      "/publications/2019-ma-influenza/index.html",
-      "/publications/2019-lawlor-nephron-commitment/index.html",
       "/publications/2019-combes-kidney-organoids/index.html",
+      "/publications/2019-lawlor-nephron-commitment/index.html",
+      "/publications/2019-ma-influenza/index.html",
       "/publications/2018-phipson-variability/index.html",
       "/publications/2018-zappia-clustree/index.html",
       "/publications/2018-zappia-scRNAtools/index.html",
@@ -93,6 +50,49 @@
       "/projects/single-cell-best-practices/index.html",
       "/projects/scanpy-in-R/index.html",
       "/projects/r-pkg-dev/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
+      "/posts/2024-09-15-scverse-conference/index.html",
+      "/posts/2024-03-04-scRNAtools-low-maintenance/index.html",
+      "/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html",
+      "/posts/2020-07-11-requestival/index.html",
+      "/posts/2020-05-12-back-to-the-sce-verse/index.html",
+      "/posts/2020-04-29-bioconductor-3-11-wrap-up/index.html",
+      "/posts/2020-04-09-caching-blogdown/index.html",
+      "/posts/2018-05-20-exploring-the-sce-verse/index.html",
+      "/posts/2018-05-04-bioconductor-3-7-wrap-up/index.html",
+      "/posts/2018-04-21-my-afl-elo-model/index.html",
+      "/posts/2018-03-24-welcome-to-blogdown/index.html",
+      "/posts/2017-08-18-joining-the-dots-twitter-analysis/index.html",
+      "/posts/2017-07-19-building-a-clustering-tree/index.html",
+      "/posts/2016-08-18-pyconau-2016/index.html",
+      "/posts/2016-06-13-gantt-charts-in-r/index.html",
+      "/posts/2016-05-03-bioconductor-3-3-packages/index.html",
+      "/posts/2016-03-30-extracting-alignment-statistics-using-python/index.html",
+      "/posts/2015-09-13-my-markdown-thesis/index.html",
+      "/posts/2014-07-20-open-science-workshops/index.html"
+    ]
+  },
+  {
+    "listing": "/talks/index.html",
+    "items": [
+      "/talks/2024-03-13-GPTS/index.html",
+      "/talks/2022-06-30-ILC-summer-school/index.html",
+      "/talks/2020-12-18-EuroBioc2020/index.html",
+      "/talks/2019-03-22-phd-completion/index.html",
+      "/talks/2018-09-27-icb-seminar-2018/index.html",
+      "/talks/2018-09-17-gi2018/index.html",
+      "/talks/2018-07-21-useR2018/index.html",
+      "/talks/2018-07-16-OzSingleCells2018/index.html",
+      "/talks/2017-11-17-BiocAsia2017/index.html",
+      "/talks/2017-11-01-gi2017/index.html",
+      "/talks/2017-10-27-berkeley2017/index.html",
+      "/talks/2017-08-18-joining-the-dots/index.html",
+      "/talks/2017-07-17-WEHI2017/index.html",
+      "/talks/2016-10-31-COMBINE16/index.html"
     ]
   }
 ]

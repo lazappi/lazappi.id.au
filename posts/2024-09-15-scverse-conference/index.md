@@ -22,7 +22,7 @@ Here are my sketchnotes summarising the keynote talks (click to expand):
 ::: {layout-nrow=3}
 ![Rob Patro - "Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data"](1-RobPatro.jpg){fig-alt="Sketchnotes of Rob Patro's scverse conference keynote 'Upstream of the single-cell data deluge: On the importance of accurate, efficient and open methods for preprocessing single-cell data'" .lightbox group="scverse-sketchnotes"}
 
-![Angela Oliveira Pisco - "Multimodal Atlas for Biological Data Anlaysis and Drug Discovery"](2-AngelaOlivieraPisco.jpg){fig-alt="Sketchnotes of Angela Oliveira Pisco's scverse conference keynote 'Multimodal Atlas for Biological Data Anlaysis and Drug Discovery'" .lightbox group="scverse-sketchnotes"}
+![Angela Oliveira Pisco - "Multimodal Atlas for Biological Data Analysis and Drug Discovery"](2-AngelaOlivieraPisco.jpg){fig-alt="Sketchnotes of Angela Oliveira Pisco's scverse conference keynote 'Multimodal Atlas for Biological Data Analysis and Drug Discovery'" .lightbox group="scverse-sketchnotes"}
 
 ![Christina Leslie - "Machine learning for regulatory genomics at single-cell resolution"](3-ChristinaLeslie.jpg){fig-alt="Sketchnotes of Christina Leslie's scverse conference keynote 'Machine learning for regulatory genomics at single-cell resolution'" .lightbox group="scverse-sketchnotes"}
 

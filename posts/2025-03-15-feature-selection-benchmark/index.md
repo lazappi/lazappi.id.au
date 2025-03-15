@@ -1,7 +1,9 @@
 ---
 title: "Benchmarking feature selection for integration"
 description: 'A summary of our recently published paper "Feature selection methods affect the performance of scRNA-seq data integration and querying"'
-authors: ["**Luke Zappia**"]
+authors:
+  - name: Luke Zappia
+    me: true
 categories: ["scrna-seq", "benchmarking", "feature selection", "integration", "publication"]
 bibliography: references.bib
 csl: ../../nature-no-et-al.csl
@@ -9,6 +11,8 @@ date: 2025-03-15
 image: thumbnail.png
 image-alt: Flowchart diagram showing an overview of the study design for the feature selection for integration benchmark project
 image-caption: Overview of the feature selection for integration benchmark project
+citation:
+  type: post-weblog
 ---
 
 Our paper ["Feature selection methods affect the performance of scRNA-seq data integration and querying"](https://doi.org/10.1038/s41592-025-02624-3)[@Zappia2025-dq] was recently published.

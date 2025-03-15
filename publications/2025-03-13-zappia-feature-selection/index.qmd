@@ -1,0 +1,36 @@
+---
+title: Feature selection methods affect the performance of scRNA-seq data integration and querying
+author:
+  - name: Luke Zappia
+    me: true
+  - Ciro Ramírez-Suástegui
+  - Raphael Kfuri-Rubens
+  - Larsen Vornholz
+  - Weixu Wang
+  - Oliver Dietrich
+  - Amit Frishberg
+  - Malte D Luecken
+  - Fabian J Theis
+abstract: |
+  The availability of single-cell transcriptomics has allowed the construction of reference cell atlases, but their usefulness depends on the quality of dataset integration and the ability to map new samples.
+  Previous benchmarks have compared integration methods and suggest that feature selection improves performance but have not explored how best to select features.
+  Here, we benchmark feature selection methods for single-cell RNA sequencing integration using metrics beyond batch correction and preservation of biological variation to assess query mapping, label transfer and the detection of unseen populations.
+  We reinforce common practice by showing that highly variable feature selection is effective for producing high-quality integrations and provide further guidance on the effect of the number of features selected, batch-aware feature selection, lineage-specific feature selection and integration and the interaction between feature selection and integration models.
+  These results are informative for analysts working on large-scale tissue atlases, using atlases or integrating their own data to tackle specific biological questions.
+categories: ["scrna-seq", "feature selection", "benchmarking", "integration"]
+date: 2025-03-13
+links:
+  code: https://github.com/lazappi/project
+  doi: 10.1038/s41592-025-02624-3
+  pdf: https://www.nature.com/articles/s41592-025-02624-3.pdf
+citation:
+  type: article-journal
+  doi: 10.1038/s41592-025-02624-3
+  pmid: "40082610"
+  issn: "1548-7091"
+  container-title: Nature methods
+  page: "1-11"
+  url: https://doi.org/10.1038/s41592-025-02624-3
+csl: ../../nature-no-et-al.csl
+google-scholar: true
+---

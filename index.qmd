@@ -6,9 +6,6 @@ about:
   template: trestles
   image-shape: round
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/_lazappi_
     - icon: mastodon
       text: Mastodon
       href: https://mastodon.au/@lazappi

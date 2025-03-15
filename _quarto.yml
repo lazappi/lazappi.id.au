@@ -15,8 +15,6 @@ website:
     right:
       - icon: github
         href: https://github.com/lazappi
-      - icon: twitter
-        href: https://twitter.com/_lazappi_
       - icon: rss
         href: posts/index.xml
   page-footer:

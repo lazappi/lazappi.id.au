@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-03-15">
+<meta name="description" content="A summary of our recently published paper “Feature selection methods affect the performance of scRNA-seq data integration and querying”">
+
+<title>Benchmarking feature selection for integration – lazappi</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3825abfc899f2f50e99227930ca303e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-83999eaec02f9411d69123612a24cdaa.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-20JH368VMR"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-20JH368VMR', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+
+
+<meta property="og:title" content="Benchmarking feature selection for integration – lazappi">
+<meta property="og:description" content="A summary of our recently published paper “Feature selection methods affect the performance of scRNA-seq data integration and querying”">
+<meta property="og:image" content="https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/thumbnail.png">
+<meta property="og:site_name" content="lazappi">
+<meta property="og:locale" content="en_AU">
+<meta property="og:image:height" content="1758">
+<meta property="og:image:width" content="2480">
+<meta property="og:image:alt" content="Flowchart diagram showing an overview of the study design for the feature selection for integration benchmark project">
+<meta name="twitter:title" content="Benchmarking feature selection for integration – lazappi">
+<meta name="twitter:description" content="A summary of our recently published paper “Feature selection methods affect the performance of scRNA-seq data integration and querying”">
+<meta name="twitter:image" content="https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/thumbnail.png">
+<meta name="twitter:creator" content="@_lazappi_">
+<meta name="twitter:site" content="@_lazappi_">
+<meta name="twitter:image-height" content="1758">
+<meta name="twitter:image-width" content="2480">
+<meta name="twitter:image:alt" content="Flowchart diagram showing an overview of the study design for the feature selection for integration benchmark project">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">lazappi</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts/index.html"> 
+<span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks/index.html"> 
+<span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lazappi"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../posts/index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#study-design" id="toc-study-design" class="nav-link" data-scroll-target="#study-design">Study design</a>
+  <ul class="collapse">
+  <li><a href="#paper-format" id="toc-paper-format" class="nav-link" data-scroll-target="#paper-format">Paper format</a></li>
+  <li><a href="#benchmarking-pipeline" id="toc-benchmarking-pipeline" class="nav-link" data-scroll-target="#benchmarking-pipeline">Benchmarking pipeline</a></li>
+  </ul></li>
+  <li><a href="#metric-selection" id="toc-metric-selection" class="nav-link" data-scroll-target="#metric-selection">Metric selection</a>
+  <ul class="collapse">
+  <li><a href="#baselines-and-scaling" id="toc-baselines-and-scaling" class="nav-link" data-scroll-target="#baselines-and-scaling">Baselines and scaling</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#how-many-features-to-use" id="toc-how-many-features-to-use" class="nav-link" data-scroll-target="#how-many-features-to-use">How many features to use?</a></li>
+  <li><a href="#which-method-to-use" id="toc-which-method-to-use" class="nav-link" data-scroll-target="#which-method-to-use">Which method to use?</a></li>
+  <li><a href="#do-i-need-to-use-batch-aware-features" id="toc-do-i-need-to-use-batch-aware-features" class="nav-link" data-scroll-target="#do-i-need-to-use-batch-aware-features">Do I need to use batch-aware features?</a></li>
+  <li><a href="#should-i-integrate-lineages-separately" id="toc-should-i-integrate-lineages-separately" class="nav-link" data-scroll-target="#should-i-integrate-lineages-separately">Should I integrate lineages separately?</a></li>
+  <li><a href="#how-do-selected-features-interact-with-the-integration-method" id="toc-how-do-selected-features-interact-with-the-integration-method" class="nav-link" data-scroll-target="#how-do-selected-features-interact-with-the-integration-method">How do selected features interact with the integration method?</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Benchmarking feature selection for integration</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">scrna-seq</div>
+    <div class="quarto-category">benchmarking</div>
+    <div class="quarto-category">feature selection</div>
+    <div class="quarto-category">integration</div>
+    <div class="quarto-category">publication</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A summary of our recently published paper “Feature selection methods affect the performance of scRNA-seq data integration and querying”
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Luke Zappia </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 15, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Our paper <a href="https://doi.org/10.1038/s41592-025-02624-3">“Feature selection methods affect the performance of scRNA-seq data integration and querying”</a><span class="citation" data-cites="Zappia2025-dq"><sup><a href="#ref-Zappia2025-dq" role="doc-biblioref">1</a></sup></span> was recently published. As the title suggests, this study looked at different methods of selecting features from scRNA-seq data and how those features affected integrated datasets and using an integrated reference. In this post I wanted to give a summary of what we found and provide some more insights into the process of developing the benchmark.</p>
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
+<p>Like for many steps in scRNA-seq analysis, integration methods typically recommend selecting a subset of genes to combine datasets. In a <a href="https://doi.org/10.1038/s41592-021-01336-8">previous benchmark</a><span class="citation" data-cites="Luecken2021-jo"><sup><a href="#ref-Luecken2021-jo" role="doc-biblioref">2</a></sup></span> we found that using highly variable genes did in fact improve integration performance compared to using all features but there remained some open questions:</p>
+<ol type="1">
+<li>What feature selection method to use? In the scIB benchmark we used 2000 batch-aware highly variable genes but there are many other feature selection methods, some of which have been shown to perform better in benchmarks of other tasks.</li>
+<li>What effect does feature selection on using an integrated reference? The scIB benchmark looked at how well datasets were integrated but didn’t consider mapping new datasets to that reference.</li>
+</ol>
+<p>The second question was of particular interest to me. We had already shown that feature selection improves integration but what about using that integrated dataset as a reference? Whenever I had see an example of mapping data to a reference I add also wondered about what happens to any variation in the features not included in the model. For example, can we reliably identify new populations in a mapped query dataset if the variation that separates them is in genes that the model knows nothing about?</p>
+<p>As always, the scope of the benchmark grew a bit beyond this but this was the starting point for the study.</p>
+</section>
+<section id="study-design" class="level1">
+<h1>Study design</h1>
+<p>We followed the standard benchmarking setup of selecting some test datasets, finding methods to compare and using a set of metrics to evaluate them. The datasets were split into query and reference sets. Features were then selected on the reference and used to integrate it, before mapping the query and classifying the query cells. We selected some cell populations to be only present in the query which we tried to identify after mapping.</p>
+<p>There are few things about how we did the study that I think are interesting.</p>
+<section id="paper-format" class="level2">
+<h2 class="anchored" data-anchor-id="paper-format">Paper format</h2>
+<p>From early on in the study, we decided to submit it as a <a href="https://www.nature.com/nmeth/submission-guidelines/registered-reports">registered report</a>. This format is designed for benchmarking studies and changes the review process. Instead of reviewing the completed study, a detailed plan for the benchmark is reviewed with a guarantee that if the accepted plan is followed the paper will be published regardless of the results. This removes some pressure from the authors, allowing you to present the results you found without needing to find an angle to interest reviewers and editors. However, having to follow a pre-approved plan presents some challenges.</p>
+<p>For a computational benchmark, it means you have to do significant engineering work in advance to be confident that you can scale to the full benchmark. It also (by design) removes a lot of the flexibility to adjust things as you go, which is challenging as you never really know how computational tools are going to behave in advance. This is part of the reason that we included the metric selection step as part of the study, as we couldn’t do it before the proposal without effectively running the whole benchmark. However that ended up being one of the most interesting parts for me and something I think every benchmarking study should show.</p>
+</section>
+<section id="benchmarking-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="benchmarking-pipeline">Benchmarking pipeline</h2>
+<p>To implement the benchmark we built a pipeline using <a href="https://www.nextflow.io/">Nextflow</a>. For any project, being able to reliably re-run things as needed is useful but for a large benchmarking project where you know things will need to be run multiple times this is especially important. Using Nextflow allowed us to have one workflow which could adapt different parameter sets and could be run locally for testing or on different HPC clusters (as ended up being necessary after an IT incident 😅). Each step in the workflow was implemented as a separate R or Python script which could be run separately or using a Nextflow process in the workflow. We also created a conda environment file for each tool or package, which could be used for multiple processes.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Nextflow automatically handles creating the environments when they are needed or updated.</p>
+<p>The structure of the pipeline and some example scripts were written and tested before a hackathon that we used to kick off the project. This allowed everyone to start contributing straight away. By using separate scripts for each step everyone could work on separate components in their preferred language without conflicting with what other people were doing.</p>
+</section>
+</section>
+<section id="metric-selection" class="level1">
+<h1>Metric selection</h1>
+<p>The first results section in the paper doesn’t involve feature selection methods at all, instead it focuses on comparing and selecting the metrics to use. As mentioned above, this was somewhat forced upon us by the paper format but I think it was a worthwhile exercise that should receive more attention. In most benchmarks this would probably be done informally (if at all) but because we had to include it in the project proposal we had to formalise the process.</p>
+<p>In the development phase of the project we had collected as many metrics as possible that had been used in previous benchmarks or method comparisons.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We divided these into five categories: removal of batch effects during integration (Integration (Batch)), conservation of biological variance during integration (Integration (Bio)), mapping of a query to the reference (Mapping), label projection to cells in the query (Classification) and detection of new populations in the query (Unseen). There were some that we excluded straight away (because they didn’t have a useable implementation or didn’t fit into our framework) but we tried to implement as many as possible. In the metric selection step, we then wanted to decide which metrics to consider. There were a few criteria we considered:</p>
+<ul>
+<li>Does the metric have a useable dynamic range (i.e.&nbsp;does it actually measure something in our scenario)?</li>
+<li>Is the metric correlated with technical factors like the number of selected features?</li>
+<li>Is the metric redundant (i.e.&nbsp;is it overly correlated with other metrics in the same category)?</li>
+<li>Is the metric correctly categorised (i.e.&nbsp;is it correlated with metrics in the same category and anti-correlated with metrics in other categories)?</li>
+</ul>
+<p>We did this by running the benchmark using sets of randomly selected features of different sizes which allowed us to investigate metric behaviour without biasing towards any particular method. We also used a highly variable gene method to check correlation with the number of selected features as random sets do not have any inherent ordering. This worked well in our benchmark but could be more challenging in other scenarios where it is not as easy to simulate the methods you are trying to evaluate.</p>
+<p>The metric selection step allowed us to choose a set of metrics that we were confident reliably measured what were were interested in evaluating.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<section id="baselines-and-scaling" class="level2">
+<h2 class="anchored" data-anchor-id="baselines-and-scaling">Baselines and scaling</h2>
+<p>Combining scores from multiple metrics is inevitably challenging because they have different effective ranges. Even though we had implemented each metric so that the theoretical worst score was 0 and the theoretical best score was 1 we knew they would have different ranges in practice. In the scIB study<span class="citation" data-cites="Luecken2021-jo"><sup><a href="#ref-Luecken2021-jo" role="doc-biblioref">2</a></sup></span> we had min-max scaled each metric before combining them but this made the analysing them difficult as adding, removing or modifying any method changed the results. For this study, we instead used a process more similar to what has been implemented in <a href="https://openproblems.bio/">Open Problems</a><span class="citation" data-cites="Luecken2024-ur"><sup><a href="#ref-Luecken2024-ur" role="doc-biblioref">3</a></sup></span>.</p>
+<p>This involved a set of baseline methods that we expected to perform well or poorly (depending on the metric). These were used to establish an effective range for each metric (for a dataset) and other methods were scaled to this range. As well as making the metrics comparable, this also provides context to the metric scores. We can easily see that any score above 1 performs better than all the baseline methods and any score less than 0 performs worse than all the baselines.</p>
+<p>Once the metrics scores were on the same scale we could combine them to create category and overall scores that we used for most of the evaluation.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>Now that I have explained how we did the study, let’s talk about the results! I’m going to mention some of the key points but you should really read the paper for the details.</p>
+<section id="how-many-features-to-use" class="level2">
+<h2 class="anchored" data-anchor-id="how-many-features-to-use">How many features to use?</h2>
+<p>Most of the methods we evaluated require the user to set how many features to select. Using a subset of methods from commonly used packages<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> we selected different numbers of features and evaluated the performance. We saw different patterns for different datasets and for each metric category. Integration was slightly better with fewer features and the query categories scored higher with more features.</p>
+<p>In the end, we chose to use 2000 features for comparing methods. It was reassuring to see that the number we found was consistent with common practice but there was enough variation here that were recommend to tune the number of features for your dataset and use case.</p>
+</section>
+<section id="which-method-to-use" class="level2">
+<h2 class="anchored" data-anchor-id="which-method-to-use">Which method to use?</h2>
+<p>Finally, we have reached the actual comparison between methods 🎉!</p>
+<p>The results here are reassuring but maybe not surprising. We found that the standard highly variable feature selection methods were the best performers, particularly the variance stabilising transformation approach in the <a href="https://satijalab.org/seurat/">Seurat</a><span class="citation" data-cites="Satija2015-or"><sup><a href="#ref-Satija2015-or" role="doc-biblioref">4</a></sup></span> and <a href="https://scanpy.readthedocs.io/en/stable/">scanpy</a><span class="citation" data-cites="Wolf2018-na"><sup><a href="#ref-Wolf2018-na" role="doc-biblioref">5</a></sup></span> packages. There is maybe some bias here as the reference labels we used for evaluation were likely to have come from one of these methods but I don’t think it is a significant issue given all the other analysis steps that go into annotating cells. More likely, it is just that this approach intuitively makes sense and works pretty well most of the time.</p>
+<p>As a comparison we included one supervised method using the cell labels based on a filtered set of Wilcoxon marker genes. This also performed very well which is probably unexpected given we use the same labels for evaluation. However, in most cases cell labels are not available before integration and we saw more variation across datasets (possibly depending on the quality and resolution of the labels). I wouldn’t rule out using supervised features, but I think you need to have confidence in the labels and some motivation for why it would be better than an unsupervised approach. Possibly, using marker genes to augment highly variable features would be a good combined approach.</p>
+<p>The other top performer was <a href="https://triku.readthedocs.io/en/latest/">triku</a><span class="citation" data-cites="M_Ascension2022-yp"><sup><a href="#ref-M_Ascension2022-yp" role="doc-biblioref">6</a></sup></span> which operates on a neighbourhood graph and is worth considering if you are looking for an alternative approach.</p>
+</section>
+<section id="do-i-need-to-use-batch-aware-features" class="level2">
+<h2 class="anchored" data-anchor-id="do-i-need-to-use-batch-aware-features">Do I need to use batch-aware features?</h2>
+<p>Some packages implement batch-aware variants of their features selection methods where they are applied to each batch separately and the results combined in some way (usually by choosing the most commonly selected features). This is the approach we considered in the scIB paper<span class="citation" data-cites="Luecken2021-jo"><sup><a href="#ref-Luecken2021-jo" role="doc-biblioref">2</a></sup></span> and has since become recommended practice. The intuition is that by selecting features within each batch you avoid choosing those that are different between batches, conserving more biology. We compared batch-aware variants of methods in scanpy but didn’t see any consistent differences that let us say what the effect is.</p>
+<p>Personally, I probably wouldn’t bother with batch-aware features, unless it was for computational reasons (because you can process each batch separately and combine the results).</p>
+</section>
+<section id="should-i-integrate-lineages-separately" class="level2">
+<h2 class="anchored" data-anchor-id="should-i-integrate-lineages-separately">Should I integrate lineages separately?</h2>
+<p>This question moves a bit beyond the original scope of the paper and comes out of reviewer comments to look more into the interaction between feature selection and biological factors. Here, we compared performance on the full <a href="https://doi.org/10.1038/s41591-023-02327-2">Human Lung Cell Atlas</a><span class="citation" data-cites="Sikkema2023-ia"><sup><a href="#ref-Sikkema2023-ia" role="doc-biblioref">7</a></sup></span> (HLCA) dataset to the immune and epithelial subsets. This section was to test the idea that restricting the biology in the dataset could improve feature selection (by selecting more specific biological features) and integration.</p>
+<p>A full benchmark study is needed to properly answer this question but our results don’t support that idea. We saw better performance on the full HLCA, particularly when identifying previously unseen populations using the <a href="https://doi.org/10.1038/s41587-021-01033-z">Milo</a><span class="citation" data-cites="Dann2022-nz"><sup><a href="#ref-Dann2022-nz" role="doc-biblioref">8</a></sup></span> metric. My explanation is that by showing the integration model a wider variety of biology it learns more about the possible cell space and therefore better separate new types of cells. But like I said, you could do a full study just to answer this question and we didn’t consider selecting features on each lineage but then integrating the full dataset.</p>
+</section>
+<section id="how-do-selected-features-interact-with-the-integration-method" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-selected-features-interact-with-the-integration-method">How do selected features interact with the integration method?</h2>
+<p>In the last section of the results we look at interactions with different integration models. Comparing integration methods has been done previously and was specifically outside the scope of this study but we included a small comparison at the prompting of the reviewers and to investigate some specific questions. We used <a href="https://doi.org/10.1038/s41592-018-0229-2">scVI</a><span class="citation" data-cites="Lopez2018-au"><sup><a href="#ref-Lopez2018-au" role="doc-biblioref">9</a></sup></span> as the integration and mapping method for most of the study but here we compared to <a href="https://doi.org/10.15252/msb.20209620">scANVI</a><span class="citation" data-cites="Xu2021-dh"><sup><a href="#ref-Xu2021-dh" role="doc-biblioref">10</a></sup></span> and <a href="https://doi.org/10.1038/s41592-019-0619-0">Harmony</a><span class="citation" data-cites="Korsunsky2019-ex"><sup><a href="#ref-Korsunsky2019-ex" role="doc-biblioref">11</a></sup></span> followed by <a href="https://doi.org/10.1038/s41467-021-25957-x">Symphony</a><span class="citation" data-cites="Kang2021-ac"><sup><a href="#ref-Kang2021-ac" role="doc-biblioref">12</a></sup></span> mapping.</p>
+<p>Overall, scANVI performed slightly better than scVI, particularly in the biological categories. This is probably because the model knowing something about cell labels allowed it to overcome deficiencies in the selected features. In contrast, Symphony performed worse in general but particularly in unseen population detection. A proper evaluation would be needed to work out why this is<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> but I would be cautions of using this integration approach of a reference mapping application.</p>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Ok, so after all that, what did we learn?</p>
+<ul>
+<li>The registered report is an interesting format but it requires you to do a lot of work in advance and doesn’t necessarily make things quicker</li>
+<li>Setting up a proper workflow takes some effort but is invaluable when you need to re-run things, especially in a large, computationally-intense project</li>
+<li>Choosing the metrics to use is vital and something that more time should be spent on in benchmarking papers</li>
+<li>Think carefully about how to scale and combine metric scores, use baseline methods if you can</li>
+<li>Around 2000 features generally works well but you should tune this for you dataset and application</li>
+<li>Using batch-aware features doesn’t add much</li>
+<li>Integrating lineages separately results in worse detection of unseen populations</li>
+<li>scANVI generally improves performance over scVI regardless of the feature selection method but Symphony struggled with detecting new populations</li>
+</ul>
+<p>Thanks for reading! You can find more about this study here:</p>
+<ul>
+<li><a href="https://doi.org/10.1038/s41592-025-02624-3">Publication</a></li>
+<li><a href="https://github.com/theislab/atlas-feature-selection-benchmark">GitHub repository</a></li>
+<li><a href="https://figshare.com/projects/Benchmarking_feature_selection_for_scRNA-seq_integration/214819">figshare collection</a></li>
+</ul>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Zappia2025-dq" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Zappia, L., Richter, S., Ramírez-Suástegui, C., Kfuri-Rubens, R., Vornholz, L., Wang, W., Dietrich, O., Frishberg, A., Luecken, M. D. &amp; Theis, F. J. <span class="nocase">Feature selection methods affect the performance of scRNA-seq data integration and querying</span>. <em>Nature methods</em> 1–11 (2025). doi:<a href="https://doi.org/10.1038/s41592-025-02624-3">10.1038/s41592-025-02624-3</a></div>
+</div>
+<div id="ref-Luecken2021-jo" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Luecken, M. D., Büttner, M., Chaichoompu, K., Danese, A., Interlandi, M., Mueller, M. F., Strobl, D. C., Zappia, L., Dugas, M., Colomé-Tatché, M. &amp; Theis, F. J. <span class="nocase">Benchmarking atlas-level data integration in single-cell genomics</span>. <em>Nature methods</em> (2021). doi:<a href="https://doi.org/10.1038/s41592-021-01336-8">10.1038/s41592-021-01336-8</a></div>
+</div>
+<div id="ref-Luecken2024-ur" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Luecken, M. D., Gigante, S., Burkhardt, D. B., Cannoodt, R., Strobl, D. C., Markov, N. S., Zappia, L., Palla, G., Lewis, W., Dimitrov, D., Vinyard, M. E., Magruder, D. S., Andersson, A., Dann, E., Qin, Q., Otto, D. J., Klein, M., Botvinnik, O. B., Deconinck, L., Waldrant, K., Open Problems Jamboree Members, Bloom, J. M., Pisco, A. O., Saez-Rodriguez, J., Wulsin, D., Pinello, L., Saeys, Y., Theis, F. J. &amp; Krishnaswamy, S. <span class="nocase">Defining and benchmarking open problems in single-cell analysis</span>. <em>Research square</em> (2024). doi:<a href="https://doi.org/10.21203/rs.3.rs-4181617/v1">10.21203/rs.3.rs-4181617/v1</a></div>
+</div>
+<div id="ref-Satija2015-or" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Satija, R., Farrell, J. A., Gennert, D., Schier, A. F. &amp; Regev, A. <a href="https://doi.org/10.1038/nbt.3192"><span class="nocase">Spatial reconstruction of single-cell gene expression data</span></a>. <em>Nature Biotechnology</em> <strong>33,</strong> 495–502 (2015).</div>
+</div>
+<div id="ref-Wolf2018-na" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Wolf, F. A., Angerer, P. &amp; Theis, F. J. <a href="https://doi.org/10.1186/s13059-017-1382-0"><span class="nocase">SCANPY: large-scale single-cell gene expression data analysis</span></a>. <em>Genome biology</em> <strong>19,</strong> 15 (2018).</div>
+</div>
+<div id="ref-M_Ascension2022-yp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">M Ascensión, A., Ibáñez-Solé, O., Inza, I., Izeta, A. &amp; Araúzo-Bravo, M. J. <a href="https://doi.org/10.1093/gigascience/giac017"><span class="nocase">Triku: a feature selection method based on nearest neighbors for single-cell data</span></a>. <em>GigaScience</em> <strong>11,</strong> (2022).</div>
+</div>
+<div id="ref-Sikkema2023-ia" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Sikkema, L., Ramírez-Suástegui, C., Strobl, D. C., Gillett, T. E., Zappia, L., Madissoon, E., Markov, N. S., Zaragosi, L.-E., Ji, Y., Ansari, M., Arguel, M.-J., Apperloo, L., Banchero, M., Bécavin, C., Berg, M., Chichelnitskiy, E., Chung, M.-I., Collin, A., Gay, A. C. A., Gote-Schniering, J., Hooshiar Kashani, B., Inecik, K., Jain, M., Kapellos, T. S., Kole, T. M., Leroy, S., Mayr, C. H., Oliver, A. J., Papen, M. von, Peter, L., Taylor, C. J., Walzthoeni, T., Xu, C., Bui, L. T., De Donno, C., Dony, L., Faiz, A., Guo, M., Gutierrez, A. J., Heumos, L., Huang, N., Ibarra, I. L., Jackson, N. D., Kadur Lakshminarasimha Murthy, P., Lotfollahi, M., Tabib, T., Talavera-López, C., Travaglini, K. J., Wilbrey-Clark, A., Worlock, K. B., Yoshida, M., Lung Biological Network Consortium, Berge, M. van den, Bossé, Y., Desai, T. J., Eickelberg, O., Kaminski, N., Krasnow, M. A., Lafyatis, R., Nikolic, M. Z., Powell, J. E., Rajagopal, J., Rojas, M., Rozenblatt-Rosen, O., Seibold, M. A., Sheppard, D., Shepherd, D. P., Sin, D. D., Timens, W., Tsankov, A. M., Whitsett, J., Xu, Y., Banovich, N. E., Barbry, P., Duong, T. E., Falk, C. S., Meyer, K. B., Kropski, J. A., Pe’er, D., Schiller, H. B., Tata, P. R., Schultze, J. L., Teichmann, S. A., Misharin, A. V., Nawijn, M. C., Luecken, M. D. &amp; Theis, F. J. <a href="https://doi.org/10.1038/s41591-023-02327-2"><span class="nocase">An integrated cell atlas of the lung in health and disease</span></a>. <em>Nature medicine</em> <strong>29,</strong> 1563–1577 (2023).</div>
+</div>
+<div id="ref-Dann2022-nz" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Dann, E., Henderson, N. C., Teichmann, S. A., Morgan, M. D. &amp; Marioni, J. C. <a href="https://doi.org/10.1038/s41587-021-01033-z"><span class="nocase">Differential abundance testing on single-cell data using k-nearest neighbor graphs</span></a>. <em>Nature biotechnology</em> <strong>40,</strong> 245–253 (2022).</div>
+</div>
+<div id="ref-Lopez2018-au" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Lopez, R., Regier, J., Cole, M. B., Jordan, M. I. &amp; Yosef, N. <a href="https://doi.org/10.1038/s41592-018-0229-2"><span class="nocase">Deep generative modeling for single-cell transcriptomics</span></a>. <em>Nature methods</em> <strong>15,</strong> 1053–1058 (2018).</div>
+</div>
+<div id="ref-Xu2021-dh" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Xu, C., Lopez, R., Mehlman, E., Regier, J., Jordan, M. I. &amp; Yosef, N. <a href="https://doi.org/10.15252/msb.20209620"><span class="nocase">Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models</span></a>. <em>Molecular systems biology</em> <strong>17,</strong> e9620 (2021).</div>
+</div>
+<div id="ref-Korsunsky2019-ex" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Korsunsky, I., Millard, N., Fan, J., Slowikowski, K., Zhang, F., Wei, K., Baglaenko, Y., Brenner, M., Loh, P.-R. &amp; Raychaudhuri, S. <span class="nocase">Fast, sensitive and accurate integration of single-cell data with Harmony</span>. <em>Nature methods</em> (2019). doi:<a href="https://doi.org/10.1038/s41592-019-0619-0">10.1038/s41592-019-0619-0</a></div>
+</div>
+<div id="ref-Kang2021-ac" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Kang, J. B., Nathan, A., Weinand, K., Zhang, F., Millard, N., Rumker, L., Moody, D. B., Korsunsky, I. &amp; Raychaudhuri, S. <a href="https://doi.org/10.1038/s41467-021-25957-x"><span class="nocase">Efficient and precise single-cell reference atlas mapping with Symphony</span></a>. <em>Nature communications</em> <strong>12,</strong> 5890 (2021).</div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I would probably use Docker containers or <a href="https://viash.io/">Viash</a> components for this now, but this worked well enough<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>We wanted to avoid developing new metrics but there were some that we significantly modified<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>See the paper for exactly which metrics we selected and why<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>It was computationally infeasible to do this for all methods, given the computation required for each integration run<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Our workflow was designed around scVI but Symphony is a completely different class of integration model and there may be some bias there<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{zappia2025,
+  author = {Zappia, Luke},
+  title = {Benchmarking Feature Selection for Integration},
+  date = {2025-03-15},
+  url = {https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zappia2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class="">Zappia, L. Benchmarking feature selection for
+integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/">https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/</a>&gt;</div>
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lazappi\.id\.au");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="lazappi/lazappi.id.au" data-repo-id="MDEwOlJlcG9zaXRvcnkxMjUwMjE0MDM=" data-category="Website comments" data-category-id="DIC_kwDOB3Os284CVrHE" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2016-2025, Luke Zappia
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../license.html">
+<p>License</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

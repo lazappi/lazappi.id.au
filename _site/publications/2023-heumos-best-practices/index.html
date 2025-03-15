@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,12 +52,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3825abfc899f2f50e99227930ca303e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-83999eaec02f9411d69123612a24cdaa.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -126,6 +126,40 @@ cookieconsent.run({
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
+<meta name="citation_title" content="Best practices for single-cell analysis across modalities">
+<meta name="citation_abstract" content="Recent advances in single-cell technologies have enabled high-throughput molecular profiling of cells across modalities and locations.
+Single-cell transcriptomics data can now be complemented by chromatin accessibility, surface protein expression, adaptive immune receptor repertoire profiling and spatial information.
+The increasing availability of single-cell data across modalities has motivated the development of novel computational methods to help analysts derive biological insights.
+As the field grows, it becomes increasingly difficult to navigate the vast landscape of tools and analysis steps.
+Here, we summarize independent benchmarking studies of unimodal and multimodal single-cell analysis across modalities to suggest comprehensive best-practice workflows for the most common analysis steps.
+Where independent benchmarks are not available, we review and contrast popular methods.
+Our article serves as an entry point for novices in the field of single-cell (multi-)omic analysis and guides advanced users to the most recent best practices.
+">
+<meta name="citation_author" content="Lukas Heumos">
+<meta name="citation_author" content="Anna C. Schaar">
+<meta name="citation_author" content="Christopher Lance">
+<meta name="citation_author" content="Anastasia Litinetskaya">
+<meta name="citation_author" content="Felix Drost">
+<meta name="citation_author" content="Luke Zappia">
+<meta name="citation_author" content="Malte D. Lücken">
+<meta name="citation_author" content="Daniel C. Strobl">
+<meta name="citation_author" content="Juan Henao">
+<meta name="citation_author" content="Fabiola Curion">
+<meta name="citation_author" content="Single-cell Best Practices Consortium">
+<meta name="citation_author" content="Herbert B. Schiller">
+<meta name="citation_author" content="Fabian J. Theis">
+<meta name="citation_publication_date" content="2023-03-31">
+<meta name="citation_cover_date" content="2023-03-31">
+<meta name="citation_year" content="2023">
+<meta name="citation_online_date" content="2023-03-31">
+<meta name="citation_fulltext_html_url" content="https://doi.org/10.1038/s41576-023-00586-w">
+<meta name="citation_doi" content="10.1038/s41576-023-00586-w">
+<meta name="citation_issn" content="1471-0056">
+<meta name="citation_pmid" content="37002403">
+<meta name="citation_language" content="en">
+<meta name="citation_firstpage" content="1">
+<meta name="citation_lastpage" content="23">
+<meta name="citation_journal_title" content="Nature reviews genetics">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -165,11 +199,6 @@ cookieconsent.run({
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lazappi"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/lazappi"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -228,10 +257,10 @@ cookieconsent.run({
                               Felix Drost
                                       </p>
               <p>
-                                <strong>
+                                </p><p style="color: #eb008d"><strong>
                     Luke Zappia
-                      </strong>
-                                      </p>
+                      </strong></p>
+                                      <p></p>
               <p>
                               Malte D. Lücken
                                       </p>
@@ -313,7 +342,7 @@ cookieconsent.run({
   journal = {Nature reviews genetics},
   pages = {1-23},
   date = {2023-03-31},
-  url = {https://lazappi.id.au/publications/2023-heumos-best-practices/},
+  url = {https://doi.org/10.1038/s41576-023-00586-w},
   doi = {10.1038/s41576-023-00586-w},
   issn = {1471-0056},
   langid = {en},
@@ -335,10 +364,11 @@ cookieconsent.run({
     and guides advanced users to the most recent best practices.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-heumos2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Heumos, Lukas, Anna C. Schaar, Christopher Lance, Anastasia
-Litinetskaya, Felix Drost, Luke Zappia, Malte D. Lücken, et al. 2023.
-<span>“Best Practices for Single-Cell Analysis Across
-Modalities.”</span> <em>Nature Reviews Genetics</em>, March, 1–23. <a href="https://doi.org/10.1038/s41576-023-00586-w">https://doi.org/10.1038/s41576-023-00586-w</a>.
+<div class="">Heumos, L., C. Schaar, A., Lance, C.,
+Litinetskaya, A., Drost, F., Zappia, L., D. Lücken, M., C. Strobl, D.,
+Henao, J., Curion, F., Best Practices Consortium, S., B. Schiller, H.
+&amp; J. Theis, F. Best practices for single-cell analysis across
+modalities. <em>Nature reviews genetics</em> 1–23 (2023). doi:<a href="https://doi.org/10.1038/s41576-023-00586-w">10.1038/s41576-023-00586-w</a></div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -566,8 +596,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -678,7 +706,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -910,7 +937,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2016-2024, Luke Zappia
+ © 2016-2025, Luke Zappia
   </li>  
 </ul>
     </div>   

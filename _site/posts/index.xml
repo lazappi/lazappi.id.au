@@ -9,8 +9,183 @@
 <link>https://lazappi.id.au/posts/</link>
 <atom:link href="https://lazappi.id.au/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Luke Zappia&#39;s personal website</description>
-<generator>quarto-1.5.57</generator>
-<lastBuildDate>Sat, 14 Sep 2024 22:00:00 GMT</lastBuildDate>
+<generator>quarto-1.6.42</generator>
+<lastBuildDate>Fri, 14 Mar 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Benchmarking feature selection for integration</title>
+  <link>https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Our paper <a href="https://doi.org/10.1038/s41592-025-02624-3">“Feature selection methods affect the performance of scRNA-seq data integration and querying”</a><span class="citation" data-cites="Zappia2025-dq"><sup>1</sup></span> was recently published. As the title suggests, this study looked at different methods of selecting features from scRNA-seq data and how those features affected integrated datasets and using an integrated reference. In this post I wanted to give a summary of what we found and provide some more insights into the process of developing the benchmark.</p>
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
+<p>Like for many steps in scRNA-seq analysis, integration methods typically recommend selecting a subset of genes to combine datasets. In a <a href="https://doi.org/10.1038/s41592-021-01336-8">previous benchmark</a><span class="citation" data-cites="Luecken2021-jo"><sup>2</sup></span> we found that using highly variable genes did in fact improve integration performance compared to using all features but there remained some open questions:</p>
+<ol type="1">
+<li>What feature selection method to use? In the scIB benchmark we used 2000 batch-aware highly variable genes but there are many other feature selection methods, some of which have been shown to perform better in benchmarks of other tasks.</li>
+<li>What effect does feature selection on using an integrated reference? The scIB benchmark looked at how well datasets were integrated but didn’t consider mapping new datasets to that reference.</li>
+</ol>
+<p>The second question was of particular interest to me. We had already shown that feature selection improves integration but what about using that integrated dataset as a reference? Whenever I had see an example of mapping data to a reference I add also wondered about what happens to any variation in the features not included in the model. For example, can we reliably identify new populations in a mapped query dataset if the variation that separates them is in genes that the model knows nothing about?</p>
+<p>As always, the scope of the benchmark grew a bit beyond this but this was the starting point for the study.</p>
+</section>
+<section id="study-design" class="level1">
+<h1>Study design</h1>
+<p>We followed the standard benchmarking setup of selecting some test datasets, finding methods to compare and using a set of metrics to evaluate them. The datasets were split into query and reference sets. Features were then selected on the reference and used to integrate it, before mapping the query and classifying the query cells. We selected some cell populations to be only present in the query which we tried to identify after mapping.</p>
+<p>There are few things about how we did the study that I think are interesting.</p>
+<section id="paper-format" class="level2">
+<h2 class="anchored" data-anchor-id="paper-format">Paper format</h2>
+<p>From early on in the study, we decided to submit it as a <a href="https://www.nature.com/nmeth/submission-guidelines/registered-reports">registered report</a>. This format is designed for benchmarking studies and changes the review process. Instead of reviewing the completed study, a detailed plan for the benchmark is reviewed with a guarantee that if the accepted plan is followed the paper will be published regardless of the results. This removes some pressure from the authors, allowing you to present the results you found without needing to find an angle to interest reviewers and editors. However, having to follow a pre-approved plan presents some challenges.</p>
+<p>For a computational benchmark, it means you have to do significant engineering work in advance to be confident that you can scale to the full benchmark. It also (by design) removes a lot of the flexibility to adjust things as you go, which is challenging as you never really know how computational tools are going to behave in advance. This is part of the reason that we included the metric selection step as part of the study, as we couldn’t do it before the proposal without effectively running the whole benchmark. However that ended up being one of the most interesting parts for me and something I think every benchmarking study should show.</p>
+</section>
+<section id="benchmarking-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="benchmarking-pipeline">Benchmarking pipeline</h2>
+<p>To implement the benchmark we built a pipeline using <a href="https://www.nextflow.io/">Nextflow</a>. For any project, being able to reliably re-run things as needed is useful but for a large benchmarking project where you know things will need to be run multiple times this is especially important. Using Nextflow allowed us to have one workflow which could adapt different parameter sets and could be run locally for testing or on different HPC clusters (as ended up being necessary after an IT incident 😅). Each step in the workflow was implemented as a separate R or Python script which could be run separately or using a Nextflow process in the workflow. We also created a conda environment file for each tool or package, which could be used for multiple processes.<sup>1</sup> Nextflow automatically handles creating the environments when they are needed or updated.</p>
+<p>The structure of the pipeline and some example scripts were written and tested before a hackathon that we used to kick off the project. This allowed everyone to start contributing straight away. By using separate scripts for each step everyone could work on separate components in their preferred language without conflicting with what other people were doing.</p>
+</section>
+</section>
+<section id="metric-selection" class="level1">
+<h1>Metric selection</h1>
+<p>The first results section in the paper doesn’t involve feature selection methods at all, instead it focuses on comparing and selecting the metrics to use. As mentioned above, this was somewhat forced upon us by the paper format but I think it was a worthwhile exercise that should receive more attention. In most benchmarks this would probably be done informally (if at all) but because we had to include it in the project proposal we had to formalise the process.</p>
+<p>In the development phase of the project we had collected as many metrics as possible that had been used in previous benchmarks or method comparisons.<sup>2</sup> We divided these into five categories: removal of batch effects during integration (Integration (Batch)), conservation of biological variance during integration (Integration (Bio)), mapping of a query to the reference (Mapping), label projection to cells in the query (Classification) and detection of new populations in the query (Unseen). There were some that we excluded straight away (because they didn’t have a useable implementation or didn’t fit into our framework) but we tried to implement as many as possible. In the metric selection step, we then wanted to decide which metrics to consider. There were a few criteria we considered:</p>
+<ul>
+<li>Does the metric have a useable dynamic range (i.e.&nbsp;does it actually measure something in our scenario)?</li>
+<li>Is the metric correlated with technical factors like the number of selected features?</li>
+<li>Is the metric redundant (i.e.&nbsp;is it overly correlated with other metrics in the same category)?</li>
+<li>Is the metric correctly categorised (i.e.&nbsp;is it correlated with metrics in the same category and anti-correlated with metrics in other categories)?</li>
+</ul>
+<p>We did this by running the benchmark using sets of randomly selected features of different sizes which allowed us to investigate metric behaviour without biasing towards any particular method. We also used a highly variable gene method to check correlation with the number of selected features as random sets do not have any inherent ordering. This worked well in our benchmark but could be more challenging in other scenarios where it is not as easy to simulate the methods you are trying to evaluate.</p>
+<p>The metric selection step allowed us to choose a set of metrics that we were confident reliably measured what were were interested in evaluating.<sup>3</sup></p>
+<section id="baselines-and-scaling" class="level2">
+<h2 class="anchored" data-anchor-id="baselines-and-scaling">Baselines and scaling</h2>
+<p>Combining scores from multiple metrics is inevitably challenging because they have different effective ranges. Even though we had implemented each metric so that the theoretical worst score was 0 and the theoretical best score was 1 we knew they would have different ranges in practice. In the scIB study<span class="citation" data-cites="Luecken2021-jo"><sup>2</sup></span> we had min-max scaled each metric before combining them but this made the analysing them difficult as adding, removing or modifying any method changed the results. For this study, we instead used a process more similar to what has been implemented in <a href="https://openproblems.bio/">Open Problems</a><span class="citation" data-cites="Luecken2024-ur"><sup>3</sup></span>.</p>
+<p>This involved a set of baseline methods that we expected to perform well or poorly (depending on the metric). These were used to establish an effective range for each metric (for a dataset) and other methods were scaled to this range. As well as making the metrics comparable, this also provides context to the metric scores. We can easily see that any score above 1 performs better than all the baseline methods and any score less than 0 performs worse than all the baselines.</p>
+<p>Once the metrics scores were on the same scale we could combine them to create category and overall scores that we used for most of the evaluation.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>Now that I have explained how we did the study, let’s talk about the results! I’m going to mention some of the key points but you should really read the paper for the details.</p>
+<section id="how-many-features-to-use" class="level2">
+<h2 class="anchored" data-anchor-id="how-many-features-to-use">How many features to use?</h2>
+<p>Most of the methods we evaluated require the user to set how many features to select. Using a subset of methods from commonly used packages<sup>4</sup> we selected different numbers of features and evaluated the performance. We saw different patterns for different datasets and for each metric category. Integration was slightly better with fewer features and the query categories scored higher with more features.</p>
+<p>In the end, we chose to use 2000 features for comparing methods. It was reassuring to see that the number we found was consistent with common practice but there was enough variation here that were recommend to tune the number of features for your dataset and use case.</p>
+</section>
+<section id="which-method-to-use" class="level2">
+<h2 class="anchored" data-anchor-id="which-method-to-use">Which method to use?</h2>
+<p>Finally, we have reached the actual comparison between methods 🎉!</p>
+<p>The results here are reassuring but maybe not surprising. We found that the standard highly variable feature selection methods were the best performers, particularly the variance stabilising transformation approach in the <a href="https://satijalab.org/seurat/">Seurat</a><span class="citation" data-cites="Satija2015-or"><sup>4</sup></span> and <a href="https://scanpy.readthedocs.io/en/stable/">scanpy</a><span class="citation" data-cites="Wolf2018-na"><sup>5</sup></span> packages. There is maybe some bias here as the reference labels we used for evaluation were likely to have come from one of these methods but I don’t think it is a significant issue given all the other analysis steps that go into annotating cells. More likely, it is just that this approach intuitively makes sense and works pretty well most of the time.</p>
+<p>As a comparison we included one supervised method using the cell labels based on a filtered set of Wilcoxon marker genes. This also performed very well which is probably unexpected given we use the same labels for evaluation. However, in most cases cell labels are not available before integration and we saw more variation across datasets (possibly depending on the quality and resolution of the labels). I wouldn’t rule out using supervised features, but I think you need to have confidence in the labels and some motivation for why it would be better than an unsupervised approach. Possibly, using marker genes to augment highly variable features would be a good combined approach.</p>
+<p>The other top performer was <a href="https://triku.readthedocs.io/en/latest/">triku</a><span class="citation" data-cites="M_Ascension2022-yp"><sup>6</sup></span> which operates on a neighbourhood graph and is worth considering if you are looking for an alternative approach.</p>
+</section>
+<section id="do-i-need-to-use-batch-aware-features" class="level2">
+<h2 class="anchored" data-anchor-id="do-i-need-to-use-batch-aware-features">Do I need to use batch-aware features?</h2>
+<p>Some packages implement batch-aware variants of their features selection methods where they are applied to each batch separately and the results combined in some way (usually by choosing the most commonly selected features). This is the approach we considered in the scIB paper<span class="citation" data-cites="Luecken2021-jo"><sup>2</sup></span> and has since become recommended practice. The intuition is that by selecting features within each batch you avoid choosing those that are different between batches, conserving more biology. We compared batch-aware variants of methods in scanpy but didn’t see any consistent differences that let us say what the effect is.</p>
+<p>Personally, I probably wouldn’t bother with batch-aware features, unless it was for computational reasons (because you can process each batch separately and combine the results).</p>
+</section>
+<section id="should-i-integrate-lineages-separately" class="level2">
+<h2 class="anchored" data-anchor-id="should-i-integrate-lineages-separately">Should I integrate lineages separately?</h2>
+<p>This question moves a bit beyond the original scope of the paper and comes out of reviewer comments to look more into the interaction between feature selection and biological factors. Here, we compared performance on the full <a href="https://doi.org/10.1038/s41591-023-02327-2">Human Lung Cell Atlas</a><span class="citation" data-cites="Sikkema2023-ia"><sup>7</sup></span> (HLCA) dataset to the immune and epithelial subsets. This section was to test the idea that restricting the biology in the dataset could improve feature selection (by selecting more specific biological features) and integration.</p>
+<p>A full benchmark study is needed to properly answer this question but our results don’t support that idea. We saw better performance on the full HLCA, particularly when identifying previously unseen populations using the <a href="https://doi.org/10.1038/s41587-021-01033-z">Milo</a><span class="citation" data-cites="Dann2022-nz"><sup>8</sup></span> metric. My explanation is that by showing the integration model a wider variety of biology it learns more about the possible cell space and therefore better separate new types of cells. But like I said, you could do a full study just to answer this question and we didn’t consider selecting features on each lineage but then integrating the full dataset.</p>
+</section>
+<section id="how-do-selected-features-interact-with-the-integration-method" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-selected-features-interact-with-the-integration-method">How do selected features interact with the integration method?</h2>
+<p>In the last section of the results we look at interactions with different integration models. Comparing integration methods has been done previously and was specifically outside the scope of this study but we included a small comparison at the prompting of the reviewers and to investigate some specific questions. We used <a href="https://doi.org/10.1038/s41592-018-0229-2">scVI</a><span class="citation" data-cites="Lopez2018-au"><sup>9</sup></span> as the integration and mapping method for most of the study but here we compared to <a href="https://doi.org/10.15252/msb.20209620">scANVI</a><span class="citation" data-cites="Xu2021-dh"><sup>10</sup></span> and <a href="https://doi.org/10.1038/s41592-019-0619-0">Harmony</a><span class="citation" data-cites="Korsunsky2019-ex"><sup>11</sup></span> followed by <a href="https://doi.org/10.1038/s41467-021-25957-x">Symphony</a><span class="citation" data-cites="Kang2021-ac"><sup>12</sup></span> mapping.</p>
+<p>Overall, scANVI performed slightly better than scVI, particularly in the biological categories. This is probably because the model knowing something about cell labels allowed it to overcome deficiencies in the selected features. In contrast, Symphony performed worse in general but particularly in unseen population detection. A proper evaluation would be needed to work out why this is<sup>5</sup> but I would be cautions of using this integration approach of a reference mapping application.</p>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Ok, so after all that, what did we learn?</p>
+<ul>
+<li>The registered report is an interesting format but it requires you to do a lot of work in advance and doesn’t necessarily make things quicker</li>
+<li>Setting up a proper workflow takes some effort but is invaluable when you need to re-run things, especially in a large, computationally-intense project</li>
+<li>Choosing the metrics to use is vital and something that more time should be spent on in benchmarking papers</li>
+<li>Think carefully about how to scale and combine metric scores, use baseline methods if you can</li>
+<li>Around 2000 features generally works well but you should tune this for you dataset and application</li>
+<li>Using batch-aware features doesn’t add much</li>
+<li>Integrating lineages separately results in worse detection of unseen populations</li>
+<li>scANVI generally improves performance over scVI regardless of the feature selection method but Symphony struggled with detecting new populations</li>
+</ul>
+<p>Thanks for reading! You can find more about this study here:</p>
+<ul>
+<li><a href="https://doi.org/10.1038/s41592-025-02624-3">Publication</a></li>
+<li><a href="https://github.com/theislab/atlas-feature-selection-benchmark">GitHub repository</a></li>
+<li><a href="https://figshare.com/projects/Benchmarking_feature_selection_for_scRNA-seq_integration/214819">figshare collection</a></li>
+</ul>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2">
+<div id="ref-Zappia2025-dq" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Zappia, L., Richter, S., Ramírez-Suástegui, C., Kfuri-Rubens, R., Vornholz, L., Wang, W., Dietrich, O., Frishberg, A., Luecken, M. D. &amp; Theis, F. J. <span class="nocase">Feature selection methods affect the performance of scRNA-seq data integration and querying</span>. <em>Nature methods</em> 1–11 (2025). doi:<a href="https://doi.org/10.1038/s41592-025-02624-3">10.1038/s41592-025-02624-3</a></div>
+</div>
+<div id="ref-Luecken2021-jo" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Luecken, M. D., Büttner, M., Chaichoompu, K., Danese, A., Interlandi, M., Mueller, M. F., Strobl, D. C., Zappia, L., Dugas, M., Colomé-Tatché, M. &amp; Theis, F. J. <span class="nocase">Benchmarking atlas-level data integration in single-cell genomics</span>. <em>Nature methods</em> (2021). doi:<a href="https://doi.org/10.1038/s41592-021-01336-8">10.1038/s41592-021-01336-8</a></div>
+</div>
+<div id="ref-Luecken2024-ur" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Luecken, M. D., Gigante, S., Burkhardt, D. B., Cannoodt, R., Strobl, D. C., Markov, N. S., Zappia, L., Palla, G., Lewis, W., Dimitrov, D., Vinyard, M. E., Magruder, D. S., Andersson, A., Dann, E., Qin, Q., Otto, D. J., Klein, M., Botvinnik, O. B., Deconinck, L., Waldrant, K., Open Problems Jamboree Members, Bloom, J. M., Pisco, A. O., Saez-Rodriguez, J., Wulsin, D., Pinello, L., Saeys, Y., Theis, F. J. &amp; Krishnaswamy, S. <span class="nocase">Defining and benchmarking open problems in single-cell analysis</span>. <em>Research square</em> (2024). doi:<a href="https://doi.org/10.21203/rs.3.rs-4181617/v1">10.21203/rs.3.rs-4181617/v1</a></div>
+</div>
+<div id="ref-Satija2015-or" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Satija, R., Farrell, J. A., Gennert, D., Schier, A. F. &amp; Regev, A. <a href="https://doi.org/10.1038/nbt.3192"><span class="nocase">Spatial reconstruction of single-cell gene expression data</span></a>. <em>Nature Biotechnology</em> <strong>33,</strong> 495–502 (2015).</div>
+</div>
+<div id="ref-Wolf2018-na" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Wolf, F. A., Angerer, P. &amp; Theis, F. J. <a href="https://doi.org/10.1186/s13059-017-1382-0"><span class="nocase">SCANPY: large-scale single-cell gene expression data analysis</span></a>. <em>Genome biology</em> <strong>19,</strong> 15 (2018).</div>
+</div>
+<div id="ref-M_Ascension2022-yp" class="csl-entry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">M Ascensión, A., Ibáñez-Solé, O., Inza, I., Izeta, A. &amp; Araúzo-Bravo, M. J. <a href="https://doi.org/10.1093/gigascience/giac017"><span class="nocase">Triku: a feature selection method based on nearest neighbors for single-cell data</span></a>. <em>GigaScience</em> <strong>11,</strong> (2022).</div>
+</div>
+<div id="ref-Sikkema2023-ia" class="csl-entry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Sikkema, L., Ramírez-Suástegui, C., Strobl, D. C., Gillett, T. E., Zappia, L., Madissoon, E., Markov, N. S., Zaragosi, L.-E., Ji, Y., Ansari, M., Arguel, M.-J., Apperloo, L., Banchero, M., Bécavin, C., Berg, M., Chichelnitskiy, E., Chung, M.-I., Collin, A., Gay, A. C. A., Gote-Schniering, J., Hooshiar Kashani, B., Inecik, K., Jain, M., Kapellos, T. S., Kole, T. M., Leroy, S., Mayr, C. H., Oliver, A. J., Papen, M. von, Peter, L., Taylor, C. J., Walzthoeni, T., Xu, C., Bui, L. T., De Donno, C., Dony, L., Faiz, A., Guo, M., Gutierrez, A. J., Heumos, L., Huang, N., Ibarra, I. L., Jackson, N. D., Kadur Lakshminarasimha Murthy, P., Lotfollahi, M., Tabib, T., Talavera-López, C., Travaglini, K. J., Wilbrey-Clark, A., Worlock, K. B., Yoshida, M., Lung Biological Network Consortium, Berge, M. van den, Bossé, Y., Desai, T. J., Eickelberg, O., Kaminski, N., Krasnow, M. A., Lafyatis, R., Nikolic, M. Z., Powell, J. E., Rajagopal, J., Rojas, M., Rozenblatt-Rosen, O., Seibold, M. A., Sheppard, D., Shepherd, D. P., Sin, D. D., Timens, W., Tsankov, A. M., Whitsett, J., Xu, Y., Banovich, N. E., Barbry, P., Duong, T. E., Falk, C. S., Meyer, K. B., Kropski, J. A., Pe’er, D., Schiller, H. B., Tata, P. R., Schultze, J. L., Teichmann, S. A., Misharin, A. V., Nawijn, M. C., Luecken, M. D. &amp; Theis, F. J. <a href="https://doi.org/10.1038/s41591-023-02327-2"><span class="nocase">An integrated cell atlas of the lung in health and disease</span></a>. <em>Nature medicine</em> <strong>29,</strong> 1563–1577 (2023).</div>
+</div>
+<div id="ref-Dann2022-nz" class="csl-entry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Dann, E., Henderson, N. C., Teichmann, S. A., Morgan, M. D. &amp; Marioni, J. C. <a href="https://doi.org/10.1038/s41587-021-01033-z"><span class="nocase">Differential abundance testing on single-cell data using k-nearest neighbor graphs</span></a>. <em>Nature biotechnology</em> <strong>40,</strong> 245–253 (2022).</div>
+</div>
+<div id="ref-Lopez2018-au" class="csl-entry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Lopez, R., Regier, J., Cole, M. B., Jordan, M. I. &amp; Yosef, N. <a href="https://doi.org/10.1038/s41592-018-0229-2"><span class="nocase">Deep generative modeling for single-cell transcriptomics</span></a>. <em>Nature methods</em> <strong>15,</strong> 1053–1058 (2018).</div>
+</div>
+<div id="ref-Xu2021-dh" class="csl-entry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Xu, C., Lopez, R., Mehlman, E., Regier, J., Jordan, M. I. &amp; Yosef, N. <a href="https://doi.org/10.15252/msb.20209620"><span class="nocase">Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models</span></a>. <em>Molecular systems biology</em> <strong>17,</strong> e9620 (2021).</div>
+</div>
+<div id="ref-Korsunsky2019-ex" class="csl-entry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Korsunsky, I., Millard, N., Fan, J., Slowikowski, K., Zhang, F., Wei, K., Baglaenko, Y., Brenner, M., Loh, P.-R. &amp; Raychaudhuri, S. <span class="nocase">Fast, sensitive and accurate integration of single-cell data with Harmony</span>. <em>Nature methods</em> (2019). doi:<a href="https://doi.org/10.1038/s41592-019-0619-0">10.1038/s41592-019-0619-0</a></div>
+</div>
+<div id="ref-Kang2021-ac" class="csl-entry">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Kang, J. B., Nathan, A., Weinand, K., Zhang, F., Millard, N., Rumker, L., Moody, D. B., Korsunsky, I. &amp; Raychaudhuri, S. <a href="https://doi.org/10.1038/s41467-021-25957-x"><span class="nocase">Efficient and precise single-cell reference atlas mapping with Symphony</span></a>. <em>Nature communications</em> <strong>12,</strong> 5890 (2021).</div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I would probably use Docker containers or <a href="https://viash.io/">Viash</a> components for this now, but this worked well enough↩︎</p></li>
+<li id="fn2"><p>We wanted to avoid developing new metrics but there were some that we significantly modified↩︎</p></li>
+<li id="fn3"><p>See the paper for exactly which metrics we selected and why↩︎</p></li>
+<li id="fn4"><p>It was computationally infeasible to do this for all methods, given the computation required for each integration run↩︎</p></li>
+<li id="fn5"><p>Our workflow was designed around scVI but Symphony is a completely different class of integration model and there may be some bias there↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{zappia2025,
+  author = {Zappia, Luke},
+  title = {Benchmarking Feature Selection for Integration},
+  date = {2025-03-15},
+  url = {https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-zappia2025" class="csl-entry quarto-appendix-citeas">
+<div class="">Zappia, L. Benchmarking feature selection for
+integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/">https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/</a>&gt;</div>
+</div></div></section></div> ]]></description>
+  <category>scrna-seq</category>
+  <category>benchmarking</category>
+  <category>feature selection</category>
+  <category>integration</category>
+  <category>publication</category>
+  <guid>https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/</guid>
+  <pubDate>Fri, 14 Mar 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/thumbnail.png" medium="image" type="image/png" height="102" width="144"/>
+</item>
 <item>
   <title>scverse conference</title>
   <link>https://lazappi.id.au/posts/2024-09-15-scverse-conference/</link>

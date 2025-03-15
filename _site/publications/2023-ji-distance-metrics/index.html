@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,12 +48,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3825abfc899f2f50e99227930ca303e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-83999eaec02f9411d69123612a24cdaa.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -122,6 +122,32 @@ cookieconsent.run({
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
+<meta name="citation_title" content="Optimal distance metrics for single-cell RNA-seq populations">
+<meta name="citation_abstract" content="In single-cell data workflows and modeling, distance metrics are commonly used in loss functions, model evaluation, and subpopulation analysis.
+However, these metrics behave differently depending on the source of variation, conditions and subpopulations in single-cell expression profiles due to data sparsity and high dimensionality.
+Thus, the metrics used for downstream tasks in this domain should be carefully selected.
+We establish a set of benchmarks with three evaluation measures, capturing desirable facets of absolute and relative distance behavior.
+Based on seven datasets using perturbation as ground truth, we evaluated 16 distance metrics applied to scRNA-seq data and demonstrated their application to three use cases.
+We find that linear metrics such as mean squared error (MSE) performed best across our three evaluation criteria.
+Therefore, we recommend the use of MSE for comparing single-cell RNA-seq populations and evaluating gene expression prediction models.
+">
+<meta name="citation_author" content="Yuge Ji">
+<meta name="citation_author" content="Tessa D. Green">
+<meta name="citation_author" content="Stefan Peidli">
+<meta name="citation_author" content="Mojtaba Bahrami">
+<meta name="citation_author" content="Meiqi Liu,">
+<meta name="citation_author" content="Luke Zappia">
+<meta name="citation_author" content="Karin Hrovatin">
+<meta name="citation_author" content="Chris Sander">
+<meta name="citation_author" content="Fabian J. Theis">
+<meta name="citation_publication_date" content="2023-12-26">
+<meta name="citation_cover_date" content="2023-12-26">
+<meta name="citation_year" content="2023">
+<meta name="citation_online_date" content="2023-12-26">
+<meta name="citation_fulltext_html_url" content="https://doi.org/10.1101/2023.12.26.572833">
+<meta name="citation_doi" content="10.1101/2023.12.26.572833">
+<meta name="citation_language" content="en">
+<meta name="citation_journal_title" content="bioRxiv">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -161,11 +187,6 @@ cookieconsent.run({
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lazappi"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/lazappi"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -224,10 +245,10 @@ cookieconsent.run({
                               Meiqi Liu,
                                       </p>
               <p>
-                                <strong>
+                                </p><p style="color: #eb008d"><strong>
                     Luke Zappia
-                      </strong>
-                                      </p>
+                      </strong></p>
+                                      <p></p>
               <p>
                               Karin Hrovatin
                                       </p>
@@ -293,7 +314,7 @@ cookieconsent.run({
   title = {Optimal Distance Metrics for Single-Cell {RNA-seq}
     Populations},
   date = {2023-12-26},
-  url = {https://lazappi.id.au/publications/2023-ji-distance-metrics/},
+  url = {https://doi.org/10.1101/2023.12.26.572833},
   doi = {10.1101/2023.12.26.572833},
   langid = {en},
   abstract = {In single-cell data workflows and modeling, distance
@@ -314,10 +335,11 @@ cookieconsent.run({
     prediction models.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ji2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Ji, Yuge, Tessa D. Green, Stefan Peidli, Mojtaba Bahrami, Meiqi Liu,
-Luke Zappia, Karin Hrovatin, Chris Sander, and Fabian J. Theis. 2023.
-<span>“Optimal Distance Metrics for Single-Cell RNA-Seq
-Populations.”</span> <em>bioRxiv</em>. <a href="https://doi.org/10.1101/2023.12.26.572833">https://doi.org/10.1101/2023.12.26.572833</a>.
+<div class="">Ji,
+Y., D. Green, T., Peidli, S., Bahrami, M., Liu, M., Zappia, L.,
+Hrovatin, K., Sander, C. &amp; J. Theis, F. Optimal distance metrics for
+single-cell RNA-seq populations. <em>bioRxiv</em> Preprint at <a href="https://doi.org/10.1101/2023.12.26.572833">https://doi.org/10.1101/2023.12.26.572833</a>
+(2023)</div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -545,8 +567,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -657,7 +677,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -889,7 +908,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2016-2024, Luke Zappia
+ © 2016-2025, Luke Zappia
   </li>  
 </ul>
     </div>   

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3825abfc899f2f50e99227930ca303e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-83999eaec02f9411d69123612a24cdaa.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -120,6 +120,36 @@ cookieconsent.run({
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
+<meta name="citation_title" content="Integrating single-cell RNA-seq datasets with substantial batch effects">
+<meta name="citation_abstract" content="Integration of single cell RNA sequencing (scRNAseq) datasets has become a standard part of the analysis, with conditional variational autoencoders (cVAE) being among the most popular approaches.
+Increasingly, researchers are asking to map cells across challenging cases such as cross-organs, species, or organoids and primary tissue, as well as different scRNAseq protocols, including single cell and single nuclei.
+Current computational methods struggle to harmonize datasets with such substantial differences, driven by technical or biological variation.
+Here, we propose to address these challenges for the popular cVAE based approaches by introducing and comparing a series of regularization constraints.
+The two commonly used strategies for increasing batch correction in cVAEs, that is Kullback Leibler divergence (KL) regularization strength tuning and adversarial learning, suffer from substantial loss of biological information.
+Therefore, we adapt, implement, and assess alternative regularization strategies for cVAEs and investigate how they improve batch effect removal or better preserve biological variation, enabling us to propose an optimal cVAE-based integration strategy for complex systems.
+We show that using a VampPrior instead of the commonly used Gaussian prior not only improves the preservation of biological variation but also unexpectedly batch correction.
+Moreover, we show that our implementation of cycle consistency loss leads to significantly better biological preservation than adversarial learning implemented in the previously proposed GLUE model.
+Additionally, we do not recommend relying only on the KL regularization strength tuning for increasing batch correction, as it removes both biological and batch information without discriminating between the two.
+Based on our findings, we propose a new model that combines VampPrior and cycle-consistency loss.
+We show that using it for datasets with substantial batch effects improves downstream interpretation of cell states and biological conditions.
+To ease the use of the newly proposed model, we make it available in the scvitools package as an external model named sysVI.
+Moreover, in the future, these regularization techniques could be added to other established cVAE based models to improve the integration of datasets with substantial batch effects.
+">
+<meta name="citation_author" content="Karin Hrovatin">
+<meta name="citation_author" content="Amir Ali Moinfar">
+<meta name="citation_author" content="Luke Zappia">
+<meta name="citation_author" content="Alejandro Tejada Lapuerta">
+<meta name="citation_author" content="Benjamin Lengerich">
+<meta name="citation_author" content="Manolis Kellis">
+<meta name="citation_author" content="Fabian J. Theis">
+<meta name="citation_publication_date" content="2023-11-03">
+<meta name="citation_cover_date" content="2023-11-03">
+<meta name="citation_year" content="2023">
+<meta name="citation_online_date" content="2023-11-03">
+<meta name="citation_fulltext_html_url" content="https://doi.org/10.1101/2023.11.03.565463">
+<meta name="citation_doi" content="10.1101/2023.11.03.565463">
+<meta name="citation_language" content="en">
+<meta name="citation_journal_title" content="bioRxiv">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -159,11 +189,6 @@ cookieconsent.run({
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lazappi"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/lazappi"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -214,10 +239,10 @@ cookieconsent.run({
                               Amir Ali Moinfar
                                       </p>
               <p>
-                                <strong>
+                                </p><p style="color: #eb008d"><strong>
                     Luke Zappia
-                      </strong>
-                                      </p>
+                      </strong></p>
+                                      <p></p>
               <p>
                               Alejandro Tejada Lapuerta
                                       </p>
@@ -286,7 +311,7 @@ cookieconsent.run({
   title = {Integrating Single-Cell {RNA-seq} Datasets with Substantial
     Batch Effects},
   date = {2023-11-03},
-  url = {https://lazappi.id.au/publications/2023-hrovatin-batch-effects/},
+  url = {https://doi.org/10.1101/2023.11.03.565463},
   doi = {10.1101/2023.11.03.565463},
   langid = {en},
   abstract = {Integration of single cell RNA sequencing (scRNAseq)
@@ -328,10 +353,11 @@ cookieconsent.run({
     integration of datasets with substantial batch effects.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hrovatin2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Hrovatin, Karin, Amir Ali Moinfar, Luke Zappia, Alejandro Tejada
-Lapuerta, Benjamin Lengerich, Manolis Kellis, and Fabian J. Theis. 2023.
-<span>“Integrating Single-Cell RNA-Seq Datasets with Substantial Batch
-Effects.”</span> <em>bioRxiv</em>. <a href="https://doi.org/10.1101/2023.11.03.565463">https://doi.org/10.1101/2023.11.03.565463</a>.
+<div class="">Hrovatin, K., Ali Moinfar, A., Zappia, L.,
+Tejada Lapuerta, A., Lengerich, B., Kellis, M. &amp; J. Theis, F.
+Integrating single-cell RNA-seq datasets with substantial batch effects.
+<em>bioRxiv</em> Preprint at <a href="https://doi.org/10.1101/2023.11.03.565463">https://doi.org/10.1101/2023.11.03.565463</a>
+(2023)</div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -559,8 +585,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -671,7 +695,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -903,7 +926,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2016-2024, Luke Zappia
+ © 2016-2025, Luke Zappia
   </li>  
 </ul>
     </div>   

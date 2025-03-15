@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,12 +45,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3825abfc899f2f50e99227930ca303e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-83999eaec02f9411d69123612a24cdaa.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -119,6 +119,28 @@ cookieconsent.run({
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
+<meta name="citation_title" content="HiTIME: An efficient model-selection approach for the detection of unknown drug metabolites in LC-MS data">
+<meta name="citation_abstract" content="The identification of metabolites plays an important role in understanding drug efficacy and safety however these compounds are often difficult to identify in complex mixtures.
+One approach to identify drug metabolites involves utilising differentially isotopically labelled drug compounds to create unique isotopic signals that can be detected by liquid chromatography-mass spectrometry (LC-MS). User-friendly, efficient, computational tools that allow selective detection of these signals are lacking.
+We have developed an efficient open-source software tool called HiTIME (High-Resolution Twin-Ion Metabolite Extraction) which filters twin-ion signals in LC-MS data.
+The intensity of each data point in the input is replaced by a Z-score describing how well the point matches an idealised twin-ion signal versus alternative ion signatures.
+Here we provide a detailed description of the algorithm and demonstrate its performance on simulated and experimental data.
+">
+<meta name="citation_author" content="Michael G Leeming">
+<meta name="citation_author" content="Andrew P Isaac">
+<meta name="citation_author" content="Luke Zappia">
+<meta name="citation_author" content="Richard A J O&amp;amp;#039;Hair">
+<meta name="citation_author" content="William A Donald">
+<meta name="citation_author" content="Bernard J Pope">
+<meta name="citation_publication_date" content="2020-07-07">
+<meta name="citation_cover_date" content="2020-07-07">
+<meta name="citation_year" content="2020">
+<meta name="citation_online_date" content="2020-07-07">
+<meta name="citation_fulltext_html_url" content="https://doi.org/10.1016/j.softx.2020.100559">
+<meta name="citation_doi" content="10.1016/j.softx.2020.100559">
+<meta name="citation_language" content="en">
+<meta name="citation_firstpage" content="100559">
+<meta name="citation_journal_title" content="SoftwareX">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -158,11 +180,6 @@ cookieconsent.run({
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/lazappi"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/lazappi"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -210,10 +227,10 @@ cookieconsent.run({
                               Andrew P Isaac
                                       </p>
               <p>
-                                <strong>
+                                </p><p style="color: #eb008d"><strong>
                     Luke Zappia
-                      </strong>
-                                      </p>
+                      </strong></p>
+                                      <p></p>
               <p>
                               Richard A J O’Hair
                                       </p>
@@ -279,7 +296,7 @@ cookieconsent.run({
   journal = {SoftwareX},
   pages = {100559},
   date = {2020-07-07},
-  url = {https://lazappi.id.au/publications/2020-leeming-HiTIME/},
+  url = {https://doi.org/10.1016/j.softx.2020.100559},
   doi = {10.1016/j.softx.2020.100559},
   langid = {en},
   abstract = {The identification of metabolites plays an important role
@@ -299,10 +316,11 @@ cookieconsent.run({
     and demonstrate its performance on simulated and experimental data.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-g_leeming2020" class="csl-entry quarto-appendix-citeas" role="listitem">
-G Leeming, Michael, Andrew P Isaac, Luke Zappia, Richard A J O’Hair,
-William A Donald, and Bernard J Pope. 2020. <span>“HiTIME: An Efficient
-Model-Selection Approach for the Detection of Unknown Drug Metabolites
-in LC-MS Data.”</span> <em>SoftwareX</em>, July, 100559. <a href="https://doi.org/10.1016/j.softx.2020.100559">https://doi.org/10.1016/j.softx.2020.100559</a>.
+<div class="">G
+Leeming, M., P Isaac, A., Zappia, L., A J O’Hair, R., A Donald, W. &amp;
+J Pope, B. HiTIME: An efficient model-selection approach for the
+detection of unknown drug metabolites in LC-MS data. <em>SoftwareX</em>
+100559 (2020). doi:<a href="https://doi.org/10.1016/j.softx.2020.100559">10.1016/j.softx.2020.100559</a></div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -530,8 +548,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -642,7 +658,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -874,7 +889,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- © 2016-2024, Luke Zappia
+ © 2016-2025, Luke Zappia
   </li>  
 </ul>
     </div>   

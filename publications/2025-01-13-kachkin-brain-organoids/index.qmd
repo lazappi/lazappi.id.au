@@ -1,0 +1,44 @@
+---
+title: Deciphering brain organoids heterogeneity by identifying key quality determinants
+author:
+  - Daniil Kachkin
+  - Naime Zagha
+  - Tom Boerstler
+  - Federica Furlanetto
+  - Negar Nayebzade
+  - name: Luke Zappia
+    me: true
+  - Michelle Boisvert
+  - Michaela Farrell
+  - Sonja Ploetz
+  - Martin Regensburger
+  - Claudia Günther
+  - Juergen Winkler
+  - Pooja Gupta
+  - Fabian Theis
+  - Marisa Karow
+  - Sven Falk
+  - Beate Winner
+  - Florian Krach
+abstract: |
+  Brain organoids derived from human pluripotent stem cells (hPSCs) hold immense potential for modeling neurodevelopmental processes and disorders.
+  However, their experimental variability and undefined organoid selection criteria for analysis hinder reproducibility.
+  As part of the Bavarian ForInter consortium, we generated 72 brain organoids from distinct hPSC lines.
+  We conducted a comprehensive analysis of their morphological and cellular characteristics at an early stage of their development.
+  In our assessment, the Feret diameter emerged as a reliable, single parameter that characterizes brain organoid quality.
+  Transcriptomic analysis further confirmed the reliability of this marker and identified a negative impact of mesenchymal cells on the abundance of organoid formation.
+  High-quality organoids consistently displayed a lower mesenchymal cell presence.
+  These findings offer a framework for enhancing brain organoid standardization and reproducibility, underscoring the need for morphological quality controls and the consideration of mesenchymal cell influence on organoid-based modeling.
+categories: ["organoids", "brain", "rna-seq"]
+date: 2025-01-13
+links:
+  doi: 10.1101/2025.01.13.632763
+  pdf: https://www.biorxiv.org/content/10.1101/2025.01.13.632763v1.full.pdf
+citation:
+  type: article
+  doi: 10.1101/2025.01.13.632763
+  container-title: bioRxiv
+  url: https://doi.org/10.1101/2025.01.13.632763
+csl: ../../nature-no-et-al.csl
+google-scholar: true
+---

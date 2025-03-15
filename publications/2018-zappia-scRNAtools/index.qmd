@@ -30,4 +30,7 @@ citation:
   number: 6
   volume: 14
   page: "e1006245"
+  url: https://doi.org/10.1371/journal.pcbi.1006245
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

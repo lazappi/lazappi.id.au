@@ -34,4 +34,7 @@ citation:
   issue: 11
   volume: 20
   page: "1683-1692"
+  url: https://doi.org/10.1038/s41592-023-02035-2
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

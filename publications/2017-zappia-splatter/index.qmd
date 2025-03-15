@@ -26,4 +26,7 @@ citation:
   number: 1
   volume: 18
   page: "174"
+  url: https://doi.org/10.1186/s13059-017-1305-0
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

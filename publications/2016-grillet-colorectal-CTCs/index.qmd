@@ -56,4 +56,7 @@ citation:
   pmid: "27456153"
   issn: "0017-5749, 1468-3288"
   container-title: Gut
+  url: https://doi.org/10.1136/gutjnl-2016-311447
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

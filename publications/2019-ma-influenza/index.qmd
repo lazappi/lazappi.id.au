@@ -42,4 +42,7 @@ citation:
   pmid: "30626665"
   issn: "0022-538X, 1098-5514"
   container-title: Journal of virology
+  url: https://doi.org/10.1128/JVI.01986-18
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

@@ -29,4 +29,7 @@ citation:
   type: article
   doi: 10.1101/2023.12.26.572833
   container-title: bioRxiv
+  url: https://doi.org/10.1101/2023.12.26.572833
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

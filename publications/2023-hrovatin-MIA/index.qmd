@@ -38,4 +38,7 @@ citation:
   issue: 9
   volume: 5
   page: "1615-1637"
+  url: https://doi.org/10.1038/s42255-023-00876-x
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

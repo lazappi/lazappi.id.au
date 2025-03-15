@@ -36,4 +36,7 @@ citation:
   issue: 1
   volume: 22
   page: "248"
+  url: https://doi.org/10.1186/s13059-021-02452-6
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

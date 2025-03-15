@@ -42,4 +42,7 @@ citation:
   container-title: eLife
   volume: 8
   page: "e41156"
+  url: https://doi.org/10.7554/eLife.41156
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

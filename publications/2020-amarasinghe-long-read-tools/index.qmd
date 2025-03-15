@@ -29,4 +29,7 @@ citation:
   number: 1
   volume: 21
   page: "30"
+  url: https://doi.org/10.1186/s13059-020-1935-5
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

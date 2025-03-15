@@ -22,8 +22,10 @@ links:
   data: https://melbourne.figshare.com/collections/PhD_thesis_analysis_data/4439804
 citation:
   type: thesis
-  doi: 10.1136/gutjnl-2016-311447
   editor:
   - Alicia Oshlack
   - Melissa H Little
+  url:  https://lazappi.github.io/phd-thesis-analysis/
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

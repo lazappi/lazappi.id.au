@@ -37,4 +37,7 @@ citation:
   issn: "1471-0056"
   container-title: Nature reviews genetics
   page: "1-23"
+  url: https://doi.org/10.1038/s41576-023-00586-w
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

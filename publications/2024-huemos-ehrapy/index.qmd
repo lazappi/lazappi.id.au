@@ -53,4 +53,7 @@ citation:
   issn: "1078-8956"
   container-title: Nature Medicine
   page: "1-12"
+  url: https://doi.org/10.1038/s41591-024-03214-0
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

@@ -41,5 +41,7 @@ citation:
   doi: 10.12688/f1000research.11290.1
   container-title: F1000Research
   volume: 6
+  url: https://doi.org/10.12688/f1000research.11290.1
+csl: ../../nature-no-et-al.csl
 google-scholar: true
 ---

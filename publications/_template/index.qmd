@@ -29,4 +29,7 @@ citation:
   issue: 1
   volume: 1
   page: "1-2"
+  url: https://doi.org/10.1038/s41591-024-03214-0
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

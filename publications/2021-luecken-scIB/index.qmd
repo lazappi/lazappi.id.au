@@ -36,4 +36,7 @@ citation:
   pmid: "34949812"
   issn: "1548-7091"
   container-title: Nature methods
+  url: https://doi.org/10.1038/s41592-021-01336-8
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

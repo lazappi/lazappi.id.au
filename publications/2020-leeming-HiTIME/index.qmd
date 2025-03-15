@@ -24,4 +24,7 @@ citation:
   doi: 10.1016/j.softx.2020.100559
   container-title: SoftwareX
   page: "100559"
+  url: https://doi.org/10.1016/j.softx.2020.100559
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

@@ -42,4 +42,7 @@ citation:
   number: 1
   volume: 11
   page: "3"
+  url: https://doi.org/10.1186/s13073-019-0615-0
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

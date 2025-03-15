@@ -32,4 +32,7 @@ citation:
   container-title: Development
   number: 12
   volume: 146
+  url: https://doi.org/10.1242/dev.178673
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

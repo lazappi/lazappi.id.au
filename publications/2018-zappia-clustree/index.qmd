@@ -30,4 +30,7 @@ citation:
   container-title: GigaScience
   number: 7
   volume: 7
+  url: https://doi.org/10.1093/gigascience/giy083
+csl: ../../nature-no-et-al.csl
+google-scholar: true
 ---

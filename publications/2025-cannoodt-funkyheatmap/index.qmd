@@ -1,0 +1,40 @@
+---
+title: "funkyheatmap: Visualising data frames with mixed data types"
+author:
+  - Robrecht Cannoodt
+  - Louise Deconinck
+  - Artuur Couckuyt
+  - Nikolay S Markov
+  - name: Luke Zappia
+    me: true
+  - Malte D Luecken
+  - Marta Interlandi
+  - Yvan Saeys
+  - Wouter Saelens
+abstract: |
+  The {funkyheatmap} package offers a flexible and user-friendly solution for visualising data frames containing a mixture of categorical, proportional, and text-based data.
+  It simplifies the creation of informative and visually appealing heatmaps while providing extensive customization options to tailor the output.
+  This tool is especially valuable in research settings for summarising and communicating complex results, such as those encountered in benchmarking studies.
+
+  The package is available on CRAN, PyPI, and npm.
+  For a showcase of examples and an overview of the different implementations, visit the project website funkyheatmap.github.io.
+categories: ["visualisation", "software"]
+date: 2025-04-11
+links:
+  code: https://github.com/funkyheatmap
+  package: https://cran.r-project.org/web/packages/funkyheatmap/index.html
+  doi: 10.21105/joss.07698
+  pdf: https://joss.theoj.org/papers/10.21105/joss.07698.pdf
+  website: https://funkyheatmap.github.io/
+citation:
+  type: article-journal
+  doi: 10.21105/joss.07698
+  issn: "2475-9066"
+  container-title: Journal of Open Source Software
+  issue: 108
+  volume: 10
+  page: "7698"
+  url: https://doi.org/10.21105/joss.07698
+csl: ../../nature-no-et-al.csl
+google-scholar: true
+---

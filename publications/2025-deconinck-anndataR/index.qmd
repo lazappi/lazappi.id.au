@@ -1,0 +1,39 @@
+---
+title: anndataR improves interoperability between R and Python in single-cell transcriptomics
+author:
+  - Louise Deconinck
+  - name: Luke Zappia
+    me: true
+  - Robrecht Cannoodt
+  - Martin Morgan
+  - name: scverse core
+  - Isaac Virshup
+  - Chananchida Sang-aram
+  - Danila Bredikhin
+  - Ruth Seurinck
+  - Yvan Saeys
+abstract: |
+  Many single-cell transcriptomics datasets are stored in the HDF5-backed AnnData (H5AD) file format, as popularised by the Python scverse ecosystem.
+  However, accessing these datasets from R, allowing users to take advantage of the strengths of each language, can be difficult.
+  anndataR facilitates this access by allowing users to natively read and write H5AD files in R, convert them to and from SingleCellExperiment or Seurat objects, or even work with the resulting R AnnData object directly.
+  We perform rigorous testing to ensure compatibility between Python-written and R-written H5AD files, guaranteeing long-term interoperability between languages.
+
+  Availability: anndataR's source code is available on GitHub at https://github.com/scverse/anndataR/ under the MIT license.
+  It is compatible with R version 4.5, has been archived at https://doi.org/10.5281/zenodo.15689523 and has been submitted to Bioconductor.
+  Installation instructions and tutorials can be found in the online documentation (https://anndatar.data-intuitive.com/).
+  Issues can be reported at the GitHub repository.
+categories: ["software", "single-cell", "interoperability"]
+date: 2025-08-22
+links:
+  code: https://github.com/scverse/anndataR
+  doi: 10.1101/2025.08.18.669052
+  pdf: https://www.biorxiv.org/content/10.1101/2025.08.18.669052v1.full.pdf
+  website: https://anndatar.data-intuitive.com
+citation:
+  type: article
+  doi: 10.1101/2025.08.18.669052
+  container-title: bioRxiv
+  url: https://doi.org/10.1101/2025.08.18.669052
+csl: ../../nature-no-et-al.csl
+google-scholar: true
+---

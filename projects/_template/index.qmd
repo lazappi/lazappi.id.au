@@ -2,9 +2,10 @@
 title: Template project
 description: An example template project
 authors:
- - "**Luke Zappia**"
- - Another author
- - Somebody else
+  - name: Luke Zappia
+    me: true
+  - Another author
+  - Somebody else
 categories: ["category1", "category2"]
 date: 2023-01-01T00:00:00+00:00
 links:

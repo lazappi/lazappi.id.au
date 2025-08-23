@@ -2,7 +2,8 @@
 title: PhD commits
 description: Functions for scraping git commits from repositories associated with a PhD (or anything else) and plotting them
 authors:
- - "**Luke Zappia**"
+  - name: Luke Zappia
+    me: true
 categories: ["visualisation", "R"]
 date: 2019-08-08T17:45:06+01:00
 links:

@@ -2,7 +2,8 @@
 title: NBA positions
 description: A dataset of NBA positions designed to replace the iris dataset
 authors:
- - "**Luke Zappia**"
+  - name: Luke Zappia
+    me: true
 categories: ["dataset"]
 date: 2020-06-12T12:00:00+02:00
 links:

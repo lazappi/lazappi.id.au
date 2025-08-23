@@ -2,10 +2,11 @@
 title: sfaira portal
 description: A website built using Vue for viewing the sfaira database
 authors:
- - "**Luke Zappia**"
- - David Fischer
- - Leander Dony
- - Lukas Heumos
+  - name: Luke Zappia
+    me: true
+  - David Fischer
+  - Leander Dony
+  - Lukas Heumos
 categories: ["single-cell", "rna-seq", "database", "website", "JavaScript"]
 date: 2021-05-10
 links:

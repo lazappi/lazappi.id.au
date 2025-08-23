@@ -2,7 +2,8 @@
 title: clamour
 description: An R package for setting up a website to display analysis of Twitter hashtags
 authors:
- - "**Luke Zappia**"
+  - name: Luke Zappia
+    me: true
 categories: ["twitter", "analysis", "software", "R"]
 date: 2019-07-08T18:01:13+01:00
 links:

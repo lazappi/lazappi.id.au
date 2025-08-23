@@ -2,7 +2,8 @@
 title: doilinker
 description: An R package for linking DOIs between preprints and publications
 authors:
- - "**Luke Zappia**"
+  - name: Luke Zappia
+    me: true
 categories: ["software", "R"]
 date: 2021-06-25
 links:

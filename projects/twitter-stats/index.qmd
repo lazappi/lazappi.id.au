@@ -2,7 +2,8 @@
 title: Twitter stats
 description: Analysis of Twitter activity for hashtags from various events, usually academic conferences
 authors:
- - "**Luke Zappia**"
+  - name: Luke Zappia
+    me: true
 categories: ["website", "twitter", "analysis", "R"]
 date: 2018-10-03T17:34:05+01:00
 links:

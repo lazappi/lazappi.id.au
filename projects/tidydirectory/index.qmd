@@ -2,7 +2,8 @@
 title: tidydirectory
 description: A Python script for tidying directories
 authors:
-  - "**Luke Zappia**"
+  - name: Luke Zappia
+    me: true
 categories: ["software", "python", "organisation"]
 date: 2024-06-24
 links:

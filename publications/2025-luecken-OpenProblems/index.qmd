@@ -1,0 +1,66 @@
+---
+title: Defining and benchmarking open problems in single-cell analysis
+author:
+  - Malte D. Luecken
+  - Scott Gigante
+  - Daniel B. Burkhardt
+  - Robrecht Cannoodt
+  - Daniel C. Strobl
+  - Nikolay S. Markov
+  - name: Luke Zappia
+    me: true
+  - Giovanni Palla
+  - Wesley Lewis
+  - Daniel Dimitrov
+  - Michael E. Vinyard
+  - D.S. Magruder
+  - Michaela F. Mueller
+  - Alma Andersson
+  - Emma Dann
+  - Qian Qin
+  - Dominik J. Otto
+  - Michal Klein
+  - Olga Borisovna Botvinnik
+  - Louise Deconinck
+  - Kai Waldrant
+  - Sai Nirmayi Yasa
+  - Artur Szałata
+  - Andrew Benz
+  - Zhijian Li
+  - Open Problems Jamboree Members
+  - Jonathan M. Bloom
+  - Angela Oliveira Pisco
+  - Julio Saez-Rodriguez
+  - Drausin Wulsin
+  - Luca Pinello
+  - Yvan Saeys
+  - Fabian J Theis
+  - Smita Krishnaswamy
+abstract: |
+  Single-cell genomics has enabled the study of biological processes at an unprecedented scale and resolution.
+  These studies were enabled by innovative data generation technologies coupled with emerging computational tools specialized for single-cell data.
+  As single-cell technologies have become more prevalent, so has the development of new analysis tools, which has resulted in over 1,700 published algorithms (as of February 2024).
+  Thus, there is an increasing need to continually evaluate which algorithm performs best in which context to inform best practices that evolve with the field.
+
+  In many fields of quantitative science, public competitions and benchmarks address this need by evaluating state-of-the-art methods against known criteria, following the concept of a common task framework.
+  Here, we present Open Problems, a living, extensive, community-guided platform including 12 current single-cell tasks that we envisage raising standards for the selection, evaluation and development of methods in single-cell analysis.
+categories: ["benchmarking", "scrna-seq", "website"]
+date: 2025-07-01
+links:
+  code: https://github.com/openproblems-bio/openproblems
+  doi: 10.1038/s41587-025-02694-w
+  pdf: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11030530/pdf/nihpp-rs4181617v1.pdf
+  preprint: https://doi.org/10.21203/rs.3.rs-4181617/v1
+  website: https://openproblems.bio/
+citation:
+  type: article-journal
+  doi: 10.1038/s41587-025-02694-w
+  container-title: Nature biotechnology
+  url: https://doi.org/10.1038/s41587-025-02694-w
+  issn: "1087-0156"
+  issue: 7
+  volume: 43
+  page: "1035-1040"
+csl: ../../nature-no-et-al.csl
+google-scholar: true
+---

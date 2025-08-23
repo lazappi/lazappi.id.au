@@ -4,10 +4,18 @@ listing:
   - id: packages
     contents:
     - "Splatter/index.qmd"
+    - "anndataR/index.qmd"
     - "zellkonverter/index.qmd"
     - "clustree/index.qmd"
     - "clamour/index.qmd"
     - "doilinker/index.qmd"
+    type: grid
+    sort: "false"
+    categories: true
+    fields: [image, title, description, categories]
+    image-placeholder: "../icon.png"
+  - id: scripts
+    contents:
     - "prettytc/index.qmd"
     - "tidydirectory/index.qmd"
     type: grid
@@ -50,9 +58,14 @@ page-layout: full
 title-block-banner: true
 ---
 
-# Packages and scripts
+# Packages
 
 :::{#packages}
+:::
+
+# Scripts
+
+:::{#scripts}
 :::
 
 ## Analysis and data

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,17 +35,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3825abfc899f2f50e99227930ca303e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-83999eaec02f9411d69123612a24cdaa.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7feb629886059345120a9d46a2bde609.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-9333087fbdc13dafed9cdf8b91518a4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7feb629886059345120a9d46a2bde609.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -172,7 +175,169 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -251,7 +416,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(14)</span></div><div class="category" data-category="QmlvY29uZHVjdG9y">Bioconductor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q1JBTg==">CRAN <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UGhE">PhD <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Uk5BLXNlcQ==">RNA-seq <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YmVzdCUyMHByYWN0aWNlcw==">best practices <span class="quarto-category-count">(2)</span></div><div class="category" data-category="YmlvY29uZHVjdG9y">bioconductor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2x1c3RlcmluZw==">clustering <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y2x1c3RyZWU=">clustree <span class="quarto-category-count">(4)</span></div><div class="category" data-category="ZGF0YWJhc2U=">database <span class="quarto-category-count">(5)</span></div><div class="category" data-category="aW50ZXJvcGVyYWJpbGl0eQ==">interoperability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="a2lkbmV5">kidney <span class="quarto-category-count">(4)</span></div><div class="category" data-category="b3JnYW5vaWRz">organoids <span class="quarto-category-count">(4)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cm5hLXNlcQ==">rna-seq <span class="quarto-category-count">(10)</span></div><div class="category" data-category="c2NSTkEtdG9vbHM=">scRNA-tools <span class="quarto-category-count">(3)</span></div><div class="category" data-category="c2NybmEtdG9vbHM=">scrna-tools <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(7)</span></div><div class="category" data-category="c2luZ2xlLWNlbGw=">single-cell <span class="quarto-category-count">(11)</span></div><div class="category" data-category="c29mdHdhcmU=">software <span class="quarto-category-count">(10)</span></div><div class="category" data-category="c3BsYXR0ZXI=">splatter <span class="quarto-category-count">(7)</span></div><div class="category" data-category="dmlzdWFsaXNhdGlvbg==">visualisation <span class="quarto-category-count">(8)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(14)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YmVzdCUyMHByYWN0aWNlcw==">best practices <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QmlvY29uZHVjdG9y">Bioconductor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmlvY29uZHVjdG9y">bioconductor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2x1c3RlcmluZw==">clustering <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y2x1c3RyZWU=">clustree <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Q1JBTg==">CRAN <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGF0YWJhc2U=">database <span class="quarto-category-count">(5)</span></div><div class="category" data-category="aW50ZXJvcGVyYWJpbGl0eQ==">interoperability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="a2lkbmV5">kidney <span class="quarto-category-count">(4)</span></div><div class="category" data-category="b3JnYW5vaWRz">organoids <span class="quarto-category-count">(4)</span></div><div class="category" data-category="UGhE">PhD <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(7)</span></div><div class="category" data-category="cm5hLXNlcQ==">rna-seq <span class="quarto-category-count">(10)</span></div><div class="category" data-category="Uk5BLXNlcQ==">RNA-seq <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2NSTkEtdG9vbHM=">scRNA-tools <span class="quarto-category-count">(3)</span></div><div class="category" data-category="c2NybmEtdG9vbHM=">scrna-tools <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(7)</span></div><div class="category" data-category="c2luZ2xlLWNlbGw=">single-cell <span class="quarto-category-count">(11)</span></div><div class="category" data-category="c29mdHdhcmU=">software <span class="quarto-category-count">(10)</span></div><div class="category" data-category="c3BsYXR0ZXI=">splatter <span class="quarto-category-count">(7)</span></div><div class="category" data-category="dmlzdWFsaXNhdGlvbg==">visualisation <span class="quarto-category-count">(8)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -263,33 +428,28 @@ window.Quarto = {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDYW5hbHlzaXMlMkNiZXN0JTIwcHJhY3RpY2Vz" data-listing-date-sort="1710288000000" data-listing-file-modified-sort="1725033170958" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDYW5hbHlzaXMlMkNiZXN0JTIwcHJhY3RpY2Vz" data-listing-date-sort="1710288000000" data-listing-file-modified-sort="1755877694777" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2024-03-13-GPTS/index.html" class="no-external">Suggestions for successful scRNA-seq analysis</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2024-03-13-GPTS/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmVzdCUyMHByYWN0aWNlcw=='); return false;">best practices</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YmVzdCUyMHByYWN0aWNlcw=='); return false;">
-best practices
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2024-03-13-GPTS/index.html" class="no-external">Presentation at the 9th German Pharm-Tox Summit on planning a successful scRNA-seq experiment from the analysts perspective</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2024-03-13-GPTS/index.html" class="no-external">
+<p>Presentation at the 9th German Pharm-Tox Summit on planning a successful scRNA-seq experiment from the analysts perspective</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2024-03-13-GPTS/index.html" class="no-external">
@@ -299,31 +459,25 @@ Mar 13, 2024
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDYW5hbHlzaXMlMkNiZXN0JTIwcHJhY3RpY2Vz" data-listing-date-sort="1656547200000" data-listing-file-modified-sort="1681144381880" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDYW5hbHlzaXMlMkNiZXN0JTIwcHJhY3RpY2Vz" data-listing-date-sort="1656547200000" data-listing-file-modified-sort="1755877694777" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2022-06-30-ILC-summer-school/index.html" class="no-external">Successful scRNA-seq analysis</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2022-06-30-ILC-summer-school/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmVzdCUyMHByYWN0aWNlcw=='); return false;">best practices</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YmVzdCUyMHByYWN0aWNlcw=='); return false;">
-best practices
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2022-06-30-ILC-summer-school/index.html" class="no-external">Presentation at the ILC Summer School 2022 on planning a successful scRNA-seq experiment</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2022-06-30-ILC-summer-school/index.html" class="no-external">
+<p>Presentation at the ILC Summer School 2022 on planning a successful scRNA-seq experiment</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2022-06-30-ILC-summer-school/index.html" class="no-external">
@@ -333,40 +487,31 @@ Jun 30, 2022
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc29mdHdhcmUlMkNpbnRlcm9wZXJhYmlsaXR5JTJDUiUyQ3B5dGhvbiUyQ0Jpb2NvbmR1Y3Rvcg==" data-listing-date-sort="1608296400000" data-listing-file-modified-sort="1681144381879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="2" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc29mdHdhcmUlMkNpbnRlcm9wZXJhYmlsaXR5JTJDUiUyQ3B5dGhvbiUyQ0Jpb2NvbmR1Y3Rvcg==" data-listing-date-sort="1608296400000" data-listing-file-modified-sort="1755877694776" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2020-12-18-EuroBioc2020/index.html" class="no-external">Interoperability between Bioconductor and Python for scRNA-seq analysis</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2020-12-18-EuroBioc2020/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJvcGVyYWJpbGl0eQ=='); return false;">interoperability</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmlvY29uZHVjdG9y'); return false;">Bioconductor</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJvcGVyYWJpbGl0eQ=='); return false;">
-interoperability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmlvY29uZHVjdG9y'); return false;">
-Bioconductor
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2020-12-18-EuroBioc2020/index.html" class="no-external">Invited keynote at the European Bioconductor meeting 2020</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2020-12-18-EuroBioc2020/index.html" class="no-external">
+<p>Invited keynote at the European Bioconductor meeting 2020</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2020-12-18-EuroBioc2020/index.html" class="no-external">
@@ -376,58 +521,43 @@ Dec 18, 2020
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2RhdGFiYXNlJTJDdmlzdWFsaXNhdGlvbiUyQ2tpZG5leSUyQ29yZ2Fub2lkcyUyQ2FuYWx5c2lzJTJDc29mdHdhcmUlMkNzcGxhdHRlciUyQ2NsdXN0cmVlJTJDc2NSTkEtdG9vbHMlMkNQaEQ=" data-listing-date-sort="1553209200000" data-listing-file-modified-sort="1681144381878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="3" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2RhdGFiYXNlJTJDdmlzdWFsaXNhdGlvbiUyQ2tpZG5leSUyQ29yZ2Fub2lkcyUyQ2FuYWx5c2lzJTJDc29mdHdhcmUlMkNzcGxhdHRlciUyQ2NsdXN0cmVlJTJDc2NSTkEtdG9vbHMlMkNQaEQ=" data-listing-date-sort="1553209200000" data-listing-file-modified-sort="1755877694776" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2019-03-22-phd-completion/index.html" class="no-external">Tools and techniques for single-cell RNA sequencing data</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2019-03-22-phd-completion/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">database</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">kidney</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">organoids</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">splatter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">clustree</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2NSTkEtdG9vbHM='); return false;">scRNA-tools</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UGhE'); return false;">PhD</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
-database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">
-kidney
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">
-organoids
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">
-splatter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">
-clustree
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2NSTkEtdG9vbHM='); return false;">
-scRNA-tools
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UGhE'); return false;">
-PhD
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2019-03-22-phd-completion/index.html" class="no-external">My PhD completion seminar</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2019-03-22-phd-completion/index.html" class="no-external">
+<p>My PhD completion seminar</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2019-03-22-phd-completion/index.html" class="no-external">
@@ -437,58 +567,43 @@ Mar 22, 2019
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2RhdGFiYXNlJTJDdmlzdWFsaXNhdGlvbiUyQ3NwbGF0dGVyJTJDY2x1c3RyZWUlMkNzY3JuYS10b29scyUyQ3NvZnR3YXJlJTJDa2lkbmV5JTJDb3JnYW5vaWRzJTJDYW5hbHlzaXMlMkNQaEQ=" data-listing-date-sort="1537999200000" data-listing-file-modified-sort="1681144381878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="4" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2RhdGFiYXNlJTJDdmlzdWFsaXNhdGlvbiUyQ3NwbGF0dGVyJTJDY2x1c3RyZWUlMkNzY3JuYS10b29scyUyQ3NvZnR3YXJlJTJDa2lkbmV5JTJDb3JnYW5vaWRzJTJDYW5hbHlzaXMlMkNQaEQ=" data-listing-date-sort="1537999200000" data-listing-file-modified-sort="1755877694776" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2018-09-27-icb-seminar-2018/index.html" class="no-external">Tools, simulations and trees for scRNA-seq</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2018-09-27-icb-seminar-2018/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">database</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">splatter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">clustree</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2NybmEtdG9vbHM='); return false;">scrna-tools</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">kidney</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">organoids</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UGhE'); return false;">PhD</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
-database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">
-splatter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">
-clustree
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2NybmEtdG9vbHM='); return false;">
-scrna-tools
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">
-kidney
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">
-organoids
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UGhE'); return false;">
-PhD
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2018-09-27-icb-seminar-2018/index.html" class="no-external">Presentation at the Institute of Computational Biology where I described my PhD projects</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2018-09-27-icb-seminar-2018/index.html" class="no-external">
+<p>Presentation at the Institute of Computational Biology where I described my PhD projects</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2018-09-27-icb-seminar-2018/index.html" class="no-external">
@@ -498,43 +613,33 @@ Sep 27, 2018
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDY2x1c3RlcmluZyUyQ3Zpc3VhbGlzYXRpb24lMkNzb2Z0d2FyZSUyQ2NsdXN0cmVlJTJDUiUyQ0NSQU4=" data-listing-date-sort="1537198800000" data-listing-file-modified-sort="1681144381877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="5" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDY2x1c3RlcmluZyUyQ3Zpc3VhbGlzYXRpb24lMkNzb2Z0d2FyZSUyQ2NsdXN0cmVlJTJDUiUyQ0NSQU4=" data-listing-date-sort="1537198800000" data-listing-file-modified-sort="1755877694776" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2018-09-17-gi2018/index.html" class="no-external">Using clustering trees to visualise scRNA-seq data</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2018-09-17-gi2018/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">clustering</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">clustree</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q1JBTg=='); return false;">CRAN</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">
-clustering
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">
-clustree
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Q1JBTg=='); return false;">
-CRAN
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2018-09-17-gi2018/index.html" class="no-external">Selected talk at the Genome Informatics 2018 conference where I described how clustering trees can be used with scRNA-seq data</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2018-09-17-gi2018/index.html" class="no-external">
+<p>Selected talk at the Genome Informatics 2018 conference where I described how clustering trees can be used with scRNA-seq data</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2018-09-17-gi2018/index.html" class="no-external">
@@ -544,28 +649,23 @@ Sep 17, 2018
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="dmlzdWFsaXNhdGlvbiUyQ3NvZnR3YXJlJTJDUg==" data-listing-date-sort="1532154600000" data-listing-file-modified-sort="1681144381877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="6" data-categories="dmlzdWFsaXNhdGlvbiUyQ3NvZnR3YXJlJTJDUg==" data-listing-date-sort="1532154600000" data-listing-file-modified-sort="1755877694775" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2018-07-21-useR2018/index.html" class="no-external">clustree: producing clustering trees using ggraph</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2018-07-21-useR2018/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2018-07-21-useR2018/index.html" class="no-external">Presentation at the userR! 2018 conference introducing the clustree package and demonstrating how it makes use of the ggraph package</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2018-07-21-useR2018/index.html" class="no-external">
+<p>Presentation at the userR! 2018 conference introducing the clustree package and demonstrating how it makes use of the ggraph package</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2018-07-21-useR2018/index.html" class="no-external">
@@ -575,37 +675,29 @@ Jul 21, 2018
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="dmlzdWFsaXNhdGlvbiUyQ2NsdXN0ZXJpbmclMkNzb2Z0d2FyZSUyQ2NsdXN0cmVlJTJDUiUyQ0NSQU4=" data-listing-date-sort="1531692000000" data-listing-file-modified-sort="1681144381876" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="7" data-categories="dmlzdWFsaXNhdGlvbiUyQ2NsdXN0ZXJpbmclMkNzb2Z0d2FyZSUyQ2NsdXN0cmVlJTJDUiUyQ0NSQU4=" data-listing-date-sort="1531692000000" data-listing-file-modified-sort="1755877694775" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2018-07-16-OzSingleCells2018/index.html" class="no-external">Clustering trees for visualising scRNA-seq data</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2018-07-16-OzSingleCells2018/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">clustering</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">clustree</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q1JBTg=='); return false;">CRAN</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">
-clustering
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RyZWU='); return false;">
-clustree
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Q1JBTg=='); return false;">
-CRAN
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2018-07-16-OzSingleCells2018/index.html" class="no-external">Selected talk at the Oz Single Cells 2018 conference where I presented clustering trees and the clustree package</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2018-07-16-OzSingleCells2018/index.html" class="no-external">
+<p>Selected talk at the Oz Single Cells 2018 conference where I presented clustering trees and the clustree package</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2018-07-16-OzSingleCells2018/index.html" class="no-external">
@@ -615,40 +707,31 @@ Jul 16, 2018
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="c2luZ2xlLWNlbGwlMkNSTkEtc2VxJTJDc2ltdWxhdGlvbiUyQ3NvZnR3YXJlJTJDc3BsYXR0ZXIlMkNSJTJDYmlvY29uZHVjdG9y" data-listing-date-sort="1510873200000" data-listing-file-modified-sort="1681144381875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="8" data-categories="c2luZ2xlLWNlbGwlMkNSTkEtc2VxJTJDc2ltdWxhdGlvbiUyQ3NvZnR3YXJlJTJDc3BsYXR0ZXIlMkNSJTJDYmlvY29uZHVjdG9y" data-listing-date-sort="1510873200000" data-listing-file-modified-sort="1755877694775" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2017-11-17-BiocAsia2017/index.html" class="no-external">Splatter, a package for simulating single-cell RNA sequencing data</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2017-11-17-BiocAsia2017/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Uk5BLXNlcQ=='); return false;">RNA-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">splatter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmlvY29uZHVjdG9y'); return false;">bioconductor</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Uk5BLXNlcQ=='); return false;">
-RNA-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">
-splatter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YmlvY29uZHVjdG9y'); return false;">
-bioconductor
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2017-11-17-BiocAsia2017/index.html" class="no-external">Selected talk at the 2017 Bioconductor Asia Meeting where I presented technical details of the Splatter package</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2017-11-17-BiocAsia2017/index.html" class="no-external">
+<p>Selected talk at the 2017 Bioconductor Asia Meeting where I presented technical details of the Splatter package</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2017-11-17-BiocAsia2017/index.html" class="no-external">
@@ -658,40 +741,31 @@ Nov 17, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2RhdGFiYXNlJTJDc3BsYXR0ZXIlMkNzY1JOQS10b29scyUyQ3NvZnR3YXJl" data-listing-date-sort="1509490800000" data-listing-file-modified-sort="1681144381875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="9" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2RhdGFiYXNlJTJDc3BsYXR0ZXIlMkNzY1JOQS10b29scyUyQ3NvZnR3YXJl" data-listing-date-sort="1509490800000" data-listing-file-modified-sort="1755877694774" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2017-11-01-gi2017/index.html" class="no-external">Simulation and analysis tools for single-cell RNA sequencing data</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2017-11-01-gi2017/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">database</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">splatter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2NSTkEtdG9vbHM='); return false;">scRNA-tools</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
-database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">
-splatter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2NSTkEtdG9vbHM='); return false;">
-scRNA-tools
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2017-11-01-gi2017/index.html" class="no-external">Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2017-11-01-gi2017/index.html" class="no-external">
+<p>Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2017-11-01-gi2017/index.html" class="no-external">
@@ -701,46 +775,35 @@ Nov 1, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2tpZG5leSUyQ29yZ2Fub2lkcyUyQ3Zpc3VhbGlzYXRpb24lMkNzY3JuYS10b29scyUyQ2RhdGFiYXNlJTJDc3BsYXR0ZXI=" data-listing-date-sort="1509055200000" data-listing-file-modified-sort="1681144381874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="10" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ2tpZG5leSUyQ29yZ2Fub2lkcyUyQ3Zpc3VhbGlzYXRpb24lMkNzY3JuYS10b29scyUyQ2RhdGFiYXNlJTJDc3BsYXR0ZXI=" data-listing-date-sort="1509055200000" data-listing-file-modified-sort="1755877694774" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2017-10-27-berkeley2017/index.html" class="no-external">Single cells, simulation and kidneys in a dish</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2017-10-27-berkeley2017/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">kidney</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">organoids</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2NybmEtdG9vbHM='); return false;">scrna-tools</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">database</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">splatter</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">
-kidney
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">
-organoids
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2NybmEtdG9vbHM='); return false;">
-scrna-tools
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
-database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">
-splatter
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2017-10-27-berkeley2017/index.html" class="no-external">Presentation at the Berkeley Statistics and Genomics Seminar describing my PhD projects</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2017-10-27-berkeley2017/index.html" class="no-external">
+<p>Presentation at the Berkeley Statistics and Genomics Seminar describing my PhD projects</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2017-10-27-berkeley2017/index.html" class="no-external">
@@ -750,25 +813,21 @@ Oct 27, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="dmlzdWFsaXNhdGlvbiUyQ2NsdXN0ZXJpbmc=" data-listing-date-sort="1503014100000" data-listing-file-modified-sort="1681144381873" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="11" data-categories="dmlzdWFsaXNhdGlvbiUyQ2NsdXN0ZXJpbmc=" data-listing-date-sort="1503014100000" data-listing-file-modified-sort="1755877694774" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2017-08-18-joining-the-dots/index.html" class="no-external">Building a clustering tree</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2017-08-18-joining-the-dots/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">clustering</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">
-clustering
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2017-08-18-joining-the-dots/index.html" class="no-external">Joining the Dots Visualisation Symposium talk describing the clustering tree visualisation algorithm</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2017-08-18-joining-the-dots/index.html" class="no-external">
+<p>Joining the Dots Visualisation Symposium talk describing the clustering tree visualisation algorithm</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2017-08-18-joining-the-dots/index.html" class="no-external">
@@ -778,55 +837,41 @@ Aug 18, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ3Zpc3VhbGlzYXRpb24lMkNkYXRhYmFzZSUyQ29yZ2Fub2lkcyUyQ2tpZG5leSUyQ3NvZnR3YXJlJTJDc3BsYXR0ZXIlMkNzY1JOQS10b29scyUyQ1IlMkNQaEQ=" data-listing-date-sort="1500252300000" data-listing-file-modified-sort="1681144381872" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="12" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ3Zpc3VhbGlzYXRpb24lMkNkYXRhYmFzZSUyQ29yZ2Fub2lkcyUyQ2tpZG5leSUyQ3NvZnR3YXJlJTJDc3BsYXR0ZXIlMkNzY1JOQS10b29scyUyQ1IlMkNQaEQ=" data-listing-date-sort="1500252300000" data-listing-file-modified-sort="1755877694773" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2017-07-17-WEHI2017/index.html" class="no-external">Single-cells, simulation and kidneys in a dish</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2017-07-17-WEHI2017/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">database</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">organoids</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">kidney</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">splatter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2NSTkEtdG9vbHM='); return false;">scRNA-tools</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UGhE'); return false;">PhD</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
-database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5vaWRz'); return false;">
-organoids
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('a2lkbmV5'); return false;">
-kidney
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">
-splatter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2NSTkEtdG9vbHM='); return false;">
-scRNA-tools
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UGhE'); return false;">
-PhD
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2017-07-17-WEHI2017/index.html" class="no-external">WEHI Bioinformatics seminar series presenting my PhD projects</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2017-07-17-WEHI2017/index.html" class="no-external">
+<p>WEHI Bioinformatics seminar series presenting my PhD projects</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2017-07-17-WEHI2017/index.html" class="no-external">
@@ -836,37 +881,29 @@ Jul 17, 2017
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ3NvZnR3YXJlJTJDc3BsYXR0ZXIlMkNS" data-listing-date-sort="1477876800000" data-listing-file-modified-sort="1681144381871" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="13" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ3NvZnR3YXJlJTJDc3BsYXR0ZXIlMkNS" data-listing-date-sort="1477876800000" data-listing-file-modified-sort="1755877694773" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="../talks/2016-10-31-COMBINE16/index.html" class="no-external">Simplifying simulation of single-cell RNA-seq</a>
 </h3>
-<div class="listing-subtitle">
-<a href="../talks/2016-10-31-COMBINE16/index.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">splatter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3BsYXR0ZXI='); return false;">
-splatter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-</div>
-<div class="listing-description">
-<a href="../talks/2016-10-31-COMBINE16/index.html" class="no-external">Presentation at the 2016 COMBINE student symposium introducing the Splatter package and the Splat scRNA-seq simulation model</a>
-</div>
+<div class="delink listing-description"><a href="../talks/2016-10-31-COMBINE16/index.html" class="no-external">
+<p>Presentation at the 2016 COMBINE student symposium introducing the Splatter package and the Splat scRNA-seq simulation model</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="../talks/2016-10-31-COMBINE16/index.html" class="no-external">
@@ -877,385 +914,258 @@ Oct 31, 2016
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lazappi\.id\.au");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/lazappi\.id\.au");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1263,185 +1173,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

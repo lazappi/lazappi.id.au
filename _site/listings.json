@@ -19,6 +19,29 @@
     ]
   },
   {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/Splatter/index.html",
+      "/projects/anndataR/index.html",
+      "/projects/zellkonverter/index.html",
+      "/projects/clustree/index.html",
+      "/projects/clamour/index.html",
+      "/projects/doilinker/index.html",
+      "/projects/prettytc/index.html",
+      "/projects/tidydirectory/index.html",
+      "/projects/oecd-housing/index.html",
+      "/projects/phd-commits/index.html",
+      "/projects/twitter-stats/index.html",
+      "/projects/nba-positions/index.html",
+      "/projects/scRNA-tools/index.html",
+      "/projects/sfaira-portal/index.html",
+      "/projects/open-problems-single-cell/index.html",
+      "/projects/single-cell-best-practices/index.html",
+      "/projects/scanpy-in-R/index.html",
+      "/projects/r-pkg-dev/index.html"
+    ]
+  },
+  {
     "listing": "/posts/index.html",
     "items": [
       "/posts/2025-03-15-feature-selection-benchmark/index.html",
@@ -46,11 +69,12 @@
   {
     "listing": "/publications/index.html",
     "items": [
+      "/publications/2025-deconinck-anndataR/index.html",
+      "/publications/2025-luecken-OpenProblems/index.html",
       "/publications/2025-cannoodt-funkyheatmap/index.html",
       "/publications/2025-03-13-zappia-feature-selection/index.html",
       "/publications/2025-01-13-kachkin-brain-organoids/index.html",
       "/publications/2024-huemos-ehrapy/index.html",
-      "/publications/2024-luecken-OpenProblems/index.html",
       "/publications/2023-ji-distance-metrics/index.html",
       "/publications/2023-hrovatin-batch-effects/index.html",
       "/publications/2023-deDonno-scPoli/index.html",
@@ -75,28 +99,6 @@
       "/publications/2017-zappia-splatter/index.html",
       "/publications/2017-phipson-gene-length/index.html",
       "/publications/2016-grillet-colorectal-CTCs/index.html"
-    ]
-  },
-  {
-    "listing": "/projects/index.html",
-    "items": [
-      "/projects/Splatter/index.html",
-      "/projects/zellkonverter/index.html",
-      "/projects/clustree/index.html",
-      "/projects/clamour/index.html",
-      "/projects/doilinker/index.html",
-      "/projects/prettytc/index.html",
-      "/projects/tidydirectory/index.html",
-      "/projects/oecd-housing/index.html",
-      "/projects/phd-commits/index.html",
-      "/projects/twitter-stats/index.html",
-      "/projects/nba-positions/index.html",
-      "/projects/scRNA-tools/index.html",
-      "/projects/sfaira-portal/index.html",
-      "/projects/open-problems-single-cell/index.html",
-      "/projects/single-cell-best-practices/index.html",
-      "/projects/scanpy-in-R/index.html",
-      "/projects/r-pkg-dev/index.html"
     ]
   }
 ]

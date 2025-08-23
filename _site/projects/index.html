@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,17 +35,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3825abfc899f2f50e99227930ca303e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-83999eaec02f9411d69123612a24cdaa.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7feb629886059345120a9d46a2bde609.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-9333087fbdc13dafed9cdf8b91518a4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7feb629886059345120a9d46a2bde609.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,6 +93,34 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-packages'] = new List('listing-packages', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-scripts .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-scripts'] = new List('listing-scripts', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -264,7 +295,169 @@ window.Quarto = {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -343,7 +536,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(17)</span></div><div class="category" data-category="QmlvY29uZHVjdG9y">Bioconductor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SmF2YVNjcmlwdA==">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(9)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YmVuY2htYXJraW5n">benchmarking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmVzdCUyMHByYWN0aWNlcw==">best practices <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ym9vaw==">book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2x1c3RlcmluZw==">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YWJhc2U=">database <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGF0YXNldA==">dataset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aG91c2luZw==">housing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZXJvcGVyYWJpbGl0eQ==">interoperability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bXVsdGlvbWljcw==">multiomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3JnYW5pc2F0aW9u">organisation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGFja2FnZSUyMGRldmVsb3BtZW50">package development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="cm5hLXNlcQ==">rna-seq <span class="quarto-category-count">(5)</span></div><div class="category" data-category="c2NhbnB5">scanpy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2luZ2xlLWNlbGw=">single-cell <span class="quarto-category-count">(7)</span></div><div class="category" data-category="c29mdHdhcmU=">software <span class="quarto-category-count">(7)</span></div><div class="category" data-category="dHJhaW5pbmc=">training <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWw=">tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHdpdHRlcg==">twitter <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dmlzdWFsaXNhdGlvbg==">visualisation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="d2Vic2l0ZQ==">website <span class="quarto-category-count">(4)</span></div><div class="category" data-category="d29ya3Nob3A=">workshop <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(18)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YmVuY2htYXJraW5n">benchmarking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmVzdCUyMHByYWN0aWNlcw==">best practices <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QmlvY29uZHVjdG9y">Bioconductor <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Ym9vaw==">book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2x1c3RlcmluZw==">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YWJhc2U=">database <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGF0YXNldA==">dataset <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aG91c2luZw==">housing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZXJvcGVyYWJpbGl0eQ==">interoperability <span class="quarto-category-count">(3)</span></div><div class="category" data-category="SmF2YVNjcmlwdA==">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bXVsdGlvbWljcw==">multiomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3JnYW5pc2F0aW9u">organisation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGFja2FnZSUyMGRldmVsb3BtZW50">package development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(10)</span></div><div class="category" data-category="cm5hLXNlcQ==">rna-seq <span class="quarto-category-count">(6)</span></div><div class="category" data-category="c2NhbnB5">scanpy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2luZ2xlLWNlbGw=">single-cell <span class="quarto-category-count">(8)</span></div><div class="category" data-category="c29mdHdhcmU=">software <span class="quarto-category-count">(8)</span></div><div class="category" data-category="dHJhaW5pbmc=">training <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWw=">tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHdpdHRlcg==">twitter <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dmlzdWFsaXNhdGlvbg==">visualisation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="d2Vic2l0ZQ==">website <span class="quarto-category-count">(4)</span></div><div class="category" data-category="d29ya3Nob3A=">workshop <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -351,48 +544,74 @@ window.Quarto = {
 
 
 
-<section id="packages-and-scripts" class="level1">
-<h1>Packages and scripts</h1>
+
+<section id="packages" class="level1">
+<h1>Packages</h1>
 <div id="listing-packages" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ3NvZnR3YXJlJTJDUiUyQ0Jpb2NvbmR1Y3Rvcg==" data-listing-date-sort="1475749619000" data-listing-file-modified-sort="1681144381826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
+<div class="g-col-1" data-index="0" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDc2ltdWxhdGlvbiUyQ3NvZnR3YXJlJTJDUiUyQ0Jpb2NvbmR1Y3Rvcg==" data-listing-date-sort="1475749619000" data-listing-file-modified-sort="1755941770214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
 <a href="../projects/Splatter/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img loading="lazy" src="../projects/Splatter/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="Splatter logo">
 </p>
 <div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
+<h5 class="no-anchor card-title listing-title" data-anchor-id="packages">
 Splatter
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmlvY29uZHVjdG9y'); return false;">Bioconductor</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">
-simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmlvY29uZHVjdG9y'); return false;">
-Bioconductor
-</div>
-</div>
-<div class="card-text listing-description">
-Bioconductor R package for simulating scRNA-seq data
+<div class="card-text listing-description delink">
+<p>Bioconductor R package for simulating scRNA-seq data</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
+<div class="g-col-1" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDaW50ZXJvcGVyYWJpbGl0eSUyQ3NvZnR3YXJlJTJDUiUyQ0Jpb2NvbmR1Y3Rvcg==" data-listing-date-sort="1754465640000" data-listing-file-modified-sort="1755940856803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<a href="../projects/anndataR/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../projects/anndataR/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;" alt="anndataR logo">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+anndataR
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJvcGVyYWJpbGl0eQ=='); return false;">interoperability</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmlvY29uZHVjdG9y'); return false;">Bioconductor</div>
+
 </div>
-<div class="g-col-1" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDaW50ZXJvcGVyYWJpbGl0eSUyQ3NvZnR3YXJlJTJDUiUyQ0Jpb2NvbmR1Y3Rvcg==" data-listing-date-sort="1594559875000" data-listing-file-modified-sort="1681144381852" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
+<div class="card-text listing-description delink">
+<p>AnnData interoperability in R</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDaW50ZXJvcGVyYWJpbGl0eSUyQ3NvZnR3YXJlJTJDUiUyQ0Jpb2NvbmR1Y3Rvcg==" data-listing-date-sort="1594559875000" data-listing-file-modified-sort="1755941812111" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
 <a href="../projects/zellkonverter/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -403,33 +622,27 @@ Bioconductor R package for simulating scRNA-seq data
 zellkonverter
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJvcGVyYWJpbGl0eQ=='); return false;">interoperability</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmlvY29uZHVjdG9y'); return false;">Bioconductor</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJvcGVyYWJpbGl0eQ=='); return false;">
-interoperability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmlvY29uZHVjdG9y'); return false;">
-Bioconductor
-</div>
-</div>
-<div class="card-text listing-description">
-Bioconductor R package for converting between scRNA-seq objects
+<div class="card-text listing-description delink">
+<p>Bioconductor R package for converting between scRNA-seq objects</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Y2x1c3RlcmluZyUyQ3Zpc3VhbGlzYXRpb24lMkNzb2Z0d2FyZSUyQ1I=" data-listing-date-sort="1522146419000" data-listing-file-modified-sort="1681144381831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="55">
+<div class="g-col-1" data-index="3" data-categories="Y2x1c3RlcmluZyUyQ3Zpc3VhbGlzYXRpb24lMkNzb2Z0d2FyZSUyQ1I=" data-listing-date-sort="1522146419000" data-listing-file-modified-sort="1755941637299" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="55">
 <a href="../projects/clustree/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -440,27 +653,23 @@ Bioconductor R package for converting between scRNA-seq objects
 clustree
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">
-clustering
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y2x1c3RlcmluZw=='); return false;">clustering</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-CRAN R package for creating clustering trees, a visualisation for looking at clustering across resolutions
+<div class="card-text listing-description delink">
+<p>CRAN R package for creating clustering trees, a visualisation for looking at clustering across resolutions</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="dHdpdHRlciUyQ2FuYWx5c2lzJTJDc29mdHdhcmUlMkNS" data-listing-date-sort="1562605273000" data-listing-file-modified-sort="1681144381830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
+<div class="g-col-1" data-index="4" data-categories="dHdpdHRlciUyQ2FuYWx5c2lzJTJDc29mdHdhcmUlMkNS" data-listing-date-sort="1562605273000" data-listing-file-modified-sort="1755941627326" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
 <a href="../projects/clamour/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -471,27 +680,23 @@ CRAN R package for creating clustering trees, a visualisation for looking at clu
 clamour
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dHdpdHRlcg=='); return false;">
-twitter
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHdpdHRlcg=='); return false;">twitter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-An R package for setting up a website to display analysis of Twitter hashtags
+<div class="card-text listing-description delink">
+<p>An R package for setting up a website to display analysis of Twitter hashtags</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="c29mdHdhcmUlMkNS" data-listing-date-sort="1624572000000" data-listing-file-modified-sort="1681144381832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42">
+<div class="g-col-1" data-index="5" data-categories="c29mdHdhcmUlMkNS" data-listing-date-sort="1624572000000" data-listing-file-modified-sort="1755941644773" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42">
 <a href="../projects/doilinker/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../icon.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -500,21 +705,27 @@ An R package for setting up a website to display analysis of Twitter hashtags
 doilinker
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-An R package for linking DOIs between preprints and publications
-</div>
+<div class="card-text listing-description delink">
+<p>An R package for linking DOIs between preprints and publications</p>
 </div>
 </div>
-</a>
+</div></a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="c29mdHdhcmUlMkNweXRob24=" data-listing-date-sort="1459358527000" data-listing-file-modified-sort="1681144381840" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="scripts" class="level1">
+<h1>Scripts</h1>
+<div id="listing-scripts" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="c29mdHdhcmUlMkNweXRob24=" data-listing-date-sort="1459358527000" data-listing-file-modified-sort="1755941711251" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
 <a href="../projects/prettytc/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -525,21 +736,19 @@ An R package for linking DOIs between preprints and publications
 prettytc
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">
-python
-</div>
-</div>
-<div class="card-text listing-description">
-A Python script for pretty printing of TeXcount output
-</div>
+<div class="card-text listing-description delink">
+<p>A Python script for pretty printing of TeXcount output</p>
 </div>
 </div>
-</a>
+</div></a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="c29mdHdhcmUlMkNweXRob24lMkNvcmdhbmlzYXRpb24=" data-listing-date-sort="1719180000000" data-listing-file-modified-sort="1725033170954" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="78">
+<div class="g-col-1" data-index="1" data-categories="c29mdHdhcmUlMkNweXRob24lMkNvcmdhbmlzYXRpb24=" data-listing-date-sort="1719180000000" data-listing-file-modified-sort="1755941782390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="78">
 <a href="../projects/tidydirectory/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -550,33 +759,28 @@ A Python script for pretty printing of TeXcount output
 tidydirectory
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5pc2F0aW9u'); return false;">organisation</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('b3JnYW5pc2F0aW9u'); return false;">
-organisation
-</div>
-</div>
-<div class="card-text listing-description">
-A Python script for tidying directories
+<div class="card-text listing-description delink">
+<p>A Python script for tidying directories</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
 </div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 <section id="analysis-and-data" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-and-data">Analysis and data</h2>
 <div id="listing-analysis" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="YW5hbHlzaXMlMkNob3VzaW5nJTJDcHl0aG9u" data-listing-date-sort="1675810800000" data-listing-file-modified-sort="1681144381836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="136">
+<div class="g-col-1" data-index="0" data-categories="YW5hbHlzaXMlMkNob3VzaW5nJTJDcHl0aG9u" data-listing-date-sort="1675810800000" data-listing-file-modified-sort="1755941665928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="136">
 <a href="../projects/oecd-housing/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -587,24 +791,21 @@ No matching items
 OECD housing
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aG91c2luZw=='); return false;">housing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('aG91c2luZw=='); return false;">
-housing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">
-python
-</div>
-</div>
-<div class="card-text listing-description">
-Some basic analysis of housing data from the OECD performed in Python
+<div class="card-text listing-description delink">
+<p>Some basic analysis of housing data from the OECD performed in Python</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="dmlzdWFsaXNhdGlvbiUyQ1I=" data-listing-date-sort="1565282706000" data-listing-file-modified-sort="1681144381838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
+<div class="g-col-1" data-index="1" data-categories="dmlzdWFsaXNhdGlvbiUyQ1I=" data-listing-date-sort="1565282706000" data-listing-file-modified-sort="1755941699837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
 <a href="../projects/phd-commits/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -615,21 +816,19 @@ Some basic analysis of housing data from the OECD performed in Python
 PhD commits
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
-visualisation
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">visualisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-Functions for scraping git commits from repositories associated with a PhD (or anything else) and plotting them
-</div>
+<div class="card-text listing-description delink">
+<p>Functions for scraping git commits from repositories associated with a PhD (or anything else) and plotting them</p>
 </div>
 </div>
-</a>
+</div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="d2Vic2l0ZSUyQ3R3aXR0ZXIlMkNhbmFseXNpcyUyQ1I=" data-listing-date-sort="1538584445000" data-listing-file-modified-sort="1681144381851" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="34">
+<div class="g-col-1" data-index="2" data-categories="d2Vic2l0ZSUyQ3R3aXR0ZXIlMkNhbmFseXNpcyUyQ1I=" data-listing-date-sort="1538584445000" data-listing-file-modified-sort="1755941794574" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="34">
 <a href="../projects/twitter-stats/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -640,27 +839,23 @@ Functions for scraping git commits from repositories associated with a PhD (or a
 Twitter stats
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">
-website
+
+<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">website</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHdpdHRlcg=='); return false;">twitter</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('dHdpdHRlcg=='); return false;">
-twitter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-Analysis of Twitter activity for hashtags from various events, usually academic conferences
+<div class="card-text listing-description delink">
+<p>Analysis of Twitter activity for hashtags from various events, usually academic conferences</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="ZGF0YXNldA==" data-listing-date-sort="1591956000000" data-listing-file-modified-sort="1681144381834" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="49">
+<div class="g-col-1" data-index="3" data-categories="ZGF0YXNldA==" data-listing-date-sort="1591956000000" data-listing-file-modified-sort="1755941655621" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="49">
 <a href="../projects/nba-positions/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -671,28 +866,25 @@ Analysis of Twitter activity for hashtags from various events, usually academic 
 NBA positions
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXNldA=='); return false;">
-dataset
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YXNldA=='); return false;">dataset</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>A dataset of NBA positions designed to replace the iris dataset</p>
 </div>
 </div>
-<div class="card-text listing-description">
-A dataset of NBA positions designed to replace the iris dataset
+</div></a>
 </div>
 </div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="web" class="level2">
 <h2 class="anchored" data-anchor-id="web">Web</h2>
 <div id="listing-web" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDZGF0YWJhc2UlMkN3ZWJzaXRl" data-listing-date-sort="1496658419000" data-listing-file-modified-sort="1681144381843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="57">
+<div class="g-col-1" data-index="0" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDZGF0YWJhc2UlMkN3ZWJzaXRl" data-listing-date-sort="1496658419000" data-listing-file-modified-sort="1755877694755" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="57">
 <a href="../projects/scRNA-tools/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -703,27 +895,23 @@ No matching items
 scRNA-tools
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">database</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">website</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
-database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">
-website
-</div>
-</div>
-<div class="card-text listing-description">
-Database and website cataloguing software tools for analysing single-cell RNA sequencing data
+<div class="card-text listing-description delink">
+<p>Database and website cataloguing software tools for analysing single-cell RNA sequencing data</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDZGF0YWJhc2UlMkN3ZWJzaXRlJTJDSmF2YVNjcmlwdA==" data-listing-date-sort="1620597600000" data-listing-file-modified-sort="1681144381846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
+<div class="g-col-1" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDZGF0YWJhc2UlMkN3ZWJzaXRlJTJDSmF2YVNjcmlwdA==" data-listing-date-sort="1620597600000" data-listing-file-modified-sort="1755941739405" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
 <a href="../projects/sfaira-portal/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -734,40 +922,33 @@ Database and website cataloguing software tools for analysing single-cell RNA se
 sfaira portal
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">database</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">website</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SmF2YVNjcmlwdA=='); return false;">JavaScript</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2U='); return false;">
-database
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">
-website
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SmF2YVNjcmlwdA=='); return false;">
-JavaScript
-</div>
-</div>
-<div class="card-text listing-description">
-A website built using Vue for viewing the sfaira database
+<div class="card-text listing-description delink">
+<p>A website built using Vue for viewing the sfaira database</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
 </div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="community-and-training" class="level2">
 <h2 class="anchored" data-anchor-id="community-and-training">Community and training</h2>
 <div id="listing-community" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="YmVuY2htYXJraW5nJTJDc2luZ2xlLWNlbGwlMkN3ZWJzaXRl" data-listing-date-sort="1617746400000" data-listing-file-modified-sort="1681144381837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="153">
+<div class="g-col-1" data-index="0" data-categories="YmVuY2htYXJraW5nJTJDc2luZ2xlLWNlbGwlMkN3ZWJzaXRl" data-listing-date-sort="1617746400000" data-listing-file-modified-sort="1755941688637" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="153">
 <a href="../projects/open-problems-single-cell/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -778,24 +959,21 @@ No matching items
 Open Problems in Single-Cell Analysis
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('YmVuY2htYXJraW5n'); return false;">
-benchmarking
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmVuY2htYXJraW5n'); return false;">benchmarking</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">website</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('d2Vic2l0ZQ=='); return false;">
-website
-</div>
-</div>
-<div class="card-text listing-description">
-An effort to formalise and benchmark open problems in single-cell genomics analysis
+<div class="card-text listing-description delink">
+<p>An effort to formalise and benchmark open problems in single-cell genomics analysis</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNhbmFseXNpcyUyQ211bHRpb21pY3MlMkNiZXN0JTIwcHJhY3RpY2VzJTJDYm9vaw==" data-listing-date-sort="1669071600000" data-listing-file-modified-sort="1681144381848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="107">
+<div class="g-col-1" data-index="1" data-categories="c2luZ2xlLWNlbGwlMkNhbmFseXNpcyUyQ211bHRpb21pY3MlMkNiZXN0JTIwcHJhY3RpY2VzJTJDYm9vaw==" data-listing-date-sort="1669071600000" data-listing-file-modified-sort="1755941754205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="107">
 <a href="../projects/single-cell-best-practices/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -806,30 +984,25 @@ An effort to formalise and benchmark open problems in single-cell genomics analy
 Single-cell best practices
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bXVsdGlvbWljcw=='); return false;">multiomics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmVzdCUyMHByYWN0aWNlcw=='); return false;">best practices</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ym9vaw=='); return false;">book</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">
-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bXVsdGlvbWljcw=='); return false;">
-multiomics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YmVzdCUyMHByYWN0aWNlcw=='); return false;">
-best practices
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ym9vaw=='); return false;">
-book
-</div>
-</div>
-<div class="card-text listing-description">
-An online book covering the best practices for multiomic single-cell analysis with extensive tutorials and code examples
+<div class="card-text listing-description delink">
+<p>An online book covering the best practices for multiomic single-cell analysis with extensive tutorials and code examples</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDaW50ZXJvcGVyYWJpbGl0eSUyQ3B5dGhvbiUyQ3NjYW5weSUyQ1IlMkN0dXRvcmlhbA==" data-listing-date-sort="1587123080000" data-listing-file-modified-sort="1681144381845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
+<div class="g-col-1" data-index="2" data-categories="c2luZ2xlLWNlbGwlMkNybmEtc2VxJTJDaW50ZXJvcGVyYWJpbGl0eSUyQ3B5dGhvbiUyQ3NjYW5weSUyQ1IlMkN0dXRvcmlhbA==" data-listing-date-sort="1587123080000" data-listing-file-modified-sort="1755877694756" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
 <a href="../projects/scanpy-in-R/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -840,36 +1013,29 @@ An online book covering the best practices for multiomic single-cell analysis wi
 Scanpy in R
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">
-single-cell
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2luZ2xlLWNlbGw='); return false;">single-cell</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">rna-seq</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJvcGVyYWJpbGl0eQ=='); return false;">interoperability</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2NhbnB5'); return false;">scanpy</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWw='); return false;">tutorial</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cm5hLXNlcQ=='); return false;">
-rna-seq
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJvcGVyYWJpbGl0eQ=='); return false;">
-interoperability
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c2NhbnB5'); return false;">
-scanpy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWw='); return false;">
-tutorial
+<div class="card-text listing-description delink">
+<p>Tutorial describing how to interact with the Scanpy Python package from R</p>
 </div>
 </div>
-<div class="card-text listing-description">
-Tutorial describing how to interact with the Scanpy Python package from R
+</div></a>
 </div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="d29ya3Nob3AlMkNwYWNrYWdlJTIwZGV2ZWxvcG1lbnQlMkNSJTJDdHJhaW5pbmc=" data-listing-date-sort="1564853833000" data-listing-file-modified-sort="1681144381842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="67">
+<div class="g-col-1" data-index="3" data-categories="d29ya3Nob3AlMkNwYWNrYWdlJTIwZGV2ZWxvcG1lbnQlMkNSJTJDdHJhaW5pbmc=" data-listing-date-sort="1564853833000" data-listing-file-modified-sort="1755941722790" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="67">
 <a href="../projects/r-pkg-dev/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -880,30 +1046,24 @@ Tutorial describing how to interact with the Scanpy Python package from R
 R Package Development Workshop
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('d29ya3Nob3A='); return false;">
-workshop
+
+<div class="listing-category" onclick="window.quartoListingCategory('d29ya3Nob3A='); return false;">workshop</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cGFja2FnZSUyMGRldmVsb3BtZW50'); return false;">package development</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJhaW5pbmc='); return false;">training</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('cGFja2FnZSUyMGRldmVsb3BtZW50'); return false;">
-package development
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dHJhaW5pbmc='); return false;">
-training
-</div>
-</div>
-<div class="card-text listing-description">
-Materials for the COMBINE Australia R package development workshop
+<div class="card-text listing-description delink">
+<p>Materials for the COMBINE Australia R package development workshop</p>
 </div>
 </div>
+</div></a>
 </div>
-</a>
 </div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 
 
@@ -913,380 +1073,255 @@ No matching items
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lazappi\.id\.au");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/lazappi\.id\.au");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1294,185 +1329,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

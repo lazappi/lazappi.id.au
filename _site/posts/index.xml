@@ -9,12 +9,13 @@
 <link>https://lazappi.id.au/posts/</link>
 <atom:link href="https://lazappi.id.au/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Luke Zappia&#39;s personal website</description>
-<generator>quarto-1.6.42</generator>
+<generator>quarto-1.7.33</generator>
 <lastBuildDate>Fri, 14 Mar 2025 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Benchmarking feature selection for integration</title>
   <link>https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -194,6 +195,7 @@ integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feat
 
 
 
+
 <section id="summary" class="level1">
 <h1>Summary</h1>
 <p>This week was the first ever <a href="https://scverse.org/conference2024">scverse conference</a> held in Munich from 10-12 September. While it was based around the <a href="https://scverse.org/">scverse</a> software community the conference covered more than just those core packages for single-cell analysis and included talks on a range of biological topics as well as a diverse range of workshops. Putting together any conference is a lot of work, but particularly the first attempt for what is still a new community. I was very impressed with what the organisers were able to put together, how smoothly everything ran and the number of attendees from around the world. It is great to see these growing into a real community that is more than just the core maintainers from a few packages and I look forward to seeing what they do in the years ahead. As with any effort on the work of students, the difficulty is always maintaining momentum as those people move on and everything is based to a new generation but I am hopeful they are building something that will be sustainable with support from senior academics and industry.</p>
@@ -201,9 +203,6 @@ integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feat
 <section id="keynote-sketchotes" class="level1">
 <h1>Keynote sketchotes</h1>
 <p>Here are my sketchnotes summarising the keynote talks (click to expand):</p>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout-nrow="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -279,6 +278,7 @@ integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feat
 
 
 
+
 <p>You are probably here because you have seen or heard that the <a href="https://www.scrna-tools.org/">scRNA-tools database</a> will be entering low-maintenance mode. This post explains a bit more about what that means and some of the motivation behind the decision.</p>
 <section id="hang-on-whats-scrna-tools" class="level2">
 <h2 class="anchored" data-anchor-id="hang-on-whats-scrna-tools">Hang on, what’s scRNA-tools?</h2>
@@ -314,6 +314,7 @@ integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feat
   <title>Bioconductor 3.12 wrap-up</title>
   <link>https://lazappi.id.au/posts/2020-10-30-bioconductor-3-12-wrap-up/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -390,6 +391,7 @@ integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feat
   <title>triple j’s Requestival</title>
   <link>https://lazappi.id.au/posts/2020-07-11-requestival/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -474,6 +476,7 @@ integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feat
   <title>Back to the SCE-verse!</title>
   <link>https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1401,6 +1404,7 @@ font-style: inherit;">theme_graph</span>()</span></code></pre></div>
 
 
 
+
 <p>The Bioconductor 3.11 release was yesterday. Here is my wrap-up of new packages and updates. This is only the things I found interesting based on the release and they don’t come with any particular endorsement. If there is something else you are looking for have a look at the release notes <a href="https://bioconductor.org/news/bioc_3_11_release/" title="Bioc 3.11 news">here</a>.</p>
 <section id="new-packages" class="level1">
 <h1>New packages</h1>
@@ -1466,6 +1470,7 @@ font-style: inherit;">theme_graph</span>()</span></code></pre></div>
   <title>Caching blogdown posts</title>
   <link>https://lazappi.id.au/posts/2020-04-09-caching-blogdown/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1730,6 +1735,7 @@ font-style: inherit;">TRUE</span></span></code></pre></div>
   <title>Exploring the SCE-verse</title>
   <link>https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -2996,6 +3002,7 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 
 
 
+
 <p>The Bioconductor 3.7 release was announced this week. I thought I would have a look through the new packages and changes to existing packages and point out some of my highlights. The descriptions below are my summaries, if you want to see more detail you can read the full release notes <a href="https://bioconductor.org/news/bioc_3_7_release/" title="Bioc 3.7 news">here</a>.</p>
 <section id="single-cell-rna-seq" class="level1">
 <h1>Single-cell RNA-seq</h1>
@@ -3097,6 +3104,7 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
   <title>My AFL-Elo model</title>
   <link>https://lazappi.id.au/posts/2018-04-21-my-afl-elo-model/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -4060,6 +4068,7 @@ Carlton
 
 
 
+
 <section id="welcome-to-blogdown" class="level1">
 <h1>Welcome to Blogdown!</h1>
 <p>I’ve just finished migrating this blog from Ghost to Blogdown. Ghost was great in a lot a ways but Blogdown adds the ability to write in RMarkdown which I’m hoping will encourage me to post more often, particularly on things that include some code or analysis.</p>
@@ -4079,6 +4088,7 @@ Carlton
   <title>Joining the Dots Twitter analysis</title>
   <link>https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -4730,6 +4740,7 @@ Best URL of the day goes to <span class="citation" data-cites="Isa_Kiko">@Isa_Ki
   <title>Building a clustering tree</title>
   <link>https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6396,6 +6407,7 @@ font-style: italic;">##  zlibbioc         1.22.0   2017-04-25 Bioconductor</span
 
 
 
+
 <p>Over the weekend I attended <a href="https://2016.pycon-au.org/">PyCon Australia</a>. This was my first time at a purely tech conference and I couldn’t help but compare it to my previous experiences at scientific conferences.</p>
 <p><strong>DISCLAIMER:</strong> Like I said this was my first tech conference and my scientific conference experience is also fairly limited so some of the comments I make might be generalisations that don’t always apply.</p>
 <p>PyCon started with miniconfs on Friday and continued coding sprints on Monday and Tuesday. I didn’t attend any of these so my experience was only of the main conference on Saturday and Sunday. Here are some of the highlights for me in terms of presentations:</p>
@@ -6427,6 +6439,7 @@ font-style: italic;">##  zlibbioc         1.22.0   2017-04-25 Bioconductor</span
   <title>Gantt charts in R</title>
   <link>https://lazappi.id.au/posts/2016-06-13-gantt-charts-in-r/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6797,6 +6810,7 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
 
 
 
+
 <p>Bioconductor 3.3 has just been released. You can find the complete list of new packages (and changes to existing packages) <a href="https://bioconductor.org/news/bioc_3_3_release/">here</a> but here are a few I thought might be interesting based on the description. I might have more to say once I’ve had time to try a few out.</p>
 <ul>
 <li><strong>debrowser</strong> – Interactive plots and tables for differential expression</li>
@@ -6836,6 +6850,7 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
 
 
 
+
 <p>Recently <a href="http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0888-1">this paper</a> by Ilicic et al.&nbsp;suggested a method for assessing the quality of individual cells in a single-cell RNA-seq experiment. The basic idea is to extract various biological and technical features from each the reads for each cell, then use PCA with outlier detection or a SVM to classify cells as “high” or “low” quality. There are two pieces of software associated with the paper: <code>cellity</code>, an R package that performs the classification and <code>Celloline</code>, a Python script that performs alignment, summarisation and extraction of alignment statistics such as the number of reads aligned to exons, introns, intergenic regions etc. I was interested in using <code>cellity</code> but I didn’t want to change my whole workflow to use the <code>Celloline</code> pipeline, so instead I decided to take the part responsible for extracting alignment statistics (available <a href="https://github.com/Teichlab/celloline/blob/master/lib/stats.py">here</a>) and convert it to a stand-alone Python script.</p>
 <p>The core processing remains the same (except I have removed read counting which I do with <code>featureCounts</code>), but I have added a few features:</p>
 <ol type="1">
@@ -6863,6 +6878,7 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
   <title>My Markdown thesis</title>
   <link>https://lazappi.id.au/posts/2015-09-13-my-markdown-thesis/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -6897,6 +6913,7 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
   <title>Open science workshops</title>
   <link>https://lazappi.id.au/posts/2014-07-20-open-science-workshops/</link>
   <description><![CDATA[ 
+
 
 
 

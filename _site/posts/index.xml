@@ -9,7 +9,7 @@
 <link>https://lazappi.id.au/posts/</link>
 <atom:link href="https://lazappi.id.au/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Luke Zappia&#39;s personal website</description>
-<generator>quarto-1.7.33</generator>
+<generator>quarto-1.8.25</generator>
 <lastBuildDate>Fri, 14 Mar 2025 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Benchmarking feature selection for integration</title>
@@ -482,7 +482,7 @@ integration. (2025). at &lt;<a href="https://lazappi.id.au/posts/2025-03-15-feat
 
 
 <p>A few weeks ago I did a short <a href="../../post/2020-04-29-bioconductor-3-11-wrap-up" title="Bioconductor 3.11 wrap up">wrap up</a> of the latest <a href="https://bioconductor.org/news/bioc_3_11_release/" title="Bioc 3.11 news">Bioconductor 3.11 release</a>. The <a href="../../post/2018-05-04-bioconductor-3-7-wrap-up" title="Bioconductor 3.7 wrap up">last time I did that</a> (for the 3.7 release in 2018) I <a href="../../post/2018-05-20-exploring-the-sce-verse" title="Exploring the SCE-verse">followed it up with a post</a> looking at packages which depend on the <a href="https://bioconductor.org/packages/SingleCellExperiment/" title="SingleCellExperiment package"><strong>{SingleCellExperiment}</strong></a> package. A lot has changed in the scRNA-seq world over the last two years and we have grown from around 200 analysis tools to <a href="https://www.scrna-tools.org" title="scRNA-tools analysis page">almost 650</a>. Given that growth I thought it would be good to repeat that analysis and see what the SCE-verse looks like in 2020.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -501,11 +501,11 @@ font-style: inherit;">"ggraph"</span>)</span>
 background-color: null;
 font-style: inherit;">library</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"tidyverse"</span>)</span></code></pre></div>
+font-style: inherit;">"tidyverse"</span>)</span></code></pre></div></div>
 <section id="getting-package-network" class="level1">
 <h1>Getting package network</h1>
 <p><a href="https://bioconductor.org/packages/BiocPkgTools/" title="BiocPkgTools"><strong>{BiocPkgTools}</strong></a> is now a fully-fledged Bioconductor package and has some new functionst that make it easy to get information about the packages connected to <strong>{SingleCellExperiment}</strong>.</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Get Bioconductor package information</span></span>
 <span id="cb2-2">bioc_pkgs <span class="ot" style="color: #003B4F;
@@ -551,9 +551,9 @@ background-color: null;
 font-style: inherit;">%in%</span> bioc_revdeps<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">$</span>Package)</span>
-<span id="cb2-11">    )</span></code></pre></div>
+<span id="cb2-11">    )</span></code></pre></div></div>
 <p>The information from <strong>{BiocPkgTools}</strong> includes CRAN packages that are dependencies of Bioconductor packages but doesn’t include any CRAN packages that depend on <strong>{SingleCellExperiment}</strong>. To get those we will use a tidier version of the function in the previous blog post. This function just uses <strong>{purr}</strong> to loop over the different types of dependencies and calls the <code>tools::package_dependencies()</code> function.</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">get_cran_deps <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">get_cran_deps <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -676,9 +676,9 @@ background-color: null;
 font-style: inherit;">get_cran_deps</span>(cran_revdeps<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">$</span>Package, db)</span>
-<span id="cb3-31">    )</span></code></pre></div>
+<span id="cb3-31">    )</span></code></pre></div></div>
 <p>Now we can combine the networks from Bioconductor and CRAN and create a graph structure.</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">revdeps <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">revdeps <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> bioc_revdeps <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -768,7 +768,7 @@ font-style: inherit;">tbl_graph</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">nodes =</span> nodes, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">edges =</span> edges)</span></code></pre></div>
+font-style: inherit;">edges =</span> edges)</span></code></pre></div></div>
 <p>We now have a graph that contains <strong>{SingleCellExperiment}</strong> and the 77 packages that depend on it. We also have edges between the reverse dependencies but have removed edges to other packages.</p>
 </section>
 <section id="what-uses-singlecellexperiment" class="level1">
@@ -776,7 +776,7 @@ font-style: inherit;">edges =</span> edges)</span></code></pre></div>
 <section id="where-are-the-packages-from" class="level2">
 <h2 class="anchored" data-anchor-id="where-are-the-packages-from">Where are the packages from?</h2>
 <p>Before we look at the relationships between packages let’s look at the reverse dependencies themselves. We expect that most of the dependencies will be other Bioconductor packages but are there any in CRAN?</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggplot</span>(revdeps, <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -803,14 +803,14 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb5-4">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
+font-style: inherit;">theme_minimal</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/repos-1.png" class="img-fluid"></p>
 <p>There are only 2 packages from CRAN, which are the same two we saw last time. These are <a href="https://CRAN.R-project.org/package=Seurat" title="Seurat"><strong>{Seurat}</strong></a>, which contains the other major R object for scRNA-seq data and includes functions for converting from <strong>{SingleCellExperiment}</strong> objects, and <a href="https://CRAN.R-project.org/package=Seurat" title="clustree"><strong>{clustree}</strong></a>, my package for visualising clustering across resolutions which includes a <strong>{SingleCellExperiment}</strong> interface.</p>
 </section>
 <section id="what-dependency-do-they-have" class="level2">
 <h2 class="anchored" data-anchor-id="what-dependency-do-they-have">What dependency do they have?</h2>
 <p>What about the types of dependencies?</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">edges <span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">edges <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%&gt;%</span></span>
 <span id="cb6-2">    <span class="fu" style="color: #4758AB;
@@ -849,14 +849,14 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb6-6">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
+font-style: inherit;">theme_minimal</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/dep-types-1.png" class="img-fluid"></p>
 <p>Most of the packages either “import” or “depend” on <strong>{SingleCellExperiment}</strong>. This is unsurprising given that is a core data structure. I suspect most of the “suggests” packages work with several data structures but we would have to check this and see.</p>
 </section>
 <section id="what-do-they-do" class="level2">
 <h2 class="anchored" data-anchor-id="what-do-they-do">What do they do?</h2>
 <p>All packages in Bioconductor are annotated with “biocViews”. There are a set of labels designed to show what a package can be used for. They provide a convenient way to get a overview of what the packages in the SCE-verse do.</p>
-<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">bioc_views <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">bioc_views <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> bioc_pkgs <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -938,7 +938,7 @@ font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">axis.title.y =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">element_blank</span>())</span></code></pre></div>
+font-style: inherit;">element_blank</span>())</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/biocViews-1.png" class="img-fluid"></p>
 <p>Many of the most common biocViews are fairly general terms but there is a set that stands out as being specific to scRNA-seq data including “SingleCell”, “GeneExpression”, “RNASeq” and “Transcriptomics”. Further down the list we see terms related to specific analysis tasks (“Clustering”, “Visualization”, “DifferentialExpression”, “DimensionReduction”, “Normalization” etc.). Many of these are similar to the categories we came up with to group tools on <a href="https://www.scrna-tools.org" title="scRNA-tools analysis page">scRNA-tools</a>. It would be interesting to look at the differences in ranking but I suspect there are enough differences in how the terms are used that it would be difficult to compare them.</p>
 </section>
@@ -946,7 +946,7 @@ font-style: inherit;">element_blank</span>())</span></code></pre></div>
 <section id="relationships-between-packages" class="level1">
 <h1>Relationships between packages</h1>
 <p>Now that we have a bit of an overview of what packages there are let’s see how they relate to each other. First let’s plot all the packages in our graph. Remember that everything here depends on <strong>{SingleCellExperiment}</strong> and we have links between them but not dependencies to other packages.</p>
-<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggraph</span>(graph, <span class="at" style="color: #657422;
 background-color: null;
@@ -1030,10 +1030,10 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb8-9">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/graph-all-1.png" class="img-fluid"></p>
 <p>A lot of these packages have no other dependencies in this community except for <strong>{SingleCellExperiment}</strong>. While I’m sure that they are very useful they aren’t very interesting for this analysis so let’s remove them by excluding nodes with a single edge.</p>
-<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">graph_deg2 <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">graph_deg2 <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> graph <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1146,10 +1146,10 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb9-14">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/graph-deg2-1.png" class="img-fluid"></p>
 <p>That’s better but it’s still pretty crowded. Let’s see if we can pick out the most important nodes using a centrality measure.</p>
-<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">graph_central <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">graph_central <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> graph_deg2 <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1260,11 +1260,11 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb10-14">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/graph-central-1.png" class="img-fluid"></p>
 <p>No surprises there! This has picked out what are probably the most used and influential R packages for scRNA-seq analysis. The central Bioconductor packages of <strong>{SingleCellExperiement}</strong> (object), <strong>{scater}</strong> (quality control and visualisation) and <strong>{scran}</strong> (normalisation and downstream analysis). They are joined by <strong>{Seurat}</strong> which is perhaps the most complete R scRNA-seq analysis package but is hosted on CRAN and uses it’s own object. It’s centrality to this graph suggests that many Bioconductor packages provide some kind of support for <strong>{Seurat}</strong> objects.</p>
 <p>Let’s zoom out a little bit by relaxing the centrality threshold and see what else we find.</p>
-<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">graph_central <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">graph_central <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> graph_deg2 <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1375,7 +1375,7 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb11-14">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2020-05-12-back-to-the-sce-verse/graph-central2-1.png" class="img-fluid"></p>
 <p>This has added a few more central packages: <strong>{iSEE}</strong> which is a Shiny app for interacting with <strong>{SingleCellExperiment}</strong> objects, <strong>{MAST}</strong> for differential expression testing, <strong>{zinbwave}</strong> for dimensionality reduction and integration and <strong>{destiny}</strong> for creating diffusion maps.</p>
 </section>
@@ -1512,7 +1512,7 @@ font-style: inherit;">theme_graph</span>()</span></code></pre></div>
 <section id="only-render-some-.rmd-files" class="level2">
 <h2 class="anchored" data-anchor-id="only-render-some-.rmd-files">Only render some <code>.Rmd</code> files</h2>
 <p>When finding files to render the script also checks to see if there is a <code>.md.cached</code> file in the same directory and that it is newer than the <code>.Rmd</code> file.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">rmd_files <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">rmd_files <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> blogdown<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1568,9 +1568,9 @@ font-style: inherit;">file_test</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"-ot"</span>, md_files, rmd_files)  <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># it is older than the Rmd</span></span></code></pre></div>
+font-style: inherit;"># it is older than the Rmd</span></span></code></pre></div></div>
 <p>If the <code>.md.cached</code> file exists (and is newer) it is rendered instead of the <code>.Rmd</code> file.</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">message</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -1600,9 +1600,9 @@ font-style: inherit;">"..."</span>)</span>
 <span id="cb2-4">    <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">render_md</span>(md, base)</span>
-<span id="cb2-5">}</span></code></pre></div>
+<span id="cb2-5">}</span></code></pre></div></div>
 <p>Otherwise the <code>.Rmd</code> file is rendered when required.</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">message</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -1628,9 +1628,9 @@ font-style: inherit;">"..."</span>)</span>
 <span id="cb3-4">    <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">render_rmd</span>(rmd, base)</span>
-<span id="cb3-5">}</span></code></pre></div>
+<span id="cb3-5">}</span></code></pre></div></div>
 <p>One thing I found is important during the rendering process is that the YAML frontmatter is preprended to the output HTML file. I’m not entirely sure why but if you don’t do this the files aren’t included in the website properly by <strong>Hugo</strong>.</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">blogdown<span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">blogdown<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:::</span><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1689,12 +1689,12 @@ background-color: null;
 font-style: inherit;">"draft: yes"</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
-<span id="cb4-9">})</span></code></pre></div>
+<span id="cb4-9">})</span></code></pre></div></div>
 </section>
 <section id="keeping-intermediate-markdown-files" class="level2">
 <h2 class="anchored" data-anchor-id="keeping-intermediate-markdown-files">Keeping intermediate Markdown files</h2>
 <p>In theory it should be possible to keep the intermediate Markdown file simply by setting <code>keep_md: true</code> in the document YAML frontmatter (or a central <code>_output.yml</code> file). Unfortunately that argument currently isn’t passed on in a way that works (see issue <a href="https://github.com/rstudio/blogdown/issues/445" title="keep_md GitHub issue">here</a>). This means that we also need to create a <a href="https://github.com/lazappi/lazappi_blog/blob/0efce159942167b35649c4dfb0f7b832fab9a137/R/render_page.R" title="Custom render_page.R script">custom <code>render_page.R</code></a> script. This script makes sure that the <code>keep_md</code> option is set when rendering <code>.Rmd</code> files.</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">output_format <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">output_format <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> rmarkdown<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1707,7 +1707,7 @@ font-style: inherit;">$</span>keep_md <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">TRUE</span></span></code></pre></div>
+font-style: inherit;">TRUE</span></span></code></pre></div></div>
 <p>The other thing we do is rename the kept intermediate Markdown files. If we Left them with the <code>.md</code> extension they would be rendered by <strong>Hugo</strong> after running the build script. I chose to name them <code>.md.cached</code> but they could have any extension.</p>
 </section>
 </section>
@@ -1765,7 +1765,7 @@ font-style: inherit;">TRUE</span></span></code></pre></div>
 <section id="getting-package-information" class="level1">
 <h1>Getting package information</h1>
 <p>First let’s load the packages we need for this analysis. <a href="https://github.com/seandavi/BiocPkgTools">BiocPkgTools</a> will need to be installed from GitHub but the rest are on CRAN.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -1786,9 +1786,9 @@ font-style: inherit;">"ggraph"</span>)</span>
 background-color: null;
 font-style: inherit;">library</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"tidyverse"</span>)</span></code></pre></div>
+font-style: inherit;">"tidyverse"</span>)</span></code></pre></div></div>
 <p>We can use Sean Davis’ BiocPkgTools package to get information about Bioconductor packages, but then we need to do some filtering to get the information we want. It turns out I needed to do this multiple times so here is a function I wrote to make it a bit easier. It takes the database of information about all Bioconductor packages, the name of a package we are interested in and a flag indicating if we want normal or reverse dependencies.</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">get_bioc_deps <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">get_bioc_deps <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -1929,9 +1929,9 @@ background-color: null;
 font-style: inherit;">select</span>(package1, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">uses =</span> type, package2)</span>
-<span id="cb2-31">}</span></code></pre></div>
+<span id="cb2-31">}</span></code></pre></div></div>
 <p>If we use it to search for reverse dependencies of SingleCellExperiment we can see it returns a data frame with which Bioconductor packages use SingleCellExperiment and the relationship between them.</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">bpi <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">bpi <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1949,9 +1949,9 @@ background-color: null;
 font-style: inherit;">TRUE</span>)</span>
 <span id="cb3-3"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">head</span>(bioc_revdeps)</span></code></pre></div>
+font-style: inherit;">head</span>(bioc_revdeps)</span></code></pre></div></div>
 <p>We can do a similar thing for CRAN packages with use of the <code>tools::package_dependencies</code> function.</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">get_cran_deps <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">get_cran_deps <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -2150,12 +2150,12 @@ background-color: null;
 font-style: inherit;">TRUE</span>)</span>
 <span id="cb4-37"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">head</span>(cran_revdeps)</span></code></pre></div>
+font-style: inherit;">head</span>(cran_revdeps)</span></code></pre></div></div>
 </section>
 <section id="what-uses-singlecellexperiment" class="level1">
 <h1>What uses SingleCellExperiment?</h1>
 <p>We now have two tables showing us which Bioconductor and CRAN packages make use of SingleCellExperiment. Tables can be fairly boring to look at though so let’s use the relationships to construct a graph using <a href="https://cran.r-project.org/package=tidygraph" title="tidygraph">tidygraph</a>.</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">nodes <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">nodes <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> bioc_revdeps <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -2233,9 +2233,9 @@ font-style: inherit;">tbl_graph</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">nodes =</span> nodes, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">edges =</span> edges)</span></code></pre></div>
+font-style: inherit;">edges =</span> edges)</span></code></pre></div></div>
 <p>We can now visualise the relationships using <a href="https://cran.r-project.org/package=ggraph" title="ggraph">ggraph</a>:</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">ggraph</span>(graph, <span class="at" style="color: #657422;
 background-color: null;
@@ -2319,7 +2319,7 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb6-9">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/plot-graph-1.png" class="img-fluid"></p>
 <p>This doesn’t tell us a lot we didn’t already know but it does allow us to see everything in one place. We can see that there are only a couple of CRAN packages, which is unsurprising given that SingleCellExperiment is part of Bioconductor, and that most packages either “import” or “depend” on SingleCellExperiment.</p>
 <p>What about the relationships between the packages that depend on SingleCellExperiment? Are there communitites of related scRNA-seq analysis tools?</p>
@@ -2327,7 +2327,7 @@ font-style: inherit;">theme_graph</span>()</span></code></pre></div>
 <section id="adding-an-extra-hop" class="level1">
 <h1>Adding an extra hop</h1>
 <p>We can reuse the functions we wrote earlier to get the dependencies (and reverse dependencies) of our list of scRNA-seq packages. We will also do a little bit of extra processing to tidy up some of the results.</p>
-<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">more_deps <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">more_deps <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2443,9 +2443,9 @@ font-style: inherit;">TRUE</span>)</span>
 background-color: null;
 font-style: inherit;">%&gt;%</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">bind_rows</span>()</span></code></pre></div>
+font-style: inherit;">bind_rows</span>()</span></code></pre></div></div>
 <p>Let’s build another graph and plot what we get. As you can see it’s a bit crowded so I have left off the package labels.</p>
-<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">nodes <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">nodes <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> more_deps <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -2601,10 +2601,10 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb8-21">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/plot-more-1.png" class="img-fluid"></p>
 <p>Our graph has a lot more information now, but is probably too complext to tell us anything useful. In particularly we can see there are a lot of nodes around the edges that have one package depending on them. Let’s get rid of those by removing sink node.</p>
-<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">graph <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">graph <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2716,10 +2716,10 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb9-13">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/remove-sinks-1.png" class="img-fluid"></p>
 <p>That’s much better! We can now see some of the structure between our packages. There are quite few packages that rely on SingleCellExperiment but nothing else. Removing source nodes as well will tidy this up a bit more.</p>
-<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">graph <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">graph <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2836,14 +2836,14 @@ background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb10-14">    <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">theme_graph</span>()</span></code></pre></div>
+font-style: inherit;">theme_graph</span>()</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/remove-sources-1.png" class="img-fluid"></p>
 <p>Now we can see the core SingleCellExperiment package network. Apart from SingleCellExperiment itself there are three main packages: scater, scran and splatter. Scater and scran are two low-level scRNA-seq analysis package with scater providing functions for tasks such as visualisation and filtering and scran focusing more on normalisation and removal of batch effects. It is unsurprising that these packages show up as Aaron Lun is heavily involved in the development of both of them as well as SingleCellExperiment. Splatter is a bit of a different case as it suggests many packages that provide the core functions for it’s simulations but isn’t used by any other analysis packages. There are a few other influential packages on the periphery of this network, particularly monocle and Seurat.</p>
 </section>
 <section id="what-do-these-packages-do" class="level1">
 <h1>What do these packages do?</h1>
 <p>We have had a look at how packages that use SingleCellExperiment are related but what do they actually do? Bioconductor categorises packages using “biocViews”, tags that describe software in various ways. Let’s summarise those for the packages that use SingleCellExperiment.</p>
-<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">plot_data <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">plot_data <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> bpi <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -2973,7 +2973,7 @@ font-style: inherit;">element_blank</span>(),</span>
 background-color: null;
 font-style: inherit;">panel.grid =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">element_blank</span>())</span></code></pre></div>
+font-style: inherit;">element_blank</span>())</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2018-05-20-exploring-the-sce-verse/biocViews-1.png" class="img-fluid"></p>
 <p>Unsurprisingly the top few categories (“SingleCell”, “GeneExpression”, “RNASeq”, “Transcriptomics”, “Sequencing”) are related to scRNA-seq data in general, along with the “Software” tag. I actually find it a bit surprising that these aren’t more common with only <!-- `r round(plot_data[plot_data$biocViews == "SingleCell", "prop"] * 100)` --> 66 percent of packages labelled as “SingleCell”. After these we have some of the most common scRNA-seq analysis tasks, “Clustering”, “Visualization”, “DifferentialExpression” and “DimensionReduction”. This is similar to what we see in the scRNA-tools database, but obviously from a much smaller sample.</p>
 <p>We can’t do the same thing for the CRAN packages, but as there are only a couple of these we can just describe them. Seurat is perhaps the most complete R scRNA-seq analysis covering most steps in a standard workflow. It’s connection to SingleCellExperiment is through functions that have recently been added to convert to/from it’s own object. Clustree is a package for visualising clustering results in general and suggests SingleCellExperiment to provide a convenience function for people working with scRNA-seq data.</p>
@@ -4097,7 +4097,7 @@ Carlton
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>An analysis of tweets from the Joining the Dots symposium. 1237 tweets were collected using the <code>rtweet</code> R package:</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">jtdwehi <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">jtdwehi <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -4110,7 +4110,7 @@ font-style: inherit;">10000</span>)</span>
 background-color: null;
 font-style: inherit;">saveRDS</span>(jtdwehi, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"data/jtdwehi.Rds"</span>)</span></code></pre></div>
+font-style: inherit;">"data/jtdwehi.Rds"</span>)</span></code></pre></div></div>
 <section id="search-all-the-hashtags" class="level2">
 <h2 class="anchored" data-anchor-id="search-all-the-hashtags">Search all the hashtags!</h2>
 <p><img src="https://lazappi.id.au/posts/2017-08-18-joining-the-dots-twitter-analysis/hashtags-1.png" class="img-fluid"></p>
@@ -4750,7 +4750,7 @@ Best URL of the day goes to <span class="citation" data-cites="Isa_Kiko">@Isa_Ki
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>First we need to load the libraries we are going to use:</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Simulation</span></span>
 <span id="cb1-2"><span class="fu" style="color: #4758AB;
@@ -4788,9 +4788,9 @@ background-color: null;
 font-style: inherit;"># Data manipulation</span></span>
 <span id="cb1-15"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">library</span>(tidyverse)</span></code></pre></div>
+font-style: inherit;">library</span>(tidyverse)</span></code></pre></div></div>
 <p>For this example I am going to simulate some scRNA-seq data with eight different groups with different numbers of cells using <a href="https://bioconductor.org/packages/splatter"><code>Splatter</code></a>.</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">sim <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">sim <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -4823,19 +4823,19 @@ font-style: inherit;">10</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">verbose =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">FALSE</span>)</span></code></pre></div>
+font-style: inherit;">FALSE</span>)</span></code></pre></div></div>
 <p>Let’s take a quick look at this to see if it is anything like we would expect:</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">plotTSNE</span>(sim, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">colour_by =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Group"</span>)</span></code></pre></div>
+font-style: inherit;">"Group"</span>)</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/sim-tSNE-1.png" class="img-fluid"></p>
 <p>Here we can see the different groups, so there should be something for our clustering analysis to find.</p>
 <p>The clustering pacakge we are going to use is <a href="http://satijalab.org/seurat/"><code>Seurat</code></a> which uses it’s own object to store the data. Here is a small function I have written to convert from the <code>SCESet</code> object produced by <code>Splatter</code> to the <code>Seurat</code> object required by <code>Seurat</code>.</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">SCESetToSeurat <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">SCESetToSeurat <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -4912,18 +4912,18 @@ font-style: inherit;">sampleNames</span>(sce))</span>
 <span id="cb4-18">    <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">return</span>(seurat)</span>
-<span id="cb4-19">}</span></code></pre></div>
+<span id="cb4-19">}</span></code></pre></div></div>
 <p>Now to convert the dataset.</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">seurat <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">seurat <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">SCESetToSeurat</span>(sim)</span></code></pre></div>
+font-style: inherit;">SCESetToSeurat</span>(sim)</span></code></pre></div></div>
 </section>
 <section id="clustering" class="level2">
 <h2 class="anchored" data-anchor-id="clustering">Clustering</h2>
 <p>We now have a dataset in the format required by <code>Seurat</code>. Before we do any clustering we need to run through some setup steps. I’m not going to explain what they are doing here, if you want to now the details refer to the <code>Seurat</code> <a href="http://satijalab.org/seurat/pbmc-tutorial.html">tutorials</a>.</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">seurat <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">seurat <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -4976,9 +4976,9 @@ font-style: inherit;">@</span>var.genes, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">do.print =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">FALSE</span>)</span></code></pre></div>
+font-style: inherit;">FALSE</span>)</span></code></pre></div></div>
 <p>Now we can do the clustering. The parameter we are interested in is the <code>resolution</code> parameter which controls how many clusters <code>Seurat</code> returns. I start by setting <code>resolution = 0</code>. This will create a cluster containing all cells that will serve as the root of our tree. We also ask <code>Seurat</code> to store some of the intermediate calculations so we don’t have to do them again when we cluster with different resolutions:</p>
-<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">seurat <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">seurat <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -5007,9 +5007,9 @@ font-style: inherit;">FALSE</span>, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">save.SNN =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
-font-style: inherit;">TRUE</span>)</span></code></pre></div>
+font-style: inherit;">TRUE</span>)</span></code></pre></div></div>
 <p>We can now loop over a range of resolutions that we are interested in. I have only tried a few values here but if this was a real dataset you might want to try some more.</p>
-<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="cf" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">for</span> (res <span class="cf" style="color: #003B4F;
@@ -5042,12 +5042,12 @@ background-color: null;
 font-style: inherit;">print.output =</span> <span class="cn" style="color: #8f5902;
 background-color: null;
 font-style: inherit;">FALSE</span>)</span>
-<span id="cb8-4">}</span></code></pre></div>
+<span id="cb8-4">}</span></code></pre></div></div>
 </section>
 <section id="get-results" class="level2">
 <h2 class="anchored" data-anchor-id="get-results">Get results</h2>
 <p><code>Seurat</code> stores the cluster labels in the <code>data.info</code> slot in columns starting with <code>res.</code>. This is the only part we are interested in so let’s extract just those columns.</p>
-<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">clusterings <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">clusterings <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> seurat<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -5085,9 +5085,9 @@ background-color: null;
 font-style: italic;">## Cell5     0       1       0       0       0</span></span>
 <span id="cb9-11"><span class="do" style="color: #5E5E5E;
 background-color: null;
-font-style: italic;">## Cell6     0       1       0       0       0</span></span></code></pre></div>
+font-style: italic;">## Cell6     0       1       0       0       0</span></span></code></pre></div></div>
 <p>We now know which cluster each cell was assigned to at each resolution but to build the tree we need some more information. This next function looks at two neighbouring resolutions and works out how many cells moved from a cluster in the lower resolution to each cluster in the higher resolution. These transitions are going to form the edges of our tree.</p>
-<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">getEdges <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">getEdges <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -5396,10 +5396,10 @@ background-color: null;
 font-style: italic;">## 5         0       4     0.0   0.3         30     0.0800000           1</span></span>
 <span id="cb10-73"><span class="do" style="color: #5E5E5E;
 background-color: null;
-font-style: italic;">## 6         0       0     0.3   0.6          0     0.0000000           0</span></span></code></pre></div>
+font-style: italic;">## 6         0       0     0.3   0.6          0     0.0000000           0</span></span></code></pre></div></div>
 <p>Some of these columns are pretty obvious but the last three could do with an explanation. <code>TransCount</code> is the number of cells that move along this edge. <code>TransPropFrom</code> is the proportion of the cells in the lower resolution cluster that have made this transition and <code>TransPropTo</code> is the proportion of cells in the higher resolution cluster that came from this edge.</p>
 <p>Getting the information about the nodes of the tree is easier as these just represent the clusters. This function summarises the cluster information and converts it to long format.</p>
-<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">getNodes <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">getNodes <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -5521,10 +5521,10 @@ background-color: null;
 font-style: italic;">## 5 R0.3C3   0.3       3    50</span></span>
 <span id="cb11-24"><span class="do" style="color: #5E5E5E;
 background-color: null;
-font-style: italic;">## 6 R0.3C4   0.3       4    30</span></span></code></pre></div>
+font-style: italic;">## 6 R0.3C4   0.3       4    30</span></span></code></pre></div></div>
 <p>Each node needs a unique ID which I have made by combining the resolution and cluster number. We also record the number of cells in each cluster.</p>
 <p>Now we can build the graph we will use as the starting point for our plot. Some of the possible edges between clusters will have no cells travelling along them so we filter them out. We also remove edges that correspond to a small proportion (&lt; 2%) of cells in the higher resolution cluster.</p>
-<div class="sourceCode" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">graph <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">graph <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> edges <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -5637,12 +5637,12 @@ background-color: null;
 font-style: italic;">## [17] R0.6C1-&gt;R0.9C5 R0.9C0-&gt;R1.2C0 R0.9C1-&gt;R1.2C1 R0.9C2-&gt;R1.2C2</span></span>
 <span id="cb12-26"><span class="do" style="color: #5E5E5E;
 background-color: null;
-font-style: italic;">## [21] R0.9C3-&gt;R1.2C3 R0.9C4-&gt;R1.2C4 R0.9C5-&gt;R1.2C5</span></span></code></pre></div>
+font-style: italic;">## [21] R0.9C3-&gt;R1.2C3 R0.9C4-&gt;R1.2C4 R0.9C5-&gt;R1.2C5</span></span></code></pre></div></div>
 </section>
 <section id="plot-the-tree" class="level2">
 <h2 class="anchored" data-anchor-id="plot-the-tree">Plot the tree</h2>
 <p>The last step is to pass our graph to the <a href="https://github.com/thomasp85/ggraph"><code>ggraph</code></a> library for plotting.</p>
-<div class="sourceCode" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Plot our graph using the `tree` layout</span></span>
 <span id="cb13-2"><span class="fu" style="color: #4758AB;
@@ -5836,14 +5836,14 @@ font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"bottom"</span>)</span></code></pre></div>
+font-style: inherit;">"bottom"</span>)</span></code></pre></div></div>
 <p><img src="https://lazappi.id.au/posts/2017-07-19-building-a-clustering-tree/plot-tree-1.png" class="img-fluid"></p>
 <p>And here is the result! We can see that see that <code>Seurat</code> finds three of the clusters easily and that these don’t change as the resolution increases. A fourth group contains most of the cells and is sub-divided as we increase resolution. Interestingly at the lowest resolution there is a small cluster which is then absorbed into one of the other branches.</p>
 <p>This tree is cleaner and has less branches than what we would be likely to see with a real dataset but the process to create it would be the same. I have used <code>Seurat</code> as the clustering method in this example but it should be easy to adapt the process to any other method that allows you to adjust the number of clusters. I have found this visualisation useful in my analysis particularly for looking at which clusters are very distinct and the relationships between different clusters and clusterings.</p>
 <p>Good luck creating your own clustering trees!</p>
 <section id="session-information" class="level3">
 <h3 class="anchored" data-anchor-id="session-information">Session information</h3>
-<div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">devtools<span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">devtools<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -6385,7 +6385,7 @@ background-color: null;
 font-style: italic;">##  yaml             2.1.14   2016-11-12 CRAN (R 3.4.0)</span></span>
 <span id="cb14-183"><span class="do" style="color: #5E5E5E;
 background-color: null;
-font-style: italic;">##  zlibbioc         1.22.0   2017-04-25 Bioconductor</span></span></code></pre></div>
+font-style: italic;">##  zlibbioc         1.22.0   2017-04-25 Bioconductor</span></span></code></pre></div></div>
 
 
 </section>
@@ -6460,7 +6460,7 @@ Task 4            :         des4, after des3, 5d</code></pre>
 <pre><code>Task name         :status, label, start_date, end_date</code></pre>
 <p>Where the start and end dates can also include durations or references to other tasks.</p>
 <p>While this format is easy to use I prefer to use a standard delimited format which is easier to edit and read into R. To this end I created some functions which will take a CSV or XLSX file and produce a Gantt chart.</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(<span class="st" style="color: #20794D;
 background-color: null;
@@ -6789,7 +6789,7 @@ background-color: null;
 font-style: inherit;">return</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">buildGantt</span>(tasks))</span>
-<span id="cb3-73">}</span></code></pre></div>
+<span id="cb3-73">}</span></code></pre></div></div>
 <p>I can now construct my tasks by editing a CSV file and produce a Gantt chart directly from that by calling a single function. You may wonder why I have included XLSX as an input option? Surely using Excel is against the principles of data science? Firstly I’m not that opposed to Excel (when it is used correctly) but the reason in this case it is to get around one of the limitations of DiagrammeR. The Mermaid syntax allows you to define a task as starting after another task but you can’t say that a task ends before another. There are often situations where you have a hard end deadline (such as a PhD committee meeting) and you need to work backwards from that. By using Excel I can use simple formulas to calculate the dates which are then passed to R. I could do this programmatically in R (and I might at some stage) but Excel was a quicker solution that let me get on to writing.</p>
 
 

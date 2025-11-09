@@ -32,7 +32,7 @@
     "href": "projects/anndataR/index.html",
     "title": "anndataR",
     "section": "",
-    "text": "{anndataR} is an R implementation of the AnnData data structure, used in the Python scverse ecosystem. It provides an R AnnData object with native reading and writing of H5AD files. Users can interact with the AnnData object directly, or use flexible functions to convert to and from SingleCellExperiment or Seurat objects."
+    "text": "{anndataR} is a Bioconductor R implementation of the AnnData data structure, used in the Python scverse ecosystem. It provides an R AnnData object with native reading and writing of H5AD files. Users can interact with the AnnData object directly, or use flexible functions to convert to and from SingleCellExperiment or Seurat objects."
   },
   {
     "objectID": "projects/clustree/index.html",

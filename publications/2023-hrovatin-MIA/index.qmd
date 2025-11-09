@@ -20,7 +20,7 @@ abstract: |
   The β-cell landscape of MIA reveals new cell states during disease progression and cross-publication differences between previously suggested marker genes.
   We show that β-cells in the streptozotocin model transcriptionally correlate with those in human type 2 diabetes and mouse db/db models, but are less similar to human type 1 diabetes and mouse NOD β-cells.
   We also report pathways that are shared between β-cells in immature, aged and diabetes models. MIA enables a comprehensive analysis of β-cell responses to different stressors, providing a roadmap for the understanding of β-cell plasticity, compensation and demise.
-categories: ["single-cell", "rna-seq", "mouse", "pancreas", "atlas"]
+categories: ["single-cell", "rna-seq", "mouse", "pancreas", "atlas", "analysis"]
 date: 2023-09-11
 links:
   code: https://github.com/theislab/mouse_cross-condition_pancreatic_islet_atlas

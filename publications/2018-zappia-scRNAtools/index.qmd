@@ -13,7 +13,7 @@ abstract: |
   We see that many tools perform tasks specific to scRNA-seq analysis, particularly clustering and ordering of cells.
   We also find that the scRNA-seq community embraces an open-source and open-science approach, with most tools available under open-source licenses and preprints being extensively used as a means to describe methods.
   The scRNA-tools database provides a valuable resource for researchers embarking on scRNA-seq analysis and records the growth of the field over time.
-categories: ["single-cell", "rna-seq", "database"]
+categories: ["single-cell", "rna-seq", "database", "website"]
 date: 2018-06-01
 links:
   code: https://github.com/Oshlack/scRNAtools-paper

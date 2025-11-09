@@ -14,7 +14,7 @@ abstract: |
   We have developed an efficient open-source software tool called HiTIME (High-Resolution Twin-Ion Metabolite Extraction) which filters twin-ion signals in LC-MS data.
   The intensity of each data point in the input is replaced by a Z-score describing how well the point matches an idealised twin-ion signal versus alternative ion signatures.
   Here we provide a detailed description of the algorithm and demonstrate its performance on simulated and experimental data.
-categories: ["mass spectrometry", "software"]
+categories: ["mass spectrometry", "software", "methods"]
 date: 2020-07-07
 links:
   code: https://github.com/bjpop/HiTIME-CPP

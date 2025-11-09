@@ -9,7 +9,7 @@ abstract: |
   Since 2016, the scRNA-tools database has cataloged software tools for analyzing scRNA-seq data. With the number of tools in the database passing 1000, we provide an update on the state of the project and the field.
   This data shows the evolution of the field and a change of focus from ordering cells on continuous trajectories to integrating multiple samples and making use of reference datasets.
   We also find that open science practices reward developers with increased recognition and help accelerate the field.
-categories: ["single-cell", "rna-seq", "database"]
+categories: ["single-cell", "rna-seq", "database", "review"]
 date: 2021-10-29
 links:
   code: https://github.com/scRNA-tools/1000-tools-paper

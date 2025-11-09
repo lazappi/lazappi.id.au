@@ -45,7 +45,7 @@ abstract: |
 
   Taken together, our results directly demonstrate the existence of patient-derived colorectal CTCs that bear all the functional attributes of CSCs.
   The CTC culture model described here is simple and takes <1 month from blood collection to drug testing, therefore, routine clinical application could facilitate access to personalised medicine.
-categories: ["drug toxicity", "cancer", "colorectal", "stem cell", "rna-seq"]
+categories: ["drug toxicity", "cancer", "colorectal", "stem cell", "rna-seq", "analysis"]
 date: 2016-07-01
 links:
   doi: 10.1136/gutjnl-2016-311447

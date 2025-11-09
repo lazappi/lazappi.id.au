@@ -12,7 +12,7 @@ abstract: |
   I also present two of my own tools and techniques including Splatter, a software package for easily simulating single-cell datasets from multiple models, and clustering trees, a visualisation approach for inspecting clustering at multiple resolutions.
   In the final part of my thesis I perform analysis of a dataset from kidney organoids to demonstrate and compare some current analysis methods.
   Taken together, my thesis covers many aspects of the tools and techniques for single-cell RNA sequencing by describing the approaches that are available, presenting software that can help in developing and evaluating methods, introducing an approach for aiding one of the most common analysis tasks, and showing how tools can be used to extract meaning from a real dataset.
-categories: ["single-cell", "rna-seq", "methods", "thesis", "PhD"]
+categories: ["single-cell", "rna-seq", "methods", "thesis", "PhD", "analysis"]
 date: 2019-08-12
 links:
   code: https://github.com/lazappi/phd-thesis

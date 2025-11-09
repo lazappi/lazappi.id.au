@@ -31,7 +31,7 @@ abstract: |
   Transcriptomic analysis of our organoid identified the abundance of unintended mesodermal differentiation as a major confounder of unguided brain organoid differentiation, correlating with Feret diameter.
   High-quality organoids consistently displayed a lower presence of mesenchymal cells.
   These findings provide a framework for enhancing brain organoid standardization and reproducibility, underscoring the need for morphological quality controls and considering the influence of mesenchymal cells on organoid-based modeling.
-categories: ["organoids", "brain", "rna-seq"]
+categories: ["organoids", "brain", "rna-seq", "analysis"]
 date: 2025-10-01
 links:
   doi: 10.1038/s42003-025-08855-6

@@ -98,7 +98,7 @@ abstract: |
   Leveraging the number and diversity of individuals in the HLCA, we identify gene modules that are associated with demographic covariates such as age, sex and body mass index, as well as gene modules changing expression along the proximal-to-distal axis of the bronchial tree.
   Mapping new data to the HLCA enables rapid data annotation and interpretation. Using the HLCA as a reference for the study of disease, we identify shared cell states across multiple lung diseases, including SPP1+ profibrotic monocyte-derived macrophages in COVID-19, pulmonary fibrosis and lung carcinoma.
   Overall, the HLCA serves as an example for the development and use of large-scale, cross-dataset organ atlases within the Human Cell Atlas.
-categories: ["single-cell", "rna-seq", "lung", "atlas"]
+categories: ["single-cell", "rna-seq", "lung", "atlas", "analysis"]
 date: 2023-08-06
 links:
   code: https://github.com/LungCellAtlas/HLCA_reproducibility

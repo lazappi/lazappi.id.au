@@ -29,7 +29,7 @@ abstract: |
 
   We find that the choice of scRNA-seq protocol influences the detection rate of genes, and that full-length datasets exhibit gene-length bias.
   In addition, despite clear differences between UMI and full-length transcript data, we illustrate that full-length and UMI data can be combined to reveal the underlying biology influencing expression of mESCs.
-categories: ["single-cell", "rna-seq", "gene length"]
+categories: ["single-cell", "rna-seq", "gene length", "analysis"]
 date: 2017-04-01
 links:
   code: https://github.com/Oshlack/GeneLengthBias-scRNASeq

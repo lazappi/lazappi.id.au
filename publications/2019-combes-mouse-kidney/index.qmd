@@ -19,7 +19,7 @@ abstract: |
   Ligand-receptor interaction and pathway analysis reveals novel crosstalk between cellular compartments and associates new pathways with differentiation of nephron and ureteric epithelium cell types.
   We identify transcriptional congruence between the distal nephron and ureteric epithelium, showing that most markers previously used to identify ureteric epithelium are not specific.
   Together, this work improves our understanding of metanephric kidney development and provides a template to guide the regeneration of renal tissue.
-categories: ["organogenesis", "single-cell", "rna-seq", "mouse", "kidney", "development", "nephron"]
+categories: ["organogenesis", "single-cell", "rna-seq", "mouse", "kidney", "development", "nephron", "analysis"]
 date: 2019-06-01
 links:
   doi: 10.1242/dev.178673

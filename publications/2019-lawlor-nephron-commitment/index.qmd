@@ -30,7 +30,7 @@ abstract: |
   **Conclusions**
 
   This study supports the fidelity of kidney organoids as models of the developing kidney and affirms their potential in disease modelling and drug screening.
-categories: ["single-cell", "rna-seq", "mouse", "kidney", "nephron"]
+categories: ["single-cell", "rna-seq", "mouse", "kidney", "nephron", "analysis"]
 date: 2019-01-01
 links:
   doi: 10.7554/eLife.41156

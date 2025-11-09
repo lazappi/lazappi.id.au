@@ -31,7 +31,7 @@ abstract: |
   Under steady-state conditions, AM and AEC express distinct transcriptional activities, consistent with distinct physiological roles in the airways.
   Not surprisingly, these cells also exhibited major differences in transcriptional responses following IAV infection.
   These studies shed light on how the different transcriptional architectures of airway cells from two different lineages drive transcriptional responses to IAV infection.
-categories: ["rna-seq", "mouse", "virus", "immune"]
+categories: ["rna-seq", "mouse", "virus", "immune", "analysis"]
 date: 2019-01-01
 links:
   doi: 10.1128/JVI.01986-18

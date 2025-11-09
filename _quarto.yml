@@ -45,5 +45,3 @@ format:
       dark: [darkly, css/custom.scss, css/dark.scss]
     mainfont: "Rubik"
     monofont: "Fira Code"
-
-editor: visual

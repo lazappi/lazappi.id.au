@@ -1,0 +1,39 @@
+---
+title: Integrating single-cell RNA-seq datasets with substantial batch effects
+author:
+  - Karin Hrovatin
+  - Amir Ali Moinfar
+  - name: Luke Zappia
+    me: true
+  - Shrey Parikh
+  - Alejandro Tejada Lapuerta
+  - Benjamin Lengerich
+  - Manolis Kellis
+  - Fabian J. Theis
+abstract: |
+  Integration of single-cell RNA-sequencing (scRNA-seq) datasets is standard in scRNA-seq analysis.
+  Nevertheless, current computational methods struggle to harmonize datasets across systems such as species, organoids and primary tissue, or different scRNA-seq protocols, including single-cell and single-nuclei.
+  Conditional variational autoencoders (cVAE) are a popular integration method, however, existing strategies for stronger batch correction have limitations.
+  Increasing the Kullback–Leibler divergence regularization does not improve integration and adversarial learning removes biological signals.
+  Here, we propose sysVI, a cVAE-based method employing VampPrior and cycle-consistency constraints. We show that sysVI integrates across systems and improves biological signals for downstream interpretation of cell states and conditions.
+categories: ["single-cell", "rna-seq", "integration", "batch effects", "methods"]
+date: 2025-10-30
+links:
+  code: https://github.com/theislab/cross_system_integration
+  package: https://docs.scvi-tools.org/en/latest/api/reference/scvi.external.SysVI.html
+  doi: 10.1186/s12864-025-12126-3
+  pdf: https://www.biorxiv.org/content/10.1101/2023.11.03.565463v2.full.pdf
+  preprint: https://doi.org/10.1101/2023.11.03.565463
+citation:
+  type: article-journal
+  doi: 10.1186/s12864-025-12126-3
+  pmid: "41168710"
+  issn: "1471-2164"
+  container-title: BMC Genomics
+  issue: 1
+  volume: 26
+  page: "974"
+  url: https://doi.org/10.1101/2023.11.03.565463
+csl: ../../nature-no-et-al.csl
+google-scholar: true
+---

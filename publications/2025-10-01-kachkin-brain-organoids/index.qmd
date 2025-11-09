@@ -1,9 +1,10 @@
 ---
 title: Deciphering brain organoids heterogeneity by identifying key quality determinants
 author:
-  - Daniil Kachkin
-  - Naime Zagha
   - Tom Boerstler
+  - Daniil Kachkin
+  - Elizaveta Gerasimova
+  - Naime Zagha
   - Federica Furlanetto
   - Negar Nayebzade
   - name: Luke Zappia
@@ -11,6 +12,7 @@ author:
   - Michelle Boisvert
   - Michaela Farrell
   - Sonja Ploetz
+  - Iryna Prots
   - Martin Regensburger
   - Claudia Günther
   - Juergen Winkler
@@ -26,19 +28,25 @@ abstract: |
   As part of the Bavarian ForInter consortium, we generated 72 brain organoids from distinct hPSC lines.
   We conducted a comprehensive analysis of their morphological and cellular characteristics at an early stage of their development.
   In our assessment, the Feret diameter emerged as a reliable, single parameter that characterizes brain organoid quality.
-  Transcriptomic analysis further confirmed the reliability of this marker and identified a negative impact of mesenchymal cells on the abundance of organoid formation.
-  High-quality organoids consistently displayed a lower mesenchymal cell presence.
-  These findings offer a framework for enhancing brain organoid standardization and reproducibility, underscoring the need for morphological quality controls and the consideration of mesenchymal cell influence on organoid-based modeling.
+  Transcriptomic analysis of our organoid identified the abundance of unintended mesodermal differentiation as a major confounder of unguided brain organoid differentiation, correlating with Feret diameter.
+  High-quality organoids consistently displayed a lower presence of mesenchymal cells.
+  These findings provide a framework for enhancing brain organoid standardization and reproducibility, underscoring the need for morphological quality controls and considering the influence of mesenchymal cells on organoid-based modeling.
 categories: ["organoids", "brain", "rna-seq"]
-date: 2025-01-13
+date: 2025-10-01
 links:
-  doi: 10.1101/2025.01.13.632763
-  pdf: https://www.biorxiv.org/content/10.1101/2025.01.13.632763v1.full.pdf
+  doi: 10.1038/s42003-025-08855-6
+  pdf: https://www.nature.com/articles/s42003-025-08855-6.pdf
+  preprint: https://doi.org/10.1101/2025.01.13.632763
 citation:
-  type: article
-  doi: 10.1101/2025.01.13.632763
-  container-title: bioRxiv
-  url: https://doi.org/10.1101/2025.01.13.632763
+  type: article-journal
+  doi: 10.1038/s42003-025-08855-6
+  pmid: "41034331"
+  issn: "2399-3642"
+  container-title: Communications biology
+  issue: 1
+  volume: 8
+  page: "1412"
+  url: https://doi.org/10.1038/s42003-025-08855-6
 csl: ../../nature-no-et-al.csl
 google-scholar: true
 ---

@@ -9,11 +9,12 @@
 <meta name="author" content="Karin Hrovatin">
 <meta name="author" content="Amir Ali Moinfar">
 <meta name="author" content="Luke Zappia">
+<meta name="author" content="Shrey Parikh">
 <meta name="author" content="Alejandro Tejada Lapuerta">
 <meta name="author" content="Benjamin Lengerich">
 <meta name="author" content="Manolis Kellis">
 <meta name="author" content="Fabian J. Theis">
-<meta name="dcterms.date" content="2023-11-03">
+<meta name="dcterms.date" content="2025-10-30">
 
 <title>Integrating single-cell RNA-seq datasets with substantial batch effects – lazappi</title>
 <style>
@@ -115,44 +116,42 @@ cookieconsent.run({
 
 
 <meta property="og:title" content="Integrating single-cell RNA-seq datasets with substantial batch effects – lazappi">
-<meta property="og:description" content="Integration of single cell RNA sequencing (scRNAseq) datasets has become a standard part of the analysis, with conditional variational autoencoders (cVAE) being among the most popular approaches. Increasingly, researchers are asking to map cells across challenging cases such as cross-organs, species, or organoids and primary tissue, as well as different scRNAseq protocols, including single cell and single nuclei. Current computational methods struggle to harmonize datasets with such substantial differences, driven by technical or biological variation. Here, we propose to address these challenges for the popular cVAE based approaches by introducing and comparing a series of regularization constraints. The two commonly used strategies for increasing batch correction in cVAEs, that is Kullback Leibler divergence (KL) regularization strength tuning and adversarial learning, suffer from substantial loss of biological information. Therefore, we adapt, implement, and assess alternative regularization strategies for cVAEs and investigate how they improve batch effect removal or better preserve biological variation, enabling us to propose an optimal cVAE-based integration strategy for complex systems. We show that using a VampPrior instead of the commonly used Gaussian prior not only improves the preservation of biological variation but also unexpectedly batch correction. Moreover, we show that our implementation of cycle consistency loss leads to significantly better biological preservation than adversarial learning implemented in the previously proposed GLUE model. Additionally, we do not recommend relying only on the KL regularization strength tuning for increasing batch correction, as it removes both biological and batch information without discriminating between the two. Based on our findings, we propose a new model that combines VampPrior and cycle-consistency loss. We show that using it for datasets with substantial batch effects improves downstream interpretation of cell states and biological conditions. To ease the use of the newly proposed model, we make it available in the scvitools package as an external model named sysVI. Moreover, in the future, these regularization techniques could be added to other established cVAE based models to improve the integration of datasets with substantial batch effects.">
+<meta property="og:description" content="Integration of single-cell RNA-sequencing (scRNA-seq) datasets is standard in scRNA-seq analysis. Nevertheless, current computational methods struggle to harmonize datasets across systems such as species, organoids and primary tissue, or different scRNA-seq protocols, including single-cell and single-nuclei. Conditional variational autoencoders (cVAE) are a popular integration method, however, existing strategies for stronger batch correction have limitations. Increasing the Kullback–Leibler divergence regularization does not improve integration and adversarial learning removes biological signals. Here, we propose sysVI, a cVAE-based method employing VampPrior and cycle-consistency constraints. We show that sysVI integrates across systems and improves biological signals for downstream interpretation of cell states and conditions.">
 <meta property="og:site_name" content="lazappi">
 <meta property="og:locale" content="en_AU">
 <meta name="twitter:title" content="Integrating single-cell RNA-seq datasets with substantial batch effects – lazappi">
-<meta name="twitter:description" content="Integration of single cell RNA sequencing (scRNAseq) datasets has become a standard part of the analysis, with conditional variational autoencoders (cVAE) being among the most popular approaches. Increasingly, researchers are asking to map cells across challenging cases such as cross-organs, species, or organoids and primary tissue, as well as different scRNAseq protocols, including single cell and single nuclei. Current computational methods struggle to harmonize datasets with such substantial differences, driven by technical or biological variation. Here, we propose to address these challenges for the popular cVAE based approaches by introducing and comparing a series of regularization constraints. The two commonly used strategies for increasing batch correction in cVAEs, that is Kullback Leibler divergence (KL) regularization strength tuning and adversarial learning, suffer from substantial loss of biological information. Therefore, we adapt, implement, and assess alternative regularization strategies for cVAEs and investigate how they improve batch effect removal or better preserve biological variation, enabling us to propose an optimal cVAE-based integration strategy for complex systems. We show that using a VampPrior instead of the commonly used Gaussian prior not only improves the preservation of biological variation but also unexpectedly batch correction. Moreover, we show that our implementation of cycle consistency loss leads to significantly better biological preservation than adversarial learning implemented in the previously proposed GLUE model. Additionally, we do not recommend relying only on the KL regularization strength tuning for increasing batch correction, as it removes both biological and batch information without discriminating between the two. Based on our findings, we propose a new model that combines VampPrior and cycle-consistency loss. We show that using it for datasets with substantial batch effects improves downstream interpretation of cell states and biological conditions. To ease the use of the newly proposed model, we make it available in the scvitools package as an external model named sysVI. Moreover, in the future, these regularization techniques could be added to other established cVAE based models to improve the integration of datasets with substantial batch effects.">
+<meta name="twitter:description" content="Integration of single-cell RNA-sequencing (scRNA-seq) datasets is standard in scRNA-seq analysis. Nevertheless, current computational methods struggle to harmonize datasets across systems such as species, organoids and primary tissue, or different scRNA-seq protocols, including single-cell and single-nuclei. Conditional variational autoencoders (cVAE) are a popular integration method, however, existing strategies for stronger batch correction have limitations. Increasing the Kullback–Leibler divergence regularization does not improve integration and adversarial learning removes biological signals. Here, we propose sysVI, a cVAE-based method employing VampPrior and cycle-consistency constraints. We show that sysVI integrates across systems and improves biological signals for downstream interpretation of cell states and conditions.">
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Integrating single-cell RNA-seq datasets with substantial batch effects">
-<meta name="citation_abstract" content="Integration of single cell RNA sequencing (scRNAseq) datasets has become a standard part of the analysis, with conditional variational autoencoders (cVAE) being among the most popular approaches.
-Increasingly, researchers are asking to map cells across challenging cases such as cross-organs, species, or organoids and primary tissue, as well as different scRNAseq protocols, including single cell and single nuclei.
-Current computational methods struggle to harmonize datasets with such substantial differences, driven by technical or biological variation.
-Here, we propose to address these challenges for the popular cVAE based approaches by introducing and comparing a series of regularization constraints.
-The two commonly used strategies for increasing batch correction in cVAEs, that is Kullback Leibler divergence (KL) regularization strength tuning and adversarial learning, suffer from substantial loss of biological information.
-Therefore, we adapt, implement, and assess alternative regularization strategies for cVAEs and investigate how they improve batch effect removal or better preserve biological variation, enabling us to propose an optimal cVAE-based integration strategy for complex systems.
-We show that using a VampPrior instead of the commonly used Gaussian prior not only improves the preservation of biological variation but also unexpectedly batch correction.
-Moreover, we show that our implementation of cycle consistency loss leads to significantly better biological preservation than adversarial learning implemented in the previously proposed GLUE model.
-Additionally, we do not recommend relying only on the KL regularization strength tuning for increasing batch correction, as it removes both biological and batch information without discriminating between the two.
-Based on our findings, we propose a new model that combines VampPrior and cycle-consistency loss.
-We show that using it for datasets with substantial batch effects improves downstream interpretation of cell states and biological conditions.
-To ease the use of the newly proposed model, we make it available in the scvitools package as an external model named sysVI.
-Moreover, in the future, these regularization techniques could be added to other established cVAE based models to improve the integration of datasets with substantial batch effects.
+<meta name="citation_abstract" content="Integration of single-cell RNA-sequencing (scRNA-seq) datasets is standard in scRNA-seq analysis.
+Nevertheless, current computational methods struggle to harmonize datasets across systems such as species, organoids and primary tissue, or different scRNA-seq protocols, including single-cell and single-nuclei.
+Conditional variational autoencoders (cVAE) are a popular integration method, however, existing strategies for stronger batch correction have limitations.
+Increasing the Kullback–Leibler divergence regularization does not improve integration and adversarial learning removes biological signals.
+Here, we propose sysVI, a cVAE-based method employing VampPrior and cycle-consistency constraints. We show that sysVI integrates across systems and improves biological signals for downstream interpretation of cell states and conditions.
 ">
 <meta name="citation_author" content="Karin Hrovatin">
 <meta name="citation_author" content="Amir Ali Moinfar">
 <meta name="citation_author" content="Luke Zappia">
+<meta name="citation_author" content="Shrey Parikh">
 <meta name="citation_author" content="Alejandro Tejada Lapuerta">
 <meta name="citation_author" content="Benjamin Lengerich">
 <meta name="citation_author" content="Manolis Kellis">
 <meta name="citation_author" content="Fabian J. Theis">
-<meta name="citation_publication_date" content="2023-11-03">
-<meta name="citation_cover_date" content="2023-11-03">
-<meta name="citation_year" content="2023">
-<meta name="citation_online_date" content="2023-11-03">
+<meta name="citation_publication_date" content="2025-10-30">
+<meta name="citation_cover_date" content="2025-10-30">
+<meta name="citation_year" content="2025">
+<meta name="citation_online_date" content="2025-10-30">
 <meta name="citation_fulltext_html_url" content="https://doi.org/10.1101/2023.11.03.565463">
-<meta name="citation_doi" content="10.1101/2023.11.03.565463">
+<meta name="citation_issue" content="1">
+<meta name="citation_doi" content="10.1186/s12864-025-12126-3">
+<meta name="citation_issn" content="1471-2164">
+<meta name="citation_pmid" content="41168710">
+<meta name="citation_volume" content="26">
 <meta name="citation_language" content="en">
-<meta name="citation_journal_title" content="bioRxiv">
+<meta name="citation_firstpage" content="974">
+<meta name="citation_journal_title" content="BMC Genomics">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -410,6 +409,9 @@ Moreover, in the future, these regularization techniques could be added to other
                       </strong></p>
                                       <p></p>
               <p>
+                              Shrey Parikh
+                                      </p>
+              <p>
                               Alejandro Tejada Lapuerta
                                       </p>
               <p>
@@ -427,7 +429,7 @@ Moreover, in the future, these regularization techniques could be added to other
     <div>
     <div class="quarto-title-meta-heading">Date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 3, 2023</p>
+      <p class="date">October 30, 2025</p>
     </div>
   </div>
   
@@ -436,16 +438,18 @@ Moreover, in the future, these regularization techniques could be added to other
     <div>
     <div class="quarto-title-meta-heading">Links</div>
     <div class="quarto-title-meta-contents">
-                          <a type="button" class="btn btn-outline-primary" href="https://github.com/theislab/cross_system_integration">Code</a>
-                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1101/2023.11.03.565463">DOI</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://docs.scvi-tools.org/en/latest/api/reference/scvi.external.SysVI.html">Package</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://github.com/theislab/cross_system_integration">Code</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1186/s12864-025-12126-3">DOI</a>
                     <a type="button" class="btn btn-outline-primary" href="https://www.biorxiv.org/content/10.1101/2023.11.03.565463v2.full.pdf">PDF</a>
-                                  </div>
+                    <a type="button" class="btn btn-outline-primary" href="https://doi.org/10.1101/2023.11.03.565463">Preprint</a>
+                            </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Citation stats</div>
     <div class="quarto-title-meta-contents">
-      <div class="scite-badge" data-doi="10.1101/2023.11.03.565463" data-layout="vertical" data-show-zero="true" data-small="false" data-show-labels="true" data-tally-show="true">
+      <div class="scite-badge" data-doi="10.1186/s12864-025-12126-3" data-layout="vertical" data-show-zero="true" data-small="false" data-show-labels="true" data-tally-show="true">
       </div>
     </div>
   </div>
@@ -458,7 +462,7 @@ Moreover, in the future, these regularization techniques could be added to other
 <div>
   <div class="abstract">
     <div class="abstract-title">Abstract</div>
-    <p>Integration of single cell RNA sequencing (scRNAseq) datasets has become a standard part of the analysis, with conditional variational autoencoders (cVAE) being among the most popular approaches. Increasingly, researchers are asking to map cells across challenging cases such as cross-organs, species, or organoids and primary tissue, as well as different scRNAseq protocols, including single cell and single nuclei. Current computational methods struggle to harmonize datasets with such substantial differences, driven by technical or biological variation. Here, we propose to address these challenges for the popular cVAE based approaches by introducing and comparing a series of regularization constraints. The two commonly used strategies for increasing batch correction in cVAEs, that is Kullback Leibler divergence (KL) regularization strength tuning and adversarial learning, suffer from substantial loss of biological information. Therefore, we adapt, implement, and assess alternative regularization strategies for cVAEs and investigate how they improve batch effect removal or better preserve biological variation, enabling us to propose an optimal cVAE-based integration strategy for complex systems. We show that using a VampPrior instead of the commonly used Gaussian prior not only improves the preservation of biological variation but also unexpectedly batch correction. Moreover, we show that our implementation of cycle consistency loss leads to significantly better biological preservation than adversarial learning implemented in the previously proposed GLUE model. Additionally, we do not recommend relying only on the KL regularization strength tuning for increasing batch correction, as it removes both biological and batch information without discriminating between the two. Based on our findings, we propose a new model that combines VampPrior and cycle-consistency loss. We show that using it for datasets with substantial batch effects improves downstream interpretation of cell states and biological conditions. To ease the use of the newly proposed model, we make it available in the scvitools package as an external model named sysVI. Moreover, in the future, these regularization techniques could be added to other established cVAE based models to improve the integration of datasets with substantial batch effects.</p>
+    <p>Integration of single-cell RNA-sequencing (scRNA-seq) datasets is standard in scRNA-seq analysis. Nevertheless, current computational methods struggle to harmonize datasets across systems such as species, organoids and primary tissue, or different scRNA-seq protocols, including single-cell and single-nuclei. Conditional variational autoencoders (cVAE) are a popular integration method, however, existing strategies for stronger batch correction have limitations. Increasing the Kullback–Leibler divergence regularization does not improve integration and adversarial learning removes biological signals. Here, we propose sysVI, a cVAE-based method employing VampPrior and cycle-consistency constraints. We show that sysVI integrates across systems and improves biological signals for downstream interpretation of cell states and conditions.</p>
   </div>
 </div>
 
@@ -470,60 +474,42 @@ Moreover, in the future, these regularization techniques could be added to other
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{hrovatin2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{hrovatin2025,
   author = {Hrovatin, Karin and Ali Moinfar, Amir and Zappia, Luke and
-    Tejada Lapuerta, Alejandro and Lengerich, Benjamin and Kellis,
-    Manolis and J. Theis, Fabian},
+    Parikh, Shrey and Tejada Lapuerta, Alejandro and Lengerich, Benjamin
+    and Kellis, Manolis and J. Theis, Fabian},
   title = {Integrating Single-Cell {RNA-seq} Datasets with Substantial
     Batch Effects},
-  date = {2023-11-03},
+  journal = {BMC Genomics},
+  volume = {26},
+  number = {1},
+  pages = {974},
+  date = {2025-10-30},
   url = {https://doi.org/10.1101/2023.11.03.565463},
-  doi = {10.1101/2023.11.03.565463},
+  doi = {10.1186/s12864-025-12126-3},
+  issn = {1471-2164},
   langid = {en},
-  abstract = {Integration of single cell RNA sequencing (scRNAseq)
-    datasets has become a standard part of the analysis, with
-    conditional variational autoencoders (cVAE) being among the most
-    popular approaches. Increasingly, researchers are asking to map
-    cells across challenging cases such as cross-organs, species, or
-    organoids and primary tissue, as well as different scRNAseq
-    protocols, including single cell and single nuclei. Current
-    computational methods struggle to harmonize datasets with such
-    substantial differences, driven by technical or biological
-    variation. Here, we propose to address these challenges for the
-    popular cVAE based approaches by introducing and comparing a series
-    of regularization constraints. The two commonly used strategies for
-    increasing batch correction in cVAEs, that is Kullback Leibler
-    divergence (KL) regularization strength tuning and adversarial
-    learning, suffer from substantial loss of biological information.
-    Therefore, we adapt, implement, and assess alternative
-    regularization strategies for cVAEs and investigate how they improve
-    batch effect removal or better preserve biological variation,
-    enabling us to propose an optimal cVAE-based integration strategy
-    for complex systems. We show that using a VampPrior instead of the
-    commonly used Gaussian prior not only improves the preservation of
-    biological variation but also unexpectedly batch correction.
-    Moreover, we show that our implementation of cycle consistency loss
-    leads to significantly better biological preservation than
-    adversarial learning implemented in the previously proposed GLUE
-    model. Additionally, we do not recommend relying only on the KL
-    regularization strength tuning for increasing batch correction, as
-    it removes both biological and batch information without
-    discriminating between the two. Based on our findings, we propose a
-    new model that combines VampPrior and cycle-consistency loss. We
-    show that using it for datasets with substantial batch effects
-    improves downstream interpretation of cell states and biological
-    conditions. To ease the use of the newly proposed model, we make it
-    available in the scvitools package as an external model named sysVI.
-    Moreover, in the future, these regularization techniques could be
-    added to other established cVAE based models to improve the
-    integration of datasets with substantial batch effects.}
+  abstract = {Integration of single-cell RNA-sequencing (scRNA-seq)
+    datasets is standard in scRNA-seq analysis. Nevertheless, current
+    computational methods struggle to harmonize datasets across systems
+    such as species, organoids and primary tissue, or different
+    scRNA-seq protocols, including single-cell and single-nuclei.
+    Conditional variational autoencoders (cVAE) are a popular
+    integration method, however, existing strategies for stronger batch
+    correction have limitations. Increasing the Kullback–Leibler
+    divergence regularization does not improve integration and
+    adversarial learning removes biological signals. Here, we propose
+    sysVI, a cVAE-based method employing VampPrior and cycle-consistency
+    constraints. We show that sysVI integrates across systems and
+    improves biological signals for downstream interpretation of cell
+    states and conditions.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hrovatin2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hrovatin2025" class="csl-entry quarto-appendix-citeas" role="listitem">
 <div class="">Hrovatin, K., Ali Moinfar, A., Zappia, L.,
-Tejada Lapuerta, A., Lengerich, B., Kellis, M. &amp; J. Theis, F.
-Integrating single-cell RNA-seq datasets with substantial batch effects.
-<em>bioRxiv</em> Preprint at <a href="https://doi.org/10.1101/2023.11.03.565463">https://doi.org/10.1101/2023.11.03.565463</a>
-(2023)</div>
+Parikh, S., Tejada Lapuerta, A., Lengerich, B., Kellis, M. &amp; J.
+Theis, F. <a href="https://doi.org/10.1186/s12864-025-12126-3">Integrating
+single-cell RNA-seq datasets with substantial batch effects</a>. <em>BMC
+Genomics</em> <strong>26,</strong> 974 (2025).</div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

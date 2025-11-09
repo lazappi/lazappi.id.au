@@ -20,10 +20,11 @@ links:
   code: https://github.com/scverse/anndataR
   doi: 10.1101/2025.08.18.669052
   website: https://anndatar.data-intuitive.com/
+  package: https://bioconductor.org/packages/anndataR
 image: thumbnail.png
 image-alt: anndataR logo
 ---
 
-**{anndataR}** is an R implementation of the [`AnnData`](https://anndata.readthedocs.io/en/latest/index.html) data structure, used in the Python scverse ecosystem.
+**{anndataR}** is a Bioconductor R implementation of the [`AnnData`](https://anndata.readthedocs.io/en/latest/index.html) data structure, used in the Python scverse ecosystem.
 It provides an R `AnnData` object with native reading and writing of H5AD files.
 Users can interact with the `AnnData` object directly, or use flexible functions to convert to and from  [`SingleCellExperiment`](https://bioconductor.org/packages/SingleCellExperiment/) or [`Seurat`](https://satijalab.org/seurat/) objects.

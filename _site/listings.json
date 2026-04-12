@@ -24,6 +24,7 @@
       "/projects/Splatter/index.html",
       "/projects/anndataR/index.html",
       "/projects/zellkonverter/index.html",
+      "/projects/laminr/index.html",
       "/projects/clustree/index.html",
       "/projects/clamour/index.html",
       "/projects/doilinker/index.html",
@@ -39,31 +40,6 @@
       "/projects/single-cell-best-practices/index.html",
       "/projects/scanpy-in-R/index.html",
       "/projects/r-pkg-dev/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/index.html",
-    "items": [
-      "/posts/2025-03-15-feature-selection-benchmark/index.html",
-      "/posts/2024-09-15-scverse-conference/index.html",
-      "/posts/2024-03-04-scRNAtools-low-maintenance/index.html",
-      "/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html",
-      "/posts/2020-07-11-requestival/index.html",
-      "/posts/2020-05-12-back-to-the-sce-verse/index.html",
-      "/posts/2020-04-29-bioconductor-3-11-wrap-up/index.html",
-      "/posts/2020-04-09-caching-blogdown/index.html",
-      "/posts/2018-05-20-exploring-the-sce-verse/index.html",
-      "/posts/2018-05-04-bioconductor-3-7-wrap-up/index.html",
-      "/posts/2018-04-21-my-afl-elo-model/index.html",
-      "/posts/2018-03-24-welcome-to-blogdown/index.html",
-      "/posts/2017-08-18-joining-the-dots-twitter-analysis/index.html",
-      "/posts/2017-07-19-building-a-clustering-tree/index.html",
-      "/posts/2016-08-18-pyconau-2016/index.html",
-      "/posts/2016-06-13-gantt-charts-in-r/index.html",
-      "/posts/2016-05-03-bioconductor-3-3-packages/index.html",
-      "/posts/2016-03-30-extracting-alignment-statistics-using-python/index.html",
-      "/posts/2015-09-13-my-markdown-thesis/index.html",
-      "/posts/2014-07-20-open-science-workshops/index.html"
     ]
   },
   {
@@ -99,6 +75,31 @@
       "/publications/2017-zappia-splatter/index.html",
       "/publications/2017-phipson-gene-length/index.html",
       "/publications/2016-grillet-colorectal-CTCs/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
+      "/posts/2025-03-15-feature-selection-benchmark/index.html",
+      "/posts/2024-09-15-scverse-conference/index.html",
+      "/posts/2024-03-04-scRNAtools-low-maintenance/index.html",
+      "/posts/2020-10-30-bioconductor-3-12-wrap-up/index.html",
+      "/posts/2020-07-11-requestival/index.html",
+      "/posts/2020-05-12-back-to-the-sce-verse/index.html",
+      "/posts/2020-04-29-bioconductor-3-11-wrap-up/index.html",
+      "/posts/2020-04-09-caching-blogdown/index.html",
+      "/posts/2018-05-20-exploring-the-sce-verse/index.html",
+      "/posts/2018-05-04-bioconductor-3-7-wrap-up/index.html",
+      "/posts/2018-04-21-my-afl-elo-model/index.html",
+      "/posts/2018-03-24-welcome-to-blogdown/index.html",
+      "/posts/2017-08-18-joining-the-dots-twitter-analysis/index.html",
+      "/posts/2017-07-19-building-a-clustering-tree/index.html",
+      "/posts/2016-08-18-pyconau-2016/index.html",
+      "/posts/2016-06-13-gantt-charts-in-r/index.html",
+      "/posts/2016-05-03-bioconductor-3-3-packages/index.html",
+      "/posts/2016-03-30-extracting-alignment-statistics-using-python/index.html",
+      "/posts/2015-09-13-my-markdown-thesis/index.html",
+      "/posts/2014-07-20-open-science-workshops/index.html"
     ]
   }
 ]

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2017-11-01">
-<meta name="description" content="Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database">
+<meta name="dcterms.date" content="2024-08-16">
+<meta name="description" content="R client for LaminDB">
 
-<title>Simulation and analysis tools for single-cell RNA sequencing data – lazappi</title>
+<title>LaminR – lazappi</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -111,15 +111,23 @@ cookieconsent.run({
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
 
 
-<meta property="og:title" content="Simulation and analysis tools for single-cell RNA sequencing data – lazappi">
-<meta property="og:description" content="Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database">
+<meta property="og:title" content="LaminR – lazappi">
+<meta property="og:description" content="R client for LaminDB">
+<meta property="og:image" content="https://lazappi.id.au/projects/laminr/thumbnail.png">
 <meta property="og:site_name" content="lazappi">
 <meta property="og:locale" content="en_AU">
-<meta name="twitter:title" content="Simulation and analysis tools for single-cell RNA sequencing data – lazappi">
-<meta name="twitter:description" content="Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database">
+<meta property="og:image:height" content="450">
+<meta property="og:image:width" content="798">
+<meta property="og:image:alt" content="Lamin and R logos">
+<meta name="twitter:title" content="LaminR – lazappi">
+<meta name="twitter:description" content="R client for LaminDB">
+<meta name="twitter:image" content="https://lazappi.id.au/projects/laminr/thumbnail.png">
 <meta name="twitter:creator" content="@_lazappi_">
 <meta name="twitter:site" content="@_lazappi_">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="450">
+<meta name="twitter:image-width" content="798">
+<meta name="twitter:image:alt" content="Lamin and R logos">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -348,21 +356,19 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Simulation and analysis tools for single-cell RNA sequencing data</h1>
+<h1 class="title">LaminR</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">single-cell</div>
-    <div class="quarto-category">rna-seq</div>
-    <div class="quarto-category">simulation</div>
-    <div class="quarto-category">database</div>
-    <div class="quarto-category">splatter</div>
-    <div class="quarto-category">scRNA-tools</div>
     <div class="quarto-category">software</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">CRAN</div>
+    <div class="quarto-category">database</div>
+    <div class="quarto-category">interoperability</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Selected talk at the Genome Informatics 2017 conference describing Splatter and the scRNA-tools database
+    R client for LaminDB
   </div>
 </div>
 
@@ -373,13 +379,18 @@ cookieconsent.run({
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
               <p>
-                              <strong>Luke Zappia</strong>
+                              Robrecht Cannoodt
                                       </p>
               <p>
-                              Belinda Phipson
+                                </p><p style="color: #eb008d"><strong>
+                    Luke Zappia
+                      </strong></p>
+                                      <p></p>
+              <p>
+                              Data Intuitive
                                       </p>
               <p>
-                              Alicia Oshlack
+                              Lamin Labs
                                       </p>
           </div>
   </div>
@@ -387,49 +398,36 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 1, 2017</p>
+      <p class="date">August 16, 2024</p>
     </div>
   </div>
   
   
-    <div>
-    <div class="quarto-title-meta-heading">Event</div>
-    <div class="quarto-title-meta-contents">
-      <p><a href="https://meetings.cshl.edu/meetings.aspx?meet=INFO&amp;year=17">Genome Informatics 2017</a> (Cold Spring Harbor Labs, Cold Spring Harbor, USA)</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Links</div>
     <div class="quarto-title-meta-contents">
-              <a type="button" class="btn btn-outline-primary" href="https://speakerdeck.com/lazappi/gi2017-simulation-and-analysis-tools-for-single-cell-rna-sequencing-data">Slides</a>
-                                                          </div>
+                    <a type="button" class="btn btn-outline-primary" href="https://CRAN.R-project.org/package=laminr">Package</a>
+                    <a type="button" class="btn btn-outline-primary" href="https://github.com/laminlabs/laminr">Code</a>
+                                      <a type="button" class="btn btn-outline-primary" href="https://docs.lamin.ai/laminr">Website</a>
+                      </div>
   </div>
   
   
 </div>
 
+<div class="quarto-title-meta-contents">
+    <img src="thumbnail.png" class="img-fluid" alt="Lamin and R logos">
+    </div>
 
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    <p>Single-cell RNA sequencing (scRNA-seq) is rapidly becoming a tool of choice for biologists who wish to investigate gene expression. In contrast to traditional bulk RNA-seq experiments, which measure expression averaged across millions of cells, single-cell experiments can be used to observe how genes are expressed in individual cells. Along with the dramatic increase in resolution provided by scRNA-seq comes an array of bioinformatics challenges. Single-cell data is relatively sparse (for both biological and technical reasons), quality control is difficult and it is unclear how to replicate measurements. Researchers have risen to address these challenges and there are currently more than 125 software tools available for analysing scRNA-seq data. We have catalogued these software tools in the scRNA-tools database (www.scRNA-tools.org). Analysis of this database shows that there are now methods available for a wide range of tasks, from pre-processing unique molecular identifiers to detecting allele-specific expression. However, the biggest areas of development have been in clustering cells to identify cell types and ordering of cells to understand dynamic processes. We also find that the R statistical programming language is the most popular platform for scRNA-seq analysis tools, followed by Python, and that the majority of tools have been described in peer-reviewed papers or preprints and are available under open-source software licenses.</p>
-    <p>With the ever increasing number of analysis methods available it is important to be able to assess and compare the performance, quality and limitations of an analysis tool. This is often done, at least in part, by testing methods on simulated datasets where the true answers are known. Unfortunately, current scRNA-seq simulations are frequently poorly documented, not reproducible and do not demonstrate similarity to real data or experimental designs. To address these concerns we have developed Splatter, a Bioconductor R package for reproducible simulation of scRNA-seq datasets. Splatter is a simulation framework that currently includes four previously published simulation models, allowing users to estimate parameters from real data in order to easily generate realistic synthetic scRNA-seq datasets. Here we discuss some of the challenges of simulating scRNA-seq data and present a comparison of the simulation methods available in Splatter (bioconductor.org/packages/splatter). As part of Splatter we also introduce our own simulation model, Splat, capable of reproducing scRNA-seq datasets with multiple groups of cells, differentiation paths or batch effects.</p>
-  </div>
-</div>
 
-<p></p>
-<div>
-  <div class="abstract">
-    <div class="abstract-title"></div>
-    <script async="" class="speakerdeck-embed" data-id="8b940093154f442a9c05eb0efda3a8d5" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-  </div>
-</div>
 
 
 </header>
 
 
+<p>R client for <a href="https://docs.lamin.ai/introduction">LaminDB</a>, a data framework for biology. Provides an R interface by wrapping the Python <code>lamindb</code> package using flexible infrastructure.</p>
+<p><em>Developed for Lamin Labs while working at Data Intuitive.</em></p>
 
 
 

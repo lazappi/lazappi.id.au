@@ -6,6 +6,7 @@ listing:
     - "Splatter/index.qmd"
     - "anndataR/index.qmd"
     - "zellkonverter/index.qmd"
+    - "laminr/index.qmd"
     - "clustree/index.qmd"
     - "clamour/index.qmd"
     - "doilinker/index.qmd"

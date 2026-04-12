@@ -1,0 +1,23 @@
+---
+title: LaminR
+description: R client for LaminDB
+authors:
+  - Robrecht Cannoodt
+  - name: Luke Zappia
+    me: true
+  - Data Intuitive
+  - Lamin Labs
+categories: ["software", "R", "CRAN", "database", "interoperability"]
+date: 2024-08-16T00:00:00+00:00
+links:
+  code: https://github.com/laminlabs/laminr
+  package: https://CRAN.R-project.org/package=laminr
+  website: https://docs.lamin.ai/laminr
+image: thumbnail.png
+image-alt: Lamin and R logos
+---
+
+R client for [LaminDB](https://docs.lamin.ai/introduction), a data framework for biology.
+Provides an R interface by wrapping the Python `lamindb` package using flexible infrastructure.
+
+_Developed for Lamin Labs while working at Data Intuitive._

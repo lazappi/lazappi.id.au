@@ -22,7 +22,7 @@ links:
   code: https://github.com/theislab/cross_system_integration
   package: https://docs.scvi-tools.org/en/latest/api/reference/scvi.external.SysVI.html
   doi: 10.1186/s12864-025-12126-3
-  pdf: https://www.biorxiv.org/content/10.1101/2023.11.03.565463v2.full.pdf
+  pdf: https://link.springer.com/content/pdf/10.1186/s12864-025-12126-3.pdf
   preprint: https://doi.org/10.1101/2023.11.03.565463
 citation:
   type: article-journal
@@ -33,7 +33,7 @@ citation:
   issue: 1
   volume: 26
   page: "974"
-  url: https://doi.org/10.1101/2023.11.03.565463
+  url: https://doi.org/10.1186/s12864-025-12126-3
 csl: ../../nature-no-et-al.csl
 google-scholar: true
 ---

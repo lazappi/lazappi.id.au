@@ -1,0 +1,22 @@
+---
+title: Getting started with Open Problems in Single-Cell Analysis
+description: Presentation at the MBZUAI Single Cell Summer Workshop introducing the Open Problems in Single-Cell Analysis project and how to get involved
+authors:
+  - "**Luke Zappia**"
+event:
+  name: MBZUAI 2025 Single Cell Summer Workshop
+  location: Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi, UAE
+abstract: |
+  An introduction to the Open Problems in Single-Cell Analysis project, a community-driven effort to benchmark key computational challenges in single-cell data analysis.
+  The presentation included an overview of the project, it's motivation how to get involved and an introduction to key technologies and concepts including [Viash](https://viash.io/), [Nextflow](https://www.nextflow.io/) and the Open Problems task structure.
+  
+  Presented at theMBZUAI 2025 Single Cell Summer Workshop.
+
+  _This workshop was part of my involvement with Open Problems and my employment at Data Intuitive._
+categories: ["single-cell", "open problems", "benchmarking", "workshop"]
+date: 2025-05-09T00:00:00+00:00
+date_end: 2025-05-10T01:00:00+01:00
+links:
+  code: https://openproblems.bio
+  website: https://github.com/openproblems-bio
+---

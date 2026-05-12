@@ -22,6 +22,7 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/2026-05-12-bioconductor-3-23-wrap-up/index.html",
       "/posts/2025-03-15-feature-selection-benchmark/index.html",
       "/posts/2024-09-15-scverse-conference/index.html",
       "/posts/2024-03-04-scRNAtools-low-maintenance/index.html",

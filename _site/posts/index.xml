@@ -10,7 +10,108 @@
 <atom:link href="https://lazappi.id.au/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Luke Zappia&#39;s personal website</description>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Fri, 14 Mar 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 11 May 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Bioconductor 3.23 wrap-up</title>
+  <link>https://lazappi.id.au/posts/2026-05-12-bioconductor-3-23-wrap-up/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>The Bioconductor 3.23 release was a couple of weeks ago. Here is my wrap-up of new packages and updates. This is only the things I found interesting based on the release notes and they don’t come with any particular recommendations. If there is something else you are interested in have a look at the full release notes <a href="https://bioconductor.org/news/bioc_3_23_release/" title="Bioconductor 3.23 release notes">here</a>.</p>
+<section id="my-packages" class="level1">
+<h1>My packages</h1>
+<section id="anndataranndatar" class="level2">
+<h2 class="anchored" data-anchor-id="anndataranndatar"><a href="https://bioconductor.org/packages/release/bioc/html/anndataR.html" title="anndataR"><strong>{anndataR}</strong></a></h2>
+<ul>
+<li>Add initial support for reading and writing Zarr stores. This was a major effort from members of the community.</li>
+<li>Improvements to chunking when writing H5AD files</li>
+<li>Improvements to performance when reading sparse matrices</li>
+<li>Improved warnings and error handling</li>
+<li>Improved tests, documentation and CI</li>
+</ul>
+</section>
+<section id="splattersplatter" class="level2">
+<h2 class="anchored" data-anchor-id="splattersplatter"><a href="https://bioconductor.org/packages/release/bioc/html/splatter.html" title="splatter"><strong>{splatter}</strong></a></h2>
+<ul>
+<li>Replace deprecated functions from <a href="https://bioconductor.org/packages/release/bioc/html/scuttle.html" title="scuttle"><strong>{scuttle}</strong></a> with equivalents in <a href="https://bioconductor.org/packages/release/bioc/html/scrapper.html" title="scrapper"><strong>{scrapper}</strong></a></li>
+<li>Deprecate the MFA simulation functions now that the <strong>{mfa}</strong> package is deprecated</li>
+<li>Minor maintenance updates</li>
+</ul>
+</section>
+<section id="zellkonverterzellkonverter" class="level2">
+<h2 class="anchored" data-anchor-id="zellkonverterzellkonverter"><a href="https://bioconductor.org/packages/release/bioc/html/zellkonverter.html" title="zellkonverter"><strong>{zellkonverter}</strong></a></h2>
+<ul>
+<li>Minor updates to tests and documentation</li>
+</ul>
+</section>
+</section>
+<section id="new-packages" class="level1">
+<h1>New packages</h1>
+<ul>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/BatChef.html" title="BatChef"><strong>{BatChef}</strong></a> - benchmark batch correction methods for scRNA-seq data and help pick an appropriate one</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/Battlefield.html" title="Battlefield"><strong>{Battlefield}</strong></a> - low-level utilities for working with spatial transcriptomics regions, interfaces and layers</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/betterChromVAR.html" title="betterChromVAR"><strong>{betterChromVAR}</strong></a> - faster chromVAR-style inference of TF activity for bulk and single-cell ATAC-seq</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/CellMentor.html" title="CellMentor"><strong>{CellMentor}</strong></a> - supervised dimensionality reduction that tries to preserve known cell-type structure</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/DenoIST.html" title="DenoIST"><strong>{DenoIST}</strong></a> - removes neighbourhood contamination from image-based spatial transcriptomics data</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/dominatR.html" title="dominatR"><strong>{dominatR}</strong></a> - visualises feature dominance using concepts from physics</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/GraphExperiment.html" title="GraphExperiment"><strong>{GraphExperiment}</strong></a> - extends <code>SingleCellExperiment</code> with infrastructure for storing feature-level networks</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/hammers.html" title="hammers"><strong>{hammers}</strong></a> - utilities package for scRNA-seq analysis using both <code>Seurat</code> and <code>SingleCellExperiment</code></li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/jvecfor.html" title="jvecfor"><strong>{jvecfor}</strong></a> - faster nearest-neighbour search for large single-cell datasets with drop-in replacements for common Bioconductor workflows</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/RankMap.html" title="RankMap"><strong>{RankMap}</strong></a> - fast reference-based cell type annotation for single-cell and spatial transcriptomics data</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scConform.html" title="scConform"><strong>{scConform}</strong></a> - cell type annotation with conformal prediction intervals and uncertainty quantification</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scECODA.html" title="scECODA"><strong>{scECODA}</strong></a> - workflow for analysing cell type proportions as compositional data</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scLang.html" title="scLang"><strong>{scLang}</strong></a> - developer-facing helpers for writing scRNA-seq packages that work with both Seurat and <code>SingleCellExperiment</code></li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scPassport.html" title="scPassport"><strong>{scPassport}</strong></a> - stores a persistent metadata passport inside <code>Seurat</code> and <code>SingleCellExperiment</code> objects</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scTypeEval.html" title="scTypeEval"><strong>{scTypeEval}</strong></a> - tools for evaluating cell type assignments with limited ground truth data</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/SpatialArtifacts.html" title="SpatialArtifacts"><strong>{SpatialArtifacts}</strong></a> - quality control for identifying spatial artifacts in Visium and Visium HD data</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/SpNeigh.html" title="SpNeigh"><strong>{SpNeigh}</strong></a> - neighbourhood-aware spatial transcriptomics analysis including boundary detection and spatial differential expression</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/tidyprint.html" title="tidyprint"><strong>{tidyprint}</strong></a> - tidier print methods for <code>SummarizedExperiment</code> objects</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/VISTA.html" title="VISTA"><strong>{VISTA}</strong></a> - wraps differential expression workflows and visualisation in a <code>SummarizedExperiment</code>-based container</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/ZarrArray.html" title="ZarrArray"><strong>{ZarrArray}</strong></a> - <code>DelayedArray</code>-backed infrastructure for working with Zarr datasets in R</li>
+</ul>
+</section>
+<section id="updates" class="level1">
+<h1>Updates</h1>
+<ul>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/DropletUtils.html" title="DropletUtils"><strong>{DropletUtils}</strong></a> - <code>downsampleReads()</code> now uses the faster downsampling algorithm from <a href="https://bioconductor.org/packages/release/bioc/html/scuttle.html" title="scuttle"><strong>{scuttle}</strong></a></li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/edgeR.html" title="edgeR"><strong>{edgeR}</strong></a> - new <code>DGEListFromTximport()</code> and <code>DGEListFromTximeta()</code> helpers plus a <code>sampleWeights()</code> function</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/limma.html" title="limma"><strong>{limma}</strong></a> - <code>voom()</code> gains offset support and <code>topTableF()</code> is now finally removed</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/Rarr.html" title="Rarr"><strong>{Rarr}</strong></a> - major updates including moving the <code>DelayedArray</code> backend into the new <a href="https://bioconductor.org/packages/release/bioc/html/ZarrArray.html" title="ZarrArray"><strong>{ZarrArray}</strong></a> package and improved Zarr v3 support</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/Rhdf5lib.html" title="Rhdf5lib"><strong>{Rhdf5lib}</strong></a> - build updates and an update to HDF5 1.14.6</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/rhdf5.html" title="rhdf5"><strong>{rhdf5}</strong></a> - updated to HDF5 1.14.6 and various fixes and improvements</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scran.html" title="scran"><strong>{scran}</strong></a> - deprecates several functions in favour of <a href="https://bioconductor.org/packages/release/bioc/html/scrapper.html" title="scrapper"><strong>{scrapper}</strong></a> and fixes overflow bugs</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scrapper.html" title="scrapper"><strong>{scrapper}</strong></a> - multiple updates to several functions, continues the migration of functionality out of <a href="https://bioconductor.org/packages/release/bioc/html/scran.html" title="scran"><strong>{scran}</strong></a> and <a href="https://bioconductor.org/packages/release/bioc/html/scuttle.html" title="scuttle"><strong>{scuttle}</strong></a></li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/scuttle.html" title="scuttle"><strong>{scuttle}</strong></a> - faster <code>downsampleMatrix()</code> and <code>summarizeAssayByGroup()</code>, more deprecations in favour of <code>scrapper</code></li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html" title="SingleCellExperiment"><strong>{SingleCellExperiment}</strong></a> - improved warnings for named assay getters and setters</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/tximeta.html" title="tximeta"><strong>{tximeta}</strong></a> - matching updates for <a href="https://bioconductor.org/packages/release/bioc/html/edgeR.html" title="edgeR"><strong>{edgeR}</strong></a>’s new <code>DGEListFromTximeta()</code> workflow</li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/tximport.html" title="tximport"><strong>{tximport}</strong></a> - vignette updates around the new <a href="https://bioconductor.org/packages/release/bioc/html/edgeR.html" title="edgeR"><strong>{edgeR}</strong></a> integration</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="AI Disclaimer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>AI Disclaimer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AI was used to research and draft this post. It did a reasonable job on matching the style of previous posts but it missed several packages I had to tell it to add later. Overall, it was moderately successful.</p>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>bioconductor</category>
+  <category>R</category>
+  <guid>https://lazappi.id.au/posts/2026-05-12-bioconductor-3-23-wrap-up/</guid>
+  <pubDate>Mon, 11 May 2026 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Benchmarking feature selection for integration</title>
   <link>https://lazappi.id.au/posts/2025-03-15-feature-selection-benchmark/</link>
@@ -6908,38 +7009,6 @@ font-style: inherit;">buildGantt</span>(tasks))</span>
   <category>latex</category>
   <guid>https://lazappi.id.au/posts/2015-09-13-my-markdown-thesis/</guid>
   <pubDate>Sat, 12 Sep 2015 22:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Open science workshops</title>
-  <link>https://lazappi.id.au/posts/2014-07-20-open-science-workshops/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>This Saturday I attended the first workshop run by <a href="https://openscienceworkshops.github.io/">Open Science Workshops</a> at the <a href="http://inspire9.com/">Inspire9</a> collaborative workspace. Open Source Workshops is a new initiative aiming to promote open source tools and techniques to the scientific community.</p>
-<p>The workshop consisted of two main parts: an introduction to the basics of Github (creating repositories, commiting, forking, merging…) and the SageMathCloud; and a serious of talks:</p>
-<ul>
-<li>General discussion of how and why you should take an open approach to scientific research (Alex Ghitza, Pure Maths Lecturer, University of Melbourne).</li>
-<li><a href="https://www.authorea.com/">Authorea</a> - An online platform for collaborative manuscript editing designed for digital publishing that can combines Latex, Markdown etc. with interactive visualisations, embedded IPython notebooks and built in citation management (Andrea Bedini, Maths and Stats, University of Melbourne).</li>
-<li><a href="https://scirate.com/">SciRate</a> - A social media approach to rating and sharing the papers available in at arXiv.org (Jaiden Mispy).</li>
-<li><a href="https://cloud.sagemath.com/">SageMathCloud</a> - Collaborative cloud platform set up with particular support for IPython and Latex as well as a terminal. Kind of like Google docs meets a VM.</li>
-<li><a href="https://nectar.org.au/">NeCTAR</a> - Cloud facility available to Australian researchers. Also the Genomics Virtual Laboratory set up that allows quick launching of a VM with Galaxy and other bioinformatics tools as well as IPython and RStudio (Clare Sloggett, VLSCI).</li>
-<li><a href="http://software-carpentry.org/">Software Capentry</a> - Bootcamps for training in scientific computing includiang Git (work tracking), UNIX (automation), Programming (modularisation) and SQL (structured data) (Scott Ritchie).</li>
-<li><a href="http://elifesciences.org/">eLIFE</a> - A new open access life sciences journal in the UK that uses a consulative peer review process as well as their eLIFE Lens and oline system for viewing their papers or anything in PubMed via the <a href="http://oa-sandbox.org/">OA Sandbox</a> (Ian Mulvany).</li>
-</ul>
-<p>A common theme running through the talks (apart from open access) was the need to move towards 21st century tools and processes, both for collaboration and publishing.</p>
-<p>Overall it was a worthwhile experience and hopefully there will be more in the future, if you are interested in the details the <a href="https://github.com/silky/osw-material/tree/master/workshop-melb-2014">talks</a> and <a href="https://github.com/OpenScienceWorkshops/osw-material/wiki/Summary-of-the-July-2014-Melbourne-Open-Science-Workshop">agenda</a> are available here on Github.</p>
-
-
-
- ]]></description>
-  <category>open science</category>
-  <category>workshop</category>
-  <category>collaboration</category>
-  <guid>https://lazappi.id.au/posts/2014-07-20-open-science-workshops/</guid>
-  <pubDate>Sat, 19 Jul 2014 22:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

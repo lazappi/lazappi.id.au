@@ -1,40 +1,65 @@
 ---
 title: Defining and benchmarking open problems in single-cell analysis
 author:
-  - Malte D. Luecken
+  - name:
+      given: Malte D.
+      family: Luecken
   - Scott Gigante
-  - Daniel B. Burkhardt
+  - name:
+      given: Daniel B.
+      family: Burkhardt
   - Robrecht Cannoodt
-  - Daniel C. Strobl
-  - Nikolay S. Markov
+  - name:
+      given: Daniel C.
+      family: Strobl
+  - name:
+      given: Nikolay S.
+      family: Markov
   - name: Luke Zappia
     me: true
   - Giovanni Palla
   - Wesley Lewis
   - Daniel Dimitrov
-  - Michael E. Vinyard
+  - name:
+      given: Michael E.
+      family: Vinyard
   - D.S. Magruder
-  - Michaela F. Mueller
+  - name:
+      given: Michaela F.
+      family: Mueller
   - Alma Andersson
   - Emma Dann
   - Qian Qin
-  - Dominik J. Otto
+  - name:
+      given: Dominik J.
+      family: Otto
   - Michal Klein
-  - Olga Borisovna Botvinnik
+  - name:
+      given: Olga Borisovna
+      family: Botvinnik
   - Louise Deconinck
   - Kai Waldrant
-  - Sai Nirmayi Yasa
+  - name:
+      given: Sai Nirmayi
+      family: Yasa
   - Artur Szałata
   - Andrew Benz
   - Zhijian Li
-  - Open Problems Jamboree Members
-  - Jonathan M. Bloom
-  - Angela Oliveira Pisco
+  - name:
+      literal: Open Problems Jamboree Members
+  - name:
+      given: Jonathan M.
+      family: Bloom
+  - name:
+      given: Angela
+      family: Oliveira Pisco
   - Julio Saez-Rodriguez
   - Drausin Wulsin
   - Luca Pinello
   - Yvan Saeys
-  - Fabian J Theis
+  - name:
+      given: Fabian J
+      family: Theis
   - Smita Krishnaswamy
 abstract: |
   Single-cell genomics has enabled the study of biological processes at an unprecedented scale and resolution.

@@ -6,21 +6,31 @@ author:
   - Olivia Villeronce
   - name: Luke Zappia
     me: true
-  - Ebba Louise Lagerqvist
+  - name:
+      given: Ebba Louise
+      family: Lagerqvist
   - Sebastian Lunke
   - Emmanuelle Charafe-Jauffret
   - Kym Pham
   - Christina Molck
   - Nathalie Rolland
-  - Jean François Bourgaux
+  - name:
+      given: Jean François
+      family: Bourgaux
   - Michel Prudhomme
   - Claire Philippe
   - Sophie Bravo
-  - Jean Christophe Boyer
+  - name:
+      given: Jean Christophe
+      family: Boyer
   - Lucile Canterel-Thouennon
-  - Graham Roy Taylor
+  - name:
+      given: Graham Roy
+      family: Taylor
   - Arthur Hsu
-  - Jean Marc Pascussi
+  - name:
+      given: Jean Marc
+      family: Pascussi
   - Frédéric Hollande
   - Julie Pannequin
 abstract: |

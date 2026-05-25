@@ -2,14 +2,20 @@
 title: Integrating single-cell RNA-seq datasets with substantial batch effects
 author:
   - Karin Hrovatin
-  - Amir Ali Moinfar
+  - name:
+      given: Amir Ali
+      family: Moinfar
   - name: Luke Zappia
     me: true
   - Shrey Parikh
-  - Alejandro Tejada Lapuerta
+  - name:
+      given: Alejandro
+      family: Tejada Lapuerta
   - Benjamin Lengerich
   - Manolis Kellis
-  - Fabian J. Theis
+  - name:
+      given: Fabian J.
+      family: Theis
 abstract: |
   Integration of single-cell RNA-sequencing (scRNA-seq) datasets is standard in scRNA-seq analysis.
   Nevertheless, current computational methods struggle to harmonize datasets across systems such as species, organoids and primary tissue, or different scRNA-seq protocols, including single-cell and single-nuclei.

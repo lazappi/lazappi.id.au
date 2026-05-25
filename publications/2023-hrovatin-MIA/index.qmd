@@ -12,7 +12,9 @@ author:
   - Anika Böttcher
   - Adriana Migliorini
   - Heiko Lickert
-  - Fabian J Theis
+  - name:
+      given: Fabian J
+      family: Theis
 abstract: |
   Although multiple pancreatic islet single-cell RNA-sequencing (scRNA-seq) datasets have been generated, a consensus on pancreatic cell states in development, homeostasis and diabetes as well as the value of preclinical animal models is missing.
   Here, we present an scRNA-seq cross-condition mouse islet atlas (MIA), a curated resource for interactive exploration and computational querying.

@@ -1,20 +1,34 @@
 ---
 title: Unique transcriptional architecture in airway epithelial cells and macrophages shapes distinct responses following influenza virus infection ex vivo
 author:
-  - Joel Z Ma
-  - Wy Ching Ng
+  - name:
+      given: Joel Z
+      family: Ma
+  - name:
+      given: Wy Ching
+      family: Ng
   - name: Luke Zappia
     me: true
-  - Linden J Gearing
+  - name:
+      given: Linden J
+      family: Gearing
   - Moshe Olshansky
   - Kym Pham
   - Karey Cheong
   - Arthur Hsu
-  - Stephen J Turner
+  - name:
+      given: Stephen J
+      family: Turner
   - Odilia Wijburg
-  - Sarah L Londrigan
-  - Andrew G Brooks
-  - Patrick C Reading
+  - name:
+      given: Sarah L
+      family: Londrigan
+  - name:
+      given: Andrew G
+      family: Brooks
+  - name:
+      given: Patrick C
+      family: Reading
 abstract: |
   Airway epithelial cells and macrophages differ markedly in their responses to influenza A virus (IAV) infection.
   To investigate transcriptional responses underlying these differences, purified subsets of type II airway epithelial cells (ATII) and alveolar macrophages (AM) recovered from the lungs of mock- or IAV-infected mice at 9 h postinfection were subjected to RNA sequencing.

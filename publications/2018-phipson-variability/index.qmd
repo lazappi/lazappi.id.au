@@ -2,20 +2,34 @@
 title: Evaluation of variability in human kidney organoids
 author:
   - Belinda Phipson
-  - Pei X Er
-  - Alexander N Combes
-  - Thomas A Forbes
-  - Sara E Howden
+  - name:
+      given: Pei X
+      family: Er
+  - name:
+      given: Alexander N
+      family: Combes
+  - name:
+      given: Thomas A
+      family: Forbes
+  - name:
+      given: Sara E
+      family: Howden
   - name: Luke Zappia
     me: true
   - Hsan-Jan Yen
-  - Kynan T Lawlor
-  - Lorna J Hale
+  - name:
+      given: Kynan T
+      family: Lawlor
+  - name:
+      given: Lorna J
+      family: Hale
   - Jane Sun
   - Ernst Wolvetang
   - Minoru Takasato
   - Alicia Oshlack
-  - Melissa H Little
+  - name:
+      given: Melissa H
+      family: Little
 abstract: |
   The utility of human pluripotent stem cell–derived kidney organoids relies implicitly on the robustness and transferability of the protocol.
   Here we analyze the sources of transcriptional variation in a specific kidney organoid protocol. Although individual organoids within a differentiation batch showed strong transcriptional correlation, we noted significant variation between experimental batches, particularly in genes associated with temporal maturation.

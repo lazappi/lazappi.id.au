@@ -1,11 +1,15 @@
 ---
 title: "splatPop: simulating population scale single-cell RNA sequencing data"
 author:
-  - Christina B Azodi
+  - name:
+      given: Christina B
+      family: Azodi
   - name: Luke Zappia
     me: true
   - Alicia Oshlack
-  - Davis J McCarthy
+  - name:
+      given: Davis J
+      family: McCarthy
 abstract: |
   Population-scale single-cell RNA sequencing (scRNA-seq) is now viable, enabling finer resolution functional genomics studies and leading to a rush to adapt bulk methods and develop new single-cell-specific methods to perform these studies.
   Simulations are useful for developing, testing, and benchmarking methods but current scRNA-seq simulation frameworks do not simulate population-scale data with genetic effects.

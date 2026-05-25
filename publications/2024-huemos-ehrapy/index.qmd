@@ -4,25 +4,35 @@ author:
   - Lukas Heumos
   - Philipp Ehmele
   - Tim Treis
-  - Julius Upmeier zu Belzen
+  - name:
+      given: Julius
+      family: Upmeier zu Belzen
   - Eljas Roellin
   - Lilly May
   - Altana Namsaraeva
   - Nastassya Horlava
-  - Vladimir A. Shitov
+  - name:
+      given: Vladimir A.
+      family: Shitov
   - Xinyue Zhang
   - name: Luke Zappia
     me: true
   - Rainer Knoll
-  - Niklas J. Lang
+  - name:
+      given: Niklas J.
+      family: Lang
   - Leon Hetzel
   - Isaac Virshup
   - Lisa Sikkema
   - Fabiola Curion
   - Roland Eils
-  - Herbert B. Schiller
+  - name:
+      given: Herbert B.
+      family: Schiller
   - Anne Hilgendorff
-  - Fabian J. Theis
+  - name:
+      given: Fabian J.
+      family: Theis
 abstract: |
   With progressive digitalization of healthcare systems worldwide, large-scale collection of electronic health records (EHRs) has become commonplace.
   However, an extensible framework for comprehensive exploratory analysis that accounts for data heterogeneity is missing.

@@ -4,10 +4,14 @@ author:
   - Robrecht Cannoodt
   - Louise Deconinck
   - Artuur Couckuyt
-  - Nikolay S Markov
+  - name:
+      given: Nikolay S
+      family: Markov
   - name: Luke Zappia
     me: true
-  - Malte D Luecken
+  - name:
+      given: Malte D
+      family: Luecken
   - Marta Interlandi
   - Yvan Saeys
   - Wouter Saelens

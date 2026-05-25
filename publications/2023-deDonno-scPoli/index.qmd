@@ -1,14 +1,20 @@
 ---
 title: Population-level integration of single-cell datasets enables multi-scale analysis across samples
 author:
-  - Carlo De Donno
+  - name:
+      given: Carlo
+      family: De Donno
   - Soroor Hediyeh-Zadeh
-  - Amir Ali Moinfar
+  - name:
+      given: Amir Ali
+      family: Moinfar
   - Marco Wagenstetter
   - name: Luke Zappia
     me: true
   - Mohammad Lotfollahi
-  - Fabian J. Theis
+  - name:
+      given: Fabian J.
+      family: Theis
 abstract: |
   The increasing generation of population-level single-cell atlases has the potential to link sample metadata with cellular data.
   Constructing such references requires integration of heterogeneous cohorts with varying metadata.

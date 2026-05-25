@@ -2,19 +2,30 @@
 title: Best practices for single-cell analysis across modalities
 author:
   - Lukas Heumos
-  - Anna C. Schaar
+  - name:
+      given: Anna C.
+      family: Schaar
   - Christopher Lance
   - Anastasia Litinetskaya
   - Felix Drost
   - name: Luke Zappia
     me: true
-  - Malte D. Lücken
-  - Daniel C. Strobl
+  - name:
+      given: Malte D.
+      family: Lücken
+  - name:
+      given: Daniel C.
+      family: Strobl
   - Juan Henao
   - Fabiola Curion
-  - Single-cell Best Practices Consortium
-  - Herbert B. Schiller
-  - Fabian J. Theis
+  - name:
+      literal: Single-cell Best Practices Consortium
+  - name:
+      given: Herbert B.
+      family: Schiller
+  - name:
+      given: Fabian J.
+      family: Theis
 abstract: |
   Recent advances in single-cell technologies have enabled high-throughput molecular profiling of cells across modalities and locations.
   Single-cell transcriptomics data can now be complemented by chromatin accessibility, surface protein expression, adaptive immune receptor repertoire profiling and spatial information.

@@ -1,16 +1,24 @@
 ---
 title: Single cell analysis of the developing mouse kidney provides deeper insight into marker gene expression and ligand-receptor crosstalk
 author:
-  - Alexander N Combes
+  - name:
+      given: Alexander N
+      family: Combes
   - Belinda Phipson
-  - Kynan T Lawlor
+  - name:
+      given: Kynan T
+      family: Lawlor
   - Aude Dorison
   - Ralph Patrick
   - name: Luke Zappia
     me: true
-  - Richard P Harvey
+  - name:
+      given: Richard P
+      family: Harvey
   - Alicia Oshlack
-  - Melissa H Little
+  - name:
+      given: Melissa H
+      family: Little
 abstract: |
   Recent advances in the generation of kidney organoids and the culture of primary nephron progenitors from mouse and human have been based on knowledge of the molecular basis of kidney development in mice.
   Although gene expression during kidney development has been intensely investigated, single cell profiling provides new opportunities to further subsect component cell types and the signalling networks at play.

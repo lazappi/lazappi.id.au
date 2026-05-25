@@ -3,12 +3,18 @@ title: An integrated cell atlas of the lung in health and disease
 author:
   - Lisa Sikkema
   - Ciro Ramírez-Suástegui
-  - Daniel C. Strobl
-  - Tessa E. Gillett
+  - name:
+      given: Daniel C.
+      family: Strobl
+  - name:
+      given: Tessa E.
+      family: Gillett
   - name: Luke Zappia
     me: true
   - Elo Madissoon
-  - Nikolay S. Markov
+  - name:
+      given: Nikolay S.
+      family: Markov
   - Laure-Emmanuelle Zaragosi
   - Yuge Ji
   - Meshal Ansari
@@ -20,75 +26,152 @@ author:
   - Evgeny Chichelnitskiy
   - Mei-i Chung
   - Antoine Collin
-  - Aurore C. A. Gay
+  - name:
+      given: Aurore C. A.
+      family: Gay
   - Janine Gote-Schniering
-  - Baharak Hooshiar Kashani
+  - name:
+      given: Baharak Hooshiar
+      family: Kashani
   - Kemal Inecik
   - Manu Jain
-  - Theodore S. Kapellos
-  - Tessa M. Kole
+  - name:
+      given: Theodore S.
+      family: Kapellos
+  - name:
+      given: Tessa M.
+      family: Kole
   - Sylvie Leroy
-  - Christoph H. Mayr
-  - Amanda J. Oliver
-  - Michael von Papen
+  - name:
+      given: Christoph H.
+      family: Mayr
+  - name:
+      given: Amanda J.
+      family: Oliver
+  - name:
+      given: Michael
+      family: von Papen
   - Lance Peter
-  - Chase J. Taylor
+  - name:
+      given: Chase J.
+      family: Taylor
   - Thomas Walzthoeni
   - Chuan Xu
-  - Linh T. Bui
-  - Carlo De Donno
+  - name:
+      given: Linh T.
+      family: Bui
+  - name:
+      given: Carlo
+      family: De Donno
   - Leander Dony
   - Alen Faiz
   - Minzhe Guo
-  - Austin J. Gutierrez
+  - name:
+      given: Austin J.
+      family: Gutierrez
   - Lukas Heumos
   - Ni Huang
-  - Ignacio L. Ibarra
-  - Nathan D. Jackson
-  - Preetish Kadur Lakshminarasimha Murthy
+  - name:
+      given: Ignacio L.
+      family: Ibarra
+  - name:
+      given: Nathan D.
+      family: Jackson
+  - name:
+      given: Preetish Kadur Lakshminarasimha
+      family: Murthy
   - Mohammad Lotfollahi
   - Tracy Tabib
   - Carlos Talavera-López
-  - Kyle J. Travaglini
+  - name:
+      given: Kyle J.
+      family: Travaglini
   - Anna Wilbrey-Clark
-  - Kaylee B. Worlock
+  - name:
+      given: Kaylee B.
+      family: Worlock
   - Masahiro Yoshida
-  - Lung Biological Network Consortium
-  - Maarten van den Berge
+  - name:
+      literal: Lung Biological Network Consortium
+  - name:
+      given: Maarten
+      family: van den Berge
   - Yohan Bossé
-  - Tushar J. Desai
+  - name:
+      given: Tushar J.
+      family: Desai
   - Oliver Eickelberg
   - Naftali Kaminski
-  - Mark A. Krasnow
+  - name:
+      given: Mark A.
+      family: Krasnow
   - Robert Lafyatis
-  - Marko Z. Nikolic
-  - Joseph E. Powell
+  - name:
+      given: Marko Z.
+      family: Nikolic
+  - name:
+      given: Joseph E.
+      family: Powell
   - Jayaraj Rajagopal
   - Mauricio Rojas
   - Orit Rozenblatt-Rosen
-  - Max A. Seibold
+  - name:
+      given: Max A.
+      family: Seibold
   - Dean Sheppard
-  - Douglas P. Shepherd
-  - Don D. Sin
+  - name:
+      given: Douglas P.
+      family: Shepherd
+  - name:
+      given: Don D.
+      family: Sin
   - Wim Timens
-  - Alexander M. Tsankov
+  - name:
+      given: Alexander M.
+      family: Tsankov
   - Jeffrey Whitsett
   - Yan Xu
-  - Nicholas E. Banovich
+  - name:
+      given: Nicholas E.
+      family: Banovich
   - Pascal Barbry
-  - Thu Elizabeth Duong
-  - Christine S. Falk
-  - Kerstin B. Meyer
-  - Jonathan A. Kropski
+  - name:
+      given: Thu Elizabeth
+      family: Duong
+  - name:
+      given: Christine S.
+      family: Falk
+  - name:
+      given: Kerstin B.
+      family: Meyer
+  - name:
+      given: Jonathan A.
+      family: Kropski
   - Dana Pe’er
-  - Herbert B. Schiller
-  - Purushothama Rao Tata
-  - Joachim L. Schultze
-  - Sara A. Teichmann
-  - Alexander V. Misharin
-  - Martijn C. Nawijn
-  - Malte D. Luecken
-  - Fabian J. Theis
+  - name:
+      given: Herbert B.
+      family: Schiller
+  - name:
+      given: Purushothama Rao
+      family: Tata
+  - name:
+      given: Joachim L.
+      family: Schultze
+  - name:
+      given: Sara A.
+      family: Teichmann
+  - name:
+      given: Alexander V.
+      family: Misharin
+  - name:
+      given: Martijn C.
+      family: Nawijn
+  - name:
+      given: Malte D.
+      family: Luecken
+  - name:
+      given: Fabian J.
+      family: Theis
 abstract: |
   Single-cell technologies have transformed our understanding of human tissues.
   Yet, studies typically capture only a limited number of donors and disagree on cell type definitions.

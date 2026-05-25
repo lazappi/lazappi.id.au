@@ -1,12 +1,16 @@
 ---
 title: Opportunities and challenges in long-read sequencing data analysis
 author:
-  - Shanika L Amarasinghe
+  - name:
+      given: Shanika L
+      family: Amarasinghe
   - Shian Su
   - Xueyi Dong
   - name: Luke Zappia
     me: true
-  - Matthew E Ritchie
+  - name:
+      given: Matthew E
+      family: Ritchie
   - Quentin Gouil
 abstract: |
   Long-read technologies are overcoming early limitations in accuracy and throughput, broadening their application domains in genomics.

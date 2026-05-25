@@ -3,6 +3,13 @@ title: Template publication
 author:
   - name: Luke Zappia
     me: true
+  # Use for complex names
+  # - name:
+  #     given: Given Name
+  #     family: Family
+  # Use for group authorship
+  # - name:
+  #     literal: A Group of Authors
 abstract: |
   An abstract describing the publication.
   It can be split across lines.

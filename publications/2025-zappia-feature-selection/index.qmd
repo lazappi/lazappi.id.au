@@ -9,8 +9,12 @@ author:
   - Weixu Wang
   - Oliver Dietrich
   - Amit Frishberg
-  - Malte D Luecken
-  - Fabian J Theis
+  - name:
+      given: Malte D
+      family: Luecken
+  - name:
+      given: Fabian J
+      family: Theis
 abstract: |
   The availability of single-cell transcriptomics has allowed the construction of reference cell atlases, but their usefulness depends on the quality of dataset integration and the ability to map new samples.
   Previous benchmarks have compared integration methods and suggest that feature selection improves performance but have not explored how best to select features.

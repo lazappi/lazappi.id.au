@@ -1,7 +1,9 @@
 ---
 title: Sfaira accelerates data and model reuse in single cell genomics
 author:
-  - David S Fischer
+  - name:
+      given: David S
+      family: Fischer
   - Leander Dony
   - Martin König
   - Abdul Moeed
@@ -11,7 +13,9 @@ author:
   - Sophie Tritschler
   - Olle Holmberg
   - Hananeh Aliee
-  - Fabian J Theis
+  - name:
+      given: Fabian J
+      family: Theis
 abstract: |
   Single-cell RNA-seq datasets are often first analyzed independently without harnessing model fits from previous studies, and are then contextualized with public data sets, requiring time-consuming data wrangling.
   We address these issues with sfaira, a single-cell data zoo for public data sets paired with a model zoo for executable pre-trained models.

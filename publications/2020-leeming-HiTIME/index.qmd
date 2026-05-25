@@ -1,13 +1,23 @@
 ---
 title: "HiTIME: An efficient model-selection approach for the detection of unknown drug metabolites in LC-MS data"
 author:
-  - Michael G Leeming
-  - Andrew P Isaac
+  - name:
+      given: Michael G
+      family: Leeming
+  - name:
+      given: Andrew P
+      family: Isaac
   - name: Luke Zappia
     me: true
-  - Richard A J O'Hair
-  - William A Donald
-  - Bernard J Pope
+  - name:
+      given: Richard A J
+      family: O'Hair
+  - name:
+      given: William A
+      family: Donald
+  - name:
+      given: Bernard J
+      family: Pope
 abstract: |
   The identification of metabolites plays an important role in understanding drug efficacy and safety however these compounds are often difficult to identify in complex mixtures.
   One approach to identify drug metabolites involves utilising differentially isotopically labelled drug compounds to create unique isotopic signals that can be detected by liquid chromatography-mass spectrometry (LC-MS). User-friendly, efficient, computational tools that allow selective detection of these signals are lacking.

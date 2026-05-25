@@ -2,7 +2,9 @@
 title: Optimal distance metrics for single-cell RNA-seq populations
 author:
   - Yuge Ji
-  - Tessa D. Green
+  - name:
+      given: Tessa D.
+      family: Green
   - Stefan Peidli
   - Mojtaba Bahrami
   - Meiqi Liu,
@@ -10,7 +12,9 @@ author:
     me: true
   - Karin Hrovatin
   - Chris Sander
-  - Fabian J. Theis
+  - name:
+      given: Fabian J.
+      family: Theis
 abstract: |
   In single-cell data workflows and modeling, distance metrics are commonly used in loss functions, model evaluation, and subpopulation analysis.
   However, these metrics behave differently depending on the source of variation, conditions and subpopulations in single-cell expression profiles due to data sparsity and high dimensionality.

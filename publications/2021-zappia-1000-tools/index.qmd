@@ -3,7 +3,9 @@ title: Over 1000 tools reveal trends in the single-cell RNA-seq analysis landsca
 author:
   - name: Luke Zappia
     me: true
-  - Fabian J Theis
+  - name:
+      given: Fabian J
+      family: Theis
 abstract: |
   Recent years have seen a revolution in single-cell RNA-sequencing (scRNA-seq) technologies, datasets, and analysis methods.
   Since 2016, the scRNA-tools database has cataloged software tools for analyzing scRNA-seq data. With the number of tools in the database passing 1000, we provide an update on the state of the project and the field.

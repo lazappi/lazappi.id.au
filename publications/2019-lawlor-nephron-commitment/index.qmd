@@ -1,15 +1,23 @@
 ---
 title: Nephron progenitor commitment is a stochastic process influenced by cell migration
 author:
-  - Kynan T Lawlor
+  - name:
+      given: Kynan T
+      family: Lawlor
   - name: Luke Zappia
     me: true
   - James Lefevre
   - Joo-Seop Park
-  - Nicholas A Hamilton
+  - name:
+      given: Nicholas A
+      family: Hamilton
   - Alicia Oshlack
-  - Melissa H Little
-  - Alexander Nicholas Combes
+  - name:
+      given: Melissa H
+      family: Little
+  - name:
+      given: Alexander Nicholas
+      family: Combes
 abstract: |
   **Background**
 

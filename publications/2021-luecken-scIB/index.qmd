@@ -1,18 +1,26 @@
 ---
 title: Benchmarking atlas-level data integration in single-cell genomics
 author:
-  - Malte D Luecken
+  - name:
+      given: Malte D
+      family: Luecken
   - Maren Büttner
   - Kridsadakorn Chaichoompu
   - Anna Danese
   - Marta Interlandi
-  - Michaela F Mueller
-  - Daniel C Strobl
+  - name:
+      given: Michaela F
+      family: Mueller
+  - name:
+      given: Daniel C
+      family: Strobl
   - name: Luke Zappia
     me: true
   - Martin Dugas
   - Maria Colomé-Tatché
-  - Fabian J Theis
+  - name:
+      given: Fabian J
+      family: Theis
 abstract: |
   Single-cell atlases often include samples that span locations, laboratories and conditions, leading to complex, nested batch effects in data.
   Thus, joint analysis of atlas datasets requires reliable data integration.

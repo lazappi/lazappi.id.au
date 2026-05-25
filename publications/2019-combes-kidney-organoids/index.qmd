@@ -1,12 +1,18 @@
 ---
 title: Single-cell analysis reveals congruence between kidney organoids and human fetal kidney
 author:
-  - Alexander N Combes
+  - name:
+      given: Alexander N
+      family: Combes
   - name: Luke Zappia
     me: true
-  - Pei Xuan Er
+  - name:
+      given: Pei Xuan
+      family: Er
   - Alicia Oshlack
-  - Melissa H Little
+  - name:
+      given: Melissa H
+      family: Little
 abstract: |
   **Background**
 

@@ -1,18 +1,30 @@
 ---
 title: Kidney micro-organoids in suspension culture as a scalable source of human pluripotent stem cell-derived kidney cells
 author:
-  - Santhosh V Kumar
-  - Pei X Er
-  - Kynan T Lawlor
+  - name:
+      given: Santhosh V
+      family: Kumar
+  - name:
+      given: Pei X
+      family: Er
+  - name:
+      given: Kynan T
+      family: Lawlor
   - Ali Motazedian
   - Michelle Scurr
   - Irene Ghobrial
-  - Alexander N Combes
+  - name:
+      given: Alexander N
+      family: Combes
   - name: Luke Zappia
     me: true
   - Alicia Oshlack
-  - Edouard G Stanley
-  - Melissa H Little
+  - name:
+      given: Edouard G
+      family: Stanley
+  - name:
+      given: Melissa H
+      family: Little
 abstract: |
   Kidney organoids have potential uses in disease modelling, drug screening and regenerative medicine.
   However, novel cost-effective techniques are needed to enable scaled-up production of kidney cell types in vitro.

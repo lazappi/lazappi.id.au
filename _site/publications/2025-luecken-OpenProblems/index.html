@@ -62,7 +62,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -82,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8f864f30bcfd61dbcbf7d9c07deebcc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8f598b0c6804ddb65bde70a8ddf8217d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -141,7 +140,15 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<script>
+  window.addEventListener("load", () => {
+    if (window.quartoToggleHeadroom) {
+      window.quartoToggleHeadroom();
+      window.quartoToggleHeadroom = () => {};
+    }
+  });
+</script>
 
 
 <meta property="og:title" content="Defining and benchmarking open problems in single-cell analysis – lazappi">
@@ -608,18 +615,19 @@ Here, we present Open Problems, a living, extensive, community-guided platform i
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{d._luecken2025,
-  author = {D. Luecken, Malte and Gigante, Scott and B. Burkhardt,
-    Daniel and Cannoodt, Robrecht and C. Strobl, Daniel and S. Markov,
-    Nikolay and Zappia, Luke and Palla, Giovanni and Lewis, Wesley and
-    Dimitrov, Daniel and E. Vinyard, Michael and Magruder, D.S. and F.
-    Mueller, Michaela and Andersson, Alma and Dann, Emma and Qin, Qian
-    and J. Otto, Dominik and Klein, Michal and Borisovna Botvinnik, Olga
-    and Deconinck, Louise and Waldrant, Kai and Nirmayi Yasa, Sai and
-    Szałata, Artur and Benz, Andrew and Li, Zhijian and Problems
-    Jamboree Members, Open and M. Bloom, Jonathan and Oliveira Pisco,
-    Angela and Saez-Rodriguez, Julio and Wulsin, Drausin and Pinello,
-    Luca and Saeys, Yvan and J Theis, Fabian and Krishnaswamy, Smita},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{luecken2025,
+  author = {Luecken, Malte D. and Gigante, Scott and Burkhardt, Daniel
+    B. and Cannoodt, Robrecht and Strobl, Daniel C. and Markov, Nikolay
+    S. and Zappia, Luke and Palla, Giovanni and Lewis, Wesley and
+    Dimitrov, Daniel and Vinyard, Michael E. and Magruder, D.S. and
+    Mueller, Michaela F. and Andersson, Alma and Dann, Emma and Qin,
+    Qian and Otto, Dominik J. and Klein, Michal and Botvinnik, Olga
+    Borisovna and Deconinck, Louise and Waldrant, Kai and Yasa, Sai
+    Nirmayi and Szałata, Artur and Benz, Andrew and Li, Zhijian and
+    {Open Problems Jamboree Members} and Bloom, Jonathan M. and Oliveira
+    Pisco, Angela and Saez-Rodriguez, Julio and Wulsin, Drausin and
+    Pinello, Luca and Saeys, Yvan and Theis, Fabian J and Krishnaswamy,
+    Smita},
   title = {Defining and Benchmarking Open Problems in Single-Cell
     Analysis},
   journal = {Nature biotechnology},
@@ -648,16 +656,15 @@ Here, we present Open Problems, a living, extensive, community-guided platform i
     that we envisage raising standards for the selection, evaluation and
     development of methods in single-cell analysis.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-d._luecken2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-<div class="">D.
-Luecken, M., Gigante, S., B. Burkhardt, D., Cannoodt, R., C. Strobl, D.,
-S. Markov, N., Zappia, L., Palla, G., Lewis, W., Dimitrov, D., E.
-Vinyard, M., Magruder, D. S., F. Mueller, M., Andersson, A., Dann, E.,
-Qin, Q., J. Otto, D., Klein, M., Borisovna Botvinnik, O., Deconinck, L.,
-Waldrant, K., Nirmayi Yasa, S., Szałata, A., Benz, A., Li, Z., Problems
-Jamboree Members, O., M. Bloom, J., Oliveira Pisco, A., Saez-Rodriguez,
-J., Wulsin, D., Pinello, L., Saeys, Y., J Theis, F. &amp; Krishnaswamy,
-S. <a href="https://doi.org/10.1038/s41587-025-02694-w">Defining and
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-luecken2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class="">Luecken, M. D., Gigante, S., Burkhardt, D. B.,
+Cannoodt, R., Strobl, D. C., Markov, N. S., Zappia, L., Palla, G.,
+Lewis, W., Dimitrov, D., Vinyard, M. E., Magruder, D. S., Mueller, M.
+F., Andersson, A., Dann, E., Qin, Q., Otto, D. J., Klein, M., Botvinnik,
+O. B., Deconinck, L., Waldrant, K., Yasa, S. N., Szałata, A., Benz, A.,
+Li, Z., Open Problems Jamboree Members, Bloom, J. M., Oliveira Pisco,
+A., Saez-Rodriguez, J., Wulsin, D., Pinello, L., Saeys, Y., Theis, F. J.
+&amp; Krishnaswamy, S. <a href="https://doi.org/10.1038/s41587-025-02694-w">Defining and
 benchmarking open problems in single-cell analysis</a>. <em>Nature
 biotechnology</em> <strong>43,</strong> 1035–1040 (2025).</div>
 </div></div></section></div></main> <!-- /main -->

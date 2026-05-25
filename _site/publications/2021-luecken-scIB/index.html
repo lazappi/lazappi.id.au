@@ -39,7 +39,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -59,9 +58,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8f864f30bcfd61dbcbf7d9c07deebcc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8f598b0c6804ddb65bde70a8ddf8217d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +117,15 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<script>
+  window.addEventListener("load", () => {
+    if (window.quartoToggleHeadroom) {
+      window.quartoToggleHeadroom();
+      window.quartoToggleHeadroom = () => {};
+    }
+  });
+</script>
 
 
 <meta property="og:title" content="Benchmarking atlas-level data integration in single-cell genomics – lazappi">
@@ -491,11 +498,11 @@ Our freely available Python module and benchmarking pipeline can identify optima
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{d_luecken2021,
-  author = {D Luecken, Malte and Büttner, Maren and Chaichoompu,
-    Kridsadakorn and Danese, Anna and Interlandi, Marta and F Mueller,
-    Michaela and C Strobl, Daniel and Zappia, Luke and Dugas, Martin and
-    Colomé-Tatché, Maria and J Theis, Fabian},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{luecken2021,
+  author = {Luecken, Malte D and Büttner, Maren and Chaichoompu,
+    Kridsadakorn and Danese, Anna and Interlandi, Marta and Mueller,
+    Michaela F and Strobl, Daniel C and Zappia, Luke and Dugas, Martin
+    and Colomé-Tatché, Maria and Theis, Fabian J},
   title = {Benchmarking Atlas-Level Data Integration in Single-Cell
     Genomics},
   journal = {Nature methods},
@@ -525,12 +532,12 @@ Our freely available Python module and benchmarking pipeline can identify optima
     can identify optimal data integration methods for new data,
     benchmark new methods and improve method development.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-d_luecken2021" class="csl-entry quarto-appendix-citeas" role="listitem">
-<div class="">D
-Luecken, M., Büttner, M., Chaichoompu, K., Danese, A., Interlandi, M., F
-Mueller, M., C Strobl, D., Zappia, L., Dugas, M., Colomé-Tatché, M.
-&amp; J Theis, F. Benchmarking atlas-level data integration in
-single-cell genomics. <em>Nature methods</em> (2021). doi:<a href="https://doi.org/10.1038/s41592-021-01336-8">10.1038/s41592-021-01336-8</a></div>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-luecken2021" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class="">Luecken, M. D., Büttner, M., Chaichoompu, K.,
+Danese, A., Interlandi, M., Mueller, M. F., Strobl, D. C., Zappia, L.,
+Dugas, M., Colomé-Tatché, M. &amp; Theis, F. J. Benchmarking atlas-level
+data integration in single-cell genomics. <em>Nature methods</em>
+(2021). doi:<a href="https://doi.org/10.1038/s41592-021-01336-8">10.1038/s41592-021-01336-8</a></div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

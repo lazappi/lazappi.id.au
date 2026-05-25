@@ -115,7 +115,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -135,9 +134,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8f864f30bcfd61dbcbf7d9c07deebcc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8f598b0c6804ddb65bde70a8ddf8217d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -194,7 +193,15 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<script>
+  window.addEventListener("load", () => {
+    if (window.quartoToggleHeadroom) {
+      window.quartoToggleHeadroom();
+      window.quartoToggleHeadroom = () => {};
+    }
+  });
+</script>
 
 
 <meta property="og:title" content="An integrated cell atlas of the lung in health and disease – lazappi">
@@ -876,35 +883,36 @@ Overall, the HLCA serves as an example for the development and use of large-scal
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{sikkema2023,
-  author = {Sikkema, Lisa and Ramírez-Suástegui, Ciro and C. Strobl,
-    Daniel and E. Gillett, Tessa and Zappia, Luke and Madissoon, Elo and
-    S. Markov, Nikolay and Zaragosi, Laure-Emmanuelle and Ji, Yuge and
+  author = {Sikkema, Lisa and Ramírez-Suástegui, Ciro and Strobl, Daniel
+    C. and Gillett, Tessa E. and Zappia, Luke and Madissoon, Elo and
+    Markov, Nikolay S. and Zaragosi, Laure-Emmanuelle and Ji, Yuge and
     Ansari, Meshal and Arguel, Marie-Jeanne and Apperloo, Leonie and
     Banchero, Martin and Bécavin, Christophe and Berg, Marijn and
-    Chichelnitskiy, Evgeny and Chung, Mei-i and Collin, Antoine and C.
-    A. Gay, Aurore and Gote-Schniering, Janine and Hooshiar Kashani,
-    Baharak and Inecik, Kemal and Jain, Manu and S. Kapellos, Theodore
-    and M. Kole, Tessa and Leroy, Sylvie and H. Mayr, Christoph and J.
-    Oliver, Amanda and von Papen, Michael and Peter, Lance and J.
-    Taylor, Chase and Walzthoeni, Thomas and Xu, Chuan and T. Bui, Linh
-    and De Donno, Carlo and Dony, Leander and Faiz, Alen and Guo, Minzhe
-    and J. Gutierrez, Austin and Heumos, Lukas and Huang, Ni and L.
-    Ibarra, Ignacio and D. Jackson, Nathan and Kadur Lakshminarasimha
-    Murthy, Preetish and Lotfollahi, Mohammad and Tabib, Tracy and
-    Talavera-López, Carlos and J. Travaglini, Kyle and Wilbrey-Clark,
-    Anna and B. Worlock, Kaylee and Yoshida, Masahiro and Biological
-    Network Consortium, Lung and van den Berge, Maarten and Bossé, Yohan
-    and J. Desai, Tushar and Eickelberg, Oliver and Kaminski, Naftali
-    and A. Krasnow, Mark and Lafyatis, Robert and Z. Nikolic, Marko and
-    E. Powell, Joseph and Rajagopal, Jayaraj and Rojas, Mauricio and
-    Rozenblatt-Rosen, Orit and A. Seibold, Max and Sheppard, Dean and P.
-    Shepherd, Douglas and D. Sin, Don and Timens, Wim and M. Tsankov,
-    Alexander and Whitsett, Jeffrey and Xu, Yan and E. Banovich,
-    Nicholas and Barbry, Pascal and Elizabeth Duong, Thu and S. Falk,
-    Christine and B. Meyer, Kerstin and A. Kropski, Jonathan and Pe’er,
-    Dana and B. Schiller, Herbert and Rao Tata, Purushothama and L.
-    Schultze, Joachim and A. Teichmann, Sara and V. Misharin, Alexander
-    and C. Nawijn, Martijn and D. Luecken, Malte and J. Theis, Fabian},
+    Chichelnitskiy, Evgeny and Chung, Mei-i and Collin, Antoine and Gay,
+    Aurore C. A. and Gote-Schniering, Janine and Kashani, Baharak
+    Hooshiar and Inecik, Kemal and Jain, Manu and Kapellos, Theodore S.
+    and Kole, Tessa M. and Leroy, Sylvie and Mayr, Christoph H. and
+    Oliver, Amanda J. and von Papen, Michael and Peter, Lance and
+    Taylor, Chase J. and Walzthoeni, Thomas and Xu, Chuan and Bui, Linh
+    T. and De Donno, Carlo and Dony, Leander and Faiz, Alen and Guo,
+    Minzhe and Gutierrez, Austin J. and Heumos, Lukas and Huang, Ni and
+    Ibarra, Ignacio L. and Jackson, Nathan D. and Murthy, Preetish Kadur
+    Lakshminarasimha and Lotfollahi, Mohammad and Tabib, Tracy and
+    Talavera-López, Carlos and Travaglini, Kyle J. and Wilbrey-Clark,
+    Anna and Worlock, Kaylee B. and Yoshida, Masahiro and {Lung
+    Biological Network Consortium} and van den Berge, Maarten and Bossé,
+    Yohan and Desai, Tushar J. and Eickelberg, Oliver and Kaminski,
+    Naftali and Krasnow, Mark A. and Lafyatis, Robert and Nikolic, Marko
+    Z. and Powell, Joseph E. and Rajagopal, Jayaraj and Rojas, Mauricio
+    and Rozenblatt-Rosen, Orit and Seibold, Max A. and Sheppard, Dean
+    and Shepherd, Douglas P. and Sin, Don D. and Timens, Wim and
+    Tsankov, Alexander M. and Whitsett, Jeffrey and Xu, Yan and
+    Banovich, Nicholas E. and Barbry, Pascal and Duong, Thu Elizabeth
+    and Falk, Christine S. and Meyer, Kerstin B. and Kropski, Jonathan
+    A. and Pe’er, Dana and Schiller, Herbert B. and Tata, Purushothama
+    Rao and Schultze, Joachim L. and Teichmann, Sara A. and Misharin,
+    Alexander V. and Nawijn, Martijn C. and Luecken, Malte D. and Theis,
+    Fabian J.},
   title = {An Integrated Cell Atlas of the Lung in Health and Disease},
   journal = {Nature Medicine},
   volume = {29},
@@ -939,28 +947,27 @@ Overall, the HLCA serves as an example for the development and use of large-scal
     atlases within the Human Cell Atlas.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sikkema2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-<div class="">Sikkema, L., Ramírez-Suástegui, C., C. Strobl,
-D., E. Gillett, T., Zappia, L., Madissoon, E., S. Markov, N., Zaragosi,
+<div class="">Sikkema, L., Ramírez-Suástegui, C., Strobl, D.
+C., Gillett, T. E., Zappia, L., Madissoon, E., Markov, N. S., Zaragosi,
 L.-E., Ji, Y., Ansari, M., Arguel, M.-J., Apperloo, L., Banchero, M.,
-Bécavin, C., Berg, M., Chichelnitskiy, E., Chung, M., Collin, A., C. A.
-Gay, A., Gote-Schniering, J., Hooshiar Kashani, B., Inecik, K., Jain,
-M., S. Kapellos, T., M. Kole, T., Leroy, S., H. Mayr, C., J. Oliver, A.,
-von Papen, M., Peter, L., J. Taylor, C., Walzthoeni, T., Xu, C., T. Bui,
-L., De Donno, C., Dony, L., Faiz, A., Guo, M., J. Gutierrez, A., Heumos,
-L., Huang, N., L. Ibarra, I., D. Jackson, N., Kadur Lakshminarasimha
-Murthy, P., Lotfollahi, M., Tabib, T., Talavera-López, C., J.
-Travaglini, K., Wilbrey-Clark, A., B. Worlock, K., Yoshida, M.,
-Biological Network Consortium, L., van den Berge, M., Bossé, Y., J.
-Desai, T., Eickelberg, O., Kaminski, N., A. Krasnow, M., Lafyatis, R.,
-Z. Nikolic, M., E. Powell, J., Rajagopal, J., Rojas, M.,
-Rozenblatt-Rosen, O., A. Seibold, M., Sheppard, D., P. Shepherd, D., D.
-Sin, D., Timens, W., M. Tsankov, A., Whitsett, J., Xu, Y., E. Banovich,
-N., Barbry, P., Elizabeth Duong, T., S. Falk, C., B. Meyer, K., A.
-Kropski, J., Pe’er, D., B. Schiller, H., Rao Tata, P., L. Schultze, J.,
-A. Teichmann, S., V. Misharin, A., C. Nawijn, M., D. Luecken, M. &amp;
-J. Theis, F. <a href="https://doi.org/10.1038/s41591-023-02327-2">An
-integrated cell atlas of the lung in health and disease</a>. <em>Nature
-Medicine</em> <strong>29,</strong> 1563–1577 (2023).</div>
+Bécavin, C., Berg, M., Chichelnitskiy, E., Chung, M., Collin, A., Gay,
+A. C. A., Gote-Schniering, J., Kashani, B. H., Inecik, K., Jain, M.,
+Kapellos, T. S., Kole, T. M., Leroy, S., Mayr, C. H., Oliver, A. J., von
+Papen, M., Peter, L., Taylor, C. J., Walzthoeni, T., Xu, C., Bui, L. T.,
+De Donno, C., Dony, L., Faiz, A., Guo, M., Gutierrez, A. J., Heumos, L.,
+Huang, N., Ibarra, I. L., Jackson, N. D., Murthy, P. K. L., Lotfollahi,
+M., Tabib, T., Talavera-López, C., Travaglini, K. J., Wilbrey-Clark, A.,
+Worlock, K. B., Yoshida, M., Lung Biological Network Consortium, van den
+Berge, M., Bossé, Y., Desai, T. J., Eickelberg, O., Kaminski, N.,
+Krasnow, M. A., Lafyatis, R., Nikolic, M. Z., Powell, J. E., Rajagopal,
+J., Rojas, M., Rozenblatt-Rosen, O., Seibold, M. A., Sheppard, D.,
+Shepherd, D. P., Sin, D. D., Timens, W., Tsankov, A. M., Whitsett, J.,
+Xu, Y., Banovich, N. E., Barbry, P., Duong, T. E., Falk, C. S., Meyer,
+K. B., Kropski, J. A., Pe’er, D., Schiller, H. B., Tata, P. R.,
+Schultze, J. L., Teichmann, S. A., Misharin, A. V., Nawijn, M. C.,
+Luecken, M. D. &amp; Theis, F. J. <a href="https://doi.org/10.1038/s41591-023-02327-2">An integrated cell
+atlas of the lung in health and disease</a>. <em>Nature Medicine</em>
+<strong>29,</strong> 1563–1577 (2023).</div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

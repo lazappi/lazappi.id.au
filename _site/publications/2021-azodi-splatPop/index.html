@@ -32,7 +32,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -52,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8f864f30bcfd61dbcbf7d9c07deebcc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8f598b0c6804ddb65bde70a8ddf8217d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +110,15 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<script>
+  window.addEventListener("load", () => {
+    if (window.quartoToggleHeadroom) {
+      window.quartoToggleHeadroom();
+      window.quartoToggleHeadroom = () => {};
+    }
+  });
+</script>
 
 
 <meta property="og:title" content="splatPop: simulating population scale single-cell RNA sequencing data – lazappi">
@@ -457,9 +464,9 @@ splatPop can also simulate complex batch, cell group, and conditional effects be
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{b_azodi2021,
-  author = {B Azodi, Christina and Zappia, Luke and Oshlack, Alicia and
-    J McCarthy, Davis},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{azodi2021,
+  author = {Azodi, Christina B and Zappia, Luke and Oshlack, Alicia and
+    McCarthy, Davis J},
   title = {splatPop: Simulating Population Scale Single-Cell {RNA}
     Sequencing Data},
   journal = {Genome biology},
@@ -484,9 +491,9 @@ splatPop can also simulate complex batch, cell group, and conditional effects be
     cell group, and conditional effects between individuals from
     different cohorts as well as genetically-driven co-expression.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-b_azodi2021" class="csl-entry quarto-appendix-citeas" role="listitem">
-<div class="">B
-Azodi, C., Zappia, L., Oshlack, A. &amp; J McCarthy, D. <a href="https://doi.org/10.1186/s13059-021-02546-1">splatPop: simulating
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-azodi2021" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class="">Azodi, C. B., Zappia, L., Oshlack, A. &amp;
+McCarthy, D. J. <a href="https://doi.org/10.1186/s13059-021-02546-1">splatPop: simulating
 population scale single-cell RNA sequencing data</a>. <em>Genome
 biology</em> <strong>22,</strong> 341 (2021).</div>
 </div></div></section></div></main> <!-- /main -->

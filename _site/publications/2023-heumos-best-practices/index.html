@@ -41,7 +41,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -61,9 +60,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8f864f30bcfd61dbcbf7d9c07deebcc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8f598b0c6804ddb65bde70a8ddf8217d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -120,7 +119,15 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<script>
+  window.addEventListener("load", () => {
+    if (window.quartoToggleHeadroom) {
+      window.quartoToggleHeadroom();
+      window.quartoToggleHeadroom = () => {};
+    }
+  });
+</script>
 
 
 <meta property="og:title" content="Best practices for single-cell analysis across modalities – lazappi">
@@ -502,11 +509,11 @@ Our article serves as an entry point for novices in the field of single-cell (mu
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{heumos2023,
-  author = {Heumos, Lukas and C. Schaar, Anna and Lance, Christopher and
-    Litinetskaya, Anastasia and Drost, Felix and Zappia, Luke and D.
-    Lücken, Malte and C. Strobl, Daniel and Henao, Juan and Curion,
-    Fabiola and Best Practices Consortium, Single-cell and B. Schiller,
-    Herbert and J. Theis, Fabian},
+  author = {Heumos, Lukas and Schaar, Anna C. and Lance, Christopher and
+    Litinetskaya, Anastasia and Drost, Felix and Zappia, Luke and
+    Lücken, Malte D. and Strobl, Daniel C. and Henao, Juan and Curion,
+    Fabiola and {Single-cell Best Practices Consortium} and Schiller,
+    Herbert B. and Theis, Fabian J.},
   title = {Best Practices for Single-Cell Analysis Across Modalities},
   journal = {Nature reviews genetics},
   pages = {1-23},
@@ -533,10 +540,10 @@ Our article serves as an entry point for novices in the field of single-cell (mu
     and guides advanced users to the most recent best practices.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-heumos2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-<div class="">Heumos, L., C. Schaar, A., Lance, C.,
-Litinetskaya, A., Drost, F., Zappia, L., D. Lücken, M., C. Strobl, D.,
-Henao, J., Curion, F., Best Practices Consortium, S., B. Schiller, H.
-&amp; J. Theis, F. Best practices for single-cell analysis across
+<div class="">Heumos, L., Schaar, A. C., Lance, C.,
+Litinetskaya, A., Drost, F., Zappia, L., Lücken, M. D., Strobl, D. C.,
+Henao, J., Curion, F., Single-cell Best Practices Consortium, Schiller,
+H. B. &amp; Theis, F. J. Best practices for single-cell analysis across
 modalities. <em>Nature reviews genetics</em> 1–23 (2023). doi:<a href="https://doi.org/10.1038/s41576-023-00586-w">10.1038/s41576-023-00586-w</a></div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

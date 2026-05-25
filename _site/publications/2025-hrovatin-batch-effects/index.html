@@ -36,7 +36,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -56,9 +55,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8f864f30bcfd61dbcbf7d9c07deebcc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-769a05848270b2b3efc8ce47da3cc17a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8f598b0c6804ddb65bde70a8ddf8217d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-67b36dd6bcad4fdf8211df7f0c814624.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,7 +114,15 @@ cookieconsent.run({
   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Rubik&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Rubik:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<script>
+  window.addEventListener("load", () => {
+    if (window.quartoToggleHeadroom) {
+      window.quartoToggleHeadroom();
+      window.quartoToggleHeadroom = () => {};
+    }
+  });
+</script>
 
 
 <meta property="og:title" content="Integrating single-cell RNA-seq datasets with substantial batch effects – lazappi">
@@ -478,9 +485,9 @@ Here, we propose sysVI, a cVAE-based method employing VampPrior and cycle-consis
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{hrovatin2025,
-  author = {Hrovatin, Karin and Ali Moinfar, Amir and Zappia, Luke and
+  author = {Hrovatin, Karin and Moinfar, Amir Ali and Zappia, Luke and
     Parikh, Shrey and Tejada Lapuerta, Alejandro and Lengerich, Benjamin
-    and Kellis, Manolis and J. Theis, Fabian},
+    and Kellis, Manolis and Theis, Fabian J.},
   title = {Integrating Single-Cell {RNA-seq} Datasets with Substantial
     Batch Effects},
   journal = {BMC Genomics},
@@ -508,9 +515,9 @@ Here, we propose sysVI, a cVAE-based method employing VampPrior and cycle-consis
     states and conditions.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hrovatin2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-<div class="">Hrovatin, K., Ali Moinfar, A., Zappia, L.,
-Parikh, S., Tejada Lapuerta, A., Lengerich, B., Kellis, M. &amp; J.
-Theis, F. <a href="https://doi.org/10.1186/s12864-025-12126-3">Integrating
+<div class="">Hrovatin, K., Moinfar, A. A., Zappia, L.,
+Parikh, S., Tejada Lapuerta, A., Lengerich, B., Kellis, M. &amp; Theis,
+F. J. <a href="https://doi.org/10.1186/s12864-025-12126-3">Integrating
 single-cell RNA-seq datasets with substantial batch effects</a>. <em>BMC
 Genomics</em> <strong>26,</strong> 974 (2025).</div>
 </div></div></section></div></main> <!-- /main -->

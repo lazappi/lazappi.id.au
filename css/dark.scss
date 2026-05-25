@@ -1,2 +1,158 @@
 /*-- scss:defaults --*/
-$body-bg: #282a36;
+$body-bg:    #09091a;
+$body-color: rgba(255, 255, 255, 0.88);
+
+/*-- scss:rules --*/
+
+// ── Dark mode surface tokens ─────────────────────────────────────────────────
+:root {
+  --pearl-0: #09091a;
+  --pearl-1: #111122;
+  --pearl-2: #1a1a2e;
+  --pearl-3: #26263c;
+  --t0: #f0ece4;
+  --t1: #b0abb8;
+  --t2: #706c7a;
+  --chrome:        linear-gradient(145deg, #131322 0%, #0f0f1e 55%, #171728 100%);
+  --shadow-chrome: 0 2px 16px rgba(0, 0, 0, .3),  0 1px 3px rgba(0, 0, 0, .18);
+  --shadow-lift:   0 8px 32px rgba(0, 0, 0, .35), 0 2px 8px rgba(0, 0, 0, .2);
+  --glass-bg:       rgba(14, 14, 30, 0.72);
+  --glass-border:   rgba(255, 255, 255, 0.07);
+  --glass-shadow:   rgba(0, 0, 0, 0.42);
+  --surface:        #111122;
+  --bezel:          #050509;
+}
+
+// ── Body / page canvas ─────────────────────────────────────────────────────
+html,
+body {
+  background: var(--pearl-0) !important;
+  color: var(--t0);
+}
+
+body {
+  min-height: 100vh;
+}
+
+// ── Richer aurora in dark mode (stronger, iris/cyan added) ──────────────────
+body::before {
+  background:
+    radial-gradient(ellipse 75% 55% at  8% 42%, rgba(235,   0, 141, 0.20) 0%, transparent 62%),
+    radial-gradient(ellipse 55% 45% at 92% 12%, rgba(  0, 173, 239, 0.20) 0%, transparent 58%),
+    radial-gradient(ellipse 45% 38% at 68% 88%, rgba(168,  85, 247, 0.12) 0%, transparent 52%),
+    radial-gradient(ellipse 38% 32% at 28% 92%, rgba(  6, 182, 212, 0.11) 0%, transparent 52%);
+}
+
+// ── Dark glass hero ──────────────────────────────────────────────────────────
+.quarto-about-trestles {
+  background: var(--glass-bg);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 8px 48px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(235, 0, 141, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.quarto-about-trestles h1,
+.quarto-about-trestles h2,
+.quarto-about-trestles h3 {
+  color: #fff;
+}
+
+.quarto-about-trestles p,
+.quarto-about-trestles li {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+// ── Dark headings ────────────────────────────────────────────────────────────
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+// Keep gradient text on hero
+#hero-heading h1:first-child {
+  color: transparent;
+}
+
+// ── Dark post cards ──────────────────────────────────────────────────────────
+div.quarto-post {
+  background: var(--pearl-1);
+  border-color: var(--pearl-3);
+
+  h3 a,
+  .listing-title a {
+    color: var(--t0) !important;
+  }
+
+  p {
+    color: var(--t1);
+  }
+
+  &:hover {
+    background: var(--pearl-2);
+  }
+}
+
+// ── Dark grid cards ──────────────────────────────────────────────────────────
+.quarto-listing-grid .card {
+  background: var(--chrome);
+  border-color: rgba(255, 255, 255, 0.06);
+  color: var(--t0);
+}
+
+// ── Dark pagination ──────────────────────────────────────────────────────────
+.page-link {
+  border-color: rgba(0, 173, 239, 0.32);
+  box-shadow: 0 8px 18px rgba(0, 173, 239, 0.1);
+  background-color: #00adef;
+  background-image: none;
+}
+
+.page-link:hover,
+.page-link:focus {
+  box-shadow:
+    0 0 0 1px rgba(235, 0, 141, 0.2),
+    0 0 14px rgba(0, 173, 239, 0.22);
+  background-color: #00adef;
+  background-image: linear-gradient(
+    90deg,
+    rgba(235, 0, 141, 0.88),
+    rgba(168, 85, 247, 0.82) 45%,
+    rgba(0, 173, 239, 0.94) 100%
+  );
+  border-color: #eb008d;
+  filter: saturate(1.06) brightness(1.02);
+}
+
+.page-link.active,
+.active > .page-link {
+  background-color: rgba(0, 173, 239, 0.3);
+  background-image: none;
+  border-color: rgba(0, 173, 239, 0.45);
+}
+
+.page-item.disabled .page-link {
+  background-color: var(--pearl-1);
+  background-image: none;
+  border-color: var(--pearl-3);
+  color: var(--t2);
+}
+
+// ── Dark inline code ────────────────────────────────────────────────────────
+:not(pre) > code {
+  background: var(--pearl-2);
+  border-color: var(--pearl-3);
+}
+
+// ── Dark flag counter ────────────────────────────────────────────────────────
+a[href*="flagcounter"] {
+  background: var(--chrome);
+  border-color: rgba(255, 255, 255, 0.06);
+  border-top-color: rgba(0, 173, 239, 0.2);
+}

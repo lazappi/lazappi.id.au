@@ -1,20 +1,821 @@
 /*-- scss:defaults --*/
-$link-color: #eb008d;
-$navbar-bg : #000;
+
+// ── Brand palette ──────────────────────────────────────────────────────────
+$pink:  #eb008d;
+$blue:  #00adef;
+$iris:  #a855f7;
+$cyan:  #06b6d4;
+
+// Bootstrap / Quarto overrides
+$link-color:           $pink;
+$link-hover-color:     $blue;
+$navbar-bg:            #000000;
+$primary:              $pink;
+$info:                 $blue;
+
+// Light mode base
+$body-bg:              #f3f3f8;
+$body-color:           #0d0d1a;
+$font-size-base:       1rem;
+$line-height-base:     1.72;
+
+// Typography
+$headings-font-family: "Rubik", sans-serif;
+$headings-font-weight: 700;
+$headings-line-height: 1.18;
+
+// Radii
+$border-radius:        10px;
+$card-border-radius:   10px;
+$card-border-color:    rgba(0, 0, 0, 0.06);
+$card-bg:              #ffffff;
 
 /*-- scss:rules --*/
-.navbar-dark .navbar-brand {
-    color: #eb008d;
+
+// ── CSS custom properties ──────────────────────────────────────────────────
+:root {
+  // Brand
+  --pink:    #eb008d;
+  --blue:    #00adef;
+  --iris:    #a855f7;
+  --cyan:    #06b6d4;
+  --prism-line: linear-gradient(90deg, #eb008d, #a855f7, #00adef, #06b6d4, #eb008d);
+
+  // Glass surfaces (light mode)
+  --glass-bg:       rgba(255, 255, 255, 0.62);
+  --glass-border:   rgba(255, 255, 255, 0.45);
+  --glass-shadow:   rgba(0, 0, 0, 0.07);
+  --surface:        #ffffff;
+
+  // Pearl surfaces for listing cards (light)
+  --pearl-0: #f3f3f8;
+  --pearl-1: #edeae5;
+  --pearl-2: #e2ddd7;
+  --pearl-3: #c8c3bb;
+
+  // Chrome card surface
+  --chrome:        linear-gradient(145deg, #faf8f5 0%, #edeae2 55%, #f5f1ea 100%);
+  --shadow-chrome: 0 2px 16px rgba(0, 0, 0, .07), 0 1px 3px rgba(0, 0, 0, .04);
+  --shadow-lift:   0 8px 32px rgba(0, 0, 0, .10), 0 2px 8px rgba(0, 0, 0, .06);
+
+  // Text scale
+  --t0: #0d0d1a;
+  --t1: #4e4b58;
+  --t2: #8e8a96;
+
+  // Bezel (nav/footer dark shell)
+  --bezel: #0a0a0c;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #00ADEF;
+// ── Animations ─────────────────────────────────────────────────────────────
+@keyframes prism-flow {
+  from { background-position: 0 50%; }
+  to   { background-position: 200% 50%; }
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(0,173,239,.7);
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:       0.001ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:      0.001ms !important;
+  }
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #00ADEF;
+@media (min-width: 992px) {
+  body.fullcontent:not(.floating):not(.docked) .page-columns {
+    grid-template-columns:
+      [screen-start] 1.5em
+      [screen-start-inset] 5fr
+      [page-start page-start-inset] 35px
+      [body-start-outset] 35px
+      [body-start] 1.5em
+      [body-content-start] minmax(620px, calc(1040px - 3em))
+      [body-content-end] 1.5em
+      [body-end] 35px
+      [body-end-outset] 35px
+      [page-end-inset page-end] 5fr
+      [screen-end-inset] 1.5em;
+  }
+}
+
+// ── Page canvas ──────────────────────────────────────────────────────────────
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 55% at  8% 42%, rgba(235,   0, 141, 0.13) 0%, transparent 62%),
+    radial-gradient(ellipse 55% 45% at 92% 12%, rgba(  0, 173, 239, 0.13) 0%, transparent 58%),
+    radial-gradient(ellipse 45% 38% at 68% 88%, rgba(168,  85, 247, 0.07) 0%, transparent 52%),
+    radial-gradient(ellipse 38% 32% at 28% 92%, rgba(  6, 182, 212, 0.07) 0%, transparent 52%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+// ── Selection & focus ──────────────────────────────────────────────────────
+::selection {
+  background: rgba(235, 0, 141, 0.15);
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid $pink;
+  outline-offset: 2px;
+}
+
+// ── Scrollbar (webkit) ──────────────────────────────────────────────────────
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $pink, $blue);
+  border-radius: 3px;
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+.navbar {
+  background: rgba(0, 0, 0, 0.93) !important;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-bottom: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--prism-line);
+    background-size: 200% 100%;
+    animation: prism-flow 3.5s linear infinite;
+    z-index: 2;
+  }
+
+  .navbar-brand {
+    color: $pink !important;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    text-transform: none;
+  }
+
+  .navbar-nav .nav-link {
+    color: rgba($blue, 0.72) !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+
+    &:hover,
+    &.active {
+      color: $blue !important;
+      text-shadow: 0 0 14px rgba(0, 173, 239, 0.65);
+    }
+  }
+
+  .navbar-nav .nav-link[href*="github"],
+  .navbar-nav .nav-link[href*=".xml"] {
+    color: rgba(255, 255, 255, 0.45) !important;
+    &:hover { color: #fff !important; text-shadow: none; }
+  }
+}
+
+// ── Headings ───────────────────────────────────────────────────────────────
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Rubik", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+}
+
+// ── Homepage panel ───────────────────────────────────────────────────────────
+.quarto-about-trestles {
+  background: var(--glass-bg);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px !important;
+  box-shadow:
+    0 8px 48px var(--glass-shadow),
+    0 0 0 1px rgba(235, 0, 141, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  padding: 2.25rem 1.75rem !important;
+  position: relative;
+  overflow: hidden;
+  width: calc(100% - 2rem);
+  max-width: none;
+  margin: 2.5rem auto 4rem !important;
+  gap: clamp(1.25rem, 2vw, 2rem);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -40%; right: -15%;
+    width: 55%; height: 110%;
+    background: radial-gradient(ellipse, rgba(235, 0, 141, 0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -35%; left: -8%;
+    width: 48%; height: 85%;
+    background: radial-gradient(ellipse, rgba(0, 173, 239, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.quarto-about-trestles .about-entity {
+  flex: 0 0 min(16rem, 100%);
+}
+
+.quarto-about-trestles .about-contents {
+  flex: 1 1 auto;
+  max-width: none;
+  min-width: 0;
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+.quarto-about-trestles .about-contents > main.content {
+  width: 100%;
+  max-width: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+// Profile image
+.quarto-about-trestles img {
+  box-shadow:
+    0 0 0 3px $pink,
+    0 0 22px rgba(235, 0, 141, 0.45),
+    0 0 55px rgba(0, 173, 239, 0.18);
+  transition: box-shadow 0.35s ease;
+
+  &:hover {
+    box-shadow:
+      0 0 0 3px $blue,
+      0 0 30px rgba(0, 173, 239, 0.55),
+      0 0 70px rgba(235, 0, 141, 0.22);
+  }
+}
+
+// Hero heading
+#hero-heading h1:first-child {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem) !important;
+  font-weight: 700;
+  background: linear-gradient(130deg, $pink 0%, $iris 42%, $blue 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+}
+
+// About links
+.quarto-about-trestles .about-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+
+  .about-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 100px;
+    background: rgba(235, 0, 141, 0.07);
+    border: 1px solid rgba(235, 0, 141, 0.18);
+    color: $pink !important;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      background: rgba(235, 0, 141, 0.16);
+      border-color: $pink;
+      transform: translateX(5px);
+      box-shadow: 0 4px 18px rgba(235, 0, 141, 0.2);
+    }
+  }
+}
+
+// ── Listing banners ──────────────────────────────────────────────────────────
+.quarto-title-banner {
+  background: var(--bezel) !important;
+  padding: 3.5rem 2rem 3rem !important;
+  position: relative;
+  overflow: hidden;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px, transparent 3px,
+      rgba(0, 173, 239, 0.01) 3px, rgba(0, 173, 239, 0.01) 4px
+    ) !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--prism-line);
+    background-size: 200% 100%;
+    animation: prism-flow 3s linear infinite;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -55px; right: 4%;
+    width: 190px; height: 190px;
+    border: 1px solid rgba(0, 173, 239, 0.08);
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+
+  h1.title {
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #ffffff !important;
+    line-height: 0.95;
+    margin: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2.8em;
+      height: 2px;
+      margin-top: 0.7rem;
+      background: linear-gradient(90deg, $pink, $iris, $blue);
+    }
+  }
+
+  // Description / meta
+  .description,
+  .quarto-title-meta {
+    color: rgba(255, 255, 255, 0.5) !important;
+    position: relative;
+  }
+}
+
+// ── Section subheadings on listing pages ───────────────────────────────────
+main.quarto-banner-title-block h2,
+main.quarto-banner-title-block h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+// ── Listing cards — Default list (posts, talks, publications) ───────────────
+div.quarto-post {
+  background: #fff;
+  border: 1px solid var(--pearl-2);
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.22s, transform 0.22s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, $pink, $iris, $blue);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-chrome), 0 0 0 1px rgba(235, 0, 141, 0.08);
+    transform: translateX(4px);
+    &::before { opacity: 1; }
+  }
+}
+
+// Date meta
+div.quarto-post .listing-date,
+div.quarto-post .post-date {
+  font-family: "Fira Code", monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.07em;
+  color: var(--t2);
+  text-transform: uppercase;
+}
+
+// Post title links
+div.quarto-post h3 a,
+div.quarto-post .listing-title a {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--t0) !important;
+  text-decoration: none;
+  &:hover { color: $pink !important; }
+}
+
+.quarto-post .listing-title::before,
+.quarto-post .listing-title::after,
+.quarto-listing-grid .card-title::before,
+.quarto-listing-grid .card-title::after {
+  content: none !important;
+}
+
+// ── Listing cards — Grid (projects) ────────────────────────────────────────
+.quarto-listing-grid .card {
+  background: var(--chrome);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  box-shadow: var(--shadow-chrome);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lift), 0 0 18px rgba(0, 173, 239, 0.1);
+  }
+
+  .card-title {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+  }
+}
+
+// ── Category / listing badges ───────────────────────────────────────────────
+.quarto-category,
+.listing-category {
+  font-family: "Fira Code", monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 0.15rem 0.5rem !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  border: 1px solid rgba(0, 173, 239, 0.35) !important;
+  color: $blue !important;
+  transition: background 0.18s, color 0.18s, border-color 0.18s !important;
+
+  &:hover {
+    background: $blue !important;
+    color: #fff !important;
+    border-color: $blue !important;
+  }
+}
+
+.quarto-listing-category .category {
+  border-left: 3px solid transparent;
+  border-radius: 8px;
+  padding-left: 0.3rem;
+  color: var(--t1);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    background: rgba(235, 0, 141, 0.05);
+    border-left-color: rgba(235, 0, 141, 0.45);
+    color: var(--t0);
+    box-shadow: none;
+    transform: translateX(1px);
+  }
+}
+
+.quarto-listing-category.category-default {
+  background: var(--surface);
+  border: 1px solid var(--pearl-2);
+  border-radius: 12px;
+  box-shadow: var(--shadow-chrome);
+  padding: 0.35rem;
+}
+
+// ── Post / article pages ────────────────────────────────────────────────────
+.quarto-title .title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.quarto-title-meta {
+  font-family: "Fira Code", monospace;
+  font-size: 1.0rem;
+  letter-spacing: 0.07em;
+  color: var(--t2);
+}
+
+.quarto-title-meta .quarto-title-meta-heading {
+  font-size: 0.9rem;
+  color: $pink;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.12rem;
+  text-transform: uppercase;
+}
+
+.quarto-title-meta .quarto-title-meta-contents,
+.quarto-title-meta .quarto-title-meta-contents p,
+.quarto-title-meta .quarto-title-meta-contents strong {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--t1);
+}
+
+.quarto-title-meta .quarto-title-meta-contents strong {
+  color: $pink;
+  font-weight: 500;
+}
+
+#quarto-content.page-layout-article > main.content:not(.quarto-banner-title-block) {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  box-shadow: var(--shadow-chrome);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  width: min(980px, 100%);
+  max-width: 980px;
+}
+
+.quarto-title-meta-contents > img,
+.quarto-title-meta-contents > a > img {
+  display: block;
+  margin: 2rem auto;
+}
+
+.quarto-title-meta-contents .scite-badge img {
+  display: inline-block;
+  margin: 0;
+}
+
+// ── Link buttons (talks / publications) ────────────────────────────────────
+.btn-outline-primary {
+  font-family: "Fira Code", monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border-color: $blue;
+  background: $blue;
+  color: #fff;
+  padding: 0.28rem 0.8rem;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+// ── Prose content ───────────────────────────────────────────────────────────
+.quarto-document-content,
+article .content {
+  p { line-height: 1.82; color: var(--t1); }
+
+  h2 {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--pearl-2);
+    font-size: 1.35rem;
+    &::before {
+      content: '// ';
+      color: $pink;
+      font-family: "Fira Code", monospace;
+      font-size: 0.88em;
+      font-weight: 400;
+    }
+  }
+
+  h3 { font-size: 1.08rem; color: $blue; }
+}
+
+// Inline code
+:not(pre) > code {
+  background: var(--pearl-1);
+  border: 1px solid var(--pearl-3);
+  padding: 0.12em 0.38em;
+  border-radius: 4px;
+  font-size: 0.84em;
+  color: $pink;
+}
+
+// ── Listing index page section headings ─────────────────────────────────────
+#quarto-document-content > h1,
+#quarto-document-content > h2 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--t2);
+  border-bottom: 1px solid var(--pearl-2);
+  padding-bottom: 0.45rem;
+  margin: 2.5rem 0 1.2rem;
+
+  &::before {
+    content: '// ';
+    color: $pink;
+    font-family: "Fira Code", monospace;
+    font-size: 0.88em;
+    font-weight: 400;
+  }
+}
+
+// ── Code blocks ─────────────────────────────────────────────────────────────
+pre, pre.sourceCode {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 173, 239, 0.14);
+  background: rgba(0, 173, 239, 0.025);
+}
+
+// ── Page footer ─────────────────────────────────────────────────────────────
+.nav-footer {
+  background: var(--bezel) !important;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.07em;
+  padding: 1.2rem 1.5rem;
+  position: relative;
+  width: 100%;
+  margin: 4rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+  box-shadow: var(--shadow-chrome);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--prism-line);
+    background-size: 200% 100%;
+    animation: prism-flow 3.5s linear infinite;
+  }
+
+  a {
+    color: rgba($blue, 0.72) !important;
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+  }
+
+  a:hover {
+    color: $blue !important;
+    text-shadow: 0 0 14px rgba(0, 173, 239, 0.45);
+  }
+}
+
+.nav-footer-left,
+.nav-footer-center,
+.nav-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 1.75rem;
+}
+
+.nav-footer-left {
+  justify-self: start;
+}
+
+.nav-footer-center {
+  justify-self: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-footer-right {
+  justify-self: end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.nav-footer-center .cookie-consent-footer {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+@media (max-width: 991.98px) {
+  .quarto-about-trestles {
+    width: calc(100% - 1rem);
+    padding: 1.6rem !important;
+  }
+
+  #quarto-content.page-layout-article > main.content:not(.quarto-banner-title-block) {
+    padding: 1.3rem;
+  }
+
+  .nav-footer {
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .nav-footer-left,
+  .nav-footer-center,
+  .nav-footer-right {
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-footer-right {
+    margin-left: 0;
+  }
+}
+
+.page-link {
+  font-family: "Fira Code", monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.38rem 0.8rem;
+  border-radius: 4px;
+  border-color: $blue;
+  background-color: $blue;
+  background-image: none;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0, 173, 239, 0.16);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, filter 0.2s ease;
+
+  &:hover {
+    border-color: $pink;
+    box-shadow:
+      0 0 0 1px rgba(235, 0, 141, 0.2),
+      0 0 14px rgba(0, 173, 239, 0.22);
+    background-color: $blue;
+    background-image: linear-gradient(
+      90deg,
+      rgba(235, 0, 141, 0.88),
+      rgba(168, 85, 247, 0.82) 45%,
+      rgba(0, 173, 239, 0.94) 100%
+    );
+    color: #fff;
+    filter: saturate(1.06) brightness(1.02);
+  }
+}
+
+.pagination {
+  gap: 0.4rem;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  border-radius: 6px;
+}
+
+.page-link.active,
+.active > .page-link {
+  border-color: rgba(0, 173, 239, 0.4);
+  background-color: rgba(0, 173, 239, 0.4);
+  background-image: none;
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 173, 239, 0.22);
+}
+
+.page-item.disabled .page-link {
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--pearl-3);
+  color: var(--t2);
+  box-shadow: none;
+  opacity: 0.75;
 }
